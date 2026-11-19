@@ -1,0 +1,90 @@
+{
+ "type": "carousel",
+ "slug": "prueba-revision",
+ "caption": "PRUEBA del sistema de revisión. Pulsa Rechazar.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/08.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/09.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/08.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-01_empezar-a-invertir/09.jpg"
+  }
+ ]
+}
