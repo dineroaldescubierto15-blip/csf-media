@@ -1,0 +1,90 @@
+{
+ "slug": "csf-02_tarjeta-revolving-cuota-fija",
+ "slides": [
+  {
+   "type": "hook",
+   "title": "Pagar solo 50 € al mes parece cómodo.",
+   "subtitle_html": "Con 2.000 € en una tarjeta revolving, son <span class=\"g\">5 años</span> pagando y casi 1.000 € de intereses.",
+   "svg": "<svg viewBox=\"0 0 888 360\" width=\"888\" height=\"360\" font-family=\"Inter\"><rect x=\"294\" y=\"40\" width=\"300\" height=\"190\" rx=\"22\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"7\"/><rect x=\"294\" y=\"85\" width=\"300\" height=\"34\" fill=\"#F5F5F2\"/><rect x=\"324\" y=\"160\" width=\"70\" height=\"40\" rx=\"6\" fill=\"#F4C542\"/><path d=\"M444,300 A110,110 0 1,1 554,190\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-dasharray=\"2 18\" transform=\"translate(-10,40)\"/></svg>",
+   "svg_bottom": 180
+  },
+  {
+   "type": "content",
+   "kicker": "Qué es",
+   "title_html": "Una tarjeta revolving aplaza lo que no pagas.",
+   "body_html": "Pagas una <b>cuota fija</b>. Lo que queda pendiente genera intereses, y lo que vuelves a gastar se suma a la deuda.",
+   "svg": "<svg viewBox=\"0 0 888 320\" width=\"888\" height=\"320\" font-family=\"Inter\"><g font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"250\" height=\"120\" rx=\"20\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"5\"/><text x=\"125\" y=\"92\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"800\" text-anchor=\"middle\">Gastas</text><text x=\"125\" y=\"130\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"middle\">con la tarjeta</text><rect x=\"319\" y=\"40\" width=\"250\" height=\"120\" rx=\"20\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"5\"/><text x=\"444\" y=\"92\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"800\" text-anchor=\"middle\">Pagas</text><text x=\"444\" y=\"130\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"middle\">cuota fija</text><rect x=\"638\" y=\"40\" width=\"250\" height=\"120\" rx=\"20\" fill=\"#F4C542\"/><text x=\"763\" y=\"92\" fill=\"#0A0A0A\" font-size=\"32\" font-weight=\"800\" text-anchor=\"middle\">El resto</text><text x=\"763\" y=\"130\" fill=\"#0A0A0A\" font-size=\"24\" font-weight=\"600\" text-anchor=\"middle\">genera intereses</text><path d=\"M256,100 H310\" stroke=\"#6F6F6F\" stroke-width=\"5\"/><path d=\"M300,90 L312,100 L300,110\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"5\"/><path d=\"M575,100 H629\" stroke=\"#6F6F6F\" stroke-width=\"5\"/><path d=\"M619,90 L631,100 L619,110\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"5\"/><path d=\"M763,166 V250 H125 V170\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"5\" stroke-dasharray=\"12 10\"/><path d=\"M113,182 L125,166 L137,182\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"5\"/><text x=\"444\" y=\"300\" fill=\"#F4C542\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\">Y la deuda vuelve a empezar</text></g></svg>"
+  },
+  {
+   "type": "stat",
+   "kicker": "El precio",
+   "label_top": "Tipo medio de las tarjetas revolving",
+   "big": "18,26 %",
+   "label_bottom": "anual · julio 2026",
+   "svg": "<svg viewBox=\"0 0 888 260\" width=\"888\" height=\"260\" font-family=\"Inter\"><rect x=\"0\" y=\"80\" width=\"888\" height=\"40\" rx=\"20\" fill=\"#2a2a2a\"/><rect x=\"0\" y=\"80\" width=\"540.5\" height=\"40\" rx=\"20\" fill=\"#F4C542\"/><line x1=\"718.1\" y1=\"56\" x2=\"718.1\" y2=\"144\" stroke=\"#F5F5F2\" stroke-width=\"5\" stroke-dasharray=\"8 6\"/><text x=\"540.496\" y=\"185\" fill=\"#F4C542\" font-size=\"26\" font-weight=\"700\" text-anchor=\"end\">18,26 % tipo medio</text><text x=\"718.0960000000001\" y=\"40\" fill=\"#F5F5F2\" font-size=\"26\" font-weight=\"700\" text-anchor=\"middle\">+6 puntos: 24,26 %</text><text x=\"0\" y=\"240\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"start\">0 %</text><text x=\"888\" y=\"240\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"end\">30 %</text></svg>",
+   "svg_bottom": 230,
+   "source": "Fuente: Banco de España, tipo medio (TEDR) de tarjetas de crédito de pago aplazado, julio 2026. STS 258/2023."
+  },
+  {
+   "type": "content",
+   "kicker": "La trampa",
+   "title_html": "De tus primeros 50 €, <span class=\"g\">28&nbsp;€ son intereses</span>.",
+   "body_html": "Solo 22 € reducen la deuda. Por eso baja tan despacio.",
+   "svg": "<svg viewBox=\"0 0 888 300\" width=\"888\" height=\"300\" font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"499.9\" height=\"110\" rx=\"10\" fill=\"#F4C542\"/><rect x=\"507.9\" y=\"40\" width=\"380.1\" height=\"110\" rx=\"10\" fill=\"#6F6F6F\"/><text x=\"24\" y=\"215\" fill=\"#F4C542\" font-size=\"34\" font-weight=\"800\" text-anchor=\"start\">28 € intereses</text><text x=\"888\" y=\"215\" fill=\"#CFCFCA\" font-size=\"34\" font-weight=\"800\" text-anchor=\"end\">22 € deuda</text><text x=\"0\" y=\"290\" fill=\"#6F6F6F\" font-size=\"26\" font-weight=\"500\" text-anchor=\"start\">Mes 1 · deuda de 2.000 € · cuota de 50 €</text></svg>",
+   "svg_bottom": 220,
+   "source": "Cálculo propio: deuda de 2.000 €, tipo anual 18,26 % (medio BdE, jul. 2026), sin nuevas compras ni comisiones."
+  },
+  {
+   "type": "content",
+   "kicker": "2.000 € de deuda",
+   "title_html": "Cuánto tardas según la cuota",
+   "body_html": "Misma deuda, mismo tipo. Solo cambia lo que pagas cada mes.",
+   "svg": "<svg viewBox=\"0 0 888 380\" width=\"888\" height=\"380\" font-family=\"Inter\"><g transform=\"translate(14,40)\"><line x1=\"0\" y1=\"300\" x2=\"860\" y2=\"300\" stroke=\"#2a2a2a\" stroke-width=\"2\"/><polyline points=\"0.0,0.0 14.3,25.8 28.7,51.9 43.0,78.4 57.3,105.3 71.7,132.6 86.0,160.2 100.3,188.2 114.7,216.7 129.0,245.5 143.3,274.7 157.7,300.0\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><polyline points=\"0.0,0.0 14.3,10.8 28.7,21.7 43.0,32.8 57.3,44.0 71.7,55.4 86.0,67.0 100.3,78.7 114.7,90.6 129.0,102.6 143.3,114.9 157.7,127.3 172.0,139.8 186.3,152.6 200.7,165.5 215.0,178.6 229.3,191.9 243.7,205.4 258.0,219.0 272.3,232.9 286.7,247.0 301.0,261.2 315.3,275.7 329.7,290.3 344.0,300.0\" fill=\"none\" stroke=\"#CFCFCA\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><polyline points=\"0.0,0.0 14.3,3.3 28.7,6.6 43.0,10.0 57.3,13.4 71.7,16.9 86.0,20.4 100.3,23.9 114.7,27.6 129.0,31.2 143.3,34.9 157.7,38.7 172.0,42.5 186.3,46.4 200.7,50.3 215.0,54.3 229.3,58.4 243.7,62.5 258.0,66.6 272.3,70.8 286.7,75.1 301.0,79.4 315.3,83.8 329.7,88.3 344.0,92.8 358.3,97.4 372.7,102.0 387.0,106.8 401.3,111.5 415.7,116.4 430.0,121.3 444.3,126.3 458.7,131.3 473.0,136.5 487.3,141.7 501.7,146.9 516.0,152.3 530.3,157.7 544.7,163.2 559.0,168.8 573.3,174.4 587.7,180.2 602.0,186.0 616.3,191.9 630.7,197.9 645.0,203.9 659.3,210.1 673.7,216.3 688.0,222.6 702.3,229.0 716.7,235.5 731.0,242.1 745.3,248.8 759.7,255.6 774.0,262.5 788.3,269.4 802.7,276.5 817.0,283.7 831.3,290.9 845.7,298.3 860.0,300.0\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><text x=\"0.0\" y=\"336\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"middle\">0</text><text x=\"172.0\" y=\"336\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"middle\">1 año</text><text x=\"344.0\" y=\"336\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"middle\">2 años</text><text x=\"516.0\" y=\"336\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"middle\">3 años</text><text x=\"688.0\" y=\"336\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"middle\">4 años</text><text x=\"830.0\" y=\"336\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"middle\">5 años</text><rect x=\"420\" y=\"-6\" width=\"26\" height=\"8\" fill=\"#F4C542\"/><text x=\"456\" y=\"4\" fill=\"#F4C542\" font-size=\"24\" font-weight=\"700\" text-anchor=\"start\">50 €/mes</text><rect x=\"590\" y=\"-6\" width=\"26\" height=\"8\" fill=\"#CFCFCA\"/><text x=\"626\" y=\"4\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"700\" text-anchor=\"start\">100 €</text><rect x=\"720\" y=\"-6\" width=\"26\" height=\"8\" fill=\"#6F6F6F\"/><text x=\"756\" y=\"4\" fill=\"#6F6F6F\" font-size=\"24\" font-weight=\"700\" text-anchor=\"start\">200 €</text></g></svg>",
+   "svg_bottom": 210,
+   "source": "Cálculo propio: deuda de 2.000 €, tipo anual 18,26 % (medio BdE, jul. 2026), sin nuevas compras ni comisiones."
+  },
+  {
+   "type": "rows",
+   "kicker": "Cuota mensual · plazo · intereses",
+   "rows": [
+    [
+     "50 €/mes · 60 meses",
+     "961 €"
+    ],
+    [
+     "100 €/mes · 24 meses",
+     "365 €"
+    ],
+    [
+     "200 €/mes · 11 meses",
+     "171 €"
+    ]
+   ],
+   "icons": [
+    "<rect x=\"4\" y=\"4\" width=\"56\" height=\"60\" rx=\"6\" fill=\"#F4C542\"/>",
+    "<rect x=\"4\" y=\"38\" width=\"56\" height=\"26\" rx=\"6\" fill=\"#CFCFCA\"/>",
+    "<rect x=\"4\" y=\"52\" width=\"56\" height=\"12\" rx=\"6\" fill=\"#6F6F6F\"/>"
+   ],
+   "body_html": "Con 50 € al mes acabas pagando <span class=\"g\">2.961 €</span> por 2.000 € de deuda."
+  },
+  {
+   "type": "content",
+   "theme": "light",
+   "kicker": "Qué mirar",
+   "title_html": "La cuota no dice nada. La TAE, sí.",
+   "body_html": "Mira la <b>TAE de tu contrato</b> y cuánto de cada cuota va a intereses. El Supremo considera usurario un interés que supere en más de 6 puntos el tipo medio del mes de firma.",
+   "svg": "<svg viewBox=\"0 0 330 360\" width=\"330\" height=\"360\" font-family=\"Inter\"><rect x=\"0\" y=\"20\" width=\"250\" height=\"300\" rx=\"18\" fill=\"none\" stroke=\"#0A0A0A\" stroke-width=\"6\"/><line x1=\"40\" y1=\"90\" x2=\"210\" y2=\"90\" stroke=\"#0A0A0A\" stroke-width=\"6\"/><line x1=\"40\" y1=\"150\" x2=\"210\" y2=\"150\" stroke=\"#0A0A0A\" stroke-width=\"6\"/><line x1=\"40\" y1=\"210\" x2=\"160\" y2=\"210\" stroke=\"#0A0A0A\" stroke-width=\"6\"/><circle cx=\"230\" cy=\"270\" r=\"70\" fill=\"#8A6A00\"/><path d=\"M196,272 L222,298 L266,246\" fill=\"none\" stroke=\"#E7E7E3\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+   "svg_bottom": 150,
+   "title_size": 72,
+   "source": ""
+  },
+  {
+   "type": "cta",
+   "kicker": "Conclusión",
+   "title_html": "Una cuota baja no es barata. Es más larga.",
+   "body_html": "Guárdalo para la próxima vez que te ofrezcan <span class=\"g\">“paga cómodamente cada mes”</span>.",
+   "svg": "<svg viewBox=\"0 0 888 360\" width=\"888\" height=\"360\" font-family=\"Inter\"><text x=\"0\" y=\"40\" fill=\"#6F6F6F\" font-size=\"28\" font-weight=\"600\" text-anchor=\"start\">Total pagado por 2.000 € de deuda</text><rect x=\"0\" y=\"80\" width=\"888\" height=\"80\" rx=\"14\" fill=\"#6F6F6F\"/><text x=\"24\" y=\"133\" fill=\"#0A0A0A\" font-size=\"30\" font-weight=\"800\" text-anchor=\"start\">50 €/mes · 5 años</text><text x=\"864\" y=\"133\" fill=\"#0A0A0A\" font-size=\"36\" font-weight=\"800\" text-anchor=\"end\">2.961 €</text><rect x=\"0\" y=\"200\" width=\"651\" height=\"80\" rx=\"14\" fill=\"#F4C542\"/><text x=\"24\" y=\"253\" fill=\"#0A0A0A\" font-size=\"30\" font-weight=\"800\" text-anchor=\"start\">200 €/mes · 11 meses</text><text x=\"627.0800405268491\" y=\"253\" fill=\"#0A0A0A\" font-size=\"36\" font-weight=\"800\" text-anchor=\"end\">2.171 €</text></svg>",
+   "svg_bottom": 180
+  }
+ ]
+}

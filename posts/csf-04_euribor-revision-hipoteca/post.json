@@ -1,0 +1,81 @@
+{
+ "type": "carousel",
+ "slug": "csf-04_euribor-revision-hipoteca",
+ "caption": "Si tienes hipoteca variable y te toca revisión estos meses, mira el Euríbor: está un punto por encima de hace un año.\n\nLa media de octubre cerró en el 3,239 %, frente al 2,187 % de octubre de 2025, y en noviembre se mantiene en la misma zona. Detrás están las dos subidas de tipos del BCE de este año (junio y septiembre), que dejaron la facilidad de depósito en el 2,50 %. En el ejemplo, una hipoteca con 150.000 € pendientes a 25 años pasa de unos 706 € a unos 791 € al mes en la revisión anual.\n\nEl matiz: cada hipoteca es distinta. Tu cuota depende de tu capital pendiente, tu plazo, tu diferencial y del mes de referencia que use tu banco. Y el Euríbor puede subir o bajar en los próximos meses: la próxima reunión del BCE es el 17 de diciembre.\n\nCompártelo con quien tenga una hipoteca variable.\n\n#euribor #hipoteca #vivienda #finanzaspersonales #bce\n\nContenido informativo, no es asesoramiento financiero.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/08.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-04_euribor-revision-hipoteca/08.jpg"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "type": "carousel",
+ "slug": "csf-03_fondo-de-emergencia",
+ "caption": "Antes de elegir dónde invertir, conviene tener un colchón.\n\nUn fondo de emergencia es dinero apartado solo para imprevistos: una avería, el dentista, una mudanza o una temporada sin ingresos. La referencia habitual es reunir entre 3 y 6 meses de gastos fijos, y se calcula con lo que pagas sí o sí cada mes, no con tu sueldo. En el ejemplo, con 1.100 € de gastos, la primera meta son 3.300 €.\n\nEl matiz: 3-6 meses es una orientación, no una regla. Con un contrato temporal o ingresos variables suele tener sentido apuntar más alto. Y no hace falta tenerlo entero para empezar: un mes de gastos ya cambia mucho cómo encajas un imprevisto.\n\n¿Cuántos meses de gastos tienes cubiertos ahora mismo? Cuéntalo en comentarios.\n\n#fondodeemergencia #ahorro #finanzaspersonales #educacionfinanciera\n\nContenido informativo, no es asesoramiento financiero.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/08.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-03_fondo-de-emergencia/08.jpg"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "type": "carousel",
+ "slug": "csf-02_tarjeta-revolving-cuota-fija",
+ "caption": "\"Paga cómodamente cada mes.\" Con una tarjeta revolving, cómodo suele significar largo.\n\nEn el ejemplo, una deuda de 2.000 € al tipo medio de estas tarjetas (18,26 % en julio de 2026, según el Banco de España) se paga en 5 años si la cuota es de 50 € al mes. Al principio, más de la mitad de cada cuota se va en intereses. Con 200 € al mes, la misma deuda se liquida en menos de un año.\n\nEl matiz: es un cálculo simplificado, sin comisiones ni compras nuevas. En la práctica, cada compra que haces con la tarjeta se suma a lo pendiente y alarga el plazo. Y la TAE de tu contrato puede ser distinta de la media: es el dato que conviene mirar.\n\nGuárdalo para cuando te ofrezcan pagar \"en cómodas cuotas\".\n\n#tarjetarevolving #deudas #educacionfinanciera #finanzaspersonales #credito\n\nContenido informativo, no es asesoramiento financiero.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/08.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-02_tarjeta-revolving-cuota-fija/08.jpg"
+  }
+ ]
+}

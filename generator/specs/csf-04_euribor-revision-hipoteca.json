@@ -1,0 +1,99 @@
+{
+ "slug": "csf-04_euribor-revision-hipoteca",
+ "slides": [
+  {
+   "type": "hook",
+   "title": "Si tu hipoteca variable se revisa ahora, lo normal es que la cuota suba.",
+   "title_size": 84,
+   "subtitle_html": "El Euríbor está <span class=\"g\">un punto por encima</span> de hace un año.",
+   "svg": "<svg viewBox=\"0 0 888 400\" width=\"888\" height=\"400\" font-family=\"Inter\"><path d=\"M244,200 L444,50 L644,200\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"10\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><rect x=\"294\" y=\"190\" width=\"300\" height=\"190\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"10\"/><polyline points=\"320,330 380,300 430,315 500,250 560,230\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"530,226 562,229 556,260\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+   "svg_bottom": 170
+  },
+  {
+   "type": "stat",
+   "kicker": "Actualidad · Euríbor",
+   "label_top": "Media de octubre de 2026",
+   "big": "3,239 %",
+   "label_bottom": "Hace un año: 2,187 %",
+   "svg": "<svg viewBox=\"0 0 888 400\" width=\"888\" height=\"400\" font-family=\"Inter\"><line x1=\"0\" y1=\"356\" x2=\"888\" y2=\"356\" stroke=\"#2a2a2a\" stroke-width=\"2\"/><rect x=\"15.3\" y=\"235.7\" width=\"50.1\" height=\"120.3\" rx=\"6\" fill=\"#6F6F6F\"/><text x=\"40.36363636363637\" y=\"223.66685746994852\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,19</text><text x=\"40.36363636363637\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">oct 25</text><rect x=\"96.1\" y=\"225.5\" width=\"50.1\" height=\"130.5\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"121.09090909090911\" y=\"213.50772753291355\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,25</text><text x=\"121.09090909090911\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">ene</text><rect x=\"176.8\" y=\"229.7\" width=\"50.1\" height=\"126.3\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"201.81818181818184\" y=\"217.7115054378935\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,22</text><text x=\"201.81818181818184\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">feb</text><rect x=\"257.5\" y=\"169.5\" width=\"50.1\" height=\"186.5\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"282.5454545454545\" y=\"157.45735546651403\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,56</text><text x=\"282.5454545454545\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">mar</text><rect x=\"338.2\" y=\"137.6\" width=\"50.1\" height=\"218.4\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"363.27272727272725\" y=\"125.57870635374931\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,75</text><text x=\"363.27272727272725\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">abr</text><rect x=\"419.0\" y=\"127.6\" width=\"50.1\" height=\"228.4\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"444.0\" y=\"115.59473382942187\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,80</text><text x=\"444.0\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">may</text><rect x=\"499.7\" y=\"128.6\" width=\"50.1\" height=\"227.4\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"524.7272727272727\" y=\"116.64567830566682\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,80</text><text x=\"524.7272727272727\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">jun</text><rect x=\"580.4\" y=\"118.7\" width=\"50.1\" height=\"237.3\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"605.4545454545455\" y=\"106.66170578133944\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,85</text><text x=\"605.4545454545455\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">jul</text><rect x=\"661.2\" y=\"101.3\" width=\"50.1\" height=\"254.7\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"686.1818181818182\" y=\"89.32112192329703\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">2,95</text><text x=\"686.1818181818182\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">ago</text><rect x=\"741.9\" y=\"50.0\" width=\"50.1\" height=\"306.0\" rx=\"6\" fill=\"#CFCFCA\"/><text x=\"766.909090909091\" y=\"38.0\" fill=\"#CFCFCA\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">3,25</text><text x=\"766.909090909091\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">sep</text><rect x=\"822.6\" y=\"51.4\" width=\"50.1\" height=\"304.6\" rx=\"6\" fill=\"#F4C542\"/><text x=\"847.6363636363637\" y=\"39.40125930165999\" fill=\"#F5F5F2\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">3,24</text><text x=\"847.6363636363637\" y=\"390\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">oct</text></svg>",
+   "svg_bottom": 210,
+   "source": "Fuente: Banco de España / EMMI, medias mensuales del Euríbor a 12 meses (vía Rankia). Datos consultados el 19/11/2026."
+  },
+  {
+   "type": "content",
+   "kicker": "Por qué",
+   "title_html": "El BCE ha subido tipos dos veces este año.",
+   "body_html": "Junio y septiembre: la facilidad de depósito está en el <b>2,50 %</b>. La próxima reunión es el <span class=\"g\">17 de diciembre</span>.",
+   "svg": "<svg viewBox=\"0 0 888 350\" width=\"888\" height=\"350\" font-family=\"Inter\"><line x1=\"0\" y1=\"300\" x2=\"888\" y2=\"300\" stroke=\"#2a2a2a\" stroke-width=\"2\"/><polyline points=\"0,240 330,240 330,170 600,170 600,100 780,100\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"8\" stroke-linejoin=\"round\"/><polyline points=\"780,100 888,100\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"6\" stroke-dasharray=\"10 10\"/><text x=\"10\" y=\"225\" fill=\"#CFCFCA\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">2,00 %</text><text x=\"340\" y=\"155\" fill=\"#CFCFCA\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">2,25 %</text><text x=\"610\" y=\"85\" fill=\"#F4C542\" font-size=\"26\" font-weight=\"700\" text-anchor=\"start\">2,50 %</text><text x=\"0\" y=\"340\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"start\">ene 2026</text><text x=\"330\" y=\"340\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"middle\">jun</text><text x=\"600\" y=\"340\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"600\" text-anchor=\"middle\">sep</text><text x=\"888\" y=\"340\" fill=\"#6F6F6F\" font-size=\"22\" font-weight=\"700\" text-anchor=\"end\">17 dic ?</text></svg>",
+   "svg_bottom": 200,
+   "source": "Fuente: BCE, decisión de política monetaria del 10/09/2026."
+  },
+  {
+   "type": "rows",
+   "kicker": "El ejemplo",
+   "rows": [
+    [
+     "Capital pendiente",
+     "150.000 €"
+    ],
+    [
+     "Plazo restante",
+     "25 años"
+    ],
+    [
+     "Tipo",
+     "Euríbor + 0,75 %"
+    ],
+    [
+     "Revisión",
+     "anual, dato de oct."
+    ]
+   ],
+   "icons": [
+    "<path d=\"M8,30 L32,10 L56,30 V56 H8 Z\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"5\" stroke-linejoin=\"round\"/>",
+    "<circle cx=\"32\" cy=\"32\" r=\"24\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"5\"/><path d=\"M32,18 V32 L42,40\" stroke=\"#F4C542\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>",
+    "<text x=\"32\" y=\"46\" text-anchor=\"middle\" fill=\"#F4C542\" font-size=\"40\" font-weight=\"800\">%</text>",
+    "<rect x=\"8\" y=\"12\" width=\"48\" height=\"44\" rx=\"6\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"5\"/><line x1=\"8\" y1=\"26\" x2=\"56\" y2=\"26\" stroke=\"#F4C542\" stroke-width=\"5\"/>"
+   ],
+   "body_html": "Tu banco puede usar otro mes de referencia: <span class=\"g\">míralo en tu escritura</span>."
+  },
+  {
+   "type": "stat",
+   "kicker": "Lo que cambia",
+   "label_top": "La cuota sube",
+   "big": "+84 €/mes",
+   "big_size": 150,
+   "label_bottom": "unos 1.013 € más al año",
+   "svg": "<svg viewBox=\"0 0 888 280\" width=\"888\" height=\"280\" font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"793\" height=\"90\" rx=\"14\" fill=\"#6F6F6F\"/><text x=\"24\" y=\"98\" fill=\"#0A0A0A\" font-size=\"28\" font-weight=\"800\" text-anchor=\"start\">Con el Euríbor de oct. 2025</text><text x=\"769.1944775534633\" y=\"98\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"end\">706 €</text><rect x=\"0\" y=\"160\" width=\"888\" height=\"90\" rx=\"14\" fill=\"#F4C542\"/><text x=\"24\" y=\"218\" fill=\"#0A0A0A\" font-size=\"28\" font-weight=\"800\" text-anchor=\"start\">Con el Euríbor de oct. 2026</text><text x=\"864\" y=\"218\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"end\">791 €</text></svg>",
+   "svg_bottom": 210,
+   "source": "Cálculo propio: 150.000 € pendientes, 25 años, Euríbor + 0,75 %, cuota francesa. Oct. 2025: 2,187 %; oct. 2026: 3,239 %."
+  },
+  {
+   "type": "content",
+   "kicker": "Según lo que debes",
+   "title_html": "Cuanto más capital pendiente, más se nota.",
+   "body_html": "Misma subida del Euríbor, mismo plazo y diferencial.",
+   "svg": "<svg viewBox=\"0 0 888 340\" width=\"888\" height=\"340\" font-family=\"Inter\"><line x1=\"0\" y1=\"296\" x2=\"888\" y2=\"296\" stroke=\"#2a2a2a\" stroke-width=\"2\"/><rect x=\"56.2\" y=\"173.0\" width=\"183.5\" height=\"123.0\" rx=\"6\" fill=\"#6F6F6F\"/><text x=\"148.0\" y=\"161.0\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\">+56 €/mes</text><text x=\"148.0\" y=\"330\" fill=\"#6F6F6F\" font-size=\"24\" font-weight=\"600\" text-anchor=\"middle\">100.000 €</text><rect x=\"352.2\" y=\"111.5\" width=\"183.5\" height=\"184.5\" rx=\"6\" fill=\"#F4C542\"/><text x=\"444.0\" y=\"99.50000000000026\" fill=\"#F5F5F2\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\">+84 €/mes</text><text x=\"444.0\" y=\"330\" fill=\"#6F6F6F\" font-size=\"24\" font-weight=\"600\" text-anchor=\"middle\">150.000 €</text><rect x=\"648.2\" y=\"50.0\" width=\"183.5\" height=\"246.0\" rx=\"6\" fill=\"#6F6F6F\"/><text x=\"740.0\" y=\"38.0\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\">+113 €/mes</text><text x=\"740.0\" y=\"330\" fill=\"#6F6F6F\" font-size=\"24\" font-weight=\"600\" text-anchor=\"middle\">200.000 €</text></svg>",
+   "svg_bottom": 210,
+   "source": "Cálculo propio: 150.000 € pendientes, 25 años, Euríbor + 0,75 %, cuota francesa. Oct. 2025: 2,187 %; oct. 2026: 3,239 %."
+  },
+  {
+   "type": "content",
+   "theme": "light",
+   "kicker": "Qué puedes mirar",
+   "title_html": "Tres datos de tu hipoteca",
+   "body_html": "<b>1.</b> Cuándo se revisa y con qué mes.<br><b>2.</b> Tu diferencial.<br><b>3.</b> Si amortizar antes te reduce cuota o plazo, y con qué coste.",
+   "svg": "<svg viewBox=\"0 0 260 310\" width=\"260\" height=\"310\" font-family=\"Inter\"><rect x=\"0\" y=\"20\" width=\"250\" height=\"280\" rx=\"18\" fill=\"none\" stroke=\"#0A0A0A\" stroke-width=\"6\"/><rect x=\"0\" y=\"20\" width=\"250\" height=\"60\" rx=\"18\" fill=\"#0A0A0A\"/><rect x=\"30\" y=\"110\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#c9c9c4\"/><rect x=\"102\" y=\"110\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#c9c9c4\"/><rect x=\"174\" y=\"110\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#c9c9c4\"/><rect x=\"30\" y=\"170\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#c9c9c4\"/><rect x=\"102\" y=\"170\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#c9c9c4\"/><rect x=\"174\" y=\"170\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#c9c9c4\"/><rect x=\"30\" y=\"230\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#c9c9c4\"/><rect x=\"102\" y=\"230\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#8A6A00\"/><rect x=\"174\" y=\"230\" width=\"46\" height=\"36\" rx=\"6\" fill=\"#c9c9c4\"/></svg>",
+   "svg_bottom": 160
+  },
+  {
+   "type": "cta",
+   "kicker": "Conclusión",
+   "title_html": "Que la revisión no te pille por sorpresa.",
+   "body_html": "Compártelo con quien tenga una hipoteca variable.",
+   "svg": "<svg viewBox=\"0 0 888 220\" width=\"888\" height=\"220\" font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"888\" height=\"150\" rx=\"24\" fill=\"none\" stroke=\"#2a2a2a\" stroke-width=\"4\"/><text x=\"444\" y=\"105\" fill=\"#CFCFCA\" font-size=\"34\" font-weight=\"600\" text-anchor=\"middle\">Tu próxima revisión:</text><text x=\"444\" y=\"160\" fill=\"#F4C542\" font-size=\"44\" font-weight=\"800\" text-anchor=\"middle\">__ / __ / ____</text></svg>",
+   "svg_bottom": 210,
+   "source": "Datos a 19/11/2026. Contenido informativo."
+  }
+ ]
+}
