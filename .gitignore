@@ -4,3 +4,6 @@ generator/.frames/
 generator/.reel.html
 generator/.reel_tmp/
 posts/reel-ejemplo/
+generator/.q_in.wav
+generator/.q_out.wav
+generator/.reel_voice/

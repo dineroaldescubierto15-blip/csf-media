@@ -12,7 +12,8 @@ Spec:
 Voz en off (Piper, local y gratis): si una escena tiene "voz", la escena dura lo que tarde la voz + 0,7 s
 (o "dur" si es mayor). "voice_speed" (por defecto 0.9; menor = más rápido). Duración orientativa: 30-50 s; prioriza el contenido
 completo antes que recortar segundos. Escribe los números EN LETRAS en "voz" ("trescientos cinco mil euros").
-Voces: "kokoro:em_alex" (por defecto, masculina, dinámica) | "kokoro:em_santa" | "kokoro:ef_dora" (femenina)
+Voces: "csf" (POR DEFECTO, voz oficial clonada desde voices/csf_voz_oficial.wav con Qwen3-TTS; "voice_speed" 1.0)
+  | "kokoro:em_alex" (masculina, dinámica) | "kokoro:em_santa" | "kokoro:ef_dora" (femenina)
   -> Kokoro, Apache 2.0, requiere `pip install kokoro-onnx`; "voice_speed" por defecto 1.05 (mayor = más rápido).
   Piper (más plano): "davefx" (CC0) | "sharvard-m" / "sharvard-f" (CC BY 3.0, requiere atribución); speed 0.9 (menor = más rápido).
 Tono del guion: dinámico y cercano (preguntas, frases cortas, alguna exclamación), sin hype ni primera persona.
@@ -110,6 +111,33 @@ def kokoro_synth(text, voice, speed):
     a = np.asarray(a, dtype=np.float32)
     return np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a)
 
+_qwen = {}
+
+def qwen_clone_synth(texts, speed=1.0):
+    """Clona la voz oficial (voices/csf_voz_oficial.*) con Qwen3-TTS Base. Lento en CPU (~5 s por s de audio).
+    Requiere `pip install qwen-tts` y descargar el modelo de Hugging Face (usar HF_HUB_DISABLE_XET=1)."""
+    import torch
+    os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
+    from qwen_tts import Qwen3TTSModel
+    if "m" not in _qwen:
+        torch.set_num_threads(max(1, os.cpu_count() or 1))
+        _qwen["m"] = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map="cpu", dtype=torch.bfloat16)
+        ref = ROOT / "voices" / "csf_voz_oficial.wav"
+        _qwen["p"] = _qwen["m"].create_voice_clone_prompt(str(ref), (ROOT / "voices" / "csf_voz_oficial.txt").read_text(encoding="utf-8"))
+    out = []
+    for t in texts:
+        wavs, sr = _qwen["m"].generate_voice_clone(text=t, language="Spanish", voice_clone_prompt=_qwen["p"])
+        a = np.asarray(wavs[0], dtype=np.float32)
+        if speed != 1.0:
+            tmp_in, tmp_out = ROOT / "generator" / ".q_in.wav", ROOT / "generator" / ".q_out.wav"
+            with wave.open(str(tmp_in), "wb") as w:
+                w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes((np.clip(a, -1, 1) * 32767).astype(np.int16).tobytes())
+            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(tmp_in), "-af", f"rubberband=tempo={speed}", str(tmp_out)], check=True)
+            with wave.open(str(tmp_out)) as w:
+                a = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
+        out.append(np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a))
+    return out
+
 def synth(text, model, spk, out, speed=0.9):
     subprocess.run([sys.executable, "-m", "piper", "-m", str(model), "-s", str(spk), "--length-scale", str(speed), "--sentence-silence", "0.2", "-f", str(out)],
                    input=text.encode(), check=True, capture_output=True)
@@ -129,9 +157,14 @@ def main():
     slug = spec["slug"]; scenes = spec["scenes"]
     gen0 = ROOT / "generator" / ".reel_voice"; shutil.rmtree(gen0, ignore_errors=True); gen0.mkdir(parents=True)
     clips = []
-    vname = spec.get("voice", "kokoro:em_alex")
+    vname = spec.get("voice", "csf")
     if any(sc.get("voz") for sc in scenes):
-        if vname.startswith("kokoro:"):
+        if vname == "csf":
+            idx = [i for i, sc in enumerate(scenes) if sc.get("voz")]
+            gen_ = qwen_clone_synth([scenes[i]["voz"] for i in idx], spec.get("voice_speed", 1.0))
+            clips = [None] * len(scenes)
+            for i, c in zip(idx, gen_): clips[i] = c
+        elif vname.startswith("kokoro:"):
             kv = vname.split(":", 1)[1]
             for sc in scenes:
                 clips.append(kokoro_synth(sc["voz"], kv, spec.get("voice_speed", 1.05)) if sc.get("voz") else None)
