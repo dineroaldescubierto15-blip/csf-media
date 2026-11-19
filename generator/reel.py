@@ -7,8 +7,13 @@ Uso:
 Salida: posts/<slug>/reel.mp4 y posts/<slug>/cover.jpg
 
 Spec:
-{ "slug": "...", "music_seed": 3,
-  "scenes": [ {"dur": 3.5, "html": "<div ...>"} , ... ] }
+{ "slug": "...", "music_seed": 3, "voice": "davefx",
+  "scenes": [ {"dur": 3.5, "voz": "Texto que lee la voz en off.", "html": "<div ...>"} , ... ] }
+Voz en off (Piper, local y gratis): si una escena tiene "voz", la escena dura lo que tarde la voz + 0,7 s
+(o "dur" si es mayor). "voice_speed" (por defecto 0.9; menor = más rápido). Objetivo: 26-30 s en total,
+unas 70-75 palabras de guion. Escribe los números EN LETRAS en "voz" ("trescientos cinco mil euros").
+Voces: "davefx" (masculina, CC0, por defecto) | "sharvard-m" / "sharvard-f" (CC BY 3.0: requiere atribución).
+Los modelos se descargan de Hugging Face a ~/.cache/csf-voices la primera vez.
 
 Cada escena es HTML libre dentro de un lienzo de 1080x1920 con la marca aplicada (clases como en los
 carruseles: .k kicker, h1, h2, p, .big, .lab, .g dorado, .src fuente). Zona segura: el contenido debe
@@ -19,7 +24,8 @@ Animación por atributos (tiempos en segundos desde el inicio de la escena):
   draw:  en <path>, dibuja el trazo;  grow/growy: barras (escala desde izquierda/abajo)
 Cada escena se funde a negro en sus últimos 0,3 s (salvo la última).
 """
-import json, sys, pathlib, subprocess, os, shutil
+import json, sys, pathlib, subprocess, os, shutil, wave, urllib.request
+import numpy as np
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FPS = 30
@@ -68,6 +74,28 @@ window.setFrame = function(idx, t, dur, total, globalT, last){
 }
 """
 
+VOICES = {"davefx": ("davefx", 0), "sharvard-m": ("sharvard", 0), "sharvard-f": ("sharvard", 1)}
+SR = 48000
+
+def voice_model(name):
+    v, spk = VOICES[name]
+    d = pathlib.Path.home() / ".cache" / "csf-voices"; d.mkdir(parents=True, exist_ok=True)
+    base = f"https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_ES/{v}/medium/es_ES-{v}-medium"
+    for ext in ("onnx", "onnx.json"):
+        f = d / f"es_ES-{v}-medium.{ext}"
+        if not f.exists():
+            urllib.request.urlretrieve(f"{base}.{ext}", f)
+    return d / f"es_ES-{v}-medium.onnx", spk
+
+def synth(text, model, spk, out, speed=0.9):
+    subprocess.run([sys.executable, "-m", "piper", "-m", str(model), "-s", str(spk), "--length-scale", str(speed), "--sentence-silence", "0.2", "-f", str(out)],
+                   input=text.encode(), check=True, capture_output=True)
+    with wave.open(str(out)) as w:
+        sr = w.getframerate(); a = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
+    if sr != SR:
+        a = np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a)
+    return a
+
 def build_html(spec):
     scenes = "".join(f'<div class="scene">{sc["html"]}</div>' for sc in spec["scenes"])
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>'
@@ -76,7 +104,17 @@ def build_html(spec):
 def main():
     spec_path = pathlib.Path(sys.argv[1]); spec = json.loads(spec_path.read_text(encoding="utf-8"))
     slug = spec["slug"]; scenes = spec["scenes"]
-    durs = [float(s["dur"]) for s in scenes]; total = sum(durs)
+    gen0 = ROOT / "generator" / ".reel_voice"; shutil.rmtree(gen0, ignore_errors=True); gen0.mkdir(parents=True)
+    clips = []
+    if any(sc.get("voz") for sc in scenes):
+        model, spk = voice_model(spec.get("voice", "davefx"))
+        for i, sc in enumerate(scenes):
+            clips.append(synth(sc["voz"], model, spk, gen0 / f"v{i}.wav", spec.get("voice_speed", 0.9)) if sc.get("voz") else None)
+    else:
+        clips = [None] * len(scenes)
+    LEAD = 0.2
+    durs = [max(float(sc.get("dur", 0)), (len(c) / SR + LEAD + 0.5) if c is not None else 0) for sc, c in zip(scenes, clips)]
+    durs = [round(d * FPS) / FPS for d in durs]; total = sum(durs)
     if not 3 <= total <= 90:
         sys.exit("Un Reel debe durar entre 3 y 90 s (recomendado 15-30 s).")
     gen = ROOT / "generator"; html = gen / ".reel.html"; html.write_text(build_html(spec), encoding="utf-8")
@@ -121,10 +159,25 @@ def main():
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(video)], check=True)
     wav = tmp / "music.wav"
     subprocess.run([sys.executable, str(gen / "music.py"), str(total), str(wav), "--seed", str(spec.get("music_seed", 1))], check=True)
+    has_voice = any(c is not None for c in clips)
     final_tmp = out / "reel.part.mp4"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(wav), "-map", "0:v", "-map", "1:a",
-                    "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-shortest", "-movflags", "+faststart",
-                    str(final_tmp)], check=True)
+    if has_voice:
+        vt = np.zeros(int(total * SR) + SR, dtype=np.float32)
+        for st, c in zip(starts, clips):
+            if c is None: continue
+            a = int((st + LEAD) * SR); vt[a:a + len(c)] += c[: len(vt) - a]
+        vt = vt / max(1e-9, np.abs(vt).max()) * 0.9
+        vw = tmp / "voice.wav"
+        with wave.open(str(vw), "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((vt * 32767).astype(np.int16).tobytes())
+        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(wav), "-i", str(vw),
+               "-filter_complex", "[1:a]volume=0.22[m];[2:a]aformat=channel_layouts=stereo,volume=1.0[v];[m][v]amix=inputs=2:duration=first:normalize=0[a]",
+               "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-shortest",
+               "-movflags", "+faststart", str(final_tmp)]
+    else:
+        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(wav), "-map", "0:v", "-map", "1:a",
+               "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(final_tmp)]
+    subprocess.run(cmd, check=True)
     final_tmp.rename(out / "reel.mp4"); shutil.rmtree(tmp, ignore_errors=True)
     mb = (out / "reel.mp4").stat().st_size / 1e6
     print(f"OK posts/{slug}/reel.mp4 ({total:.1f}s, {mb:.1f} MB) + cover.jpg")
