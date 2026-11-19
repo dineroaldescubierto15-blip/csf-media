@@ -1,0 +1,95 @@
+{
+ "slug": "csf-05_mito-pasar-de-tramo-irpf",
+ "slides": [
+  {
+   "type": "hook",
+   "title": "“Si paso de tramo, cobraré menos.”",
+   "subtitle_html": "No funciona así. En el IRPF, cada tipo se aplica <span class=\"g\">solo a la parte</span> que cae en su tramo.",
+   "svg": "<svg viewBox=\"0 0 888 300\" width=\"888\" height=\"300\" font-family=\"Inter\"><g transform=\"translate(-60,-40)\"><path d=\"M150,300 H330 V230 H510 V160 H690 V90\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"10\" stroke-linejoin=\"round\"/><circle cx=\"690\" cy=\"90\" r=\"16\" fill=\"#F4C542\"/></g></svg>",
+   "svg_bottom": 190
+  },
+  {
+   "type": "content",
+   "kicker": "Cómo funciona",
+   "title_html": "El IRPF sube por escalones.",
+   "body_html": "Cuanto más ganas, más alto es el tipo… pero solo para lo que entra en cada escalón.",
+   "svg": "<svg viewBox=\"0 0 888 410\" width=\"888\" height=\"410\" font-family=\"Inter\"><rect x=\"6\" y=\"320\" width=\"136\" height=\"40\" rx=\"8\" fill=\"#CFCFCA\"/><text x=\"74.0\" y=\"306\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">19 %</text><rect x=\"154\" y=\"268\" width=\"136\" height=\"92\" rx=\"8\" fill=\"#CFCFCA\"/><text x=\"222.0\" y=\"254\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">24 %</text><rect x=\"302\" y=\"216\" width=\"136\" height=\"144\" rx=\"8\" fill=\"#F4C542\"/><text x=\"370.0\" y=\"202\" fill=\"#F5F5F2\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">30 %</text><rect x=\"450\" y=\"164\" width=\"136\" height=\"196\" rx=\"8\" fill=\"#6F6F6F\"/><text x=\"518.0\" y=\"150\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">37 %</text><rect x=\"598\" y=\"112\" width=\"136\" height=\"248\" rx=\"8\" fill=\"#6F6F6F\"/><text x=\"666.0\" y=\"98\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">45 %</text><rect x=\"746\" y=\"60\" width=\"136\" height=\"300\" rx=\"8\" fill=\"#6F6F6F\"/><text x=\"814.0\" y=\"46\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">47 %</text><text x=\"74\" y=\"396\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">hasta 12.450</text><text x=\"222\" y=\"396\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">20.200</text><text x=\"370\" y=\"396\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">35.200</text><text x=\"518\" y=\"396\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">60.000</text><text x=\"666\" y=\"396\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">300.000</text><text x=\"814\" y=\"396\" fill=\"#6F6F6F\" font-size=\"20\" font-weight=\"600\" text-anchor=\"middle\">más</text></svg>",
+   "svg_bottom": 200,
+   "source": "Escala general 2026: estatal + autonómica de referencia (coincide con la estatal hasta 60.000 €). Varía según comunidad. Fuente: AEAT / Taxdown."
+  },
+  {
+   "type": "rows",
+   "kicker": "Escala general de referencia",
+   "rows": [
+    [
+     "Hasta 12.450 €",
+     "19 %"
+    ],
+    [
+     "12.450 – 20.200 €",
+     "24 %"
+    ],
+    [
+     "20.200 – 35.200 €",
+     "30 %"
+    ],
+    [
+     "35.200 – 60.000 €",
+     "37 %"
+    ]
+   ],
+   "icons": [
+    "<rect x=\"4\" y=\"42\" width=\"56\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/>",
+    "<rect x=\"4\" y=\"34\" width=\"56\" height=\"22\" rx=\"6\" fill=\"#CFCFCA\"/>",
+    "<rect x=\"4\" y=\"24\" width=\"56\" height=\"32\" rx=\"6\" fill=\"#F4C542\"/>",
+    "<rect x=\"4\" y=\"12\" width=\"56\" height=\"44\" rx=\"6\" fill=\"#CFCFCA\"/>"
+   ],
+   "body_html": "Por encima: 45 % y 47 %. Tu comunidad puede tener <span class=\"g\">tipos algo distintos</span>."
+  },
+  {
+   "type": "content",
+   "kicker": "Ejemplo · base de 21.000 €",
+   "title_html": "Solo 800&nbsp;€ pagan el 30&nbsp;%.",
+   "body_html": "El resto sigue tributando al 19 % y al 24 %, igual que antes.",
+   "svg": "<svg viewBox=\"0 0 888 240\" width=\"888\" height=\"240\" font-family=\"Inter\"><rect x=\"0.0\" y=\"40\" width=\"522.5\" height=\"100\" rx=\"8\" fill=\"#CFCFCA\"/><text x=\"263.22857142857146\" y=\"175\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">19 %</text><text x=\"263.22857142857146\" y=\"210\" fill=\"#6F6F6F\" font-size=\"24\" font-weight=\"600\" text-anchor=\"middle\">12.450 €</text><rect x=\"526.5\" y=\"40\" width=\"323.7\" height=\"100\" rx=\"8\" fill=\"#d9ad3a\"/><text x=\"690.3142857142858\" y=\"175\" fill=\"#d9ad3a\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">24 %</text><text x=\"690.3142857142858\" y=\"210\" fill=\"#6F6F6F\" font-size=\"24\" font-weight=\"600\" text-anchor=\"middle\">7.750 €</text><rect x=\"854.2\" y=\"40\" width=\"29.8\" height=\"100\" rx=\"8\" fill=\"#F4C542\"/><text x=\"868.0\" y=\"175\" fill=\"#F4C542\" font-size=\"28\" font-weight=\"800\" text-anchor=\"end\">30 %</text><text x=\"868.0\" y=\"210\" fill=\"#6F6F6F\" font-size=\"24\" font-weight=\"600\" text-anchor=\"end\">800 €</text></svg>",
+   "svg_bottom": 220,
+   "source": "Cálculo propio sobre base liquidable general con la escala de referencia, mínimo personal 5.550 €. Ejemplo simplificado."
+  },
+  {
+   "type": "stat",
+   "kicker": "Una subida de 1.000 €",
+   "label_top": "De 20.000 € a 21.000 € de base, te quedas",
+   "big": "712 €",
+   "label_bottom": "y 288 € van al IRPF",
+   "svg": "<svg viewBox=\"0 0 888 220\" width=\"888\" height=\"220\" font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"632\" height=\"100\" rx=\"12\" fill=\"#F4C542\"/><text x=\"24\" y=\"104\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"start\">712 € para ti</text><rect x=\"638\" y=\"40\" width=\"250\" height=\"100\" rx=\"12\" fill=\"#6F6F6F\"/><text x=\"864\" y=\"104\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"end\">288 €</text><text x=\"0\" y=\"190\" fill=\"#6F6F6F\" font-size=\"26\" font-weight=\"600\" text-anchor=\"start\">200 € al 24 % + 800 € al 30 %</text></svg>",
+   "svg_bottom": 220,
+   "source": "Cálculo propio sobre base liquidable general con la escala de referencia, mínimo personal 5.550 €. Ejemplo simplificado."
+  },
+  {
+   "type": "content",
+   "theme": "light",
+   "kicker": "El mito vs. la realidad",
+   "title_html": "No pagas el 30 % de todo.",
+   "body_html": "Tu tipo medio real ronda el <b>16 %</b>.",
+   "svg": "<svg viewBox=\"0 0 888 290\" width=\"888\" height=\"290\" font-family=\"Inter\"><text x=\"0\" y=\"30\" fill=\"#3a3a3a\" font-size=\"28\" font-weight=\"700\" text-anchor=\"start\">Impuesto sobre 21.000 € de base</text><rect x=\"0\" y=\"60\" width=\"888\" height=\"90\" rx=\"14\" fill=\"#c9c9c4\"/><text x=\"24\" y=\"117\" fill=\"#0A0A0A\" font-size=\"30\" font-weight=\"800\" text-anchor=\"start\">Si fuera el 30 % de todo</text><text x=\"864\" y=\"117\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"end\">6.300 €</text><rect x=\"0\" y=\"180\" width=\"481\" height=\"90\" rx=\"14\" fill=\"#8A6A00\"/><text x=\"24\" y=\"237\" fill=\"#E7E7E3\" font-size=\"30\" font-weight=\"800\" text-anchor=\"start\">Lo que sale por tramos</text><text x=\"504.78857142857146\" y=\"237\" fill=\"#8A6A00\" font-size=\"34\" font-weight=\"800\" text-anchor=\"start\">3.411 €</text></svg>",
+   "svg_bottom": 210,
+   "source": "Cálculo propio sobre base liquidable general con la escala de referencia, mínimo personal 5.550 €. Ejemplo simplificado."
+  },
+  {
+   "type": "content",
+   "kicker": "Entonces, ¿por qué…?",
+   "title_html": "…a veces una nómina sale más baja?",
+   "body_html": "Suele ser la <b>retención</b>: un adelanto del impuesto que se ajusta en la declaración de la renta.",
+   "svg": "<svg viewBox=\"0 0 888 320\" width=\"888\" height=\"320\" font-family=\"Inter\"><rect x=\"0\" y=\"10\" width=\"280\" height=\"300\" rx=\"16\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"6\"/><text x=\"140\" y=\"64\" fill=\"#F5F5F2\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">NÓMINA</text><line x1=\"30\" y1=\"110\" x2=\"250\" y2=\"110\" stroke=\"#F5F5F2\" stroke-width=\"5\"/><line x1=\"30\" y1=\"160\" x2=\"250\" y2=\"160\" stroke=\"#F5F5F2\" stroke-width=\"5\"/><rect x=\"30\" y=\"200\" width=\"220\" height=\"60\" rx=\"8\" fill=\"#F4C542\"/><text x=\"140\" y=\"240\" fill=\"#0A0A0A\" font-size=\"26\" font-weight=\"800\" text-anchor=\"middle\">Retención</text><path d=\"M330,160 H470\" stroke=\"#F5F5F2\" stroke-width=\"6\"/><path d=\"M455,145 L472,160 L455,175\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"6\"/><rect x=\"510\" y=\"90\" width=\"300\" height=\"140\" rx=\"16\" fill=\"#F5F5F2\"/><text x=\"660\" y=\"150\" fill=\"#0A0A0A\" font-size=\"32\" font-weight=\"800\" text-anchor=\"middle\">Declaración</text><text x=\"660\" y=\"195\" fill=\"#3a3a3a\" font-size=\"26\" font-weight=\"500\" text-anchor=\"middle\">se regulariza</text></svg>",
+   "svg_bottom": 190
+  },
+  {
+   "type": "cta",
+   "kicker": "Conclusión",
+   "title_html": "Pasar de tramo no te hace cobrar menos.",
+   "body_html": "Compártelo con quien rechazaría una subida <span class=\"g\">“por los impuestos”</span>.",
+   "svg": "<svg viewBox=\"0 0 888 380\" width=\"888\" height=\"380\" font-family=\"Inter\"><path d=\"M150,300 H330 V230 H510 V160 H690 V90\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"10\" stroke-linejoin=\"round\"/><circle cx=\"690\" cy=\"90\" r=\"16\" fill=\"#F4C542\"/><text x=\"150\" y=\"350\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"start\">Cada escalón grava solo su parte</text></svg>",
+   "svg_bottom": 170
+  }
+ ]
+}

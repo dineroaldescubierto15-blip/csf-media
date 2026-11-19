@@ -1,0 +1,81 @@
+{
+ "type": "carousel",
+ "slug": "csf-05_mito-pasar-de-tramo-irpf",
+ "caption": "\"No me interesa que me suban el sueldo, que paso de tramo y cobro menos.\" Es uno de los mitos más repetidos sobre el IRPF.\n\nEl impuesto funciona por escalones: cada tipo se aplica solo a la parte de la base que cae dentro de su tramo. En el ejemplo, alguien que pasa de 20.000 € a 21.000 € de base solo paga el 30 % por los 800 € que superan los 20.200 €. De la subida de 1.000 €, se queda con unos 712 €.\n\nEl matiz: es un ejemplo simplificado sobre base liquidable, con la escala de referencia (cada comunidad tiene la suya) y sin deducciones. Lo que sí puede pasar es que la retención de tu nómina cambie, pero es un adelanto que se ajusta en la declaración de la renta.\n\nCompártelo con quien rechazaría una subida \"por los impuestos\".\n\n#irpf #impuestos #declaraciondelarenta #educacionfinanciera #finanzaspersonales\n\nContenido informativo, no es asesoramiento financiero.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/08.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-05_mito-pasar-de-tramo-irpf/08.jpg"
+  }
+ ]
+}
