@@ -10,9 +10,12 @@ Spec:
 { "slug": "...", "music_seed": 3, "voice": "davefx",
   "scenes": [ {"dur": 3.5, "voz": "Texto que lee la voz en off.", "html": "<div ...>"} , ... ] }
 Voz en off (Piper, local y gratis): si una escena tiene "voz", la escena dura lo que tarde la voz + 0,7 s
-(o "dur" si es mayor). "voice_speed" (por defecto 0.9; menor = más rápido). Objetivo: 26-30 s en total,
-unas 70-75 palabras de guion. Escribe los números EN LETRAS en "voz" ("trescientos cinco mil euros").
-Voces: "davefx" (masculina, CC0, por defecto) | "sharvard-m" / "sharvard-f" (CC BY 3.0: requiere atribución).
+(o "dur" si es mayor). "voice_speed" (por defecto 0.9; menor = más rápido). Duración orientativa: 30-50 s; prioriza el contenido
+completo antes que recortar segundos. Escribe los números EN LETRAS en "voz" ("trescientos cinco mil euros").
+Voces: "kokoro:em_alex" (por defecto, masculina, dinámica) | "kokoro:em_santa" | "kokoro:ef_dora" (femenina)
+  -> Kokoro, Apache 2.0, requiere `pip install kokoro-onnx`; "voice_speed" por defecto 1.05 (mayor = más rápido).
+  Piper (más plano): "davefx" (CC0) | "sharvard-m" / "sharvard-f" (CC BY 3.0, requiere atribución); speed 0.9 (menor = más rápido).
+Tono del guion: dinámico y cercano (preguntas, frases cortas, alguna exclamación), sin hype ni primera persona.
 Los modelos se descargan de Hugging Face a ~/.cache/csf-voices la primera vez.
 
 Cada escena es HTML libre dentro de un lienzo de 1080x1920 con la marca aplicada (clases como en los
@@ -87,6 +90,26 @@ def voice_model(name):
             urllib.request.urlretrieve(f"{base}.{ext}", f)
     return d / f"es_ES-{v}-medium.onnx", spk
 
+KOKORO = "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX/resolve/main"
+_kok = {}
+
+def kokoro_synth(text, voice, speed):
+    """Kokoro (Apache 2.0): voces más naturales y expresivas. Requiere `pip install kokoro-onnx`."""
+    d = pathlib.Path.home() / ".cache" / "csf-voices" / "kokoro"; d.mkdir(parents=True, exist_ok=True)
+    if not (d / "model.onnx").exists():
+        urllib.request.urlretrieve(f"{KOKORO}/onnx/model.onnx", d / "model.onnx")
+    vf = d / f"{voice}.bin"
+    if not vf.exists():
+        urllib.request.urlretrieve(f"{KOKORO}/voices/{voice}.bin", vf)
+    if voice not in _kok:
+        from kokoro_onnx import Kokoro
+        npz = d / f"v_{voice}.npz"
+        np.savez(npz, **{voice: np.fromfile(vf, dtype=np.float32).reshape(-1, 1, 256)})
+        _kok[voice] = Kokoro(str(d / "model.onnx"), str(npz))
+    a, sr = _kok[voice].create(text, voice=voice, speed=speed, lang="es")
+    a = np.asarray(a, dtype=np.float32)
+    return np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a)
+
 def synth(text, model, spk, out, speed=0.9):
     subprocess.run([sys.executable, "-m", "piper", "-m", str(model), "-s", str(spk), "--length-scale", str(speed), "--sentence-silence", "0.2", "-f", str(out)],
                    input=text.encode(), check=True, capture_output=True)
@@ -106,10 +129,16 @@ def main():
     slug = spec["slug"]; scenes = spec["scenes"]
     gen0 = ROOT / "generator" / ".reel_voice"; shutil.rmtree(gen0, ignore_errors=True); gen0.mkdir(parents=True)
     clips = []
+    vname = spec.get("voice", "kokoro:em_alex")
     if any(sc.get("voz") for sc in scenes):
-        model, spk = voice_model(spec.get("voice", "davefx"))
-        for i, sc in enumerate(scenes):
-            clips.append(synth(sc["voz"], model, spk, gen0 / f"v{i}.wav", spec.get("voice_speed", 0.9)) if sc.get("voz") else None)
+        if vname.startswith("kokoro:"):
+            kv = vname.split(":", 1)[1]
+            for sc in scenes:
+                clips.append(kokoro_synth(sc["voz"], kv, spec.get("voice_speed", 1.05)) if sc.get("voz") else None)
+        else:
+            model, spk = voice_model(vname)
+            for i, sc in enumerate(scenes):
+                clips.append(synth(sc["voz"], model, spk, gen0 / f"v{i}.wav", spec.get("voice_speed", 0.9)) if sc.get("voz") else None)
     else:
         clips = [None] * len(scenes)
     LEAD = 0.2

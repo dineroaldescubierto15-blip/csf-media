@@ -32,6 +32,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
 
 ## Infraestructura
 - Imágenes públicas: `posts/<slug>/NN.jpg` → `https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/<slug>/NN.jpg`
+- `generator/reel.py <spec.json>`: Reels con voz en off (Kokoro; antes `pip install --break-system-packages kokoro-onnx piper-tts`). Ver docstring y `generator/specs/reel-ejemplo.json`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
 - `tools/build_post.py <slug> <caption.txt>`: crea `posts/<slug>/post.json` (caption + files + telegram_media).
 - `tools/send_review.py <slug> "<título>" "<mensaje>"`: envía álbum + botones a Telegram. Necesita
