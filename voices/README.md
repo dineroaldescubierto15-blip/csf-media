@@ -8,9 +8,12 @@ Voz oficial ("csf") desde el 20-11-2026: **`csf_voz_oficial.pt`**, perfil de clo
   Qwen3-TTS VoiceDesign. No deriva de ninguna grabación de una persona real.
 - Estilo "Pro_Enfasis": profesional de finanzas, con énfasis en cifras. Parámetros de generación en `QWEN_GEN` (reel.py).
 - Ficha completa (diseño, filtros, parámetros, validación, hash del perfil): `csf_voz_oficial_config.json`.
-- Modelo en float32 (en bfloat16 suena más robótica). Por escena se generan 2 tomas (`"voice_takes"`) y se elige la de
-  más entonación y menos duración; luego se acortan los silencios entre frases (máx. 0,22 s) y se acelera un 8 %
-  (`"voice_speed"` 1.08, atempo, sin cambiar el tono). Elegido por Pol (opción C) el 20-11-2026.
+- Modelo en float32 (en bfloat16 suena más robótica).
+- Estilo (20-11-2026, a partir de un Reel de referencia elegido por Pol; solo se toma el estilo, nunca la voz):
+  ritmo ~5,6-5,8 sílabas/s, pausas casi nulas, afirmaciones que bajan claro al final, comas y suspensiones que suben,
+  preguntas que suben. En `reel.py`: cada frase se genera aparte con 3 tomas (`"voice_takes"`) y se elige la que
+  tiene el final correcto, más ritmo y más entonación (si ninguna acierta, hasta 3 tomas más); silencios internos
+  ≤ 0,12 s; tempo hacia `"voice_rate"` 5.8 (entre 1.08 y 1.12, atempo, sin cambiar el tono).
 - Cada toma varía (muestreo). `"voice_seed"` (por defecto 0) permite repetir con otras tomas.
 - Escribe las cifras en letras en el guion ("diez mil euros", "tres por ciento").
 

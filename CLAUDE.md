@@ -41,8 +41,10 @@ Lo esencial está resumido abajo; si dudas, léelo.
   Si falta Playwright para Python: `pip install --break-system-packages playwright==<versión del Playwright de Node>`
   (para que use el Chromium preinstalado; no ejecutes `playwright install`).
   En CPU tarda ~5 s por segundo de audio + descarga del modelo la primera vez: lanza el render en segundo plano.
-  Voz oficial con silencios acortados y `voice_speed` 1.08 (por defecto): ~185 palabras/min. Para 35-55 s, guion de
-  110-160 palabras en total. 2 tomas por escena (se elige la más dinámica): cuenta ~10-12 min de render para 50 s.
+  Estilo de la voz (elegido por Pol): ritmo ~5,8 sílabas/s (~180 palabras/min), pausas casi nulas, finales marcados.
+  Para 35-55 s, guion de 110-160 palabras. Se genera frase a frase con 3 tomas: cuenta ~15-20 min de render para 50 s.
+  La puntuación decide la entonación: "." baja (cierre seguro), "?" sube, "," y "…" dejan la frase abierta.
+  Frases cortas: cada frase es una unidad de entonación.
   Revisa fotogramas con `--frames t1,t2,...` antes del render completo. Ver docstring y `generator/specs/csf-07_reel-empezar-a-invertir.json`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
 - `tools/build_post.py <slug> <caption.txt> [--reel]`: crea `posts/<slug>/post.json` (carrusel: files; reel: video_url
