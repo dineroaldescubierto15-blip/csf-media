@@ -1,0 +1,81 @@
+{
+ "type": "carousel",
+ "slug": "csf-06_inflacion-dinero-parado",
+ "caption": "Tener el dinero quieto en la cuenta parece no tener riesgo. Con la inflación en el 4,9 %, sí tiene un coste.\n\nSegún el INE, los precios en España subieron un 4,9 % en el último año hasta octubre, con el transporte (10,3 %) y la vivienda (7,6 %) a la cabeza. En la práctica, 1.000 € guardados hace un año compran hoy lo mismo que unos 953 €. Por eso conviene mirar la rentabilidad real: lo que te pagan menos la inflación.\n\nEl matiz: el IPC es una media y tu inflación depende de en qué gastas. Y no todo tu dinero tiene que buscar rentabilidad: el fondo de emergencia debe estar disponible cuando lo necesites, aunque pierda algo de valor.\n\nGuárdalo para la próxima vez que compares dónde tener tus ahorros.\n\n#inflacion #ipc #ahorro #finanzaspersonales #educacionfinanciera\n\nContenido informativo, no es asesoramiento financiero.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/08.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-06_inflacion-dinero-parado/08.jpg"
+  }
+ ]
+}
