@@ -177,13 +177,21 @@ def qwen_clone_synth(texts, speed=1.08, seed=0, takes=3, rate=5.8):
     os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
     from qwen_tts import Qwen3TTSModel
     from qwen_tts.inference.qwen3_tts_model import VoiceClonePromptItem
-    if "m" not in _qwen:
-        torch.set_num_threads(max(1, os.cpu_count() or 1))
-        _qwen["m"] = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map="cpu", dtype=torch.float32)
-        payload = torch.load(ROOT / "voices" / "csf_voz_oficial.pt", map_location="cpu", weights_only=True)
-        _qwen["p"] = [VoiceClonePromptItem(**d) for d in payload["items"]]
+    import hashlib
+    cache = ROOT / "generator" / ".voice_cache"; cache.mkdir(exist_ok=True)
+    prof = hashlib.sha1((ROOT / "voices" / "csf_voz_oficial.pt").read_bytes()).hexdigest()[:12]
     out = []
     for n, text in enumerate(texts):
+        # Caché por escena: --frames y el render completo reutilizan la misma voz (no se genera dos veces)
+        key = hashlib.sha1(f"v3|{prof}|{text}|{speed}|{seed}|{takes}|{rate}|{n}".encode()).hexdigest()[:20]
+        cf = cache / f"{key}.npy"
+        if cf.exists():
+            out.append(np.load(cf)); print(f"  voz escena {n + 1}: caché", flush=True); continue
+        if "m" not in _qwen:
+            torch.set_num_threads(max(1, os.cpu_count() or 1))
+            _qwen["m"] = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map="cpu", dtype=torch.float32)
+            payload = torch.load(ROOT / "voices" / "csf_voz_oficial.pt", map_location="cpu", weights_only=True)
+            _qwen["p"] = [VoiceClonePromptItem(**d) for d in payload["items"]]
         pieces, log = [], []
         for j, sent in enumerate(split_sentences(text)):
             cands = []
@@ -212,7 +220,8 @@ def qwen_clone_synth(texts, speed=1.08, seed=0, takes=3, rate=5.8):
             subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(tmp_in), "-af", f"atempo={tempo:.3f}", str(tmp_out)], check=True)
             with wave.open(str(tmp_out)) as w:
                 a = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
-        out.append(np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a))
+        out.append(np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a).astype(np.float32))
+        np.save(cf, out[-1])
     return out
 
 def synth(text, model, spk, out, speed=0.9):
