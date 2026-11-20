@@ -22,6 +22,9 @@ Lo esencial está resumido abajo; si dudas, léelo.
   Inter. Mucho espacio. 1 slide = 1 idea. Fuente en pequeño bajo cada dato. Sin emojis en slides.
 - Cada slide lleva apoyo visual propio: mejor un gráfico con datos reales que una ilustración decorativa.
   Ilustraciones planas, solo paleta de marca, sin fotos ni personas reales, sin marcas/personajes de terceros.
+- Reel: 1080×1920, 35-55 s, 5-8 escenas animadas, voz en off oficial ("csf"). Guion dinámico y cercano
+  (preguntas, frases cortas, contrastes), números EN LETRAS en la voz. Gancho fuerte en los 2 primeros segundos.
+  Contenido en la zona segura (no tapar abajo ni a la derecha). Última escena: conclusión + "Síguenos…" + aviso legal en pequeño.
 - Carrusel: 1080×1350, 6-9 slides. 1 Hook → 2 Contexto → 3-6 Desarrollo → 7-8 Ejemplo/contraste → Conclusión + CTA.
 - Caption: hook 1-2 líneas → desarrollo breve (no repetir slides) → matiz → CTA único (guardar/compartir/comentar)
   → 3-5 hashtags específicos → última línea fija: `Contenido informativo, no es asesoramiento financiero.`
@@ -32,36 +35,44 @@ Lo esencial está resumido abajo; si dudas, léelo.
 
 ## Infraestructura
 - Imágenes públicas: `posts/<slug>/NN.jpg` → `https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/<slug>/NN.jpg`
-- `generator/reel.py <spec.json>`: Reels con voz en off (Kokoro; antes `pip install --break-system-packages kokoro-onnx piper-tts`). Ver docstring y `generator/specs/reel-ejemplo.json`.
+- `generator/reel.py <spec.json>`: Reels con voz en off. Voz oficial "csf" = clon de `voices/csf_voz_oficial.wav`
+  con Qwen3-TTS (antes: `pip install --break-system-packages qwen-tts` y exporta `HF_HUB_DISABLE_XET=1`).
+  En CPU tarda ~5 s por segundo de audio + descarga del modelo la primera vez: lanza el render en segundo plano.
+  Revisa fotogramas con `--frames t1,t2,...` antes del render completo. Ver docstring y `generator/specs/csf-07_reel-empezar-a-invertir.json`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
-- `tools/build_post.py <slug> <caption.txt>`: crea `posts/<slug>/post.json` (caption + files + telegram_media).
-- `tools/send_review.py <slug> "<título>" "<mensaje>"`: envía álbum + botones a Telegram. Necesita
+- `tools/build_post.py <slug> <caption.txt> [--reel]`: crea `posts/<slug>/post.json` (carrusel: files; reel: video_url
+  servido por jsDelivr como video/mp4).
+- `tools/send_review.py <slug> "<título>" "<mensaje>"`: envía álbum (carrusel) o vídeo (reel) + botones a Telegram. Necesita
   `CSF_TG_TOKEN` y `CSF_TG_CHAT` (ambos en el data store, registro `config-telegram`: `texto` = token, `slug` = chat id).
 - Make (zona eu1, team 3680760). Plan gratuito: **ahorra operaciones**; todo lo que puedas hacer tú, hazlo tú.
   - Data store **"CSF cola"** id `265346`. Registros:
-    - posts: key = slug; `tipo`="post", `estado` = pendiente | aprobado | rechazado | publicado, `caption`, `files`
-      (lista de `{media_type:"IMAGE", image_url}`), `prioridad` (1 = actualidad, 0 = normal), `fecha`.
+    - posts: key = slug; `tipo`="post", `media` = carousel | reel, `estado` = pendiente | aprobado | rechazado | publicado,
+      `caption`, `prioridad` (1 = actualidad, 0 = normal), `fecha`; carrusel: `files` (lista de `{media_type:"IMAGE", image_url}`);
+      reel: `video_url` (el de post.json).
     - feedback de Pol: key `fb-...`, `tipo`="feedback", `estado`="nuevo" | "leido", `texto`.
     - `config-telegram` (no tocar).
   - Escenario "Aprobar o rechazar desde Telegram" (webhook del bot): cambia `estado` a aprobado/rechazado y guarda feedback.
-  - Escenario "Publicar en Instagram (13:30)": cada día publica el post `aprobado` con mayor `prioridad` y luego más antiguo.
+  - Escenario "Publicar en Instagram": a las 13:30 publica el carrusel `aprobado` y a las 20:30 el reel `aprobado`
+    (mayor `prioridad` y luego más antiguo).
   - Escribe/lee el data store con las herramientas MCP de Make (no gastan operaciones). No crees escenarios nuevos
     (máx. 2 activos en el plan gratuito).
 
 ## Procedimiento diario (tarea programada)
 1. Prepara el entorno: añade el repo con push y clónalo; lee el data store (token, feedback nuevo, cola de posts).
 2. Feedback `nuevo`: aplícalo al contenido de hoy y márcalo `leido`. Si pide cambios en un post rechazado, rehazlo.
-3. Revisa la cola: cuenta posts `pendiente` + `aprobado`. Objetivo: siempre ≥ 3 en cola.
-   Genera 1 carrusel normal cada día; 2 si la cola tiene menos de 3.
+3. Revisa la cola por tipo (`pendiente` + `aprobado`). Objetivo: ≥ 3 carruseles y ≥ 2 reels en cola.
+   Cada día: 1 carrusel (2 si hay menos de 3 en cola) y 1 reel. El reel puede adaptar un tema ya hecho en carrusel
+   (otro ángulo, guion propio) o ser un tema nuevo; no repitas el mismo tema que el carrusel del mismo día.
 4. Actualidad: busca noticias financieras de las últimas 24 h relevantes para el público (BCE, Euríbor, IPC,
    fiscalidad, grandes movimientos de mercado o de Bitcoin, cambios en productos de ahorro populares en España).
    Solo si hay algo **realmente relevante**, crea además un carrusel de actualidad con `prioridad` = 1.
 5. Elige temas sin repetir los publicados/pendientes recientes (mira los slugs de la cola). Varía pilares.
-6. Para cada carrusel: investiga y verifica datos (WebSearch), calcula cifras con Python, escribe el spec con
+6. Para cada carrusel o reel: investiga y verifica datos (WebSearch), calcula cifras con Python, escribe el spec con
    SVG propios, renderiza, **mira el mosaico** (`generator/.preview.png`) y arregla solapes o textos densos,
    escribe el caption, pasa el semáforo.
 7. `build_post.py`, commit y push. Espera a que la URL raw de `post.json` responda 200.
-8. Crea el registro en el data store (`estado`="pendiente", `tipo`="post", caption, files, prioridad, fecha=ahora).
+8. Crea el registro en el data store (`estado`="pendiente", `tipo`="post", `media`, caption, files o video_url,
+   prioridad, fecha=ahora).
 9. `send_review.py` con un título corto y en el mensaje: pilar, semáforo y fuentes principales.
 10. Termina con un resumen breve: qué se ha generado, estado de la cola y cualquier problema.
 
