@@ -52,7 +52,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
     - feedback de Pol: key `fb-...`, `tipo`="feedback", `estado`="nuevo" | "leido", `texto`.
     - `config-telegram` (no tocar).
   - Escenario "Aprobar o rechazar desde Telegram" (webhook del bot): cambia `estado` a aprobado/rechazado y guarda feedback.
-  - Escenario "Publicar en Instagram": a las 13:30 publica el carrusel `aprobado` y a las 20:30 el reel `aprobado`
+  - Escenario "Publicar en Instagram": a las 13:00 publica el carrusel `aprobado` y a las 20:00 el reel `aprobado`
     (mayor `prioridad` y luego más antiguo).
   - Escribe/lee el data store con las herramientas MCP de Make (no gastan operaciones). No crees escenarios nuevos
     (máx. 2 activos en el plan gratuito).
