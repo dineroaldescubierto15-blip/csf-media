@@ -187,7 +187,9 @@ def qwen_clone_synth(texts, speed=1.08, seed=0, takes=3, rate=5.8):
         pieces, log = [], []
         for j, sent in enumerate(split_sentences(text)):
             cands = []
-            for k in range(max(1, takes)):
+            for k in range(2 * max(1, takes)):                   # si ninguna toma acaba bien, hasta otras tantas
+                if k == max(1, takes) and any(c["ok"] for c in cands):
+                    break
                 torch.manual_seed(seed * 100000 + n * 1000 + j * 10 + k)
                 wavs, sr = _qwen["m"].generate_voice_clone(text=sent, language="Spanish", voice_clone_prompt=_qwen["p"], **QWEN_GEN)
                 a = compress_pauses(np.asarray(wavs[0], dtype=np.float32), sr)
