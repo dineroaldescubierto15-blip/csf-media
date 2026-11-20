@@ -57,6 +57,10 @@ Lo esencial está resumido abajo; si dudas, léelo.
   - Escribe/lee el data store con las herramientas MCP de Make (no gastan operaciones). No crees escenarios nuevos
     (máx. 2 activos en el plan gratuito).
 
+## Cambios en el sistema
+Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea diaria) usa la skill
+`/csf-cambios` (`.claude/skills/csf-cambios/SKILL.md`). Los IDs internos están en el data store, registro `config-sistema`.
+
 ## Procedimiento diario (tarea programada)
 1. Prepara el entorno: añade el repo con push y clónalo; lee el data store (token, feedback nuevo, cola de posts).
 2. Feedback `nuevo`: aplícalo al contenido de hoy y márcalo `leido`. Si pide cambios en un post rechazado, rehazlo.
