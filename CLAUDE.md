@@ -38,6 +38,8 @@ Lo esencial está resumido abajo; si dudas, léelo.
 - `generator/reel.py <spec.json>`: Reels con voz en off. Voz oficial "csf" = perfil `voices/csf_voz_oficial.pt`
   (voz sintética creada por Pol) con Qwen3-TTS. Antes: `pip install --break-system-packages --ignore-installed setuptools wheel`,
   luego `pip install --break-system-packages qwen-tts` y exporta `HF_HUB_DISABLE_XET=1`. Ver `voices/README.md`.
+  Si falta Playwright para Python: `pip install --break-system-packages playwright==<versión del Playwright de Node>`
+  (para que use el Chromium preinstalado; no ejecutes `playwright install`).
   En CPU tarda ~5 s por segundo de audio + descarga del modelo la primera vez: lanza el render en segundo plano.
   Revisa fotogramas con `--frames t1,t2,...` antes del render completo. Ver docstring y `generator/specs/csf-07_reel-empezar-a-invertir.json`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
