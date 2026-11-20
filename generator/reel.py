@@ -12,8 +12,9 @@ Spec:
 Voz en off (Piper, local y gratis): si una escena tiene "voz", la escena dura lo que tarde la voz + 0,7 s
 (o "dur" si es mayor). "voice_speed" (por defecto 0.9; menor = más rápido). Duración orientativa: 30-50 s; prioriza el contenido
 completo antes que recortar segundos. Escribe los números EN LETRAS en "voz" ("trescientos cinco mil euros").
-Voces: "csf" (POR DEFECTO, voz oficial: perfil voices/csf_voz_oficial.pt con Qwen3-TTS; "voice_speed" 1.0;
-  "voice_seed" opcional, por defecto 0: cámbiala si una toma no convence)
+Voces: "csf" (POR DEFECTO, voz oficial: perfil voices/csf_voz_oficial.pt con Qwen3-TTS; silencios acortados,
+  "voice_speed" 1.08 por defecto (máx. recomendado 1.12), "voice_takes" 2 (tomas por escena; se elige la más dinámica),
+  "voice_seed" 0 (cámbiala si el resultado no convence))
   | "kokoro:em_alex" (masculina, dinámica) | "kokoro:em_santa" | "kokoro:ef_dora" (femenina)
   -> Kokoro, Apache 2.0, requiere `pip install kokoro-onnx`; "voice_speed" por defecto 1.05 (mayor = más rápido).
   Piper (más plano): "davefx" (CC0) | "sharvard-m" / "sharvard-f" (CC BY 3.0, requiere atribución); speed 0.9 (menor = más rápido).
@@ -117,29 +118,63 @@ _qwen = {}
 QWEN_GEN = dict(temperature=0.9, top_p=1.0, top_k=50, repetition_penalty=1.05, do_sample=True, subtalker_dosample=True,
                 subtalker_temperature=0.9, subtalker_top_p=1.0, subtalker_top_k=50, max_new_tokens=2048)
 
-def qwen_clone_synth(texts, speed=1.0, seed=0):
+def compress_pauses(a, sr, max_gap=0.22, top_db=38, pad=0.04):
+    """Acorta los silencios entre frases a max_gap s (la voz en sí no se toca)."""
+    import librosa
+    iv = librosa.effects.split(a, top_db=top_db, frame_length=1024, hop_length=256)
+    if len(iv) == 0:
+        return a
+    p, out, prev = int(pad * sr), [], None
+    for s0, e0 in iv:
+        s0, e0 = max(0, s0 - p), min(len(a), e0 + p)
+        if prev is not None:
+            if s0 > prev: out.append(np.zeros(min(s0 - prev, int(max_gap * sr)), dtype=np.float32))
+            else: s0 = prev
+        seg = a[s0:e0].copy(); f = min(len(seg) // 2, int(0.008 * sr))
+        if f: seg[:f] *= np.linspace(0, 1, f); seg[-f:] *= np.linspace(1, 0, f)
+        out.append(seg); prev = e0
+    return np.concatenate(out)
+
+def take_score(a, sr):
+    """Puntúa una toma: más rango de entonación (semitonos) y menos duración = más dinámica."""
+    import librosa
+    f0, _, _ = librosa.pyin(a, fmin=70, fmax=400, sr=sr, frame_length=1024)
+    f = f0[~np.isnan(f0)]
+    rng = 12 * np.log2(np.percentile(f, 95) / np.percentile(f, 5)) if len(f) > 20 else 0.0
+    return rng, len(a) / sr
+
+def qwen_clone_synth(texts, speed=1.08, seed=0, takes=2):
     """Voz oficial "csf": perfil de clonación voices/csf_voz_oficial.pt (voz sintética original creada por Pol con
-    Qwen3-TTS VoiceDesign; detalles en voices/csf_voz_oficial_config.json) + Qwen3-TTS Base. ~5 s por s de audio en CPU.
-    Requiere `pip install qwen-tts` (ver CLAUDE.md) y HF_HUB_DISABLE_XET=1. Misma seed = misma toma."""
+    Qwen3-TTS VoiceDesign; detalles en voices/csf_voz_oficial_config.json) + Qwen3-TTS Base en float32 (bfloat16 suena peor).
+    Por escena: genera `takes` tomas y se queda con la más dinámica, acorta silencios entre frases y acelera `speed`
+    (atempo, sin cambiar el tono). ~5-6 s de CPU por s de audio y toma. Requiere `pip install qwen-tts` (ver CLAUDE.md)."""
     import torch
     os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
     from qwen_tts import Qwen3TTSModel
     from qwen_tts.inference.qwen3_tts_model import VoiceClonePromptItem
     if "m" not in _qwen:
         torch.set_num_threads(max(1, os.cpu_count() or 1))
-        _qwen["m"] = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map="cpu", dtype=torch.bfloat16)
+        _qwen["m"] = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map="cpu", dtype=torch.float32)
         payload = torch.load(ROOT / "voices" / "csf_voz_oficial.pt", map_location="cpu", weights_only=True)
         _qwen["p"] = [VoiceClonePromptItem(**d) for d in payload["items"]]
-    torch.manual_seed(seed)
     out = []
-    for t in texts:
-        wavs, sr = _qwen["m"].generate_voice_clone(text=t, language="Spanish", voice_clone_prompt=_qwen["p"], **QWEN_GEN)
-        a = np.asarray(wavs[0], dtype=np.float32)
+    for n, t in enumerate(texts):
+        cands = []
+        for k in range(max(1, takes)):
+            torch.manual_seed(seed * 1000 + n * 10 + k)
+            wavs, sr = _qwen["m"].generate_voice_clone(text=t, language="Spanish", voice_clone_prompt=_qwen["p"], **QWEN_GEN)
+            a = compress_pauses(np.asarray(wavs[0], dtype=np.float32), sr)
+            cands.append((a, *take_score(a, sr)))
+        med = float(np.median([c[2] for c in cands]))
+        ok = [c for c in cands if c[2] <= 1.35 * med] or cands          # descarta tomas anómalas (repeticiones)
+        dmin = min(c[2] for c in ok)
+        a = max(ok, key=lambda c: c[1] * dmin / c[2])[0]
+        print(f"  voz escena {n + 1}: " + ", ".join(f"{c[2]:.1f}s/{c[1]:.0f}st" for c in cands), flush=True)
         if speed != 1.0:
             tmp_in, tmp_out = ROOT / "generator" / ".q_in.wav", ROOT / "generator" / ".q_out.wav"
             with wave.open(str(tmp_in), "wb") as w:
                 w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes((np.clip(a, -1, 1) * 32767).astype(np.int16).tobytes())
-            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(tmp_in), "-af", f"rubberband=tempo={speed}", str(tmp_out)], check=True)
+            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(tmp_in), "-af", f"atempo={speed}", str(tmp_out)], check=True)
             with wave.open(str(tmp_out)) as w:
                 a = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
         out.append(np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a))
@@ -168,7 +203,7 @@ def main():
     if any(sc.get("voz") for sc in scenes):
         if vname == "csf":
             idx = [i for i, sc in enumerate(scenes) if sc.get("voz")]
-            gen_ = qwen_clone_synth([scenes[i]["voz"] for i in idx], spec.get("voice_speed", 1.0), spec.get("voice_seed", 0))
+            gen_ = qwen_clone_synth([scenes[i]["voz"] for i in idx], spec.get("voice_speed", 1.08), spec.get("voice_seed", 0), spec.get("voice_takes", 2))
             clips = [None] * len(scenes)
             for i, c in zip(idx, gen_): clips[i] = c
         elif vname.startswith("kokoro:"):
