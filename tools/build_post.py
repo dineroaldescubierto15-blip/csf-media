@@ -11,6 +11,8 @@ Uso:
 import json, sys, pathlib
 
 REPO_RAW = "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts"
+# Vídeos: jsDelivr los sirve como video/mp4 (raw.githubusercontent los da como octet-stream)
+CDN = "https://cdn.jsdelivr.net/gh/dineroaldescubierto15-blip/csf-media@main/posts"
 
 def main():
     args = sys.argv[1:]
@@ -26,7 +28,7 @@ def main():
         if len(caption) > 2200:
             sys.exit("El caption supera los 2200 caracteres de Instagram.")
         post = {"type": "reel", "slug": slug, "caption": caption,
-                "video_url": f"{REPO_RAW}/{slug}/reel.mp4", "cover_url": f"{REPO_RAW}/{slug}/cover.jpg"}
+                "video_url": f"{CDN}/{slug}/reel.mp4", "cover_url": f"{REPO_RAW}/{slug}/cover.jpg"}
         (root / slug / "post.json").write_text(json.dumps(post, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"OK posts/{slug}/post.json (reel)")
         return
