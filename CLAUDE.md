@@ -45,6 +45,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
   Para 35-55 s, guion de 110-160 palabras. Se genera frase a frase con 3 tomas: cuenta ~15-20 min de render para 50 s.
   La puntuación decide la entonación: "." baja (cierre seguro), "?" sube, "," y "…" dejan la frase abierta.
   Frases cortas: cada frase es una unidad de entonación.
+  La voz se guarda en `generator/.voice_cache/`: `--frames` y el render completo la sintetizan una sola vez.
   Revisa fotogramas con `--frames t1,t2,...` antes del render completo. Ver docstring y `generator/specs/csf-07_reel-empezar-a-invertir.json`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
 - `tools/build_post.py <slug> <caption.txt> [--reel]`: crea `posts/<slug>/post.json` (carrusel: files; reel: video_url
