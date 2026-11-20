@@ -139,8 +139,14 @@ def compress_pauses(a, sr, max_gap=0.12, top_db=38, pad=0.035):
 def split_sentences(text):
     """Divide el guion de una escena en frases (cada una se genera y se elige por separado)."""
     import re
-    parts = re.findall(r"[^.?!…]+(?:[.?!…]+|$)", text.strip())
-    return [x.strip() for x in parts if x.strip()]
+    parts = [x.strip() for x in re.findall(r"[^.?!…]+(?:[.?!…]+|$)", text.strip()) if x.strip()]
+    out = []                                   # frases muy cortas ("Compara.", "No es poco.") se unen a la vecina:
+    for x in parts:                            # solas salen planas o con un final que no se puede medir
+        if out and (syllables(x) < 6 or syllables(out[-1]) < 6) and not out[-1].endswith("?"):
+            out[-1] = out[-1] + " " + x
+        else:
+            out.append(x)
+    return out
 
 def syllables(text):
     import re
@@ -183,7 +189,7 @@ def qwen_clone_synth(texts, speed=1.08, seed=0, takes=3, rate=5.8):
     out = []
     for n, text in enumerate(texts):
         # Caché por escena: --frames y el render completo reutilizan la misma voz (no se genera dos veces)
-        key = hashlib.sha1(f"v3|{prof}|{text}|{speed}|{seed}|{takes}|{rate}|{n}".encode()).hexdigest()[:20]
+        key = hashlib.sha1(f"v3|{prof}|{'|'.join(split_sentences(text))}|{speed}|{seed}|{takes}|{rate}|{n}".encode()).hexdigest()[:20]
         cf = cache / f"{key}.npy"
         if cf.exists():
             out.append(np.load(cf)); print(f"  voz escena {n + 1}: caché", flush=True); continue
