@@ -29,6 +29,18 @@ def main():
     if not token or not chat:
         sys.exit("Faltan CSF_TG_TOKEN / CSF_TG_CHAT")
     post = json.loads((pathlib.Path(__file__).resolve().parent.parent / "posts" / slug / "post.json").read_text())
+    buttons = {"inline_keyboard": [[
+        {"text": "✅ Aprobar", "callback_data": f"ok:{slug}"},
+        {"text": "❌ Rechazar", "callback_data": f"no:{slug}"}]]}
+    if post.get("type") == "reel":
+        cap = f"<b>🎬 {html.escape(titulo)}</b>" + (f"\n\n{html.escape(mensaje)}" if mensaje else "")
+        api(token, "sendVideo", {"chat_id": chat, "video": post["video_url"], "caption": cap[:1024],
+                                 "parse_mode": "HTML", "supports_streaming": True, "disable_notification": True})
+        texto = f"<b>Caption del Reel:</b>\n{html.escape(post['caption'])}"
+        api(token, "sendMessage", {"chat_id": chat, "text": texto[:4096], "parse_mode": "HTML",
+                                   "disable_web_page_preview": True, "reply_markup": buttons})
+        print(f"Aviso enviado (reel): {slug}")
+        return
     media = [{"type": "photo", "media": f["image_url"]} for f in post["files"]][:10]
     api(token, "sendMediaGroup", {"chat_id": chat, "media": media, "disable_notification": True})
     texto = f"<b>{html.escape(titulo)}</b>\n\n"
@@ -37,9 +49,7 @@ def main():
     texto += f"<b>Caption:</b>\n{html.escape(post['caption'])}"
     api(token, "sendMessage", {
         "chat_id": chat, "text": texto[:4096], "parse_mode": "HTML", "disable_web_page_preview": True,
-        "reply_markup": {"inline_keyboard": [[
-            {"text": "✅ Aprobar", "callback_data": f"ok:{slug}"},
-            {"text": "❌ Rechazar", "callback_data": f"no:{slug}"}]]}})
+        "reply_markup": buttons})
     print(f"Aviso enviado: {slug}")
 
 if __name__ == "__main__":

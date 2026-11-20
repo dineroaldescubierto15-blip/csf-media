@@ -3,6 +3,7 @@
 
 Uso:
   python3 tools/build_post.py <slug> <caption.txt> [--images-from <slug_origen>]
+  python3 tools/build_post.py <slug> <caption.txt> --reel      (usa posts/<slug>/reel.mp4 y cover.jpg)
 
 - Las imágenes deben estar en posts/<slug>/01.jpg, 02.jpg... (JPG, 1080x1350).
 - post.json contiene: caption, files (Instagram) y telegram_media (álbum de revisión).
@@ -17,6 +18,18 @@ def main():
         sys.exit(__doc__)
     slug, caption_path = args[0], args[1]
     src = args[args.index("--images-from") + 1] if "--images-from" in args else slug
+    if "--reel" in args:
+        root = pathlib.Path(__file__).resolve().parent.parent / "posts"
+        if not (root / slug / "reel.mp4").exists():
+            sys.exit(f"Falta posts/{slug}/reel.mp4")
+        caption = pathlib.Path(caption_path).read_text(encoding="utf-8").strip()
+        if len(caption) > 2200:
+            sys.exit("El caption supera los 2200 caracteres de Instagram.")
+        post = {"type": "reel", "slug": slug, "caption": caption,
+                "video_url": f"{REPO_RAW}/{slug}/reel.mp4", "cover_url": f"{REPO_RAW}/{slug}/cover.jpg"}
+        (root / slug / "post.json").write_text(json.dumps(post, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"OK posts/{slug}/post.json (reel)")
+        return
     if len(slug) > 55:
         sys.exit("El slug debe tener 55 caracteres o menos (límite de los botones de Telegram).")
     root = pathlib.Path(__file__).resolve().parent.parent / "posts"
