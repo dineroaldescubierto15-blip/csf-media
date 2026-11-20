@@ -1,0 +1,119 @@
+{
+  "perfil": "csf_voz_oficial.pt",
+  "sha256_perfil": "19f79745170350442d8b558ecb54e7ddcc998014c9bd3e3428afc390d2f1119b",
+  "creat": "2026-11-20",
+  "voz": {
+    "nombre": "Capital Sin Filtros (VarA_Pro_Enfasis)",
+    "descripcion": "Voz masculina sintética original (~30 años), español peninsular neutro con distinción /θ/, color nítido, tono ~136 Hz, estilo profesional de finanzas con énfasis en cifras.",
+    "origen": "Voz NUEVA creada con Qwen3-TTS VoiceDesign; no deriva de ninguna grabación de una persona real."
+  },
+  "model": {
+    "repo_id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    "revisio_hf": "fd4b254389122332181a7c3db7f27e918eec64e3",
+    "tipus": "base",
+    "nota": "Para USAR el perfil solo hace falta este modelo. El perfil no es compatible con el 0.6B-Base."
+  },
+  "clonacio": {
+    "funcio": "Qwen3TTSModel.create_voice_clone_prompt",
+    "x_vector_only_mode": false,
+    "icl_mode": true,
+    "ref_code_shape": [
+      363,
+      16
+    ],
+    "ref_code_dtype": "torch.int64",
+    "ref_spk_embedding_shape": [
+      2048
+    ],
+    "ref_spk_embedding_dtype": "torch.float32",
+    "ref_text": "Hoy vamos a hablar de algo que casi nadie te explica bien: el interés compuesto. La idea es sencilla: tu dinero genera intereses, y esos intereses empiezan a generar los suyos. Por ejemplo, si ahorras doce euros al día, en cinco años habrás reunido casi veintidós mil euros. Pero ojo: antes de decidir dónde invertir, conviene hacer números y revisar las comisiones, el riesgo y el plazo.",
+    "audio_referencia": "CapitalSinFiltros_Referencia.wav",
+    "sha256_referencia": "0b977e89399d6233e9c4d024dff37c1dd176454e054d1aefd9265d11ed1c04ea"
+  },
+  "creacion_de_la_referencia": {
+    "paso_1_diseno": {
+      "modelo": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision_hf": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "funcion": "generate_voice_design",
+      "instruct": "A man's voice. Adult male, 30 years old, light baritone, mid pitch, warm, clear, cheerful and friendly. Standard European Spanish from Madrid, Spain, like a Spanish national TV news presenter: uses Castilian distinción, pronouncing z and soft c as /θ/, no seseo and no Latin American accent. Perfect crisp diction, every syllable articulated. Expressive intonation stressing numbers and key words, dynamic pace.",
+      "text": "Hoy vamos a hablar de algo que casi nadie te explica bien: el interés compuesto. La idea es sencilla: tu dinero genera intereses, y esos intereses empiezan a generar los suyos. Por ejemplo, si ahorras doce euros al día, en cinco años habrás reunido casi veintidós mil euros. Pero ojo: antes de decidir dónde invertir, conviene hacer números y revisar las comisiones, el riesgo y el plazo.",
+      "language": "Spanish",
+      "seed": 4,
+      "dtype": "float32",
+      "max_new_tokens": 2048
+    },
+    "paso_2_color_nitido": {
+      "herramienta": "ffmpeg 6.1.1-3ubuntu5",
+      "filtro": "bass=g=-3:f=180,equalizer=f=3000:t=o:w=1.5:g=4",
+      "post": "normalización de pico a 0.97 (solo ganancia)"
+    },
+    "nota": "Sin transformación de tono (PSOLA) para preservar la dicción."
+  },
+  "serialitzacio": {
+    "format": "torch.save({'items':[asdict(VoiceClonePromptItem)]}) — formato del demo oficial qwen-tts",
+    "carrega": "torch.load(path, map_location='cpu', weights_only=True) -> [VoiceClonePromptItem(**it) for it in payload['items']]"
+  },
+  "generacio": {
+    "metode": "Qwen3TTSModel.generate_voice_clone(text, language='Spanish', voice_clone_prompt=items, **parametros)",
+    "parametros_estilo_Pro_Enfasis": {
+      "temperature": 0.9,
+      "top_p": 1.0,
+      "top_k": 50,
+      "repetition_penalty": 1.05,
+      "subtalker_dosample": true,
+      "subtalker_temperature": 0.9,
+      "subtalker_top_p": 1.0,
+      "subtalker_top_k": 50,
+      "do_sample": true,
+      "max_new_tokens": 2048
+    },
+    "sample_rate_sortida": 24000,
+    "consejos": [
+      "Escribe las cifras con letras ('diez mil euros', 'tres por ciento') para una lectura segura.",
+      "El resultado varía entre generaciones (muestreo): si una toma no convence, repite con otra seed.",
+      "Misma seed + mismos parámetros + float32 en CPU reproduce exactamente el audio; en otra máquina/dtype puede variar ligeramente."
+    ]
+  },
+  "dependencies": {
+    "python": "3.13.18 (qwen-tts admite 3.9-3.13)",
+    "qwen-tts": "0.1.1",
+    "torch": "2.15.0",
+    "torchaudio": "2.11.1",
+    "transformers": "4.57.3",
+    "accelerate": "1.12.0",
+    "librosa": "1.0.1",
+    "soundfile": "0.14.0",
+    "numpy": "2.5.5",
+    "onnxruntime": "1.32.0",
+    "einops": "0.8.2",
+    "solo_para_crear_la_voz": {
+      "ffmpeg": "6.1.1-3ubuntu5",
+      "praat-parselmouth": "0.4.7 (análisis)",
+      "faster-whisper (validación)": "1.2.1"
+    }
+  },
+  "validacio": {
+    "recarrega_des_de_disc": true,
+    "audio_referencia_reprocessat": false,
+    "metode": "speech_tokenizer.encode y extract_speaker_embedding bloqueados durante la generación",
+    "reproduccion_audio_aprobado": {
+      "texto": "Vamos a ver un dato importante. Si tienes diez mil euros en una cuenta al cero por ciento, y la inflación es del tres por ciento anual, en diez años habrás perdido cerca de una cuarta parte de tu poder adquisitivo. Por eso conviene saber qué rentabilidad necesitas, qué riesgo asumes y qué comisiones pagas. Contenido informativo, no es asesoramiento financiero.",
+      "seed": 1,
+      "resultado": "idéntico a VarA_Pro_Enfasis.wav (correlación 1.0000, diferencia máx. 0.00003)"
+    },
+    "prueba": {
+      "archivo": "CapitalSinFiltros_Prueba.wav",
+      "texto": "¿Sabías que pequeños errores con tu dinero pueden costarte miles de euros? Hoy vamos a descubrir cuáles son y cómo puedes evitarlos.",
+      "seed": 0,
+      "asr_whisper_large_v3": "coincide literalmente",
+      "confianza_whisper_media_min": [
+        0.999,
+        0.99
+      ],
+      "F0_mediana_hz": 152.5,
+      "rango_entonacion_st": 16.5
+    },
+    "pronunciacion": "distinción /θ/ verificada con wav2vec2 de fonemas en 'cerca', 'inflación', 'necesitas' (/neθesitas/), 'sencilla', 'empiezan', 'cinco'",
+    "similitud_identidad_vs_grabacion_original": "0.969 (la referencia antigua era 0.987-0.999)"
+  }
+}

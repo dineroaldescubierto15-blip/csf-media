@@ -1,8 +1,14 @@
 # Voz oficial de Capital Sin Filtros
 
-`csf_voz_oficial.wav` + `csf_voz_oficial.txt`: referencia para clonar siempre la misma voz con Qwen3-TTS (Base).
-Origen: diseñada desde cero con Qwen3-TTS VoiceDesign (no es la voz de ninguna persona real) y bajada 1,5 semitonos
-(rubberband, formantes preservados). Tono ~145 Hz, ritmo ~160 palabras/min.
+Voz oficial ("csf") desde el 20-11-2026: **`csf_voz_oficial.pt`**, perfil de clonación de Qwen3-TTS
+(`create_voice_clone_prompt`, modo ICL) que `generator/reel.py` carga directamente con
+`torch.load(..., weights_only=True)`. Se usa con el modelo `Qwen/Qwen3-TTS-12Hz-1.7B-Base` (no es compatible con el 0.6B).
 
-Descripción usada en el diseño:
-> A young adult MALE voice, a man around 28, medium male pitch, speaking Castilian Spanish from Spain. Viral short-form video narrator: very fast pace, high energy, highly expressive intonation that rises and falls a lot, like someone excitedly revealing a surprising discovery to a friend. Casual and conversational, punchy hooks at the start of sentences, emphatic endings, still very clear. Clean studio recording.
+- Origen: voz masculina **sintética y original** (~30 años, castellano peninsular con distinción /θ/), creada por Pol con
+  Qwen3-TTS VoiceDesign. No deriva de ninguna grabación de una persona real.
+- Estilo "Pro_Enfasis": profesional de finanzas, con énfasis en cifras. Parámetros de generación en `QWEN_GEN` (reel.py).
+- Ficha completa (diseño, filtros, parámetros, validación, hash del perfil): `csf_voz_oficial_config.json`.
+- Cada toma varía (muestreo). En el spec del Reel, `"voice_seed"` (por defecto 0) permite repetir con otra toma.
+- Escribe las cifras en letras en el guion ("diez mil euros", "tres por ciento").
+
+`anterior/`: la voz oficial anterior (referencia WAV + texto, tono ~145 Hz), por si hay que volver a ella.

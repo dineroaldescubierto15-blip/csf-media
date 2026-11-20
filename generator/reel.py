@@ -12,7 +12,8 @@ Spec:
 Voz en off (Piper, local y gratis): si una escena tiene "voz", la escena dura lo que tarde la voz + 0,7 s
 (o "dur" si es mayor). "voice_speed" (por defecto 0.9; menor = más rápido). Duración orientativa: 30-50 s; prioriza el contenido
 completo antes que recortar segundos. Escribe los números EN LETRAS en "voz" ("trescientos cinco mil euros").
-Voces: "csf" (POR DEFECTO, voz oficial clonada desde voices/csf_voz_oficial.wav con Qwen3-TTS; "voice_speed" 1.0)
+Voces: "csf" (POR DEFECTO, voz oficial: perfil voices/csf_voz_oficial.pt con Qwen3-TTS; "voice_speed" 1.0;
+  "voice_seed" opcional, por defecto 0: cámbiala si una toma no convence)
   | "kokoro:em_alex" (masculina, dinámica) | "kokoro:em_santa" | "kokoro:ef_dora" (femenina)
   -> Kokoro, Apache 2.0, requiere `pip install kokoro-onnx`; "voice_speed" por defecto 1.05 (mayor = más rápido).
   Piper (más plano): "davefx" (CC0) | "sharvard-m" / "sharvard-f" (CC BY 3.0, requiere atribución); speed 0.9 (menor = más rápido).
@@ -112,21 +113,27 @@ def kokoro_synth(text, voice, speed):
     return np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a)
 
 _qwen = {}
+# Parámetros de estilo de la voz oficial ("Pro_Enfasis", ver voices/csf_voz_oficial_config.json)
+QWEN_GEN = dict(temperature=0.9, top_p=1.0, top_k=50, repetition_penalty=1.05, do_sample=True, subtalker_dosample=True,
+                subtalker_temperature=0.9, subtalker_top_p=1.0, subtalker_top_k=50, max_new_tokens=2048)
 
-def qwen_clone_synth(texts, speed=1.0):
-    """Clona la voz oficial (voices/csf_voz_oficial.*) con Qwen3-TTS Base. Lento en CPU (~5 s por s de audio).
-    Requiere `pip install qwen-tts` y descargar el modelo de Hugging Face (usar HF_HUB_DISABLE_XET=1)."""
+def qwen_clone_synth(texts, speed=1.0, seed=0):
+    """Voz oficial "csf": perfil de clonación voices/csf_voz_oficial.pt (voz sintética original creada por Pol con
+    Qwen3-TTS VoiceDesign; detalles en voices/csf_voz_oficial_config.json) + Qwen3-TTS Base. ~5 s por s de audio en CPU.
+    Requiere `pip install qwen-tts` (ver CLAUDE.md) y HF_HUB_DISABLE_XET=1. Misma seed = misma toma."""
     import torch
     os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
     from qwen_tts import Qwen3TTSModel
+    from qwen_tts.inference.qwen3_tts_model import VoiceClonePromptItem
     if "m" not in _qwen:
         torch.set_num_threads(max(1, os.cpu_count() or 1))
         _qwen["m"] = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map="cpu", dtype=torch.bfloat16)
-        ref = ROOT / "voices" / "csf_voz_oficial.wav"
-        _qwen["p"] = _qwen["m"].create_voice_clone_prompt(str(ref), (ROOT / "voices" / "csf_voz_oficial.txt").read_text(encoding="utf-8"))
+        payload = torch.load(ROOT / "voices" / "csf_voz_oficial.pt", map_location="cpu", weights_only=True)
+        _qwen["p"] = [VoiceClonePromptItem(**d) for d in payload["items"]]
+    torch.manual_seed(seed)
     out = []
     for t in texts:
-        wavs, sr = _qwen["m"].generate_voice_clone(text=t, language="Spanish", voice_clone_prompt=_qwen["p"])
+        wavs, sr = _qwen["m"].generate_voice_clone(text=t, language="Spanish", voice_clone_prompt=_qwen["p"], **QWEN_GEN)
         a = np.asarray(wavs[0], dtype=np.float32)
         if speed != 1.0:
             tmp_in, tmp_out = ROOT / "generator" / ".q_in.wav", ROOT / "generator" / ".q_out.wav"
@@ -161,7 +168,7 @@ def main():
     if any(sc.get("voz") for sc in scenes):
         if vname == "csf":
             idx = [i for i, sc in enumerate(scenes) if sc.get("voz")]
-            gen_ = qwen_clone_synth([scenes[i]["voz"] for i in idx], spec.get("voice_speed", 1.0))
+            gen_ = qwen_clone_synth([scenes[i]["voz"] for i in idx], spec.get("voice_speed", 1.0), spec.get("voice_seed", 0))
             clips = [None] * len(scenes)
             for i, c in zip(idx, gen_): clips[i] = c
         elif vname.startswith("kokoro:"):

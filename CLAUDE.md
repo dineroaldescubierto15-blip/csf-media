@@ -35,8 +35,9 @@ Lo esencial está resumido abajo; si dudas, léelo.
 
 ## Infraestructura
 - Imágenes públicas: `posts/<slug>/NN.jpg` → `https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/<slug>/NN.jpg`
-- `generator/reel.py <spec.json>`: Reels con voz en off. Voz oficial "csf" = clon de `voices/csf_voz_oficial.wav`
-  con Qwen3-TTS (antes: `pip install --break-system-packages qwen-tts` y exporta `HF_HUB_DISABLE_XET=1`).
+- `generator/reel.py <spec.json>`: Reels con voz en off. Voz oficial "csf" = perfil `voices/csf_voz_oficial.pt`
+  (voz sintética creada por Pol) con Qwen3-TTS. Antes: `pip install --break-system-packages --ignore-installed setuptools wheel`,
+  luego `pip install --break-system-packages qwen-tts` y exporta `HF_HUB_DISABLE_XET=1`. Ver `voices/README.md`.
   En CPU tarda ~5 s por segundo de audio + descarga del modelo la primera vez: lanza el render en segundo plano.
   Revisa fotogramas con `--frames t1,t2,...` antes del render completo. Ver docstring y `generator/specs/csf-07_reel-empezar-a-invertir.json`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
