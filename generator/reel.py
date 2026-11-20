@@ -14,7 +14,7 @@ Voz en off (Piper, local y gratis): si una escena tiene "voz", la escena dura lo
 completo antes que recortar segundos. Escribe los números EN LETRAS en "voz" ("trescientos cinco mil euros").
 Voces: "csf" (POR DEFECTO, voz oficial: perfil voices/csf_voz_oficial.pt con Qwen3-TTS. Se genera frase a frase
   ("voice_takes" 3 tomas, se elige la de final bien entonado y más ritmo), pausas casi nulas y tempo hacia
-  "voice_rate" 6.0 sílabas/s (entre "voice_speed" 1.08 y 1.12). "voice_seed" 0: cámbiala si algo no convence.
+  "voice_rate" 5.8 sílabas/s (entre "voice_speed" 1.08 y 1.12). "voice_seed" 0: cámbiala si algo no convence.
   Puntuación = entonación: "." baja, "?" sube, "," y "…" dejan la frase abierta.)
   | "kokoro:em_alex" (masculina, dinámica) | "kokoro:em_santa" | "kokoro:ef_dora" (femenina)
   -> Kokoro, Apache 2.0, requiere `pip install kokoro-onnx`; "voice_speed" por defecto 1.05 (mayor = más rápido).
@@ -167,7 +167,7 @@ def ending_ok(sentence, end):
     if t.endswith(("…", ":", ",")): return end >= -2.0
     return end <= -2.5
 
-def qwen_clone_synth(texts, speed=1.08, seed=0, takes=3, rate=6.0):
+def qwen_clone_synth(texts, speed=1.08, seed=0, takes=3, rate=5.8):
     """Voz oficial "csf": perfil voices/csf_voz_oficial.pt (voz sintética original creada por Pol con Qwen3-TTS
     VoiceDesign; ver voices/csf_voz_oficial_config.json) + Qwen3-TTS Base en float32 (bfloat16 suena peor).
     Estilo (ritmo, pausas y finales tomados como referencia de un Reel elegido por Pol, sin copiar su voz):
@@ -236,7 +236,7 @@ def main():
     if any(sc.get("voz") for sc in scenes):
         if vname == "csf":
             idx = [i for i, sc in enumerate(scenes) if sc.get("voz")]
-            gen_ = qwen_clone_synth([scenes[i]["voz"] for i in idx], spec.get("voice_speed", 1.08), spec.get("voice_seed", 0), spec.get("voice_takes", 3), spec.get("voice_rate", 6.0))
+            gen_ = qwen_clone_synth([scenes[i]["voz"] for i in idx], spec.get("voice_speed", 1.08), spec.get("voice_seed", 0), spec.get("voice_takes", 3), spec.get("voice_rate", 5.8))
             clips = [None] * len(scenes)
             for i, c in zip(idx, gen_): clips[i] = c
         elif vname.startswith("kokoro:"):
