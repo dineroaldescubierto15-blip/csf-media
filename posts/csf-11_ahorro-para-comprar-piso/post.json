@@ -1,0 +1,81 @@
+{
+ "type": "carousel",
+ "slug": "csf-11_ahorro-para-comprar-piso",
+ "caption": "Para comprar un piso de 200.000 €, el 20 % de entrada no basta. En el ejemplo, necesitas unos 55.000 € ahorrados.\n\nEl banco suele financiar como máximo el 80 % del valor de tasación o del precio (el menor). A esos 40.000 € de entrada se suman el ITP, que en vivienda usada va del 6 % en Madrid al 10 % en comunidades como Cataluña o la Comunitat Valenciana, y unos 3.000 € de notaría, registro y gestoría. Según dónde compres, la cuenta va de unos 55.000 € a 63.000 €.\n\nEl matiz: es un ejemplo simplificado. Si tienes menos de 35 años, algunas comunidades aplican un ITP reducido (con límites de precio y renta) y el aval ICO, prorrogado hasta el 31/12/2027, permite financiar más del 80 %. Consulta las condiciones de tu comunidad antes de hacer números.\n\nGuárdalo para cuando empieces a buscar casa. 🏠\n\n#vivienda #comprarpiso #hipoteca #ahorro #finanzaspersonales\n\nContenido informativo, no es asesoramiento financiero.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/08.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-11_ahorro-para-comprar-piso/08.jpg"
+  }
+ ]
+}

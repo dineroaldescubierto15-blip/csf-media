@@ -1,0 +1,79 @@
+{
+ "slug": "csf-11_ahorro-para-comprar-piso",
+ "slides": [
+  {
+   "type": "hook",
+   "title": "¿Cuánto necesitas ahorrado para comprar un piso de 200.000 €?",
+   "title_size": 84,
+   "subtitle_html": "Bastante más que el <span class=\"g\">20 %</span> de entrada.",
+   "svg": "<svg viewBox=\"0 0 888 400\" width=\"888\" height=\"400\" font-family=\"Inter\"><path d=\"M244,190 L444,40 L644,190\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"12\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><rect x=\"294\" y=\"180\" width=\"300\" height=\"200\" fill=\"none\" stroke=\"#F5F5F2\" stroke-width=\"12\"/><rect x=\"404\" y=\"270\" width=\"80\" height=\"110\" fill=\"#F4C542\"/><ellipse cx=\"740\" cy=\"360\" rx=\"70\" ry=\"18\" fill=\"#F4C542\"/><ellipse cx=\"740\" cy=\"330\" rx=\"70\" ry=\"18\" fill=\"#C9A02F\"/><ellipse cx=\"740\" cy=\"300\" rx=\"70\" ry=\"18\" fill=\"#F4C542\"/><ellipse cx=\"740\" cy=\"270\" rx=\"70\" ry=\"18\" fill=\"#C9A02F\"/><ellipse cx=\"740\" cy=\"240\" rx=\"70\" ry=\"18\" fill=\"#F4C542\"/><ellipse cx=\"740\" cy=\"210\" rx=\"70\" ry=\"18\" fill=\"#C9A02F\"/><ellipse cx=\"740\" cy=\"180\" rx=\"70\" ry=\"18\" fill=\"#F4C542\"/></svg>",
+   "svg_bottom": 160
+  },
+  {
+   "type": "content",
+   "kicker": "La entrada",
+   "title_html": "El banco suele financiar como máximo el <span class=\"g\">80 %</span>.",
+   "body_html": "Del valor de tasación o del precio, el menor de los dos. El resto lo pones tú.",
+   "svg": "<svg viewBox=\"0 0 888 260\" width=\"888\" height=\"260\" font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"710\" height=\"120\" rx=\"14\" fill=\"#6F6F6F\"/><rect x=\"718\" y=\"40\" width=\"170\" height=\"120\" rx=\"14\" fill=\"#F4C542\"/><text x=\"30\" y=\"115\" fill=\"#0A0A0A\" font-size=\"40\" font-weight=\"800\">Hipoteca 80 % · 160.000 €</text><text x=\"803\" y=\"115\" fill=\"#0A0A0A\" font-size=\"40\" font-weight=\"800\" text-anchor=\"middle\">20 %</text><text x=\"803\" y=\"215\" fill=\"#F4C542\" font-size=\"34\" font-weight=\"800\" text-anchor=\"middle\">40.000 €</text><text x=\"0\" y=\"215\" fill=\"#CFCFCA\" font-size=\"30\" font-weight=\"600\">Lo que pones tú →</text></svg>",
+   "svg_bottom": 220
+  },
+  {
+   "type": "content",
+   "kicker": "Los impuestos",
+   "title_html": "Y el ITP, que va aparte.",
+   "body_html": "En vivienda usada se paga el Impuesto de Transmisiones Patrimoniales. Depende de tu comunidad:",
+   "svg": "<svg viewBox=\"0 0 888 410\" width=\"888\" height=\"410\" font-family=\"Inter\"><text x=\"0\" y=\"62\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"700\">Madrid</text><rect x=\"240\" y=\"20\" width=\"168\" height=\"62\" rx=\"10\" fill=\"#F4C542\"/><text x=\"424\" y=\"63\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"800\">6 % · 12.000 €</text><text x=\"0\" y=\"162\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"700\">Andalucía</text><rect x=\"240\" y=\"120\" width=\"196\" height=\"62\" rx=\"10\" fill=\"#6F6F6F\"/><text x=\"452\" y=\"163\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"800\">7 % · 14.000 €</text><text x=\"0\" y=\"262\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"700\">C. Valenciana</text><rect x=\"240\" y=\"220\" width=\"280\" height=\"62\" rx=\"10\" fill=\"#6F6F6F\"/><text x=\"536\" y=\"263\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"800\">10 % · 20.000 €</text><text x=\"0\" y=\"362\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"700\">Cataluña</text><rect x=\"240\" y=\"320\" width=\"280\" height=\"62\" rx=\"10\" fill=\"#6F6F6F\"/><text x=\"536\" y=\"363\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"800\">10 % · 20.000 €</text></svg>",
+   "svg_bottom": 190,
+   "source": "Tipo general 2026. Fuente: gibobs (23/07/2026). En obra nueva se paga IVA (10 %) + AJD."
+  },
+  {
+   "type": "stat",
+   "kicker": "Los gastos",
+   "label_top": "Notaría, registro y gestoría",
+   "big": "~3.000 €",
+   "label_bottom": "Estimación orientativa. No los financia el banco.",
+   "svg": "<svg viewBox=\"0 0 888 300\" width=\"888\" height=\"300\" font-family=\"Inter\"><g transform=\"translate(60,20)\"><rect x=\"0\" y=\"0\" width=\"190\" height=\"240\" rx=\"18\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"8\"/><rect x=\"35\" y=\"50\" width=\"120\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><rect x=\"35\" y=\"90\" width=\"120\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><rect x=\"35\" y=\"130\" width=\"80\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><circle cx=\"130\" cy=\"195\" r=\"22\" fill=\"#F4C542\"/></g><g transform=\"translate(350,20)\"><rect x=\"0\" y=\"0\" width=\"190\" height=\"240\" rx=\"18\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"8\"/><rect x=\"35\" y=\"50\" width=\"120\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><rect x=\"35\" y=\"90\" width=\"120\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><rect x=\"35\" y=\"130\" width=\"80\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><circle cx=\"130\" cy=\"195\" r=\"22\" fill=\"#6F6F6F\"/></g><g transform=\"translate(640,20)\"><rect x=\"0\" y=\"0\" width=\"190\" height=\"240\" rx=\"18\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"8\"/><rect x=\"35\" y=\"50\" width=\"120\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><rect x=\"35\" y=\"90\" width=\"120\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><rect x=\"35\" y=\"130\" width=\"80\" height=\"14\" rx=\"6\" fill=\"#CFCFCA\"/><circle cx=\"130\" cy=\"195\" r=\"22\" fill=\"#6F6F6F\"/></g><text x=\"155\" y=\"295\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">Notaría</text><text x=\"445\" y=\"295\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">Registro</text><text x=\"735\" y=\"295\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">Gestoría</text></svg>",
+   "svg_bottom": 200,
+   "source": "Fuente: estimación de gibobs (23/07/2026). Varía según precio y gestor."
+  },
+  {
+   "type": "stat",
+   "kicker": "El total en Madrid",
+   "label_top": "Lo que necesitas tener ahorrado",
+   "big": "55.000 €",
+   "label_bottom": "El 27,5 % del precio. Con ITP del 10 %: 63.000 €",
+   "svg": "<svg viewBox=\"0 0 888 250\" width=\"888\" height=\"250\" font-family=\"Inter\"><rect x=\"0\" y=\"30\" width=\"640\" height=\"110\" rx=\"12\" fill=\"#6F6F6F\"/><rect x=\"646\" y=\"30\" width=\"188\" height=\"110\" rx=\"12\" fill=\"#F4C542\"/><rect x=\"840\" y=\"30\" width=\"48\" height=\"110\" rx=\"12\" fill=\"#F5F5F2\"/><text x=\"24\" y=\"100\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\">Entrada 40.000 €</text><text x=\"743\" y=\"100\" fill=\"#0A0A0A\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">ITP 12.000</text><text x=\"888\" y=\"190\" fill=\"#CFCFCA\" font-size=\"26\" font-weight=\"600\" text-anchor=\"end\">+ 3.000 € de gastos</text></svg>",
+   "svg_bottom": 220,
+   "source": "Fuente ITP: gibobs, «ITP 2026» (23/07/2026). Gastos: estimación de la misma fuente. Ejemplo ilustrativo, vivienda usada."
+  },
+  {
+   "type": "content",
+   "kicker": "El tiempo",
+   "title_html": "Ahorrando 500 € al mes, más de <span class=\"g\">9 años</span>.",
+   "body_html": "Para reunir 55.000 €, sin contar rentabilidad ni subidas de precios.",
+   "svg": "<svg viewBox=\"0 0 888 390\" width=\"888\" height=\"390\" font-family=\"Inter\"><line x1=\"0\" y1=\"330\" x2=\"888\" y2=\"330\" stroke=\"#2a2a2a\" stroke-width=\"2\"/><rect x=\"60\" y=\"63\" width=\"190\" height=\"267\" rx=\"8\" fill=\"#6F6F6F\"/><text x=\"155\" y=\"47\" fill=\"#CFCFCA\" font-size=\"36\" font-weight=\"800\" text-anchor=\"middle\">15,3 años</text><text x=\"155\" y=\"372\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">300 €/mes</text><rect x=\"350\" y=\"170\" width=\"190\" height=\"160\" rx=\"8\" fill=\"#F4C542\"/><text x=\"445\" y=\"154\" fill=\"#F4C542\" font-size=\"36\" font-weight=\"800\" text-anchor=\"middle\">9,2 años</text><text x=\"445\" y=\"372\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">500 €/mes</text><rect x=\"640\" y=\"230\" width=\"190\" height=\"100\" rx=\"8\" fill=\"#6F6F6F\"/><text x=\"735\" y=\"214\" fill=\"#CFCFCA\" font-size=\"36\" font-weight=\"800\" text-anchor=\"middle\">5,7 años</text><text x=\"735\" y=\"372\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">800 €/mes</text></svg>",
+   "svg_bottom": 190,
+   "source": "Cálculo propio: 55.000 € / ahorro mensual."
+  },
+  {
+   "type": "content",
+   "theme": "light",
+   "kicker": "Lo que puede ayudar",
+   "title_html": "Ayudas si tienes menos de 35 años",
+   "body_html": "<b>ITP reducido</b> en algunas comunidades, con límites de precio y renta: Andalucía 3,5&nbsp;% (hasta 150.000 €), Cataluña 5&nbsp;% (menores de 36, hasta 300.000 €).<br><b>Aval ICO</b>: el banco puede financiar más del 80&nbsp;%. Hasta el 31/12/2027.",
+   "title_size": 64,
+   "svg": "<svg viewBox=\"0 0 300 300\" width=\"300\" height=\"300\" font-family=\"Inter\"><rect x=\"20\" y=\"20\" width=\"240\" height=\"270\" rx=\"20\" fill=\"none\" stroke=\"#0A0A0A\" stroke-width=\"8\"/><path d=\"M80,140 L125,185 L205,95\" fill=\"none\" stroke=\"#8A6A00\" stroke-width=\"16\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+   "svg_bottom": 200,
+   "source": "Fuentes: gibobs (23/07/2026); BOE, prórroga de avales ICO (02/07/2026). Consulta los requisitos de tu comunidad."
+  },
+  {
+   "type": "cta",
+   "kicker": "Conclusión",
+   "title_html": "Antes de mirar pisos, haz la cuenta completa.",
+   "body_html": "Guárdalo para cuando empieces a buscar casa.",
+   "svg": "<svg viewBox=\"0 0 888 200\" width=\"888\" height=\"200\" font-family=\"Inter\"><rect x=\"0\" y=\"30\" width=\"888\" height=\"140\" rx=\"24\" fill=\"none\" stroke=\"#2a2a2a\" stroke-width=\"4\"/><text x=\"444\" y=\"118\" fill=\"#F4C542\" font-size=\"46\" font-weight=\"800\" text-anchor=\"middle\">Cuenta con ~30 %, no con 20 %</text></svg>",
+   "svg_bottom": 220,
+   "source": "Ejemplo ilustrativo con datos de 2026. Contenido informativo, no es asesoramiento financiero."
+  }
+ ]
+}
