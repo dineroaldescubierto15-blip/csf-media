@@ -66,13 +66,16 @@ Lo esencial está resumido abajo; si dudas, léelo.
 - Make (zona eu1, team 3680760). Plan gratuito: **ahorra operaciones**; todo lo que puedas hacer tú, hazlo tú.
   - Data store **"CSF cola"** id `265346`. Registros:
     - posts: key = slug; `tipo`="post", `media` = carousel | reel, `estado` = pendiente | aprobado | rechazado | publicado,
-      `caption`, `prioridad` (1 = actualidad, 0 = normal), `fecha`; carrusel: `files` (lista de `{media_type:"IMAGE", image_url}`);
+      `caption`, `prioridad` (2 = serie en partes, 1 = actualidad, 0 = normal), `fecha`; carrusel: `files` (lista de `{media_type:"IMAGE", image_url}`);
       reel: `video_url` (el de post.json).
     - feedback de Pol: key `fb-...`, `tipo`="feedback", `estado`="nuevo" | "leido", `texto`.
     - `config-telegram` (no tocar).
   - Escenario "Aprobar o rechazar desde Telegram" (webhook del bot): cambia `estado` a aprobado/rechazado y guarda feedback.
   - Escenario "Publicar en Instagram": a las 13:30 publica el carrusel `aprobado` y a las 20:30 el reel `aprobado`
     (mayor `prioridad` y luego más antiguo).
+  - Series en partes ("Parte 1/3"…): `prioridad` 2 y `fecha` en orden de parte (la parte 1 la más antigua), para que
+    salgan seguidas y en orden. Cada parte debe entenderse sola (gancho propio) y enlazar con la siguiente; en el caption,
+    "las siguientes salen los próximos días" (nunca "mañana": depende de cuándo apruebe Pol). Pide aprobarlas juntas.
   - Escribe/lee el data store con las herramientas MCP de Make (no gastan operaciones). No crees escenarios nuevos
     (máx. 2 activos en el plan gratuito).
 
