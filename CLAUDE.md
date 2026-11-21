@@ -25,6 +25,10 @@ Lo esencial está resumido abajo; si dudas, léelo.
 - Reel: 1080×1920, 35-55 s, 5-8 escenas animadas, voz en off oficial ("csf"). Guion dinámico y cercano
   (preguntas, frases cortas, contrastes), números EN LETRAS en la voz. Gancho fuerte en los 2 primeros segundos.
   Contenido en la zona segura (no tapar abajo ni a la derecha). Última escena: conclusión + "Síguenos…" + aviso legal en pequeño.
+- Crecimiento (cuenta nueva, ver `docs/crecimiento.md`): primera línea del caption con la palabra clave que se busca
+  (Euríbor, IRPF, fondo de emergencia…); gancho del Reel en texto en pantalla y voz en el primer segundo; alterna CTA
+  y usa "Envíaselo a quien…" cuando el tema se preste; usa series reconocibles ("Mito o realidad", "Tu primer sueldo",
+  "Explicado en 40 segundos"). Nunca automatices comentarios, likes ni follows en cuentas ajenas.
 - Carrusel: 1080×1350, 6-9 slides. 1 Hook → 2 Contexto → 3-6 Desarrollo → 7-8 Ejemplo/contraste → Conclusión + CTA.
 - Caption: hook 1-2 líneas → desarrollo breve (no repetir slides) → matiz → CTA único (guardar/compartir/comentar)
   → 3-5 hashtags específicos → última línea fija: `Contenido informativo, no es asesoramiento financiero.`
@@ -50,6 +54,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
 - `tools/build_post.py <slug> <caption.txt> [--reel]`: crea `posts/<slug>/post.json` (carrusel: files; reel: video_url
   servido por jsDelivr como video/mp4).
+- `tools/send_msg.py <archivo.txt>`: envía un texto a Pol por Telegram (borradores de comentarios, respuestas, informes).
 - `tools/send_review.py <slug> "<título>" "<mensaje>"`: envía álbum (carrusel) o vídeo (reel) + botones a Telegram. Necesita
   `CSF_TG_TOKEN` y `CSF_TG_CHAT` (ambos en el data store, registro `config-telegram`: `texto` = token, `slug` = chat id).
 - Make (zona eu1, team 3680760). Plan gratuito: **ahorra operaciones**; todo lo que puedas hacer tú, hazlo tú.
@@ -72,6 +77,10 @@ Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea d
 ## Procedimiento diario (tarea programada)
 1. Prepara el entorno: añade el repo con push y clónalo; lee el data store (token, feedback nuevo, cola de posts).
 2. Feedback `nuevo`: aplícalo al contenido de hoy y márcalo `leido`. Si pide cambios en un post rechazado, rehazlo.
+   Mensajes especiales (ver `docs/crecimiento.md`): `comenta:` → 2 borradores de comentario que aporten valor para ese
+   post ajeno (1-3 frases, tono de marca, sin enlaces ni "sígueme", datos solo verificados); `respon:` → borrador de
+   respuesta a un comentario propio; `stats:` → breve análisis y ajuste de temas/formatos (anótalo en el resumen).
+   Junta todos los borradores en un solo mensaje y envíalo con `tools/send_msg.py`. Márcalos `leido`.
 3. Revisa la cola por tipo (`pendiente` + `aprobado`). Objetivo: ≥ 3 carruseles y ≥ 2 reels en cola.
    Cada día: 1 carrusel (2 si hay menos de 3 en cola) y 1 reel. El reel puede adaptar un tema ya hecho en carrusel
    (otro ángulo, guion propio) o ser un tema nuevo; no repitas el mismo tema que el carrusel del mismo día.
