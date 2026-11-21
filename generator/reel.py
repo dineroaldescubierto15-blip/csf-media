@@ -250,6 +250,15 @@ def main():
     gen0 = ROOT / "generator" / ".reel_voice"; shutil.rmtree(gen0, ignore_errors=True); gen0.mkdir(parents=True)
     clips = []
     vname = spec.get("voice", "csf")
+    lock = json.loads((ROOT / "voices" / "VOZ_BLOQUEADA.json").read_text(encoding="utf-8"))
+    if lock.get("bloqueada"):   # Voz bloqueada por Pol: solo se cambia con su confirmación (ver voices/VOZ_BLOQUEADA.json)
+        import hashlib
+        if hashlib.sha256((ROOT / "voices" / "csf_voz_oficial.pt").read_bytes()).hexdigest() != lock["perfil_sha256"]:
+            sys.exit("VOZ BLOQUEADA: voices/csf_voz_oficial.pt no coincide con el perfil aprobado por Pol.")
+        extra = [k for k in spec if (k.startswith("voice") and k not in lock["permitido_en_spec"])]
+        if extra:
+            sys.exit(f"VOZ BLOQUEADA: el spec no puede cambiar {extra}. Pol tiene que confirmarlo dos veces.")
+        spec = {**spec, **lock["parametros"]}
     if any(sc.get("voz") for sc in scenes):
         if vname == "csf":
             idx = [i for i, sc in enumerate(scenes) if sc.get("voz")]

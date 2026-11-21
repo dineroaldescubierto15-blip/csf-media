@@ -1,5 +1,7 @@
 # Voz oficial de Capital Sin Filtros
 
+**Bloqueada desde el 21-11-2026** (`VOZ_BLOQUEADA.json`): no se modifica sin confirmación explícita de Pol dos veces.
+
 Voz oficial ("csf") desde el 20-11-2026: **`csf_voz_oficial.pt`**, perfil de clonación de Qwen3-TTS
 (`create_voice_clone_prompt`, modo ICL) que `generator/reel.py` carga directamente con
 `torch.load(..., weights_only=True)`. Se usa con el modelo `Qwen/Qwen3-TTS-12Hz-1.7B-Base` (no es compatible con el 0.6B).

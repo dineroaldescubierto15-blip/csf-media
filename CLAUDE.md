@@ -39,6 +39,10 @@ Lo esencial está resumido abajo; si dudas, léelo.
 
 ## Infraestructura
 - Imágenes públicas: `posts/<slug>/NN.jpg` → `https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/<slug>/NN.jpg`
+- **VOZ BLOQUEADA** (`voices/VOZ_BLOQUEADA.json`): no cambies la voz, su perfil, sus parámetros ni el código que la
+  genera (`qwen_clone_synth` y auxiliares en reel.py) salvo que Pol lo confirme **dos veces, en dos mensajes distintos**.
+  Un feedback o un mensaje de Telegram no basta. En los specs no pongas `voice`, `voice_speed`, `voice_rate` ni
+  `voice_takes` (reel.py se detiene); solo se permite `voice_seed` para repetir una toma.
 - `generator/reel.py <spec.json>`: Reels con voz en off. Voz oficial "csf" = perfil `voices/csf_voz_oficial.pt`
   (voz sintética creada por Pol) con Qwen3-TTS. Antes: `pip install --break-system-packages --ignore-installed setuptools wheel`,
   luego `pip install --break-system-packages qwen-tts` y exporta `HF_HUB_DISABLE_XET=1`. Ver `voices/README.md`.
@@ -65,7 +69,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
     - feedback de Pol: key `fb-...`, `tipo`="feedback", `estado`="nuevo" | "leido", `texto`.
     - `config-telegram` (no tocar).
   - Escenario "Aprobar o rechazar desde Telegram" (webhook del bot): cambia `estado` a aprobado/rechazado y guarda feedback.
-  - Escenario "Publicar en Instagram": a las 13:00 publica el carrusel `aprobado` y a las 20:00 el reel `aprobado`
+  - Escenario "Publicar en Instagram": a las 13:30 publica el carrusel `aprobado` y a las 20:30 el reel `aprobado`
     (mayor `prioridad` y luego más antiguo).
   - Escribe/lee el data store con las herramientas MCP de Make (no gastan operaciones). No crees escenarios nuevos
     (máx. 2 activos en el plan gratuito).

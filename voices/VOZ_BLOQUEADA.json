@@ -1,0 +1,8 @@
+{
+ "bloqueada": true,
+ "desde": "2026-11-21",
+ "motivo": "Pol aprobó esta voz y este estilo. No se modifican sin su confirmación explícita dos veces (dos mensajes distintos).",
+ "perfil_sha256": "19f79745170350442d8b558ecb54e7ddcc998014c9bd3e3428afc390d2f1119b",
+ "parametros": {"voice_speed": 1.08, "voice_takes": 3, "voice_rate": 5.8},
+ "permitido_en_spec": ["voice_seed"]
+}

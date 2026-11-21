@@ -22,7 +22,7 @@ probarlo y explicarle el resultado en catalán, breve y sin tecnicismos.
 | Temas, tono, más/menos de un pilar, captions | `CLAUDE.md` (sección de marca/procedimiento). Si es puntual para mañana, basta un registro de feedback en el data store (`tipo`="feedback", `estado`="nuevo"). |
 | Aspecto de los carruseles | `generator/render.py` (CSS/tipos de slide) y, si aplica, el ejemplo en `generator/specs/` |
 | Aspecto, ritmo o duración de los Reels, subtítulos | `generator/reel.py` y la guía de Reels en `CLAUDE.md` |
-| Voz (tono, velocidad, otra voz) | `voices/` (referencia oficial + README) y el motor en `generator/reel.py`. Tras cambiarla, mide el tono (F0) y genera una muestra |
+| Voz (tono, velocidad, otra voz) — **BLOQUEADA**: solo con confirmación explícita de Pol dos veces (dos mensajes); luego actualiza `voices/VOZ_BLOQUEADA.json` | `voices/` (referencia oficial + README) y el motor en `generator/reel.py`. Tras cambiarla, mide el tono (F0) y genera una muestra |
 | Horarios de publicación, qué se publica | Escenario de publicación en Make (`escenario_publicar`). Pide primero el blueprint con `scenarios_get`, edítalo y envíalo entero |
 | Aprobación por Telegram | Escenario `escenario_aprobar` (mismo método) y/o `tools/send_review.py` |
 | Cuántas piezas al día, qué hace la tarea de cada mañana | Prompt de la tarea programada (`tarea_diaria_id`) con `update_trigger`, y el procedimiento de `CLAUDE.md` |
