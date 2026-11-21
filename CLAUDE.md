@@ -54,6 +54,8 @@ Lo esencial está resumido abajo; si dudas, léelo.
   La puntuación decide la entonación: "." baja (cierre seguro), "?" sube, "," y "…" dejan la frase abierta.
   Frases cortas: cada frase es una unidad de entonación.
   La voz se guarda en `generator/.voice_cache/`: `--frames` y el render completo la sintetizan una sola vez.
+  Lanza el render en segundo plano con un `timeout` largo (7200000 ms): por defecto se corta a los 30 min. Si se corta,
+  relánzalo: las escenas ya sintetizadas salen de la caché.
   Revisa fotogramas con `--frames t1,t2,...` antes del render completo. Ver docstring y `generator/specs/csf-07_reel-empezar-a-invertir.json`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
 - `tools/build_post.py <slug> <caption.txt> [--reel]`: crea `posts/<slug>/post.json` (carrusel: files; reel: video_url
