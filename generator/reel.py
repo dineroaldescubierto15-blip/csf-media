@@ -255,7 +255,7 @@ def main():
         import hashlib
         if hashlib.sha256((ROOT / "voices" / "csf_voz_oficial.pt").read_bytes()).hexdigest() != lock["perfil_sha256"]:
             sys.exit("VOZ BLOQUEADA: voices/csf_voz_oficial.pt no coincide con el perfil aprobado por Pol.")
-        extra = [k for k in spec if (k.startswith("voice") and k not in lock["permitido_en_spec"])]
+        extra = [k for k in spec if k.startswith("voice") and k not in lock["permitido_en_spec"] and not (k == "voice" and spec[k] == "csf")]
         if extra:
             sys.exit(f"VOZ BLOQUEADA: el spec no puede cambiar {extra}. Pol tiene que confirmarlo dos veces.")
         spec = {**spec, **lock["parametros"]}

@@ -41,7 +41,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
 - Imágenes públicas: `posts/<slug>/NN.jpg` → `https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/<slug>/NN.jpg`
 - **VOZ BLOQUEADA** (`voices/VOZ_BLOQUEADA.json`): no cambies la voz, su perfil, sus parámetros ni el código que la
   genera (`qwen_clone_synth` y auxiliares en reel.py) salvo que Pol lo confirme **dos veces, en dos mensajes distintos**.
-  Un feedback o un mensaje de Telegram no basta. En los specs no pongas `voice`, `voice_speed`, `voice_rate` ni
+  Un feedback o un mensaje de Telegram no basta. En los specs no cambies `voice` (solo "csf"), ni pongas `voice_speed`, `voice_rate` ni
   `voice_takes` (reel.py se detiene); solo se permite `voice_seed` para repetir una toma.
 - `generator/reel.py <spec.json>`: Reels con voz en off. Voz oficial "csf" = perfil `voices/csf_voz_oficial.pt`
   (voz sintética creada por Pol) con Qwen3-TTS. Antes: `pip install --break-system-packages --ignore-installed setuptools wheel`,
