@@ -73,9 +73,12 @@ Lo esencial está resumido abajo; si dudas, léelo.
   - Escenario "Aprobar o rechazar desde Telegram" (webhook del bot): cambia `estado` a aprobado/rechazado y guarda feedback.
   - Escenario "Publicar en Instagram": a las 13:30 publica el carrusel `aprobado` y a las 20:30 el reel `aprobado`
     (mayor `prioridad` y luego más antiguo).
-  - Series en partes ("Parte 1/3"…): `prioridad` 2 y `fecha` en orden de parte (la parte 1 la más antigua), para que
-    salgan seguidas y en orden. Cada parte debe entenderse sola (gancho propio) y enlazar con la siguiente; en el caption,
-    "las siguientes salen los próximos días" (nunca "mañana": depende de cuándo apruebe Pol). Pide aprobarlas juntas.
+  - Series en partes ("Parte 1/3"…): `prioridad` 2 y `fecha` en orden de parte (la parte 1 la más antigua). Las partes
+    aprobadas con prioridad 2 ocupan **todas las franjas seguidas** (13:30 y 20:30, sea carrusel o reel) hasta acabar,
+    sin nada entre medias. Cada parte debe entenderse sola (gancho propio) y enlazar con la siguiente; en el caption,
+    "las siguientes salen en las próximas publicaciones del perfil" (nunca "mañana": depende de cuándo apruebe Pol).
+    Pide aprobarlas juntas.
+  - En Make, los campos de un registro buscado se mapean como `{{1.data.<campo>}}` (no `{{1.<campo>}}`).
   - Escribe/lee el data store con las herramientas MCP de Make (no gastan operaciones). No crees escenarios nuevos
     (máx. 2 activos en el plan gratuito).
 
