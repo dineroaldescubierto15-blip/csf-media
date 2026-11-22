@@ -1,0 +1,81 @@
+{
+ "type": "carousel",
+ "slug": "csf-16_tu-primer-sueldo-bruto-a-neto",
+ "caption": "Sueldo bruto y neto: te ofrecen 22.000 € al año, pero a tu cuenta llegan unos 1.264 € al mes. Así se calcula.\n\nEn 14 pagas, cada nómina bruta es de 1.571 €. De ahí salen dos descuentos: la Seguridad Social (6,50 % con contrato indefinido en 2026) y la retención de IRPF. En el ejemplo, con un 12 % de retención, el neto mensual se queda en 1.263,69 €. En junio y diciembre cobras algo más, porque la paga extra solo lleva IRPF. Y tu empresa paga además unos 6.743 € al año de Seguridad Social.\n\nEl matiz: la retención del 12 % es un supuesto. La tuya depende de tu sueldo, tu situación familiar y tu contrato, y aparece en tu nómina. Además, es un adelanto: en la declaración de la renta se ajusta y te devuelven o pagas la diferencia.\n\nEnvíaselo a quien esté a punto de firmar su primer contrato.\n\n#nomina #primersueldo #sueldoneto #irpf #finanzaspersonales\n\nContenido informativo, no es asesoramiento financiero.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/08.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-16_tu-primer-sueldo-bruto-a-neto/08.jpg"
+  }
+ ]
+}

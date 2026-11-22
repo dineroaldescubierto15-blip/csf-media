@@ -1,0 +1,104 @@
+{
+ "slug": "csf-16_tu-primer-sueldo-bruto-a-neto",
+ "slides": [
+  {
+   "type": "hook",
+   "title": "Te ofrecen 22.000&nbsp;€. ¿Cuánto <span class=\"g\">cobras</span> al mes?",
+   "subtitle_html": "Tu primer sueldo, de bruto a neto. Con números.",
+   "svg": "<svg viewBox=\"0 0 888 280\" width=\"888\" height=\"280\" font-family=\"Inter\"><text x=\"0\" y=\"40\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"start\">Nómina bruta (1 de 14 pagas)</text><rect x=\"0\" y=\"60\" width=\"888\" height=\"72\" rx=\"12\" fill=\"#6F6F6F\"/><text x=\"24\" y=\"108\" fill=\"#0A0A0A\" font-size=\"36\" font-weight=\"800\" text-anchor=\"start\">1.571 €</text><text x=\"0\" y=\"190\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"start\">Lo que llega a tu cuenta</text><rect x=\"0\" y=\"210\" width=\"714\" height=\"72\" rx=\"12\" fill=\"#F4C542\"/><text x=\"24\" y=\"258\" fill=\"#0A0A0A\" font-size=\"36\" font-weight=\"800\" text-anchor=\"start\">1.264 €</text></svg>"
+  },
+  {
+   "type": "content",
+   "kicker": "Bruto no es neto",
+   "title_html": "El bruto es lo que pactas. El neto, <span class=\"g\">lo que cobras</span>.",
+   "body_html": "Entre uno y otro hay dos descuentos: la Seguridad Social y la retención de IRPF.",
+   "svg": "<svg viewBox=\"0 0 888 300\" width=\"888\" height=\"300\" font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"250\" height=\"220\" rx=\"20\" fill=\"none\" stroke=\"#CFCFCA\" stroke-width=\"5\"/><text x=\"125\" y=\"135\" fill=\"#F5F5F2\" font-size=\"40\" font-weight=\"800\" text-anchor=\"middle\">Bruto</text><text x=\"125\" y=\"185\" fill=\"#CFCFCA\" font-size=\"26\" font-weight=\"500\" text-anchor=\"middle\">lo pactado</text><path d=\"M265,150 L355,150\" stroke=\"#6F6F6F\" stroke-width=\"6\"/><path d=\"M345,135 L362,150 L345,165\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"6\"/><rect x=\"370\" y=\"40\" width=\"200\" height=\"100\" rx=\"16\" fill=\"#2a2a2a\"/><text x=\"470\" y=\"102\" fill=\"#F5F5F2\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\">− Seg. Social</text><rect x=\"370\" y=\"160\" width=\"200\" height=\"100\" rx=\"16\" fill=\"#2a2a2a\"/><text x=\"470\" y=\"222\" fill=\"#F5F5F2\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\">− IRPF</text><path d=\"M585,150 L675,150\" stroke=\"#6F6F6F\" stroke-width=\"6\"/><path d=\"M665,135 L682,150 L665,165\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"6\"/><rect x=\"690\" y=\"40\" width=\"198\" height=\"220\" rx=\"20\" fill=\"#F4C542\"/><text x=\"789\" y=\"135\" fill=\"#0A0A0A\" font-size=\"40\" font-weight=\"800\" text-anchor=\"middle\">Neto</text><text x=\"789\" y=\"185\" fill=\"#0A0A0A\" font-size=\"24\" font-weight=\"600\" text-anchor=\"middle\">lo que cobras</text></svg>"
+  },
+  {
+   "type": "stat",
+   "kicker": "Paso 1: las pagas",
+   "label_top": "22.000 € en 14 pagas son",
+   "big": "1.571 €",
+   "label_bottom": "brutos por nómina. En 12 pagas serían 1.833 €: las extras van repartidas.",
+   "svg": "<svg viewBox=\"0 0 888 250\" width=\"888\" height=\"250\" font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"63\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"126\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"189\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"252\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"315\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"378\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#F4C542\"/><rect x=\"441\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"504\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"567\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"630\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"693\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"756\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#6F6F6F\"/><rect x=\"819\" y=\"40\" width=\"54\" height=\"140\" rx=\"8\" fill=\"#F4C542\"/><text x=\"0\" y=\"230\" fill=\"#CFCFCA\" font-size=\"26\" font-weight=\"600\" text-anchor=\"start\">12 nóminas</text><text x=\"358\" y=\"30\" fill=\"#F4C542\" font-size=\"24\" font-weight=\"700\" text-anchor=\"start\">extra</text><text x=\"799\" y=\"30\" fill=\"#F4C542\" font-size=\"24\" font-weight=\"700\" text-anchor=\"start\">extra</text></svg>",
+   "source": "Cálculo propio: 22.000 / 14 y 22.000 / 12. Ejemplo ilustrativo."
+  },
+  {
+   "type": "rows",
+   "kicker": "Paso 2: Seguridad Social",
+   "rows": [
+    [
+     "Contingencias comunes",
+     "4,70 %"
+    ],
+    [
+     "Desempleo",
+     "1,55 %"
+    ],
+    [
+     "Formación profesional",
+     "0,10 %"
+    ],
+    [
+     "MEI (pensiones)",
+     "0,15 %"
+    ],
+    [
+     "Total",
+     "<span class=\"g\">6,50 %</span>"
+    ]
+   ],
+   "body_html": "Con contrato temporal, el desempleo sube al 1,60 %.",
+   "source": "Tipos del trabajador 2026 (Orden de cotización 2026, BOE 31/03/2026): contingencias comunes 4,70 %, desempleo 1,55 %, FP 0,10 %, MEI 0,15 %."
+  },
+  {
+   "type": "content",
+   "kicker": "Paso 3: IRPF",
+   "title_html": "La retención es un <span class=\"g\">adelanto</span>, no el impuesto final.",
+   "body_html": "Tu empresa la calcula según tu sueldo, tu situación familiar y tu contrato.",
+   "svg": "<svg viewBox=\"0 0 888 240\" width=\"888\" height=\"240\" font-family=\"Inter\"><rect x=\"0\" y=\"80\" width=\"888\" height=\"40\" rx=\"20\" fill=\"#2a2a2a\"/><rect x=\"0\" y=\"80\" width=\"237\" height=\"40\" rx=\"20\" fill=\"#F4C542\"/><text x=\"236.8\" y=\"60\" fill=\"#F4C542\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">12 % (supuesto)</text><text x=\"0\" y=\"175\" fill=\"#F5F5F2\" font-size=\"32\" font-weight=\"700\" text-anchor=\"start\">En la renta (abril-junio) se ajusta:</text><text x=\"0\" y=\"225\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"500\" text-anchor=\"start\">si te retuvieron de más, te devuelven; si fue de menos, pagas.</text></svg>",
+   "svg_bottom": 240,
+   "source": "El 12 % es un supuesto para el ejemplo. Tu tipo de retención aparece en tu nómina."
+  },
+  {
+   "type": "rows",
+   "kicker": "Tu nómina, línea a línea",
+   "rows": [
+    [
+     "Salario bruto",
+     "1.571,43 €"
+    ],
+    [
+     "Seguridad Social",
+     "−119,17 €"
+    ],
+    [
+     "IRPF (12 %)",
+     "−188,57 €"
+    ],
+    [
+     "Neto",
+     "<span class=\"g\">1.263,69 €</span>"
+    ]
+   ],
+   "body_html": "En junio y diciembre cobras más: la extra solo lleva IRPF (1.382,86 €).",
+   "source": "Cálculo propio. Seguridad Social: 6,50 % sobre 1.833,33 € (22.000 / 12, extras prorrateadas). Contrato indefinido, 2026."
+  },
+  {
+   "type": "content",
+   "theme": "light",
+   "kicker": "Lo que no ves",
+   "title_html": "Tu empresa paga además unos <span class=\"g\">6.743&nbsp;€</span> al año.",
+   "body_html": "Tu puesto le cuesta unos 28.700 €. Tú recibes 17.930 €.",
+   "svg": "<svg viewBox=\"0 0 888 300\" width=\"888\" height=\"300\" font-family=\"Inter\"><rect x=\"0.0\" y=\"20\" width=\"553.9\" height=\"110\" fill=\"#F4C542\"/><rect x=\"553.9\" y=\"20\" width=\"81.6\" height=\"110\" fill=\"#6F6F6F\"/><rect x=\"635.5\" y=\"20\" width=\"44.2\" height=\"110\" fill=\"#CFCFCA\"/><rect x=\"679.7\" y=\"20\" width=\"208.3\" height=\"110\" fill=\"#0A0A0A\"/><rect x=\"0\" y=\"154\" width=\"30\" height=\"30\" rx=\"6\" fill=\"#F4C542\" stroke=\"#0A0A0A\" stroke-width=\"2\"/><text x=\"44\" y=\"178\" fill=\"#0A0A0A\" font-size=\"26\" font-weight=\"600\" text-anchor=\"start\">Neto: 17.930 €</text><rect x=\"450\" y=\"154\" width=\"30\" height=\"30\" rx=\"6\" fill=\"#6F6F6F\" stroke=\"#0A0A0A\" stroke-width=\"2\"/><text x=\"494\" y=\"178\" fill=\"#0A0A0A\" font-size=\"26\" font-weight=\"600\" text-anchor=\"start\">IRPF: 2.640 €</text><rect x=\"0\" y=\"210\" width=\"30\" height=\"30\" rx=\"6\" fill=\"#CFCFCA\" stroke=\"#0A0A0A\" stroke-width=\"2\"/><text x=\"44\" y=\"234\" fill=\"#0A0A0A\" font-size=\"26\" font-weight=\"600\" text-anchor=\"start\">Seg. Social tuya: 1.430 €</text><rect x=\"450\" y=\"210\" width=\"30\" height=\"30\" rx=\"6\" fill=\"#0A0A0A\" stroke=\"#0A0A0A\" stroke-width=\"2\"/><text x=\"494\" y=\"234\" fill=\"#0A0A0A\" font-size=\"26\" font-weight=\"600\" text-anchor=\"start\">Seg. Social empresa: 6.743 €</text></svg>",
+   "source": "Cotización empresa 2026: 23,60 % + 5,50 % + 0,60 % + 0,75 % + FOGASA 0,20 % = 30,65 %, sin accidentes de trabajo. Cálculo propio."
+  },
+  {
+   "type": "cta",
+   "kicker": "Para llevártelo",
+   "title_html": "Antes de comparar ofertas, <span class=\"g\">pasa el bruto a neto</span>.",
+   "body_html": "Envíaselo a quien esté a punto de firmar su primer contrato.",
+   "svg": "<svg viewBox=\"0 0 888 200\" width=\"888\" height=\"200\" font-family=\"Inter\"><rect x=\"0\" y=\"0\" width=\"48\" height=\"48\" rx=\"10\" fill=\"none\" stroke=\"#CFCFCA\" stroke-width=\"5\"/><text x=\"72\" y=\"36\" fill=\"#CFCFCA\" font-size=\"32\" font-weight=\"700\" text-anchor=\"start\">Bruto anual y número de pagas</text><rect x=\"0\" y=\"70\" width=\"48\" height=\"48\" rx=\"10\" fill=\"none\" stroke=\"#CFCFCA\" stroke-width=\"5\"/><text x=\"72\" y=\"106\" fill=\"#CFCFCA\" font-size=\"32\" font-weight=\"700\" text-anchor=\"start\">Seguridad Social: 6,5 %</text><rect x=\"0\" y=\"140\" width=\"48\" height=\"48\" rx=\"10\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"5\"/><text x=\"72\" y=\"176\" fill=\"#F4C542\" font-size=\"32\" font-weight=\"700\" text-anchor=\"start\">Retención de IRPF: mira tu nómina</text></svg>"
+  }
+ ]
+}
