@@ -9,6 +9,10 @@ on:
       slug:
         description: "Slug del Reel (generator/specs/<slug>.json)"
         required: true
+      cache_from:
+        description: "Opcional: slug de un Reel anterior cuya voz por escena se reutiliza (versiones nuevas del mismo guion)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -58,7 +62,9 @@ jobs:
         with:
           path: generator/.voice_cache
           key: voice-${{ inputs.slug }}-${{ github.run_id }}
-          restore-keys: voice-${{ inputs.slug }}-
+          restore-keys: |
+            voice-${{ inputs.slug }}-
+            voice-${{ inputs.cache_from || inputs.slug }}-
 
       - name: Renderizar
         run: python generator/reel.py "generator/specs/$SLUG.json"
