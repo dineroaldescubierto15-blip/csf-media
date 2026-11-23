@@ -1,0 +1,84 @@
+# Renderiza un Reel (voz oficial "csf" + vídeo) en un runner de GitHub (16 GB de RAM).
+# La sesión de la tarea diaria no tiene memoria suficiente para Qwen3-TTS 1.7B en float32.
+# No cambia la voz ni su código: ejecuta generator/reel.py tal cual sobre el spec indicado.
+name: Render Reel
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Slug del Reel (generator/specs/<slug>.json)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-reel-${{ inputs.slug }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    env:
+      HF_HUB_DISABLE_XET: "1"
+      SLUG: ${{ inputs.slug }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Comprobar spec
+        run: |
+          case "$SLUG" in *[!a-z0-9_-]*|"") echo "Slug no válido"; exit 1;; esac
+          test -f "generator/specs/$SLUG.json"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Paquetes del sistema (ffmpeg, Inter, sox)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fonts-inter sox
+
+      - name: Dependencias de Python (versiones fijadas, torch de CPU)
+        run: |
+          python -m pip install -q --upgrade pip setuptools wheel
+          python -m pip install -q -r generator/requirements-reel.txt --extra-index-url https://download.pytorch.org/whl/cpu
+          python -m playwright install --with-deps chromium
+
+      - name: Caché del modelo de voz (Hugging Face)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-qwen3-tts-1.7b-base-v1
+
+      - name: Caché de la voz por escena
+        uses: actions/cache@v4
+        with:
+          path: generator/.voice_cache
+          key: voice-${{ inputs.slug }}-${{ github.run_id }}
+          restore-keys: voice-${{ inputs.slug }}-
+
+      - name: Renderizar
+        run: python generator/reel.py "generator/specs/$SLUG.json"
+
+      - name: Subir el vídeo como artefacto (copia de seguridad)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.slug }}
+          path: |
+            posts/${{ inputs.slug }}/reel.mp4
+            posts/${{ inputs.slug }}/cover.jpg
+
+      - name: Commit y push a main
+        run: |
+          git config user.name "csf-render-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "posts/$SLUG/reel.mp4" "posts/$SLUG/cover.jpg"
+          git commit -m "Reel $SLUG renderizado en GitHub Actions"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1
