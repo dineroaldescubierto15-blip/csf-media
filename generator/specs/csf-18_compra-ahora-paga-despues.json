@@ -1,0 +1,115 @@
+{
+ "slug": "csf-18_compra-ahora-paga-despues",
+ "slides": [
+  {
+   "type": "hook",
+   "title": "¿Pagar en 3 plazos <span class=\"g\">sin intereses</span>? Lee esto antes del Black Friday.",
+   "subtitle_html": "Qué es el «compra ahora, paga después» y qué cambia con la nueva norma europea.",
+   "svg": "<svg viewBox=\"0 0 888 260\" width=\"888\" height=\"260\" font-family=\"Inter\"><text x=\"0\" y=\"36\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"start\">Una compra de 300 €</text><rect x=\"0\" y=\"56\" width=\"888\" height=\"70\" rx=\"12\" fill=\"#6F6F6F\" /><text x=\"24\" y=\"102\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"start\">300 € hoy</text><rect x=\"0\" y=\"176\" width=\"288\" height=\"70\" rx=\"12\" fill=\"#F4C542\" /><text x=\"24\" y=\"222\" fill=\"#0A0A0A\" font-size=\"30\" font-weight=\"800\" text-anchor=\"start\">100 € · mes 1</text><rect x=\"300\" y=\"176\" width=\"288\" height=\"70\" rx=\"12\" fill=\"#2a2a2a\" /><text x=\"324\" y=\"222\" fill=\"#F5F5F2\" font-size=\"30\" font-weight=\"800\" text-anchor=\"start\">100 € · mes 2</text><rect x=\"600\" y=\"176\" width=\"288\" height=\"70\" rx=\"12\" fill=\"#2a2a2a\" /><text x=\"624\" y=\"222\" fill=\"#F5F5F2\" font-size=\"30\" font-weight=\"800\" text-anchor=\"start\">100 € · mes 3</text><text x=\"0\" y=\"164\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"start\"></text></svg>"
+  },
+  {
+   "type": "content",
+   "kicker": "Black Friday: 27 de noviembre",
+   "title_html": "Gasto medio previsto: <span class=\"g\">196&nbsp;€</span> por persona.",
+   "body_html": "El 76 % piensa comprar, dos puntos menos que en 2025.",
+   "svg": "<svg viewBox=\"0 0 888 300\" width=\"888\" height=\"300\" font-family=\"Inter\"><rect x=\"90\" y=\"66.43835616438355\" width=\"160\" height=\"183.56164383561645\" rx=\"10\" fill=\"#6F6F6F\" /><text x=\"170\" y=\"52.43835616438355\" fill=\"#F5F5F2\" font-size=\"36\" font-weight=\"800\" text-anchor=\"middle\">201 €</text><text x=\"170\" y=\"290\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">2024</text><rect x=\"360\" y=\"50.0\" width=\"160\" height=\"200.0\" rx=\"10\" fill=\"#6F6F6F\" /><text x=\"440\" y=\"36.0\" fill=\"#F5F5F2\" font-size=\"36\" font-weight=\"800\" text-anchor=\"middle\">219 €</text><text x=\"440\" y=\"290\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">2025</text><rect x=\"630\" y=\"71.00456621004568\" width=\"160\" height=\"178.99543378995432\" rx=\"10\" fill=\"#F4C542\" /><text x=\"710\" y=\"57.00456621004568\" fill=\"#F5F5F2\" font-size=\"36\" font-weight=\"800\" text-anchor=\"middle\">196 €</text><text x=\"710\" y=\"290\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">2026</text></svg>",
+   "svg_bottom": 215,
+   "source": "Fuente: OCU, encuesta Black Friday 2026 a 2.009 personas de 18 a 74 años (13/11/2026)."
+  },
+  {
+   "type": "content",
+   "kicker": "Qué es",
+   "title_html": "Compras hoy y pagas en plazos. Si lo financia otra empresa, <span class=\"g\">es un crédito</span>.",
+   "body_html": "Aunque no tenga intereses: debes un dinero y te comprometes a devolverlo.",
+   "svg": "<svg viewBox=\"0 0 888 270\" width=\"888\" height=\"270\" font-family=\"Inter\"><rect x=\"0\" y=\"20\" width=\"240\" height=\"110\" rx=\"18\" fill=\"#2a2a2a\" /><text x=\"120\" y=\"88\" fill=\"#F5F5F2\" font-size=\"36\" font-weight=\"800\" text-anchor=\"middle\">Tú</text><rect x=\"324\" y=\"20\" width=\"240\" height=\"110\" rx=\"18\" fill=\"#2a2a2a\" /><text x=\"444\" y=\"88\" fill=\"#F5F5F2\" font-size=\"34\" font-weight=\"800\" text-anchor=\"middle\">Tienda</text><rect x=\"648\" y=\"20\" width=\"240\" height=\"110\" rx=\"18\" fill=\"#F4C542\" /><text x=\"768\" y=\"72\" fill=\"#0A0A0A\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">Financiera</text><text x=\"768\" y=\"108\" fill=\"#0A0A0A\" font-size=\"24\" font-weight=\"600\" text-anchor=\"middle\">(un tercero)</text><text x=\"282\" y=\"88\" fill=\"#CFCFCA\" font-size=\"40\" font-weight=\"800\" text-anchor=\"middle\">→</text><text x=\"606\" y=\"88\" fill=\"#CFCFCA\" font-size=\"40\" font-weight=\"800\" text-anchor=\"middle\">←</text><path d=\"M768,140 L768,200 L120,200 L120,150\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"5\"/><path d=\"M106,164 L120,146 L134,164\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"5\"/><text x=\"444\" y=\"250\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"600\" text-anchor=\"middle\">La financiera paga a la tienda. Tú le devuelves a plazos.</text></svg>"
+  },
+  {
+   "type": "content",
+   "kicker": "La novedad",
+   "title_html": "Desde el <span class=\"g\">20 de noviembre</span>, la UE trata estos pagos como crédito al consumo.",
+   "body_html": "La nueva directiva incluye el pago a plazos financiado por terceros, aunque sea sin intereses.",
+   "svg": "<svg viewBox=\"0 0 888 230\" width=\"888\" height=\"230\" font-family=\"Inter\"><line x1=\"30\" y1=\"60\" x2=\"858\" y2=\"60\" stroke=\"#6F6F6F\" stroke-width=\"5\"/><circle cx=\"30\" cy=\"60\" r=\"13\" fill=\"#CFCFCA\"/><text x=\"18\" y=\"130\" fill=\"#F5F5F2\" font-size=\"30\" font-weight=\"800\" text-anchor=\"start\">Oct 2023</text><text x=\"18\" y=\"172\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"start\">Se aprueba</text><text x=\"18\" y=\"204\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"start\">la directiva</text><circle cx=\"306\" cy=\"60\" r=\"13\" fill=\"#CFCFCA\"/><text x=\"306\" y=\"130\" fill=\"#F5F5F2\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">20/11/2025</text><text x=\"306\" y=\"172\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"middle\">Plazo para pasarla</text><text x=\"306\" y=\"204\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"middle\">a ley</text><circle cx=\"582\" cy=\"60\" r=\"13\" fill=\"#CFCFCA\"/><text x=\"582\" y=\"130\" fill=\"#F5F5F2\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">Ene 2026</text><text x=\"582\" y=\"172\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"middle\">España:</text><text x=\"582\" y=\"204\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"middle\">anteproyecto</text><circle cx=\"858\" cy=\"60\" r=\"18\" fill=\"#F4C542\"/><text x=\"876\" y=\"130\" fill=\"#F4C542\" font-size=\"30\" font-weight=\"800\" text-anchor=\"end\">20/11/2026</text><text x=\"876\" y=\"172\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"end\">Debe</text><text x=\"876\" y=\"204\" fill=\"#CFCFCA\" font-size=\"24\" font-weight=\"500\" text-anchor=\"end\">aplicarse</text></svg>",
+   "svg_bottom": 230,
+   "source": "Directiva (UE) 2023/2225, art. 48: aplicación desde el 20/11/2026. Fuentes: EUR-Lex; Qué! (21/11/2026); Hoy Aragón (12/11/2026)."
+  },
+  {
+   "type": "rows",
+   "kicker": "Qué exige la directiva",
+   "rows": [
+    [
+     "Solvencia",
+     "¿puedes pagarlo?"
+    ],
+    [
+     "Información",
+     "TAE y coste total"
+    ],
+    [
+     "Consentimiento",
+     "nada premarcado"
+    ],
+    [
+     "Importes",
+     "también &lt;200&nbsp;€"
+    ]
+   ],
+   "icons": [
+    "<svg viewBox=\"0 0 64 64\" width=\"64\" height=\"64\"><circle cx=\"32\" cy=\"32\" r=\"24\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"6\"/><path d=\"M20 33 L29 42 L45 24\" fill=\"none\" stroke=\"#F4C542\" stroke-width=\"6\"/></svg>",
+    "<svg viewBox=\"0 0 64 64\" width=\"64\" height=\"64\"><rect x=\"14\" y=\"8\" width=\"36\" height=\"48\" rx=\"6\" fill=\"none\" stroke=\"#CFCFCA\" stroke-width=\"5\"/><path d=\"M22 22 H42 M22 32 H42 M22 42 H34\" stroke=\"#CFCFCA\" stroke-width=\"5\"/></svg>",
+    "<svg viewBox=\"0 0 64 64\" width=\"64\" height=\"64\"><rect x=\"12\" y=\"12\" width=\"40\" height=\"40\" rx=\"8\" fill=\"none\" stroke=\"#CFCFCA\" stroke-width=\"5\"/></svg>",
+    "<svg viewBox=\"0 0 64 64\" width=\"64\" height=\"64\"><circle cx=\"32\" cy=\"32\" r=\"24\" fill=\"#2a2a2a\"/><text x=\"32\" y=\"42\" fill=\"#F5F5F2\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\" font-family=\"Inter\">€</text></svg>"
+   ],
+   "body_html": "Los detalles (como los límites de coste) los fija cada país en su ley.",
+   "source": "Directiva (UE) 2023/2225. Resumen de Qué! (21/11/2026) y Hoy Aragón (12/11/2026)."
+  },
+  {
+   "type": "content",
+   "kicker": "¿Y en España?",
+   "title_html": "España llega tarde: la ley <span class=\"g\">aún no está aprobada</span>.",
+   "body_html": "Mientras tanto se aplica la normativa española actual. Bruselas ya ha advertido a España y a otros 15 países.",
+   "svg": "<svg viewBox=\"0 0 888 240\" width=\"888\" height=\"240\" font-family=\"Inter\"><rect x=\"0\" y=\"40\" width=\"204\" height=\"120\" rx=\"16\" fill=\"#F4C542\" /><text x=\"102\" y=\"112\" fill=\"#0A0A0A\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">Anteproyecto</text><text x=\"216\" y=\"112\" fill=\"#6F6F6F\" font-size=\"40\" font-weight=\"800\" text-anchor=\"middle\">›</text><rect x=\"228\" y=\"40\" width=\"204\" height=\"120\" rx=\"16\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"4\" stroke-dasharray=\"10 8\"/><text x=\"330\" y=\"112\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">2.ª vuelta</text><text x=\"444\" y=\"112\" fill=\"#6F6F6F\" font-size=\"40\" font-weight=\"800\" text-anchor=\"middle\">›</text><rect x=\"456\" y=\"40\" width=\"204\" height=\"120\" rx=\"16\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"4\" stroke-dasharray=\"10 8\"/><text x=\"558\" y=\"112\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">Congreso</text><text x=\"672\" y=\"112\" fill=\"#6F6F6F\" font-size=\"40\" font-weight=\"800\" text-anchor=\"middle\">›</text><rect x=\"684\" y=\"40\" width=\"204\" height=\"120\" rx=\"16\" fill=\"none\" stroke=\"#6F6F6F\" stroke-width=\"4\" stroke-dasharray=\"10 8\"/><text x=\"786\" y=\"112\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">BOE</text><text x=\"0\" y=\"220\" fill=\"#CFCFCA\" font-size=\"26\" font-weight=\"500\" text-anchor=\"start\">Enero 2026: primera vuelta en el Consejo de Ministros.</text></svg>",
+   "source": "Situación a 21/11/2026. Fuentes: Qué! (21/11/2026); Hoy Aragón (12/11/2026); Comisión Europea, dictamen motivado (octubre de 2026)."
+  },
+  {
+   "type": "content",
+   "theme": "light",
+   "kicker": "El riesgo real",
+   "title_html": "Cada plazo parece poco. Juntos, <span class=\"g\">200&nbsp;€ al mes</span>.",
+   "body_html": "Cuatro compras que suman 600 €, cada una en 3 plazos. Con un neto de 1.264 €, es casi el 16 % del sueldo durante 3 meses.",
+   "svg": "<svg viewBox=\"0 0 888 380\" width=\"888\" height=\"380\" font-family=\"Inter\"><rect x=\"60\" y=\"246.0\" width=\"180\" height=\"44.0\" fill=\"#0A0A0A\"/><rect x=\"60\" y=\"213.0\" width=\"180\" height=\"33.0\" fill=\"#6F6F6F\"/><rect x=\"60\" y=\"125.0\" width=\"180\" height=\"88.0\" fill=\"#F4C542\"/><rect x=\"60\" y=\"70.0\" width=\"180\" height=\"55.0\" fill=\"#CFCFCA\"/><text x=\"150\" y=\"56.0\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"middle\">200 €</text><text x=\"150\" y=\"326\" fill=\"#6F6F6F\" font-size=\"26\" font-weight=\"600\" text-anchor=\"middle\">Mes 1</text><rect x=\"340\" y=\"246.0\" width=\"180\" height=\"44.0\" fill=\"#0A0A0A\"/><rect x=\"340\" y=\"213.0\" width=\"180\" height=\"33.0\" fill=\"#6F6F6F\"/><rect x=\"340\" y=\"125.0\" width=\"180\" height=\"88.0\" fill=\"#F4C542\"/><rect x=\"340\" y=\"70.0\" width=\"180\" height=\"55.0\" fill=\"#CFCFCA\"/><text x=\"430\" y=\"56.0\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"middle\">200 €</text><text x=\"430\" y=\"326\" fill=\"#6F6F6F\" font-size=\"26\" font-weight=\"600\" text-anchor=\"middle\">Mes 2</text><rect x=\"620\" y=\"246.0\" width=\"180\" height=\"44.0\" fill=\"#0A0A0A\"/><rect x=\"620\" y=\"213.0\" width=\"180\" height=\"33.0\" fill=\"#6F6F6F\"/><rect x=\"620\" y=\"125.0\" width=\"180\" height=\"88.0\" fill=\"#F4C542\"/><rect x=\"620\" y=\"70.0\" width=\"180\" height=\"55.0\" fill=\"#CFCFCA\"/><text x=\"710\" y=\"56.0\" fill=\"#0A0A0A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"middle\">200 €</text><text x=\"710\" y=\"326\" fill=\"#6F6F6F\" font-size=\"26\" font-weight=\"600\" text-anchor=\"middle\">Mes 3</text><rect x=\"0\" y=\"350\" width=\"22\" height=\"22\" fill=\"#0A0A0A\"/><text x=\"30\" y=\"369\" fill=\"#0A0A0A\" font-size=\"22\" font-weight=\"600\" text-anchor=\"start\">Abrigo 120 €</text><rect x=\"222\" y=\"350\" width=\"22\" height=\"22\" fill=\"#6F6F6F\"/><text x=\"252\" y=\"369\" fill=\"#0A0A0A\" font-size=\"22\" font-weight=\"600\" text-anchor=\"start\">Auriculares 90 €</text><rect x=\"444\" y=\"350\" width=\"22\" height=\"22\" fill=\"#F4C542\"/><text x=\"474\" y=\"369\" fill=\"#0A0A0A\" font-size=\"22\" font-weight=\"600\" text-anchor=\"start\">Móvil 240 €</text><rect x=\"666\" y=\"350\" width=\"22\" height=\"22\" fill=\"#CFCFCA\"/><text x=\"696\" y=\"369\" fill=\"#0A0A0A\" font-size=\"22\" font-weight=\"600\" text-anchor=\"start\">Zapatillas 150 €</text></svg>",
+   "svg_bottom": 150,
+   "source": "Ejemplo ilustrativo, cálculo propio: 600 / 3 = 200 €; 200 / 1.263,69 = 15,8 %."
+  },
+  {
+   "type": "rows",
+   "kicker": "Antes de aceptar, pregúntate",
+   "rows": [
+    [
+     "¿Quién lo financia?",
+     "tienda o tercero"
+    ],
+    [
+     "¿Y si me retraso?",
+     "mira las comisiones"
+    ],
+    [
+     "¿Cuánto suman?",
+     "todos tus plazos"
+    ],
+    [
+     "¿Lo pagaría hoy?",
+     "si no, piénsalo"
+    ]
+   ],
+   "body_html": "Un pago que se retrasa puede tener comisiones aunque la compra fuera «sin intereses».",
+   "source": "Revisa siempre las condiciones del servicio antes de aceptar."
+  },
+  {
+   "type": "cta",
+   "kicker": "Para llevártelo",
+   "title_html": "Sin intereses no significa <span class=\"g\">sin compromiso</span>.",
+   "body_html": "Envíaselo a quien ya tiene la cesta del Black Friday preparada.",
+   "svg": "<svg viewBox=\"0 0 888 110\" width=\"888\" height=\"110\" font-family=\"Inter\"><rect x=\"0\" y=\"20\" width=\"888\" height=\"64\" rx=\"32\" fill=\"#2a2a2a\" /><rect x=\"0\" y=\"20\" width=\"296\" height=\"64\" rx=\"32\" fill=\"#F4C542\" /><text x=\"148\" y=\"62\" fill=\"#0A0A0A\" font-size=\"28\" font-weight=\"800\" text-anchor=\"middle\">Plazo 1</text><text x=\"444\" y=\"62\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\">Plazo 2</text><text x=\"740\" y=\"62\" fill=\"#CFCFCA\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\">Plazo 3</text></svg>"
+  }
+ ]
+}

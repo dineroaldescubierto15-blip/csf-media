@@ -1,0 +1,90 @@
+{
+ "type": "carousel",
+ "slug": "csf-18_compra-ahora-paga-despues",
+ "caption": "Compra ahora, paga después: antes de dividir tus compras del Black Friday en plazos \"sin intereses\", mira qué estás firmando.\n\nSi el pago a plazos lo financia una empresa distinta de la tienda, es un crédito, aunque no cobre intereses. Desde el 20 de noviembre, la nueva directiva europea de crédito al consumo incluye este tipo de pagos: exige comprobar la solvencia, informar de la TAE y del coste total y pedir un consentimiento expreso, también en importes de menos de 200 €. España aún no ha aprobado su ley, así que de momento sigue rigiendo la normativa española actual.\n\nEl matiz: pagar a plazos no es malo en sí. El riesgo está en sumar varios: cuatro compras que suman 600 € en tres plazos son 200 € al mes. Y un retraso puede tener comisiones aunque la compra fuera sin intereses. Revisa las condiciones de cada servicio.\n\nEnvíaselo a quien ya tiene la cesta del Black Friday preparada.\n\n#compraahorapagadespues #blackfriday #credito #deudas #finanzaspersonales\n\nContenido informativo, no es asesoramiento financiero.",
+ "files": [
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/01.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/02.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/03.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/04.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/05.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/06.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/07.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/08.jpg"
+  },
+  {
+   "media_type": "IMAGE",
+   "image_url": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/09.jpg"
+  }
+ ],
+ "telegram_media": [
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/01.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/02.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/03.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/04.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/05.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/06.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/07.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/08.jpg"
+  },
+  {
+   "type": "photo",
+   "sendType": "send_byurl",
+   "httpUrl": "https://raw.githubusercontent.com/dineroaldescubierto15-blip/csf-media/main/posts/csf-18_compra-ahora-paga-despues/09.jpg"
+  }
+ ]
+}
