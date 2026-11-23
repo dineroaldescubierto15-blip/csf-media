@@ -29,7 +29,11 @@ Lo esencial está resumido abajo; si dudas, léelo.
   (Euríbor, IRPF, fondo de emergencia…); gancho del Reel en texto en pantalla y voz en el primer segundo; alterna CTA
   y usa "Envíaselo a quien…" cuando el tema se preste; usa series reconocibles ("Mito o realidad", "Tu primer sueldo",
   "Explicado en 40 segundos"). Nunca automatices comentarios, likes ni follows en cuentas ajenas.
-- Carrusel: 1080×1350, 6-9 slides. 1 Hook → 2 Contexto → 3-6 Desarrollo → 7-8 Ejemplo/contraste → Conclusión + CTA.
+- **Solo Reels (desde el 23-11-2026, decisión de Pol)**: los Reels traen alcance y seguidores; los carruseles tenían 0 visualizaciones.
+  Mientras dure, no se generan ni se publican carruseles. Portada del Reel: Make usa el fotograma de 2,5 s
+  (`thumb_offset` 2500), así que la escena 1 debe mostrar el gancho **completo** a los 2,5 s (todos los `data-in` ≤ 1,8 s)
+  y durar ≥ 3,2 s. Es lo que se ve en la cuadrícula del perfil y en búsquedas: el título del Reel, nunca negro.
+- Carrusel (en pausa): 1080×1350, 6-9 slides. 1 Hook → 2 Contexto → 3-6 Desarrollo → 7-8 Ejemplo/contraste → Conclusión + CTA.
 - Caption: hook 1-2 líneas → desarrollo breve (no repetir slides) → matiz → CTA único (guardar/compartir/comentar)
   → 3-5 hashtags específicos → última línea fija: `Contenido informativo, no es asesoramiento financiero.`
   Máximo 1-2 emojis. Máx. 2200 caracteres.
@@ -80,8 +84,8 @@ Lo esencial está resumido abajo; si dudas, léelo.
     - feedback de Pol: key `fb-...`, `tipo`="feedback", `estado`="nuevo" | "leido", `texto`.
     - `config-telegram` (no tocar).
   - Escenario "Aprobar o rechazar desde Telegram" (webhook del bot): cambia `estado` a aprobado/rechazado y guarda feedback.
-  - Escenario "Publicar en Instagram": a las 13:30 publica el carrusel `aprobado` y a las 20:30 el reel `aprobado`
-    (mayor `prioridad` y luego más antiguo).
+  - Escenario "Publicar en Instagram": a las 13:30 y a las 20:30 publica un reel `aprobado` (mayor `prioridad` y luego
+    más antiguo), con portada en el fotograma de 2,5 s. Los carruseles no se publican mientras dure "solo Reels".
   - Series en partes ("Parte 1/3"…): `prioridad` 2 y `fecha` en orden de parte (la parte 1 la más antigua). Las partes
     aprobadas con prioridad 2 ocupan **todas las franjas seguidas** (13:30 y 20:30, sea carrusel o reel) hasta acabar,
     sin nada entre medias. Cada parte debe entenderse sola (gancho propio) y enlazar con la siguiente; en el caption,
@@ -102,9 +106,9 @@ Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea d
    post ajeno (1-3 frases, tono de marca, sin enlaces ni "sígueme", datos solo verificados); `respon:` → borrador de
    respuesta a un comentario propio; `stats:` → breve análisis y ajuste de temas/formatos (anótalo en el resumen).
    Junta todos los borradores en un solo mensaje y envíalo con `tools/send_msg.py`. Márcalos `leido`.
-3. Revisa la cola por tipo (`pendiente` + `aprobado`). Objetivo: ≥ 3 carruseles y ≥ 2 reels en cola.
-   Cada día: 1 carrusel (2 si hay menos de 3 en cola) y 1 reel. El reel puede adaptar un tema ya hecho en carrusel
-   (otro ángulo, guion propio) o ser un tema nuevo; no repitas el mismo tema que el carrusel del mismo día.
+3. Revisa la cola de reels (`pendiente` + `aprobado`). Objetivo: ≥ 4 reels en cola. Cada día: 2 reels (3 si hay menos
+   de 2 en cola), con temas distintos entre sí. Primero adapta a Reel los carruseles de la cola que nunca se publicaron
+   (guion propio, datos revisados hoy) y después temas nuevos. Lanza los workflows de render en paralelo.
 4. Actualidad: busca noticias financieras de las últimas 24 h relevantes para el público (BCE, Euríbor, IPC,
    fiscalidad, grandes movimientos de mercado o de Bitcoin, cambios en productos de ahorro populares en España).
    Solo si hay algo **realmente relevante**, crea además un carrusel de actualidad con `prioridad` = 1.
