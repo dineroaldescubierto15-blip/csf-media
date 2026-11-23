@@ -84,7 +84,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
     - feedback de Pol: key `fb-...`, `tipo`="feedback", `estado`="nuevo" | "leido", `texto`.
     - `config-telegram` (no tocar).
   - Escenario "Aprobar o rechazar desde Telegram" (webhook del bot): cambia `estado` a aprobado/rechazado y guarda feedback.
-  - Escenario "Publicar en Instagram": a las 13:30 y a las 20:30 publica un reel `aprobado` (mayor `prioridad` y luego
+  - Escenario "Publicar en Instagram": a las 13:30, a las 17:00 y a las 20:30 (desde el 23-11-2026, unos días) publica un reel `aprobado` (mayor `prioridad` y luego
     más antiguo), con portada en el fotograma de 2,5 s. Los carruseles no se publican mientras dure "solo Reels".
   - Series en partes ("Parte 1/3"…): `prioridad` 2 y `fecha` en orden de parte (la parte 1 la más antigua). Las partes
     aprobadas con prioridad 2 ocupan **todas las franjas seguidas** (13:30 y 20:30, sea carrusel o reel) hasta acabar,
@@ -106,8 +106,8 @@ Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea d
    post ajeno (1-3 frases, tono de marca, sin enlaces ni "sígueme", datos solo verificados); `respon:` → borrador de
    respuesta a un comentario propio; `stats:` → breve análisis y ajuste de temas/formatos (anótalo en el resumen).
    Junta todos los borradores en un solo mensaje y envíalo con `tools/send_msg.py`. Márcalos `leido`.
-3. Revisa la cola de reels (`pendiente` + `aprobado`). Objetivo: ≥ 4 reels en cola. Cada día: 2 reels (3 si hay menos
-   de 2 en cola), con temas distintos entre sí. Primero adapta a Reel los carruseles de la cola que nunca se publicaron
+3. Revisa la cola de reels (`pendiente` + `aprobado`). Objetivo: ≥ 6 reels en cola. Cada día: 3 reels (4 si hay menos
+   de 3 en cola), con temas distintos entre sí (se publican 3 al día: 13:30, 17:00 y 20:30). Primero adapta a Reel los carruseles de la cola que nunca se publicaron
    (guion propio, datos revisados hoy) y después temas nuevos. Lanza los workflows de render en paralelo.
 4. Actualidad: busca noticias financieras de las últimas 24 h relevantes para el público (BCE, Euríbor, IPC,
    fiscalidad, grandes movimientos de mercado o de Bitcoin, cambios en productos de ahorro populares en España).
