@@ -57,6 +57,15 @@ Lo esencial está resumido abajo; si dudas, léelo.
   Lanza el render en segundo plano con un `timeout` largo (7200000 ms): por defecto se corta a los 30 min. Si se corta,
   relánzalo: las escenas ya sintetizadas salen de la caché.
   Revisa fotogramas con `--frames t1,t2,...` antes del render completo. Ver docstring y `generator/specs/csf-07_reel-empezar-a-invertir.json`.
+- **Render del Reel en GitHub Actions** (desde el 23-11-2026; la sesión de la tarea tiene ~6,3 GB de RAM y la voz csf en
+  float32 necesita más: el render local muere por memoria). Flujo: commit y push del spec → lanza el workflow
+  `render-reel.yml` con la herramienta MCP `actions_run_trigger` (method `run_workflow`, ref `main`, inputs `{"slug": "<slug>"}`)
+  → mientras, trabaja en los carruseles → comprueba el run con `actions_list`/`actions_get` (unos 30-60 min; no sondees
+  más de una vez cada ~5 min) → al acabar, el workflow sube `posts/<slug>/reel.mp4` y `cover.jpg` a `main`: `git pull`,
+  extrae fotogramas del mp4 con ffmpeg y **míralos** (solapes, textos cortados) → si hay que corregir, edita el spec y
+  relanza (la voz de las escenas sin cambios sale de la caché del workflow) → `build_post.py --reel`, commit, push.
+  No cambies la voz, sus parámetros ni las versiones de `generator/requirements-reel.txt` (son las de la voz aprobada).
+  No ejecutes `reel.py` en local para la voz csf (ni con `--frames`): se queda sin memoria.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
 - `tools/build_post.py <slug> <caption.txt> [--reel]`: crea `posts/<slug>/post.json` (carrusel: files; reel: video_url
   servido por jsDelivr como video/mp4).
