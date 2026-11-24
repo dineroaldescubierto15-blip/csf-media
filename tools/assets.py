@@ -93,7 +93,7 @@ def openverse_token():
     """Token de Openverse a partir de OPENVERSE_CLIENT_ID y OPENVERSE_CLIENT_SECRET (registro gratuito; caduca a las 12 h)."""
     global _ov_tok
     if _ov_tok is None:
-        cid, sec = os.environ.get("OPENVERSE_CLIENT_ID"), os.environ.get("OPENVERSE_CLIENT_SECRET")
+        cid, sec = [(os.environ.get(k) or "").strip().strip(",").strip("\"' ") for k in ("OPENVERSE_CLIENT_ID", "OPENVERSE_CLIENT_SECRET")]
         tok = ""
         if cid and sec:
             body = urllib.parse.urlencode({"grant_type": "client_credentials", "client_id": cid, "client_secret": sec}).encode()
