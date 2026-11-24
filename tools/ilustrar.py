@@ -33,7 +33,8 @@ def candidatos(persona, out, n=15, fuentes=None):
     """Busca en varias fuentes con licencia libre: Wikimedia Commons, Openverse (sobre todo Flickr) y Unsplash."""
     import assets, cv2, os
     out = pathlib.Path(out); out.mkdir(parents=True, exist_ok=True)
-    fuentes = fuentes or (["commons", "openverse"] + (["unsplash"] if os.environ.get("UNSPLASH_ACCESS_KEY") else []))
+    # Unsplash no sirve para personas concretas (devuelve gente cualquiera): solo Commons y Openverse
+    fuentes = fuentes or ["commons", "openverse"]
     cs = []
     consultas = [persona, f"{persona} portrait", f"{persona} keynote", f"{persona} 2025", f"{persona} 2024", f"{persona} interview"]
     for f in fuentes:

@@ -99,8 +99,13 @@ def openverse_token():
             body = urllib.parse.urlencode({"grant_type": "client_credentials", "client_id": cid, "client_secret": sec}).encode()
             req = urllib.request.Request("https://api.openverse.org/v1/auth_tokens/token/", data=body,
                                          headers={**UA, "Content-Type": "application/x-www-form-urlencoded"})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                _ov_tok = json.loads(r.read())["access_token"]
+            import urllib.error
+            try:
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    _ov_tok = json.loads(r.read())["access_token"]
+            except urllib.error.HTTPError as e:
+                det = e.read().decode("utf-8", "replace")[:300]
+                raise SystemExit(f"Openverse no da token (HTTP {e.code}): {det}. ¿Está verificado el correo del registro?")
     return _ov_tok
 
 def search_openverse(q, n=6, orient=None, audio=False):
