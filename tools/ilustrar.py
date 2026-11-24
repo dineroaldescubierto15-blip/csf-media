@@ -10,7 +10,7 @@ Uso:
          hoja de contacto <carpeta>/candidatos.jpg y lista con autor/licencia/tamaño en <carpeta>/candidatos.json
   python3 tools/ilustrar.py hacer <foto.jpg> <carpeta> [--credito "Foto: X / Wikimedia Commons, CC BY-SA 2.0"]
       -> <carpeta>/ilus_pintura.jpg, ilus_editorial.jpg, ilus_duotono.jpg (1080x1350) + recorte transparente .png
-  python3 tools/ilustrar.py dibujo <foto.jpg> <carpeta>
+  python3 tools/ilustrar.py dibujo <foto.jpg> <carpeta> [--cerca]   (--cerca: primer plano de cabeza y hombros)
       -> estilos de dibujo (menos realistas): dib_comic, dib_poster, dib_lapiz, dib_trama, dib_linea, dib_acuarela
 Necesita: opencv-contrib-python-headless<5 (óleo con xphoto), rembg[cpu] (recorte de la persona), pillow, numpy.
 Crédito: "Ilustración: Capital Sin Filtros, a partir de una foto de <autor> (Wikimedia Commons, <licencia>)".
@@ -23,6 +23,7 @@ import numpy as np
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 W, H = 1080, 1350
+CERCA = '--cerca' in sys.argv    # primer plano (cabeza y hombros)
 GOLD = np.array([66, 197, 244], np.float32)   # BGR de #F4C542
 BG = np.array([10, 10, 10], np.float32)
 
@@ -67,7 +68,12 @@ def _frame(img, a):
     head = np.nonzero(a[top:top + max(10, (bot - top) // 4)] > 0.5)[1]
     if len(head): cx = 0.5 * cx + 0.5 * head.mean()        # centra entre el cuerpo y la cabeza
     side_h = (bot - top) / 0.91                            # la persona ocupa desde el 9 % hasta abajo
-    side_h = min(side_h, (right - left) * 1.15 * H / W)    # que quepan los hombros
+    rows = (a > 0.5).sum(axis=1).astype(np.float32); hw = np.median(rows[top:top + max(5, (bot - top) // 10)])
+    head_h = next((i for i in range(top, bot) if rows[i] > 2.2 * max(hw, 1)), bot) - top   # hasta los hombros
+    if CERCA and head_h > 0:
+        side_h = min(side_h, head_h * 2.3)                 # primer plano: cabeza y hombros
+    if not CERCA:
+        side_h = min(side_h, (right - left) * 1.15 * H / W)    # que quepan los hombros
     side_w = side_h * W / H
     x0, y0 = cx - side_w / 2, top - side_h * 0.09
     M = np.float32([[W / side_w, 0, -x0 * W / side_w], [0, H / side_h, -y0 * H / side_h]])
