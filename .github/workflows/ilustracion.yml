@@ -1,0 +1,69 @@
+# Ilustración realista de una persona a partir de una foto con licencia libre (Wikimedia Commons).
+# Modo 1 (sin "foto"): descarga las mejores fotos candidatas y una hoja de contacto para elegir.
+# Modo 2 (con "foto" = "File:..." de Commons o "cand_NN.jpg" de una búsqueda anterior): hace las ilustraciones.
+# Resultado en posts/_ilustraciones/<id>/ (commit a main). Ver tools/ilustrar.py.
+name: Ilustración
+
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "Carpeta de salida (minúsculas, guiones), p. ej. buffett"
+        required: true
+      persona:
+        description: "Búsqueda en Commons, p. ej. Warren Buffett"
+        required: true
+      foto:
+        description: "Opcional: File:... de Commons o cand_NN.jpg ya descargado"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  ilustrar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      ID: ${{ inputs.id }}
+      PERSONA: ${{ inputs.persona }}
+      FOTO: ${{ inputs.foto }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar id
+        run: case "$ID" in *[!a-z0-9-]*|"") echo "id no válido"; exit 1;; esac
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Dependencias
+        run: python -m pip install -q "opencv-contrib-python-headless==4.14.0.*" "rembg[cpu]==2.0.*" pillow numpy
+      - name: Candidatos o ilustración
+        run: |
+          D="posts/_ilustraciones/$ID"; mkdir -p "$D"
+          if [ -z "$FOTO" ]; then
+            python tools/ilustrar.py candidatos "$PERSONA" "$D" --n 10
+          else
+            case "$FOTO" in
+              File:*) python - <<'PY'
+          import os, sys, json, pathlib
+          sys.path.insert(0, "tools"); import assets
+          d = pathlib.Path("posts/_ilustraciones") / os.environ["ID"]
+          c = assets.search_commons(os.environ["FOTO"], 1)[0]
+          (d / "foto.jpg").write_bytes(assets.get(c["url"]))
+          (d / "foto.json").write_text(json.dumps(c, ensure_ascii=False, indent=1), encoding="utf-8")
+          PY
+                 SRC="$D/foto.jpg";;
+              *) SRC="$D/$FOTO";;
+            esac
+            python tools/ilustrar.py hacer "$SRC" "$D"
+          fi
+          ls -la "$D"
+      - name: Commit y push a main
+        run: |
+          git config user.name "csf-render-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "posts/_ilustraciones/$ID"
+          git commit -m "Ilustración $ID ($PERSONA${FOTO:+, $FOTO})"
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep 10; done
+          exit 1
