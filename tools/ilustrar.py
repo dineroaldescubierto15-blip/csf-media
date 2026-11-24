@@ -132,13 +132,14 @@ def hacer(foto, out, credito=None):
     im, a = _frame(img, a)
     cv2.imwrite(str(out / "recorte.png"), np.dstack([im, (a * 255).astype(np.uint8)]))
     # 1) pintura realista: óleo (xphoto) sobre una base suavizada que conserva bordes, con detalle en la cara
-    base = cv2.bilateralFilter(im, 9, 35, 9)
+    base = cv2.bilateralFilter(im, 7, 30, 7)
     try:
-        oil = cv2.xphoto.oilPainting(base, 7, 1).astype(np.float32)
+        oil = cv2.xphoto.oilPainting(base, 4, 1).astype(np.float32)
     except AttributeError:
-        oil = cv2.stylization(base, sigma_s=30, sigma_r=0.3).astype(np.float32)
-    det = cv2.detailEnhance(base, sigma_s=6, sigma_r=0.1).astype(np.float32)
-    paint = 0.7 * oil + 0.3 * det
+        oil = cv2.stylization(base, sigma_s=20, sigma_r=0.25).astype(np.float32)
+    det = cv2.detailEnhance(base, sigma_s=5, sigma_r=0.08).astype(np.float32)
+    paint = 0.5 * cv2.GaussianBlur(oil, (0, 0), 0.8) + 0.5 * det
+    blur = cv2.GaussianBlur(paint, (0, 0), 2.0); paint = cv2.addWeighted(paint, 1.35, blur, -0.35, 0)   # nitidez
     paint = _grade(np.clip(paint, 0, 255).astype(np.uint8), warm=0.12, contrast=1.1, sat=0.92) * _lines(im, 0.18)[..., None]
     cv2.imwrite(str(out / "ilus_pintura.jpg"), _comp(paint, a, _background()), [cv2.IMWRITE_JPEG_QUALITY, 92])
     # 2) editorial: manchas de color planas + línea de tinta
