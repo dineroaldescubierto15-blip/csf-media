@@ -10,6 +10,8 @@ Uso:
          hoja de contacto <carpeta>/candidatos.jpg y lista con autor/licencia/tamaño en <carpeta>/candidatos.json
   python3 tools/ilustrar.py hacer <foto.jpg> <carpeta> [--credito "Foto: X / Wikimedia Commons, CC BY-SA 2.0"]
       -> <carpeta>/ilus_pintura.jpg, ilus_editorial.jpg, ilus_duotono.jpg (1080x1350) + recorte transparente .png
+  python3 tools/ilustrar.py dibujo <foto.jpg> <carpeta>
+      -> estilos de dibujo (menos realistas): dib_comic, dib_poster, dib_lapiz, dib_trama, dib_linea, dib_acuarela
 Necesita: opencv-contrib-python-headless<5 (óleo con xphoto), rembg[cpu] (recorte de la persona), pillow, numpy.
 Crédito: "Ilustración: Capital Sin Filtros, a partir de una foto de <autor> (Wikimedia Commons, <licencia>)".
 Si la foto es CC BY-SA, la ilustración se comparte con la misma licencia. Nunca se cambia la expresión ni se
@@ -157,12 +159,90 @@ def hacer(foto, out, credito=None):
         (out / "credito.txt").write_text(credito, encoding="utf-8")
     print(f"OK {out}/ilus_pintura.jpg, ilus_editorial.jpg, ilus_duotono.jpg")
 
+# ---------- estilos de dibujo (menos realistas) ----------
+def _xdog(im, sigma=0.9, k=1.6, tau=0.985, eps=0.02, phi=60):
+    """Líneas de dibujo (XDoG): 1 = papel, 0 = trazo."""
+    import cv2
+    g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY).astype(np.float32) / 255
+    g1 = cv2.GaussianBlur(g, (0, 0), sigma); g2 = cv2.GaussianBlur(g, (0, 0), sigma * k)
+    d = g1 - tau * g2
+    e = np.where(d >= eps, 1.0, 1 + np.tanh(phi * (d - eps)))
+    return np.clip(e, 0, 1).astype(np.float32)
+
+def _hex(h):
+    h = h.lstrip("#"); return np.array([int(h[4:6], 16), int(h[2:4], 16), int(h[0:2], 16)], np.float32)
+
+def _bands(im, cuts, cols, smooth=9):
+    import cv2
+    g = cv2.cvtColor(cv2.bilateralFilter(im, 9, 60, 9), cv2.COLOR_BGR2GRAY)
+    g = cv2.medianBlur(g, smooth).astype(np.float32) / 255
+    g = np.clip((g - np.percentile(g, 2)) / (np.percentile(g, 98) - np.percentile(g, 2) + 1e-6), 0, 1)
+    out = np.zeros(im.shape, np.float32); idx = np.digitize(g, cuts)
+    for i, c in enumerate(cols): out[idx == i] = _hex(c)
+    return out
+
+def estilos_dibujo(im, a, out):
+    import cv2
+    bg = _background()
+    # 1) cómic: colores planos y vivos con contorno negro limpio
+    sm = cv2.bilateralFilter(cv2.bilateralFilter(im, 9, 60, 9), 9, 60, 9)
+    flat = _quant(cv2.pyrMeanShiftFiltering(sm, 18, 40), 8)
+    flat = _grade(flat, warm=0.06, contrast=1.12, sat=1.1)
+    flat = flat * 1.08
+    ed = cv2.Canny(cv2.GaussianBlur(sm, (0, 0), 1.6), 40, 110)
+    ed = cv2.dilate(ed, np.ones((2, 2), np.uint8)); ed = cv2.GaussianBlur(ed.astype(np.float32) / 255, (0, 0), 0.8)
+    comic = flat * (1 - 0.9 * ed[..., None])
+    cv2.imwrite(str(out / "dib_comic.jpg"), _comp(comic, a, bg), [cv2.IMWRITE_JPEG_QUALITY, 92])
+    # 2) póster a dos tintas (negro, gris, dorado, crema) sin líneas
+    pos = _bands(im, [0.28, 0.5, 0.74], ["#0A0A0A", "#3A3A38", "#F4C542", "#F5F5F2"], 11)
+    cv2.imwrite(str(out / "dib_poster.jpg"), _comp(pos, a, bg * 0.6, 1.0), [cv2.IMWRITE_JPEG_QUALITY, 92])
+    # 3) lápiz sobre papel claro (slide de contraste #E7E7E3)
+    g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    sk = cv2.divide(g, 255 - cv2.GaussianBlur(255 - g, (0, 0), 8), scale=256).astype(np.float32) / 255
+    sk = np.clip(sk, 0, 1) ** 2.2 * np.clip(_xdog(im, 0.8, eps=0.02) + 0.35, 0, 1)
+    rng = np.random.default_rng(3); paper = _hex("#E7E7E3") - rng.normal(0, 4, im.shape[:2])[..., None]
+    pen = paper * sk[..., None] + _hex("#1A1A18") * (1 - sk[..., None])
+    a3 = a[..., None]; card = paper * (1 - a3) + pen * a3
+    cv2.imwrite(str(out / "dib_lapiz.jpg"), np.clip(card, 0, 255).astype(np.uint8), [cv2.IMWRITE_JPEG_QUALITY, 92])
+    # 4) tinta con trama de puntos dorada
+    gg = cv2.cvtColor(cv2.bilateralFilter(im, 9, 50, 9), cv2.COLOR_BGR2GRAY).astype(np.float32) / 255
+    yy, xx = np.mgrid[0:H, 0:W]; cell = 9
+    cxp = (xx % cell) - cell / 2; cyp = (yy % cell) - cell / 2
+    r = np.sqrt(cxp ** 2 + cyp ** 2) / (cell / 2)
+    dots = (r < np.clip(gg * 1.25, 0, 1.1)).astype(np.float32)
+    ink2 = _xdog(im, 1.0, eps=0.01)
+    ht = (_hex("#0A0A0A") * (1 - dots[..., None]) + _hex("#F4C542") * dots[..., None]) * ink2[..., None]
+    ht = np.where((gg > 0.82)[..., None], _hex("#F5F5F2"), ht) * ink2[..., None]
+    cv2.imwrite(str(out / "dib_trama.jpg"), _comp(ht, a, bg, 0.6), [cv2.IMWRITE_JPEG_QUALITY, 92])
+    # 5) solo línea: contornos crema y sombras en dorado oscuro sobre negro
+    sm5 = cv2.bilateralFilter(cv2.bilateralFilter(im, 9, 60, 9), 9, 60, 9)
+    e5 = cv2.Canny(cv2.GaussianBlur(sm5, (0, 0), 1.3), 30, 90)
+    e5 = cv2.GaussianBlur(cv2.dilate(e5, np.ones((2, 2), np.uint8)).astype(np.float32) / 255, (0, 0), 0.7)
+    shade = _bands(im, [0.35, 0.7], ["#0A0A0A", "#1E1A0C", "#3A3014"], 15)
+    line = shade * (1 - e5[..., None]) + _hex("#F5F5F2") * e5[..., None]
+    cv2.imwrite(str(out / "dib_linea.jpg"), _comp(line, a, bg, 1.0), [cv2.IMWRITE_JPEG_QUALITY, 92])
+    # 6) acuarela: manchas suaves, poca saturación, bordes que se funden, línea fina
+    wc = cv2.stylization(cv2.pyrMeanShiftFiltering(im, 10, 28), sigma_s=60, sigma_r=0.45).astype(np.float32)
+    wc = _grade(wc.astype(np.uint8), warm=0.16, contrast=0.95, sat=0.7)
+    wc = wc * (0.75 + 0.25 * _xdog(im, 0.8, eps=0.02))[..., None]
+    noise = cv2.GaussianBlur(np.random.default_rng(7).normal(0, 1, im.shape[:2]).astype(np.float32), (0, 0), 3)
+    wc = wc * (1 + 0.04 * noise[..., None])
+    cv2.imwrite(str(out / "dib_acuarela.jpg"), _comp(wc, a, bg, 0.7), [cv2.IMWRITE_JPEG_QUALITY, 92])
+
+def dibujos(foto, out):
+    import cv2
+    out = pathlib.Path(out); out.mkdir(parents=True, exist_ok=True)
+    img = cv2.imread(str(foto)); a = _cutout(img); im, a = _frame(img, a)
+    estilos_dibujo(im, a, out)
+    print(f"OK {out}/dib_comic, dib_poster, dib_lapiz, dib_trama, dib_linea, dib_acuarela (.jpg)")
+
 def main():
     a = sys.argv[1:]
     opt = lambda k, d=None: a[a.index(k) + 1] if k in a else d
     if not a: sys.exit(__doc__)
     if a[0] == "candidatos": candidatos(a[1], a[2], int(opt("--n", 10)))
     elif a[0] == "hacer": hacer(a[1], a[2], opt("--credito"))
+    elif a[0] == "dibujo": dibujos(a[1], a[2])
     else: sys.exit(__doc__)
 
 if __name__ == "__main__":
