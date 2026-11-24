@@ -48,7 +48,8 @@ EXTRA_CSS = """
 .row{display:flex;align-items:center;gap:40px}
 .col{display:flex;flex-direction:column;gap:24px}
 .center{align-items:center;text-align:center}
-.chip{display:inline-block;padding:14px 28px;border-radius:999px;background:#1C1C1A;border:2px solid #2E2E2B;font-size:36px;font-weight:600;color:#F5F5F2}
+.chip{align-self:flex-start;display:inline-block;padding:14px 28px;border-radius:999px;background:#1C1C1A;border:2px solid #2E2E2B;font-size:36px;font-weight:600;color:#F5F5F2}
+.center .chip,.row .chip{align-self:auto}
 .chip.gold{background:#F4C542;color:#0A0A0A;border-color:#F4C542}
 .card{background:#151514;border:2px solid #262624;border-radius:28px;padding:44px}
 .news{background:#F5F5F2;color:#0A0A0A;border-radius:24px;padding:44px 48px 48px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
@@ -198,7 +199,7 @@ def _chart(cfg):
 
 def _news(cfg):
     t0 = float(cfg.get("in", 0.2)); sfx = cfg.get("sfx", "paper")
-    tit = _html.escape(cfg["titular"])
+    tit = _html.escape(cfg["titular"]).replace(" %", "\u00a0%").replace(" $", "\u00a0$").replace(" €", "\u00a0€")
     k = [0]
     def hl(m):
         k[0] += 1

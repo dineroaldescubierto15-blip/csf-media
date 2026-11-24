@@ -1,0 +1,97 @@
+{
+ "slug": "csf-31_reel-nvidia-historia-parte-1",
+ "music_seed": 11,
+ "subtitulos": true,
+ "fondo": "grid",
+ "plan": {
+  "idea": "Parte 1/3 de la historia de Nvidia: la caída (11-20 nov).",
+  "promesa": "Entender por qué Nvidia perdió 1,2 billones en 9 días sin un mal resultado.",
+  "palabra_clave": "Nvidia",
+  "ganchos": [
+   "Nvidia perdió 1,2 billones en 9 días. Sin un mal resultado. ¿Qué pasó? (5,5,4,5)",
+   "Presentó resultados récord y su acción siguió cayendo. (4,5,3,4)",
+   "Los 9 días que hundieron a Nvidia. (4,4,3,3)"
+  ],
+  "gancho": "Nvidia perdió 1,2 billones de dólares en nueve días. Sin un mal resultado.",
+  "bucle": "¿Qué pasó? (se cierra con el riesgo de persona clave) y deja abierto lo que pasó 11 días después (parte 2).",
+  "golpes": [
+   "11/11: 173,73 $ y la noticia",
+   "12/11: dimisión e investigación",
+   "17/11: resultados récord y la acción cae",
+   "20/11: 125,53 $ (−27,7 %)"
+  ],
+  "re_ganchos": [
+   "~14 s: Y aquí viene lo raro",
+   "~32 s: ¿Por qué?"
+  ],
+  "recompensa": "El mercado compraba a Huang: riesgo de persona clave.",
+  "cta": "Parte 2 + Síguenos."
+ },
+ "assets": [
+  {
+   "id": "jensen",
+   "de": "commons",
+   "q": "File:Jensen Huang Stanford 2026-04-30 010 (cropped).jpg",
+   "alt": "Jensen Huang",
+   "recorte": "real"
+  }
+ ],
+ "scenes": [
+  {
+   "voz": "Nvidia perdió un billón doscientos mil millones de dólares en nueve días. Sin un mal resultado. ¿Qué pasó?",
+   "dur": 3.4,
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "impact",
+     "v": 0.8
+    }
+   ],
+   "html": "<div data-photo='{\"src\": \"assets/jensen.jpg\", \"credito\": \"auto\", \"h\": 620, \"in\": 0.0, \"a\": \"zoom\", \"sfx\": \"camera\"}'></div><div class=\"row\" style=\"margin-top:34px;gap:24px\"><div class=\"chip\" style=\"font-size:44px\" data-in=\"0.3\" data-a=\"stamp\">−1,2 billones $</div><div class=\"chip gold\" style=\"font-size:44px\" data-in=\"0.8\" data-a=\"stamp\">en 9 días</div></div><h2 style=\"margin-top:30px;font-size:70px\" data-in=\"1.1\" data-a=\"words\" data-step=\"0.08\">Los 9 días que hundieron a Nvidia</h2>"
+  },
+  {
+   "voz": "El once de noviembre, la acción cerraba a ciento setenta y tres dólares. Esa noche, la prensa adelantó que el consejo quería apartar a su fundador, Jensen Huang.",
+   "trans": "slide",
+   "html": "<div class=\"row\"><i data-icon=\"si:nvidia\" data-size=\"110\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"chip\" data-in=\"0.2\" data-a=\"slide\">11 nov · cierre</div></div><div class=\"big\" data-in=\"0.3\" data-a=\"count\" data-to=\"173\" data-suf=\",73 $\" data-d=\"0.9\" data-sfx=\"tick\">0 $</div><p data-in=\"2.6\" data-a=\"up\">Esa noche: el consejo prepara la salida de <b>Jensen Huang</b>.</p><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cierre del 11/11/2026. Fuente: Nvidia (relación con inversores).</div>"
+  },
+  {
+   "voz": "Al día siguiente, dimitió. Había reconocido una infidelidad, y esa persona está investigada por posibles contactos con la inteligencia china. China lo niega.",
+   "trans": "whip",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">12 de noviembre</div><div data-news='{\"medio\": \"CNBC\", \"fecha\": \"12/11/2026\", \"titular\": \"La acción de Nvidia cierra con una caída de más del **4 %** tras la dimisión de Jensen Huang\", \"nota\": \"Titular traducido del inglés\", \"in\": 0.2}'></div><div class=\"row\" style=\"margin-top:40px\"><i data-icon=\"lucide:shield-alert\" data-size=\"84\" class=\"g\" data-in=\"2.4\" data-a=\"shake\" data-d=\"0.5\"></i><p style=\"margin:0\" data-in=\"2.5\" data-a=\"slide\">Investigación por posibles contactos con la inteligencia china (China lo niega)</p></div>"
+  },
+  {
+   "voz": "Y aquí viene lo raro. El diecisiete presentó resultados récord: más del doble que hace un año. Y la acción siguió cayendo.",
+   "trans": "cut",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "glitch",
+     "v": 0.7
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">17 de noviembre · resultados</div><div class=\"big2 g\" data-in=\"0.3\" data-a=\"stamp\" data-sfx=\"impact\">115.800 M$</div><p style=\"margin-top:10px\" data-in=\"0.6\" data-a=\"up\">de ingresos en un trimestre</p><div class=\"chip gold\" style=\"margin-top:30px\" data-in=\"1.6\" data-a=\"pop\" data-sfx=\"pop\">+103 % en un año</div><div class=\"row\" style=\"margin-top:60px\"><i data-icon=\"lucide:trending-down\" data-size=\"120\" class=\"w\" data-in=\"4.2\" data-a=\"slide\" data-sfx=\"error\"></i><h2 style=\"font-size:64px\" data-in=\"4.3\" data-a=\"slide\">Y la acción, <span class=\"g\">cayendo</span></h2></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Tercer trimestre fiscal 2027. Fuente: Nvidia, 17/11/2026.</div>"
+  },
+  {
+   "voz": "El viernes veinte cerró a ciento veinticinco dólares. Un veintisiete por ciento menos en nueve días.",
+   "trans": "slide",
+   "html": "<h2 data-in=\"0\" data-a=\"left\">Precio de cierre de la acción</h2><div style=\"margin-top:40px\" data-chart='{\"type\": \"bar\", \"data\": [173.73, 166.19, 125.53], \"labels\": [\"11 nov\", \"12 nov\", \"20 nov\"], \"unit\": \" $\", \"dec\": 2, \"mark\": 2, \"in\": 0.3, \"d\": 1.2, \"h\": 540}'></div><div class=\"chip gold\" style=\"margin-top:20px\" data-in=\"2.2\" data-a=\"stamp\" data-sfx=\"impact\">−27,7 % en 9 días</div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cierres de 2026. Fuente: Nvidia (relación con inversores).</div>"
+  },
+  {
+   "voz": "¿Por qué? Porque el mercado no compraba solo resultados, compraba a Huang. Se llama riesgo de persona clave.",
+   "trans": "zoom",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:user-round\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"spin\" data-sfx=\"whoosh\"></i><h1 style=\"margin-top:30px\" data-in=\"0.3\" data-a=\"words\">Riesgo de persona clave</h1><p data-in=\"2.4\" data-a=\"up\">El mercado no solo compraba resultados: compraba a Huang.</p></div>"
+  },
+  {
+   "voz": "Pero once días después pasó algo que nadie esperaba. Te lo contamos en la parte dos. Síguenos para no perdértela.",
+   "trans": "fade",
+   "sfx": [
+    {
+     "t": 0.2,
+     "s": "ding",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Continúa · 2/3</div><h1 data-in=\"0.15\" data-a=\"words\">Once días después, pasó algo que nadie esperaba.</h1><p data-in=\"2.4\" data-a=\"up\">En la parte 2. Síguenos para no perdértela.</p><div class=\"src\" data-in=\"2.8\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero ni una recomendación de compra o venta.</div>"
+  }
+ ]
+}
