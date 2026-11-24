@@ -86,9 +86,11 @@ Lo esencial está resumido abajo; si dudas, léelo.
   `sfx_cues.json`.
 - `tools/assets.py`: busca y descarga fotos (Unsplash, Wikimedia Commons, Openverse) y sonidos (Openverse) con licencia
   libre y guarda el crédito. En el spec, `"assets"`: el workflow los descarga antes del render. Unsplash necesita el
-  secreto `UNSPLASH_ACCESS_KEY` en GitHub.
-- `tools/ilustrar.py` y workflow `ilustracion.yml`: si la foto de una persona no queda bien, ilustración realista hecha
-  sobre una foto con licencia (recorte + acabado pintado sobre el fondo de la marca), con crédito. Ver `docs/reels.md`.
+  secreto `UNSPLASH_ACCESS_KEY` en GitHub; Openverse, `OPENVERSE_CLIENT_ID` y `OPENVERSE_CLIENT_SECRET`.
+- Fotos de personas (decisión de Pol, 24-11-2026): por defecto, **la persona sin fondo** sobre el fondo de la marca, en
+  color natural (`"recorte": "real"` en el asset) o en blanco y negro cálido (`"recorte": "bn"`). Candidatas con el
+  workflow `ilustracion.yml` (Commons, Openverse/Flickr, Unsplash); `tools/ilustrar.py` también hace ilustraciones y
+  estilos de dibujo si alguna vez hacen falta. Ver `docs/reels.md`.
 - Skills de vídeo y sonido en `.claude/skills/` (versiones en `skills-lock.json`): `gsap-*`, `hyperframes*` (y su
   registro de ~450 bloques), `remotion-*`, `earshot`, `real-sound`, `real-sfx`, `find-skills`. Ver `docs/reels.md`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).

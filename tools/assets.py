@@ -12,12 +12,15 @@ Uso:
                     {"id": "bolsa", "de": "unsplash", "q": "stock market screen", "orient": "portrait"},
                     {"id": "campana", "de": "openverse-audio", "q": "bell ring"}]
          "alt": consulta de reserva si "q" (p. ej. un "File:..." exacto de Commons) no da resultado.
+         "recorte": "real" | "bn" (personas): quita el fondo y deja la foto sobre el fondo de la marca, en color natural
+                    o en blanco y negro cálido (estilos elegidos por Pol). "cerca": false para plano más abierto.
   python3 tools/assets.py hoja <slug>     -> posts/<slug>/assets/hoja.jpg (miniaturas para revisar)
 
 Créditos en posts/<slug>/assets/creditos.json: {"jensen": {"credito": "Foto: ... / Wikimedia Commons, CC BY 3.0", ...}}.
 Pon ese texto en el "credito" del componente data-photo (o en un .src). Solo se aceptan licencias que permiten uso
 comercial y modificación: CC0, dominio público, CC BY, CC BY-SA (Unsplash: licencia Unsplash, crédito "Foto: X / Unsplash").
-Unsplash necesita la variable UNSPLASH_ACCESS_KEY (secreto del repo en GitHub Actions). Commons y Openverse, nada.
+Unsplash necesita la variable UNSPLASH_ACCESS_KEY (secreto del repo en GitHub Actions). Commons, nada. Openverse, desde
+GitHub, OPENVERSE_CLIENT_ID y OPENVERSE_CLIENT_SECRET (registro gratuito, ver docs/reels.md).
 Imágenes de personas: solo figuras públicas y fotos con licencia libre (normalmente Commons); nunca retocadas.
 """
 import json, os, sys, pathlib, subprocess, urllib.parse, urllib.request
@@ -85,12 +88,27 @@ def search_commons(q, n=6, orient=None):
                         "credito": f"Foto: {autor[:60]} / Wikimedia Commons, {lic}", "fuente": "commons"})
     return out[:n]
 
+_ov_tok = None
+def openverse_token():
+    """Token de Openverse a partir de OPENVERSE_CLIENT_ID y OPENVERSE_CLIENT_SECRET (registro gratuito; caduca a las 12 h)."""
+    global _ov_tok
+    if _ov_tok is None:
+        cid, sec = os.environ.get("OPENVERSE_CLIENT_ID"), os.environ.get("OPENVERSE_CLIENT_SECRET")
+        _ov_tok = ""
+        if cid and sec:
+            body = urllib.parse.urlencode({"grant_type": "client_credentials", "client_id": cid, "client_secret": sec}).encode()
+            req = urllib.request.Request("https://api.openverse.org/v1/auth_tokens/token/", data=body,
+                                         headers={**UA, "Content-Type": "application/x-www-form-urlencoded"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                _ov_tok = json.loads(r.read())["access_token"]
+    return _ov_tok
+
 def search_openverse(q, n=6, orient=None, audio=False):
     kind = "audio" if audio else "images"
     p = {"q": q, "page_size": n * 2, "license": "cc0,pdm,by,by-sa", "mature": "false"}
     if audio: p["extension"] = "wav,mp3,ogg,flac"
     if orient and not audio: p["aspect_ratio"] = {"portrait": "tall", "landscape": "wide", "squarish": "square"}.get(orient, orient)
-    tok = os.environ.get("OPENVERSE_TOKEN")   # desde algunas IPs (p. ej. GitHub) Openverse pide registrarse (gratis)
+    tok = openverse_token()   # desde algunas IPs (p. ej. GitHub) Openverse pide registrarse (gratis)
     res = getj(f"https://api.openverse.org/v1/{kind}/?" + urllib.parse.urlencode(p), {"Authorization": f"Bearer {tok}"} if tok else None)["results"]
     out = []
     for r in res:
@@ -139,7 +157,8 @@ def resolve(spec_path):
     spec = json.loads(pathlib.Path(spec_path).read_text(encoding="utf-8")); slug = spec["slug"]
     for a in spec.get("assets", []):
         ext = "wav" if a["de"] == "openverse-audio" else "jpg"
-        if (ROOT / "posts" / slug / "assets" / f"{a['id']}.{ext}").exists():
+        dest = ROOT / "posts" / slug / "assets" / f"{a['id']}.{ext}"
+        if dest.exists():
             print(f"ya está: {a['id']}"); continue
         try:
             download(slug, a["id"], a["de"], a["q"], int(a.get("elige", 1)), a.get("orient"))
@@ -147,6 +166,19 @@ def resolve(spec_path):
             if not a.get("alt"): raise
             print(f"  sin resultado para «{a['q']}», pruebo «{a['alt']}»")
             download(slug, a["id"], a["de"], a["alt"], 1, a.get("orient"))
+        if a.get("recorte"):   # persona: quitar el fondo ("real" = color natural, "bn" = blanco y negro cálido)
+            recortar(dest, a["recorte"], a.get("cerca", True))
+
+def recortar(dest, estilo="real", cerca=True):
+    """Sustituye la foto por la persona sin fondo sobre el fondo de la marca (guarda la original como <id>_orig.jpg)."""
+    import shutil, tempfile
+    orig = dest.with_name(dest.stem + "_orig.jpg"); shutil.copy(dest, orig)
+    with tempfile.TemporaryDirectory() as tmp:
+        cmd = [sys.executable, str(ROOT / "tools" / "ilustrar.py"), "recorte", str(orig), tmp] + (["--cerca"] if cerca else [])
+        subprocess.run(cmd, check=True)
+        shutil.copy(pathlib.Path(tmp) / {"real": "rec_original.jpg", "bn": "rec_bn.jpg", "paleta": "rec_paleta.jpg",
+                                          "calido": "rec_calido.jpg"}[estilo], dest)
+    print(f"  recorte «{estilo}»: {dest.name} (original en {orig.name})")
 
 def sheet(slug):
     d = ROOT / "posts" / slug / "assets"; imgs = sorted(d.glob("*.jpg"))

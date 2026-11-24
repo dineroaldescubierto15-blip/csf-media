@@ -41,7 +41,8 @@ jobs:
       - name: Candidatos o ilustración
         env:
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
-          OPENVERSE_TOKEN: ${{ secrets.OPENVERSE_TOKEN }}
+          OPENVERSE_CLIENT_ID: ${{ secrets.OPENVERSE_CLIENT_ID }}
+          OPENVERSE_CLIENT_SECRET: ${{ secrets.OPENVERSE_CLIENT_SECRET }}
         run: |
           D="posts/_ilustraciones/$ID"; mkdir -p "$D"
           if [ -z "$FOTO" ]; then

@@ -78,8 +78,13 @@ jobs:
       - name: Fotos y sonidos del spec (Unsplash, Wikimedia Commons, Openverse)
         env:
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
-          OPENVERSE_TOKEN: ${{ secrets.OPENVERSE_TOKEN }}
-        run: python tools/assets.py resolver "generator/specs/$SLUG.json"
+          OPENVERSE_CLIENT_ID: ${{ secrets.OPENVERSE_CLIENT_ID }}
+          OPENVERSE_CLIENT_SECRET: ${{ secrets.OPENVERSE_CLIENT_SECRET }}
+        run: |
+          # entorno aparte para no tocar las versiones de la voz (requirements-reel.txt)
+          python -m venv /tmp/assets
+          /tmp/assets/bin/pip install -q "opencv-contrib-python-headless==4.14.0.*" "rembg[cpu]==2.0.*" pillow numpy
+          /tmp/assets/bin/python tools/assets.py resolver "generator/specs/$SLUG.json"
 
       - name: Renderizar
         run: python generator/reel.py "generator/specs/$SLUG.json"
