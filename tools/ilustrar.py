@@ -5,11 +5,13 @@ La ilustración se hace SOBRE la foto real (no se inventa la cara): recorta a la
 ilustración y la coloca sobre el fondo de la marca. Así la cara es la de la foto, pero con estética propia.
 
 Uso:
-  python3 tools/ilustrar.py candidatos "<persona>" <carpeta> [--n 10]
-      -> descarga las N mejores fotos de Wikimedia Commons (licencia libre) a <carpeta>/cand_NN.jpg,
+  python3 tools/ilustrar.py candidatos "<persona>" <carpeta> [--n 15] [--fuentes commons,openverse,unsplash]
+      -> descarga las N mejores fotos con licencia libre (Commons, Openverse/Flickr, Unsplash) a <carpeta>/cand_NN.jpg,
          hoja de contacto <carpeta>/candidatos.jpg y lista con autor/licencia/tamaño en <carpeta>/candidatos.json
   python3 tools/ilustrar.py hacer <foto.jpg> <carpeta> [--credito "Foto: X / Wikimedia Commons, CC BY-SA 2.0"]
       -> <carpeta>/ilus_pintura.jpg, ilus_editorial.jpg, ilus_duotono.jpg (1080x1350) + recorte transparente .png
+  python3 tools/ilustrar.py recorte <foto.jpg> <carpeta> [--cerca]
+      -> solo quita el fondo y pasa la foto a la paleta del perfil: rec_paleta, rec_bn, rec_calido, rec_original
   python3 tools/ilustrar.py dibujo <foto.jpg> <carpeta> [--cerca]   (--cerca: primer plano de cabeza y hombros)
       -> estilos de dibujo (menos realistas): dib_comic, dib_poster, dib_lapiz, dib_trama, dib_linea, dib_acuarela
 Necesita: opencv-contrib-python-headless<5 (óleo con xphoto), rembg[cpu] (recorte de la persona), pillow, numpy.
@@ -27,27 +29,44 @@ CERCA = '--cerca' in sys.argv    # primer plano (cabeza y hombros)
 GOLD = np.array([66, 197, 244], np.float32)   # BGR de #F4C542
 BG = np.array([10, 10, 10], np.float32)
 
-def candidatos(persona, out, n=10):
-    import assets, cv2
+def candidatos(persona, out, n=15, fuentes=None):
+    """Busca en varias fuentes con licencia libre: Wikimedia Commons, Openverse (sobre todo Flickr) y Unsplash."""
+    import assets, cv2, os
     out = pathlib.Path(out); out.mkdir(parents=True, exist_ok=True)
-    cs = assets.search_commons(persona, n * 2)
-    cs = sorted(cs, key=lambda c: -(c["w"] or 0) * (c["h"] or 0))[:n]
+    fuentes = fuentes or (["commons", "openverse"] + (["unsplash"] if os.environ.get("UNSPLASH_ACCESS_KEY") else []))
+    cs = []
+    for f in fuentes:
+        try:
+            got = assets.search(f, persona, 20)
+            for c in got: c["de"] = f
+            cs += got; print(f"{f}: {len(got)} resultados")
+        except BaseException as e:
+            print(f"{f}: error {e}")
+    seen = set(); uniq = []
+    for c in cs:
+        k = (c.get("autor"), c.get("w"), c.get("h"))
+        if k in seen: continue
+        seen.add(k); uniq.append(c)
+    uniq = [c for c in uniq if (c.get("w") or 1000) >= 800 and (c.get("h") or 1000) >= 800]
+    uniq = sorted(uniq, key=lambda c: -((c.get("w") or 1000) * (c.get("h") or 1000)))[:n]
     lst = []
-    for i, c in enumerate(cs, 1):
-        f = out / f"cand_{i:02d}.jpg"; f.write_bytes(assets.get(c["url"]))
-        lst.append({"n": i, "archivo": f.name, **{k: c[k] for k in ("id", "autor", "licencia", "w", "h", "pagina", "desc", "credito")}})
-        print(f"{i}. {c['licencia']} · {c['w']}x{c['h']} · {c['autor'][:40]} · {c['id']}")
+    for i, c in enumerate(uniq, 1):
+        f = out / f"cand_{i:02d}.jpg"
+        try: f.write_bytes(assets.get(c["url"]))
+        except Exception as e: print(f"  no se pudo bajar {c['url']}: {e}"); continue
+        lst.append({"n": i, "archivo": f.name, "de": c["de"], **{k: c.get(k) for k in ("id", "autor", "licencia", "w", "h", "pagina", "desc", "credito")}})
+        print(f"{i}. [{c['de']}] {c['licencia']} · {c.get('w')}x{c.get('h')} · {str(c['autor'])[:40]} · {str(c.get('desc'))[:50]}")
     (out / "candidatos.json").write_text(json.dumps(lst, ensure_ascii=False, indent=1), encoding="utf-8")
     th = []
     for c in lst:
         im = cv2.imread(str(out / c["archivo"]))
         if im is None: continue
-        s = 320 / max(im.shape[:2]); im = cv2.resize(im, None, fx=s, fy=s, interpolation=cv2.INTER_AREA)
+        s_ = 320 / max(im.shape[:2]); im = cv2.resize(im, None, fx=s_, fy=s_, interpolation=cv2.INTER_AREA)
         cell = np.full((360, 320, 3), 10, np.uint8); y = (320 - im.shape[0]) // 2; x = (320 - im.shape[1]) // 2
         cell[y:y + im.shape[0], x:x + im.shape[1]] = im
-        cv2.putText(cell, f"{c['n']}  {c['w']}x{c['h']}", (8, 350), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (66, 197, 244), 2)
+        cv2.putText(cell, f"{c['n']} {c['de'][:9]}", (8, 350), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (66, 197, 244), 2)
         th.append(cell)
-    cols = 5; rows = (len(th) + cols - 1) // cols
+    cols = 5; rows = max(1, (len(th) + cols - 1) // cols)
     sheet = np.full((rows * 360, cols * 320, 3), 10, np.uint8)
     for i, t in enumerate(th): sheet[(i // cols) * 360:(i // cols) * 360 + 360, (i % cols) * 320:(i % cols) * 320 + 320] = t
     cv2.imwrite(str(out / "candidatos.jpg"), sheet, [cv2.IMWRITE_JPEG_QUALITY, 88])
@@ -242,13 +261,46 @@ def dibujos(foto, out):
     estilos_dibujo(im, a, out)
     print(f"OK {out}/dib_comic, dib_poster, dib_lapiz, dib_trama, dib_linea, dib_acuarela (.jpg)")
 
+# ---------- solo quitar el fondo y llevar la foto a la paleta del perfil ----------
+def _gradient_map(gray, stops):
+    """gray 0..1 -> color por tramos: stops = [(pos, "#hex"), ...]"""
+    pos = np.array([p for p, _ in stops], np.float32); cols = np.stack([_hex(c) for _, c in stops])
+    out = np.zeros(gray.shape + (3,), np.float32)
+    for ch in range(3): out[..., ch] = np.interp(gray, pos, cols[:, ch])
+    return out
+
+def recortes(foto, out):
+    import cv2
+    out = pathlib.Path(out); out.mkdir(parents=True, exist_ok=True)
+    img = cv2.imread(str(foto)); a = _cutout(img); im, a = _frame(img, a)
+    bg = _background()
+    g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY).astype(np.float32) / 255
+    lo, hi = np.percentile(g[a > 0.5], 1), np.percentile(g[a > 0.5], 99.5)
+    g = np.clip((g - lo) / (hi - lo + 1e-6), 0, 1)
+    # 1) paleta del perfil: negro -> gris cálido -> dorado -> crema (la foto, en los colores de la marca)
+    pal = _gradient_map(g, [(0, "#0A0A0A"), (0.38, "#3A3428"), (0.66, "#F4C542"), (1, "#F5F5F2")])
+    cv2.imwrite(str(out / "rec_paleta.jpg"), _comp(pal, a, bg, 0.7), [cv2.IMWRITE_JPEG_QUALITY, 93])
+    # 2) blanco y negro con contraste y luces cálidas (más sobrio)
+    bn = _gradient_map(g ** 1.1, [(0, "#0A0A0A"), (0.55, "#7A7670"), (0.85, "#E7E1CF"), (1, "#F5F5F2")])
+    cv2.imwrite(str(out / "rec_bn.jpg"), _comp(bn, a, bg, 0.7), [cv2.IMWRITE_JPEG_QUALITY, 93])
+    # 3) color natural apagado con tinte dorado (se reconoce la foto, pero ya "es" del perfil)
+    hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV).astype(np.float32); hsv[..., 1] *= 0.45
+    col = cv2.cvtColor(np.clip(hsv, 0, 255).astype(np.uint8), cv2.COLOR_HSV2BGR).astype(np.float32)
+    col = col * 0.72 + pal * 0.28
+    col = np.clip((col - 128) * 1.08 + 128, 0, 255)
+    cv2.imwrite(str(out / "rec_calido.jpg"), _comp(col, a, bg, 0.7), [cv2.IMWRITE_JPEG_QUALITY, 93])
+    # 4) la foto original solo sin fondo (referencia)
+    cv2.imwrite(str(out / "rec_original.jpg"), _comp(im.astype(np.float32), a, bg, 0.7), [cv2.IMWRITE_JPEG_QUALITY, 93])
+    print(f"OK {out}/rec_paleta, rec_bn, rec_calido, rec_original (.jpg)")
+
 def main():
     a = sys.argv[1:]
     opt = lambda k, d=None: a[a.index(k) + 1] if k in a else d
     if not a: sys.exit(__doc__)
-    if a[0] == "candidatos": candidatos(a[1], a[2], int(opt("--n", 10)))
+    if a[0] == "candidatos": candidatos(a[1], a[2], int(opt("--n", 15)), opt("--fuentes") and opt("--fuentes").split(","))
     elif a[0] == "hacer": hacer(a[1], a[2], opt("--credito"))
     elif a[0] == "dibujo": dibujos(a[1], a[2])
+    elif a[0] == "recorte": recortes(a[1], a[2])
     else: sys.exit(__doc__)
 
 if __name__ == "__main__":
