@@ -1,0 +1,116 @@
+{
+ "slug": "csf-32_reel-nvidia-historia-parte-2",
+ "music_seed": 12,
+ "subtitulos": true,
+ "fondo": "grid",
+ "plan": {
+  "idea": "Parte 2/3: la vuelta de Huang y el mejor día de Nvidia desde 2003 (22-24 nov).",
+  "promesa": "Entender qué pasó entre el 16 y el 24 de noviembre y por qué el precio refleja confianza.",
+  "palabra_clave": "Nvidia",
+  "ganchos": [
+   "El mejor día de Nvidia desde 2003 llegó once días después de perder a su fundador. (5,5,4,5)",
+   "Nvidia ganó 950.000 millones en un día. (4,4,3,5)",
+   "Volvió 11 días después de dimitir. (4,4,3,4)"
+  ],
+  "gancho": "El mejor día de Nvidia desde 2003 llegó once días después de perder a su fundador.",
+  "bucle": "¿Cómo? (se responde con la restitución y el rebote) y abre la parte 3.",
+  "golpes": [
+   "Recap -27,7 %",
+   "16/11: el consejo descarta su vuelta",
+   "22/11: lo restituye",
+   "23/11: +31,5 %, ~952.000 M$",
+   "Aún -5 % y -4 % en la preapertura del 24/11"
+  ],
+  "re_ganchos": [
+   "~12 s: Pero el domingo 22…",
+   "~28 s: Aun así…",
+   "~36 s: Ojo"
+  ],
+  "recompensa": "El precio también refleja confianza.",
+  "cta": "Parte 3 + Síguenos."
+ },
+ "assets": [
+  {
+   "id": "jensen",
+   "de": "commons",
+   "q": "File:Jensen Huang Stanford 2026-04-30 010 (cropped).jpg",
+   "alt": "Jensen Huang",
+   "recorte": "bn"
+  }
+ ],
+ "scenes": [
+  {
+   "voz": "El mejor día de Nvidia desde dos mil tres llegó once días después de perder a su fundador. ¿Cómo?",
+   "dur": 3.4,
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "impact",
+     "v": 0.8
+    }
+   ],
+   "html": "<div data-photo='{\"src\": \"assets/jensen.jpg\", \"credito\": \"auto\", \"h\": 620, \"in\": 0.0, \"a\": \"zoom\", \"sfx\": \"camera\"}'></div><div class=\"row\" style=\"margin-top:34px;gap:24px\"><div class=\"chip gold\" style=\"font-size:44px\" data-in=\"0.3\" data-a=\"stamp\" data-sfx=\"cash\">+31,5 % en un día</div></div><h2 style=\"margin-top:30px;font-size:70px\" data-in=\"0.9\" data-a=\"words\" data-step=\"0.08\">La vuelta de Jensen Huang</h2>"
+  },
+  {
+   "voz": "Contexto: tras su dimisión, el doce de noviembre, la acción cayó un veintisiete por ciento.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Parte 1, en 5 segundos</div><div data-chart='{\"type\": \"bar\", \"data\": [173.73, 125.53], \"labels\": [\"11 nov\", \"20 nov\"], \"unit\": \" $\", \"dec\": 2, \"mark\": 1, \"in\": 0.2, \"d\": 0.8, \"h\": 520}'></div><div class=\"chip\" style=\"margin-top:20px\" data-in=\"1.6\" data-a=\"pop\" data-sfx=\"pop\">−27,7 % en 9 días</div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Precios de cierre de 2026. Fuente: Nvidia (relación con inversores).</div>"
+  },
+  {
+   "voz": "El dieciséis, el consejo descartaba su vuelta, según una fuente citada por CNBC.",
+   "trans": "whip",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">16 de noviembre</div><div data-news='{\"medio\": \"CNBC\", \"fecha\": \"16/11/2026\", \"titular\": \"El consejo de Nvidia **no se plantea** traer de vuelta a Jensen Huang, según una fuente\", \"nota\": \"Titular traducido del inglés\", \"in\": 0.2}'></div>"
+  },
+  {
+   "voz": "Pero el domingo veintidós lo restituyó. Dijo confiar en su sinceridad y en su capacidad para liderar.",
+   "trans": "cut",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "glitch",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">22 de noviembre</div><div data-news='{\"medio\": \"Nvidia · nota de prensa\", \"fecha\": \"23/11/2026\", \"titular\": \"El consejo de Nvidia **restituye** a Jensen Huang como presidente y consejero delegado\", \"nota\": \"Traducido del inglés. Efectivo desde el 22/11 (formulario 8-K)\", \"in\": 0.2, \"a\": \"zoom\"}'></div><div class=\"row\" style=\"margin-top:40px\"><i data-icon=\"lucide:user-check\" data-size=\"96\" class=\"g\" data-in=\"2.6\" data-a=\"pop\" data-sfx=\"success\"></i><p style=\"margin:0\" data-in=\"2.7\" data-a=\"slide\">«Sinceridad y capacidad para liderar», según el consejo</p></div>"
+  },
+  {
+   "voz": "El lunes veintitrés subió un treinta y uno coma cinco por ciento: unos novecientos cincuenta mil millones de valor en un día.",
+   "trans": "zoom",
+   "sfx": [
+    {
+     "t": 0.1,
+     "s": "riser",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Lunes 23 de noviembre</div><div class=\"big\" data-in=\"0.3\" data-a=\"count\" data-to=\"31\" data-suf=\",5 %\" data-d=\"1.0\" data-sfx=\"tick\">0 %</div><p style=\"margin-top:0\" data-in=\"0.8\" data-a=\"up\">su mejor día desde <b>2003</b></p><div class=\"row\" style=\"margin-top:50px\"><i data-icon=\"lucide:trending-up\" data-size=\"110\" class=\"g\" data-in=\"3.4\" data-a=\"pop\" data-sfx=\"cash\"></i><div class=\"big2\" style=\"font-size:96px\" data-in=\"3.5\" data-a=\"slide\">≈ 952.000 M$</div></div><p data-in=\"3.8\" data-a=\"up\">de valor ganado en un solo día</p><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cierre del 23/11/2026 (+31,48 %). Fuente: CNN.</div>"
+  },
+  {
+   "voz": "Aun así, cerró un cinco por ciento por debajo del once de noviembre. Y el martes veinticuatro, antes de abrir, cedía un cuatro.",
+   "trans": "slide",
+   "html": "<h2 data-in=\"0\" data-a=\"left\">La foto completa</h2><div style=\"margin-top:40px\" data-chart='{\"type\": \"bar\", \"data\": [173.73, 125.53, 165.05], \"labels\": [\"11 nov\", \"20 nov\", \"23 nov\"], \"unit\": \" $\", \"dec\": 2, \"mark\": 2, \"in\": 0.3, \"d\": 1.0, \"h\": 520}'></div><div class=\"row\" style=\"margin-top:20px;gap:20px\"><div class=\"chip\" data-in=\"2.0\" data-a=\"pop\" data-sfx=\"pop\">−5 % vs. 11 nov</div><div class=\"chip\" data-in=\"4.2\" data-a=\"pop\" data-sfx=\"pop\">24 nov, preapertura: ≈ −4 %</div></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cierres de 2026: Nvidia, CNN. Preapertura del 24/11: Yahoo Finanzas. Rentabilidades pasadas no garantizan las futuras.</div>"
+  },
+  {
+   "voz": "Ojo: la investigación sobre esa mujer sigue abierta, y el Congreso aún pide explicaciones.",
+   "trans": "zoom",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:triangle-alert\" data-size=\"180\" class=\"g\" data-in=\"0\" data-a=\"shake\" data-d=\"0.5\" data-sfx=\"error\"></i><h2 style=\"margin-top:30px\" data-in=\"0.3\" data-a=\"up\">No está <span class=\"g\">todo resuelto</span></h2><div class=\"col\" style=\"margin-top:40px;align-items:flex-start\"><div class=\"row\" data-in=\"1.4\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:search\" data-size=\"70\" class=\"w\"></i><p style=\"margin:0\">La investigación sigue abierta</p></div><div class=\"row\" data-in=\"2.4\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:landmark\" data-size=\"70\" class=\"w\"></i><p style=\"margin:0\">El Congreso pide explicaciones</p></div></div></div>"
+  },
+  {
+   "voz": "La lección: el precio no solo refleja resultados. También confianza. Y la confianza se mueve muy rápido.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">La lección</div><h1 data-in=\"0.15\" data-a=\"words\">El precio también refleja <span>confianza</span>.</h1><p data-in=\"2.6\" data-a=\"up\">Y la confianza se mueve <span class=\"hl\" data-in=\"3.0\" data-d=\"0.5\" data-a=\"hl\">muy rápido</span>.</p>"
+  },
+  {
+   "voz": "¿Y qué le pasó a tu fondo indexado mientras tanto? En la parte tres. Síguenos para no perdértela.",
+   "trans": "fade",
+   "sfx": [
+    {
+     "t": 0.2,
+     "s": "ding",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Continúa · 3/3</div><h1 data-in=\"0.15\" data-a=\"words\">¿Y tu fondo indexado, mientras tanto?</h1><p data-in=\"2.4\" data-a=\"up\">En la parte 3. Síguenos para no perdértela.</p><div class=\"src\" data-in=\"2.8\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero ni una recomendación de compra o venta.</div>"
+  }
+ ]
+}
