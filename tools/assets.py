@@ -162,10 +162,17 @@ def resolve(spec_path):
             print(f"ya está: {a['id']}"); continue
         try:
             download(slug, a["id"], a["de"], a["q"], int(a.get("elige", 1)), a.get("orient"))
-        except SystemExit:
-            if not a.get("alt"): raise
-            print(f"  sin resultado para «{a['q']}», pruebo «{a['alt']}»")
-            download(slug, a["id"], a["de"], a["alt"], 1, a.get("orient"))
+        except BaseException as e:
+            if isinstance(e, KeyboardInterrupt): raise
+            alt = a.get("alt")
+            if a["de"] == "openverse" and not alt:      # Openverse sin registro falla desde GitHub: prueba Commons
+                print(f"  Openverse no disponible ({e}); pruebo Wikimedia Commons")
+                download(slug, a["id"], "commons", a["q"], 1, a.get("orient")); alt = None
+            elif not alt:
+                raise
+            else:
+                print(f"  sin resultado para «{a['q']}», pruebo «{alt}»")
+                download(slug, a["id"], a["de"], alt, 1, a.get("orient"))
         if a.get("recorte"):   # persona: quitar el fondo ("real" = color natural, "bn" = blanco y negro cálido)
             recortar(dest, a["recorte"], a.get("cerca", True))
 

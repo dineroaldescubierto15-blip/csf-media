@@ -131,3 +131,6 @@ Zona segura: contenido entre y = 260 y 1480, x = 90-930 (con subtítulos, el con
   `OPENVERSE_CLIENT_ID` y `OPENVERSE_CLIENT_SECRET`). Registro de Openverse (gratis, una vez):
   `curl -X POST https://api.openverse.org/v1/auth_tokens/register/ -H "Content-Type: application/json" -d '{"name":"csf-media","description":"Imagenes con licencia libre para Reels educativos","email":"<correo>"}'`
   → confirmar el correo → guardar `client_id` y `client_secret` como secretos del repo (Settings → Secrets → Actions).
+  Sin registro, Openverse funciona desde las sesiones de Claude (su dominio está permitido en el entorno): búscalo y
+  descárgalo ahí con `tools/assets.py bajar …` y haz commit de `posts/<slug>/assets/` antes de lanzar el render (el
+  workflow no vuelve a bajar lo que ya está). En GitHub, sin registro, un asset de Openverse cae a Commons.
