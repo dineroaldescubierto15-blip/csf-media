@@ -23,7 +23,7 @@ Unsplash necesita la variable UNSPLASH_ACCESS_KEY (secreto del repo en GitHub Ac
 GitHub, OPENVERSE_CLIENT_ID y OPENVERSE_CLIENT_SECRET (registro gratuito, ver docs/reels.md).
 Imágenes de personas: solo figuras públicas y fotos con licencia libre (normalmente Commons); nunca retocadas.
 """
-import json, os, sys, pathlib, subprocess, urllib.parse, urllib.request
+import json, os, sys, pathlib, subprocess, urllib.parse, urllib.request, urllib.error
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 UA = {"User-Agent": "csf-media-assets/1.0 (+https://github.com/dineroaldescubierto15-blip/csf-media)"}
@@ -94,18 +94,18 @@ def openverse_token():
     global _ov_tok
     if _ov_tok is None:
         cid, sec = os.environ.get("OPENVERSE_CLIENT_ID"), os.environ.get("OPENVERSE_CLIENT_SECRET")
-        _ov_tok = ""
+        tok = ""
         if cid and sec:
             body = urllib.parse.urlencode({"grant_type": "client_credentials", "client_id": cid, "client_secret": sec}).encode()
             req = urllib.request.Request("https://api.openverse.org/v1/auth_tokens/token/", data=body,
                                          headers={**UA, "Content-Type": "application/x-www-form-urlencoded"})
-            import urllib.error
             try:
                 with urllib.request.urlopen(req, timeout=60) as r:
-                    _ov_tok = json.loads(r.read())["access_token"]
+                    tok = json.loads(r.read())["access_token"]
             except urllib.error.HTTPError as e:
                 det = e.read().decode("utf-8", "replace")[:300]
                 raise SystemExit(f"Openverse no da token (HTTP {e.code}): {det}. ¿Está verificado el correo del registro?")
+        _ov_tok = tok
     return _ov_tok
 
 def search_openverse(q, n=6, orient=None, audio=False):
