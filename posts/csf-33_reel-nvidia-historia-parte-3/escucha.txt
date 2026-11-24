@@ -1,0 +1,54 @@
+# Escucha de posts/csf-33_reel-nvidia-historia-parte-3/reel.mp4 (earshot)
+reel.mp4: 0:00.00-0:51.35 (51.3 s). Loudness -14.5 LUFS integrated, true peak -1.0 dBTP, LRA 2.0 LU; loudest 0:19.50-0:22.50 (-13.4 LUFS short-term). No steady beat grid (pulse clarity 0.01 < 0.15). 4 section(s): 0:00.00-0:03.05 funk music, vocal chop, confident and cool; 0:03.05-0:36.50 glitch hop music?, vocal chop | also: speech synthesizer, synthesizer (AST) | voice: voice-over narration; 0:36.50-0:46.10 glitch hop music?, vocal chop, confident and cool | also: speech synthesizer (AST) | voice: voice-over narration; 0:46.10-0:51.35 funk music, vocal chop, confident and cool | voice: voice-over narration. 353 events (6.9/s); 20 tagged (11 ui, 4 riser, 3 voice, 2 whoosh; tags are hints). Strongest accents over a running bed: 0:00.26 +21 dB (spoken word), 0:18.82 +15 dB (chat message pop), 0:27.06 +15 dB (chat message pop). Sync to 4 cuts: 0% have an onset within 1 frame (chance 44%), 50% within 100 ms, median |offset| 80 ms; 0% land on a strong accent (>= 10 dB over the bed) within 1 frame (chance 10%); 1 only by a level peak (soft whoosh / swell?); 1 without a hit: 0:26.53.
+
+SECTIONS
+  0:00.00-0:03.05  funk music, vocal chop, confident and cool  -14 LUFS
+  0:03.05-0:36.50  glitch hop music?, vocal chop | also: speech synthesizer, synthesizer (AST) | voice: voice-over narration  -14 LUFS  [AST music 0.49, speech 0.71]
+  0:36.50-0:46.10  glitch hop music?, vocal chop, confident and cool | also: speech synthesizer (AST) | voice: voice-over narration  -15 LUFS  [AST music 0.59, speech 0.62]
+  0:46.10-0:51.35  funk music, vocal chop, confident and cool | voice: voice-over narration  -14 LUFS  [AST music 0.65, speech 0.81]
+
+TRANSCRIPT   time  kind   what (CLAP tag / runner-up)                     peak  over bed  length  centroid  | sync
+== 0:00.00-0:03.05  funk music, vocal chop, confident and cool  (+23 untagged onsets, 7.5/s)
+ 0:00.00  VOICE  spoken word / sub bass drop                      -4.4 dBFS   silent  2000 ms    99 Hz
+ 0:00.26  VOICE  spoken word / chat message pop                   -4.3 dBFS +21.3 dB  2000 ms   609 Hz  | strong accent (summary)
+== 0:03.05-0:36.50  glitch hop music?, vocal chop | also: speech synthesizer, synthesizer (AST) | voice: voice-over narration  (+217 untagged onsets, 6.5/s)
+ 0:03.78  UI     chat message pop / spoken word                   -1.6 dBFS +13.9 dB  1569 ms   705 Hz
+ 0:07.30  CUT     no onset; level peak -90 ms, rising 37 dB (a soft whoosh / swell, or just the bed?)  <- CHECK
+ 0:08.72  UI     chat message pop / spoken word                   -1.4 dBFS +14.9 dB  2000 ms  1.6 kHz
+ 0:12.25  RISER  uplifter sweep / short swish                    -12.0 dBFS   silent    80 ms   418 Hz
+ 0:17.12  RISER  uplifter sweep / short swish                    -11.7 dBFS   silent    70 ms   349 Hz
+ 0:18.82  UI     chat message pop / whip pan whoosh transition    -1.9 dBFS +15.0 dB   283 ms   524 Hz  | strong accent (summary)
+ 0:19.33  UI     chat message pop / spoken word                   -1.5 dBFS +14.4 dB  1469 ms  1.1 kHz
+ 0:23.09  UI     chat message pop / spoken word                   -1.5 dBFS +14.6 dB  2000 ms   837 Hz
+ 0:24.48  VOICE  spoken word / chat message pop                   -1.9 dBFS +14.9 dB  1359 ms   656 Hz
+ 0:26.53  CUT     no onset or level peak within 250 ms  <- NO HIT
+ 0:27.06  UI     chat message pop / glockenspiel note             -1.5 dBFS +15.0 dB   485 ms   862 Hz  | strong accent (summary)
+ 0:32.72  RISER  uplifter sweep / short swish                    -13.8 dBFS   silent    70 ms   463 Hz  [AST Whoosh, swoosh, swish 0.15]  | cut -80 ms near
+== 0:36.50-0:46.10  glitch hop music?, vocal chop, confident and cool | also: speech synthesizer (AST) | voice: voice-over narration  (+58 untagged onsets, 6.0/s)
+ 0:37.14  WHOOSH short swish / uplifter sweep                     -7.7 dBFS   silent    80 ms   508 Hz
+ 0:38.38  UI     chat message pop / breath                        -4.0 dBFS   silent   140 ms   377 Hz
+ 0:40.56  UI     chat message pop / whip pan whoosh transition    -1.4 dBFS +13.8 dB    96 ms  1.0 kHz
+ 0:42.70  UI     chat message pop / short vocal sound             -1.5 dBFS +15.0 dB   446 ms   977 Hz
+ 0:43.67  RISER? uplifter sweep / plucked string note            -12.8 dBFS  +2.7 dB   165 ms   742 Hz  | cut +38 ms near
+ 0:44.17  WHOOSH whip pan whoosh transition / punchy impact hit   -1.6 dBFS +14.4 dB    76 ms  1.4 kHz
+ 0:46.08  UI     chat message pop / spoken word                   -1.9 dBFS +14.4 dB   753 ms   958 Hz
+== 0:46.10-0:51.35  funk music, vocal chop, confident and cool | voice: voice-over narration  (+35 untagged onsets, 6.7/s)
+ 0:47.14  UI     chat message pop / short vocal sound             -1.5 dBFS +13.8 dB    67 ms  1.2 kHz
+
+NOTES  times, levels, loudness and sync offsets are measurements. Event kinds / tags are CLAP guesses: '?' = the event is less than 12 dB over its bed, so its excerpt is mostly bed and the tag a weak hint (right kind about 1 in 4 on the tuning mixes, 1 in 2 for exposed events; often wrong on music and voice). Where AST ran, its speech overrides the kind with VOICE. Section genres marked ? are weak. 'over bed' = how far the event rises over the level just before it; 'silent' = that bed was below -60 (after a gap the rise means nothing). Full data: --json.
+
+51.35 s busy, 5.2 onsets/s, loudness range 2 LU. Music (AudioSet Music 0.76). Unvalidated hints - genre: glitch hop music (z +2.6), hip hop beat with heavy bass (z +2.5); mood (wrong for ~1 in 5 tracks in a test): confident and cool music (z +2.4). Sounds most like: a chat message pop (z +2.1), a sub bass drop (z +1.7), a busy cafe (z +1.6) [weak reading]. Other readings: keys jingling (everyday, z +1.5), a finger squeaking on glass (foley, z +1.2). AudioSet: Speech 0.88, Single-lens reflex camera 0.79, Music 0.76. peak -1.0 dBFS, -14.5 LUFS, brightness 1.5 kHz, bandwidth 20.5 kHz, side/mid -27 dB. Windows that read differently: 0:10.00-0:20.00 a chat message pop (z +2.7; AudioSet Speech 0.60); 0:20.00-0:30.00 keys jingling (z +3.0; AudioSet Speech 0.82); 0:35.00-0:45.00 walking through dry leaves (z +1.5; AudioSet Speech 0.65).
+
+top tags (z calibrated: >= 3 clear, 2.5-3 plausible, 2-2.5 weak, < 2 tentative):
+   +2.1  a chat message pop  [ui]  cos 0.156
+   +1.7  a sub bass drop  [impacts]  cos 0.048
+   +1.6  a busy cafe  [ambience]  cos -0.077
+   +1.5  keys jingling  [everyday]  cos 0.026
+   +1.5  a digital glitch  [ui]  cos 0.078
+   +1.4  a phone vibration buzz  [ui]  cos 0.009
+   +1.3  people talking in the background  [ambience]  cos -0.104
+   +1.2  a finger squeaking on glass  [foley]  cos -0.023
+unvalidated hints (music genre / mood, instruments, voice): a man speaking (+3.5), a voice-over narration (+3.4), glitch hop music (+2.6), a vocal chop (+2.5), hip hop beat with heavy bass (+2.5)
+best per category: transitions: a quick swipe (+0.6); impacts: a sub bass drop (+1.7); ui: a chat message pop (+2.1); keyboard: an enter key press (+1.2); foley: a finger squeaking on glass (+1.2); water: bubbles underwater (+1.1); nature: walking through dry leaves (+1.0); chimes: a glass ting (+0.6); ambience: a busy cafe (+1.6); everyday: keys jingling (+1.5); music_genre: glitch hop music (+2.6); music_mood: confident and cool music (+2.4); instruments: a vocal chop (+2.5); voice: a man speaking (+3.5); quality: a boomy sound (+1.1); production: a low bitrate mp3 with artifacts (+2.4)
+audioset: Speech 0.88, Single-lens reflex camera 0.79, Music 0.76, Speech synthesizer 0.24, Camera 0.22
+measurements: duration 51.349, peak_dbfs -1.0, true_peak_dbtp -1.0, rms_dbfs -17.2, lufs -14.5, lra_lu 2.0, attack_ms 274.0, decay_ms 5056.0, brightness_hz 1524, bandwidth_hz 20480, noise_floor_dbfs -24.0, flatness 0.0004, harmonic_ratio 0.465, onset_count 268, onsets_per_s 5.22, width side/mid -27 dB, digital_silence_frac 0.0
