@@ -1,0 +1,94 @@
+{
+ "slug": "csf-33_reel-nvidia-historia-parte-3",
+ "music_seed": 13,
+ "subtitulos": true,
+ "fondo": "grid",
+ "plan": {
+  "idea": "Parte 3/3: qué le pasó a un fondo indexado del S&P 500 con la montaña rusa de Nvidia.",
+  "promesa": "Ver con números cuánto afectó la caída y el rebote de Nvidia a un fondo indexado frente a tenerlo todo en Nvidia.",
+  "palabra_clave": "fondo indexado",
+  "ganchos": [
+   "¿Tienes un fondo indexado del S&P 500? Viviste la montaña rusa de Nvidia sin comprar ni una acción. (5,5,5,4)",
+   "Con 10.000 € en un fondo indexado, Nvidia te costó 166 €. Con todo en Nvidia, 2.774. (4,4,4,5)",
+   "Tu fondo indexado tiene Nvidia aunque no lo sepas. (4,4,5,3)"
+  ],
+  "gancho": "¿Tienes un fondo indexado del S&P 500? Entonces viviste la montaña rusa de Nvidia sin comprar ni una acción.",
+  "bucle": "¿Cuánto te afectó? (se responde con el ejemplo y el rebote).",
+  "golpes": [
+   "Peso ≈ 6 %",
+   "Ejemplo 10.000 € → 600 € en Nvidia",
+   "−166 € vs −2.774 €",
+   "Tras el rebote: −30 €",
+   "Concentración: más de 1/3"
+  ],
+  "re_ganchos": [
+   "~17 s: Con la caída…",
+   "~30 s: Pero ojo"
+  ],
+  "recompensa": "El fondo repartió el golpe: 166 € frente a 2.774 €.",
+  "cta": "Envíaselo a quien tenga un fondo indexado + Síguenos."
+ },
+ "scenes": [
+  {
+   "voz": "¿Tienes un fondo indexado del S&P quinientos? Entonces viviste la montaña rusa de Nvidia sin comprar ni una acción.",
+   "dur": 3.4,
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "impact",
+     "v": 0.8
+    }
+   ],
+   "html": "<div class=\"col center\"><div class=\"row\" style=\"gap:30px\"><i data-icon=\"lucide:chart-pie\" data-size=\"170\" class=\"w\" data-in=\"0\" data-a=\"spin\" data-d=\"0.5\"></i><i data-icon=\"si:nvidia\" data-size=\"170\" class=\"g\" data-in=\"0.3\" data-a=\"pop\" data-sfx=\"pop\"></i></div><h1 style=\"margin-top:40px;font-size:92px\" data-in=\"0.5\" data-a=\"words\" data-step=\"0.08\">¿Fondo indexado? Tienes Nvidia.</h1><div class=\"chip gold\" style=\"margin-top:30px\" data-in=\"1.4\" data-a=\"stamp\">Parte 3/3</div></div>"
+  },
+  {
+   "voz": "Antes del escándalo, Nvidia pesaba en torno a un seis por ciento del índice.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Peso de Nvidia en el S&amp;P 500</div><div class=\"big\" data-in=\"0.2\" data-a=\"count\" data-to=\"6\" data-suf=\" %\" data-d=\"0.7\" data-sfx=\"tick\">0 %</div><svg viewBox=\"0 0 840 70\" width=\"840\" style=\"margin-top:40px\"><rect x=\"0\" y=\"0\" width=\"840\" height=\"70\" rx=\"12\" fill=\"#262624\"/><rect x=\"0\" y=\"0\" width=\"50\" height=\"70\" rx=\"12\" fill=\"#F4C542\" data-in=\"0.6\" data-d=\"0.6\" data-a=\"grow\" data-sfx=\"pop\"/></svg><p data-in=\"1.4\" data-a=\"up\">de cada 100 € del fondo, unos <b class=\"g\">6 €</b> eran Nvidia</p><div class=\"src\" data-in=\"1\" data-a=\"fade\">Aproximado. Fuente: Trefis (6,1 % al cierre del 13/11/2026).</div>"
+  },
+  {
+   "voz": "Un ejemplo. Con diez mil euros en ese fondo, unos seiscientos eran Nvidia.",
+   "trans": "zoom",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Ejemplo</div><div class=\"row\" style=\"gap:30px\"><i data-icon=\"lucide:wallet\" data-size=\"130\" class=\"w\" data-in=\"0.1\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2\" data-in=\"0.2\" data-a=\"slide\">10.000 €</div></div><p data-in=\"0.6\" data-a=\"up\">en un fondo del S&amp;P 500</p><div class=\"row\" style=\"margin-top:50px;gap:30px\"><i data-icon=\"si:nvidia\" data-size=\"110\" class=\"g\" data-in=\"2.0\" data-a=\"pop\" data-sfx=\"coin\"></i><div class=\"big2 g\" data-in=\"2.1\" data-a=\"slide\">600 €</div></div><p data-in=\"2.4\" data-a=\"up\">eran Nvidia</p>"
+  },
+  {
+   "voz": "Con la caída del veintisiete por ciento, el fondo perdió por Nvidia unos ciento sesenta y seis euros. Con todo en Nvidia, dos mil setecientos setenta y cuatro.",
+   "trans": "slide",
+   "html": "<h2 data-in=\"0\" data-a=\"left\">Pérdida por la caída de Nvidia</h2><div style=\"margin-top:40px\" data-chart='{\"type\": \"bar\", \"data\": [166.5, 2774], \"labels\": [\"Fondo S&P 500\", \"Todo en Nvidia\"], \"unit\": \" €\", \"dec\": 0, \"colors\": [\"#F4C542\", \"#6F6F6F\"], \"in\": 0.4, \"d\": 2.2, \"h\": 560, \"sfx\": \"impact\"}'></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Del 11/11 al 20/11/2026 (−27,7 %). Cálculo propio, sin otras acciones ni tipo de cambio.</div>"
+  },
+  {
+   "voz": "Y el lunes veintitrés recuperó casi todo. Al fondo le quedaba una diferencia de unos treinta euros.",
+   "trans": "cut",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "success",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Tras el rebote del 23/11</div><div class=\"row\" style=\"gap:30px\"><i data-icon=\"lucide:rotate-ccw\" data-size=\"120\" class=\"g\" data-in=\"0.1\" data-a=\"spin\"></i><div class=\"big2\" data-in=\"0.3\" data-a=\"stamp\" data-sfx=\"pop\">−30 €</div></div><p data-in=\"0.7\" data-a=\"up\">frente al 11 de noviembre, en el ejemplo</p><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cierre del 23/11/2026 (165,05 $). Cálculo propio.</div>"
+  },
+  {
+   "voz": "Pero ojo: las diez mayores empresas ya son más de un tercio del índice.",
+   "trans": "zoom",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Concentración</div><h2 data-in=\"0.2\" data-a=\"up\">10 empresas = <span class=\"g\">más de 1/3</span> del S&amp;P 500</h2><svg viewBox=\"0 0 840 70\" width=\"840\" style=\"margin-top:50px\"><rect x=\"0\" y=\"0\" width=\"840\" height=\"70\" rx=\"12\" fill=\"#262624\"/><rect x=\"0\" y=\"0\" width=\"311\" height=\"70\" rx=\"12\" fill=\"#F4C542\" data-in=\"0.8\" data-d=\"0.8\" data-a=\"grow\" data-sfx=\"swoosh\"/></svg><div class=\"src\" data-in=\"1\" data-a=\"fade\">Estimaciones de 2026: entre el 37 % y el 39 % (Trefis, Chartrow).</div>"
+  },
+  {
+   "voz": "Diversificar no elimina el riesgo, lo reparte. Y cuanto más pesan unas pocas empresas, más se nota.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:shield-half\" data-size=\"180\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"whoosh\"></i><h1 style=\"margin-top:30px\" data-in=\"0.2\" data-a=\"words\">Diversificar reparte el riesgo.</h1><p data-in=\"2.4\" data-a=\"up\">No lo elimina.</p></div>"
+  },
+  {
+   "voz": "Ya conoces la historia completa. Envíaselo a quien tenga un fondo indexado, y síguenos para entender tu dinero sin humo.",
+   "trans": "fade",
+   "sfx": [
+    {
+     "t": 0.2,
+     "s": "ding",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Conclusión</div><h1 data-in=\"0.15\" data-a=\"words\">Un fondo indexado reparte golpes. No los evita.</h1><p data-in=\"2.4\" data-a=\"up\">Envíaselo a quien tenga uno. Síguenos para entender tu dinero <span class=\"g\">sin humo</span>.</p><div class=\"src\" data-in=\"2.8\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero ni una recomendación de inversión.</div>"
+  }
+ ]
+}
