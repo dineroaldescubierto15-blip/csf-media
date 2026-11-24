@@ -1,0 +1,127 @@
+{
+ "slug": "csf-30_reel-buffett-regla-90-10",
+ "music_seed": 8,
+ "subtitulos": true,
+ "fondo": "grid",
+ "plan": {
+  "idea": "Lo que Warren Buffett dejó escrito para el dinero de su mujer (90/10) y la apuesta de un millón que lo respalda.",
+  "promesa": "Entender qué es el 90/10 de Buffett, qué demostró su apuesta contra los hedge funds y por qué importan las comisiones.",
+  "palabra_clave": "Warren Buffett",
+  "ganchos": [
+   "Warren Buffett dejó escrito qué hacer con el dinero de su mujer. (claridad 5, curiosidad 5, relevancia 4, concreción 5)",
+   "El mayor inversor del mundo apostó un millón contra Wall Street… y ganó. (5, 4, 3, 4)",
+   "¿Por qué Buffett no quiere que su mujer invierta como él? (4, 5, 3, 3)"
+  ],
+  "gancho": "Warren Buffett dejó escrito qué hacer con el dinero de su mujer.",
+  "bucle": "¿Por qué no elegir acciones como él? -> la apuesta de un millón (se cierra en la escena 6).",
+  "golpes": [
+   "Contexto: deja Berkshire (titular CNBC 18/09/2026)",
+   "La instrucción 90/10 (carta de 2014)",
+   "La apuesta 2008-2017",
+   "Resultado 125,8 % vs 36,3 %",
+   "Por qué: comisiones"
+  ],
+  "re_ganchos": [
+   "~13 s: ¿Y por qué no elegir acciones?",
+   "~22 s: Resultado:",
+   "~35 s: Ojo: era para un caso concreto"
+  ],
+  "recompensa": "El fondo indexado ganó 125,8 % frente a ~36 %: las comisiones explican la diferencia.",
+  "cta": "Síguenos para entender tu dinero sin humo."
+ },
+ "assets": [
+  {
+   "id": "buffett",
+   "de": "commons",
+   "q": "File:Warren Buffett KU Visit.jpg",
+   "alt": "Warren Buffett portrait"
+  }
+ ],
+ "scenes": [
+  {
+   "voz": "Warren Buffett dejó escrito qué hacer con el dinero de su mujer cuando él falte.",
+   "dur": 3.4,
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "impact",
+     "v": 0.8
+    }
+   ],
+   "html": "<div data-photo='{\"src\": \"assets/buffett.jpg\", \"credito\": \"auto\", \"h\": 560, \"in\": 0.0, \"a\": \"zoom\", \"sfx\": \"camera\"}'></div><h1 style=\"margin-top:44px;font-size:86px\" data-in=\"0.15\" data-a=\"words\" data-step=\"0.1\">Buffett dejó escrito qué hacer con el dinero de su mujer</h1>"
+  },
+  {
+   "voz": "Ya ha dejado Berkshire, con noventa y seis años. Pero esto lo escribió en dos mil catorce.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Septiembre de 2026</div><div data-news='{\"medio\": \"CNBC\", \"fecha\": \"18/09/2026\", \"titular\": \"Warren Buffett deja la **presidencia** de Berkshire Hathaway: «El tiempo siempre gana»\", \"nota\": \"Titular traducido del inglés\", \"in\": 0.2}'></div><div class=\"row\" style=\"margin-top:56px\" ><i data-icon=\"lucide:scroll-text\" data-size=\"96\" class=\"g\" data-in=\"2.4\" data-a=\"pop\" data-sfx=\"pop\"></i><p style=\"margin:0\" data-in=\"2.5\" data-a=\"slide\">Pero la instrucción es de <b>2014</b></p></div>"
+  },
+  {
+   "voz": "Noventa por ciento, a un fondo indexado del S&P quinientos de muy bajo coste. Diez por ciento, a deuda pública a corto plazo.",
+   "trans": "zoom",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Carta a los accionistas · 2014</div><div class=\"big\" data-in=\"0.2\" data-a=\"count\" data-to=\"90\" data-suf=\" %\" data-d=\"0.9\">0 %</div><p style=\"margin-top:0\" data-in=\"0.5\" data-a=\"up\">a un <b>fondo indexado</b> del S&amp;P 500 de muy bajo coste</p><svg viewBox=\"0 0 840 90\" width=\"840\" style=\"margin-top:50px\"><rect x=\"0\" y=\"0\" width=\"750\" height=\"90\" rx=\"14\" fill=\"#F4C542\" data-in=\"0.4\" data-d=\"0.9\" data-a=\"grow\"/><rect x=\"762\" y=\"0\" width=\"78\" height=\"90\" rx=\"14\" fill=\"#6F6F6F\" data-in=\"3.2\" data-d=\"0.4\" data-a=\"grow\" data-sfx=\"pop\"/></svg><p data-in=\"3.3\" data-a=\"up\"><b class=\"g\">10 %</b> a deuda pública a corto plazo</p><div class=\"src\" data-in=\"1\" data-a=\"fade\">Fuente: carta de Warren Buffett a los accionistas de Berkshire Hathaway (febrero de 2014)</div>"
+  },
+  {
+   "voz": "¿Y por qué no elegir acciones, como hizo él toda su vida?",
+   "trans": "cut",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "glitch",
+     "v": 0.8
+    }
+   ],
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:circle-help\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.45\"></i><h1 data-in=\"0.15\" data-a=\"words\">¿Por qué no elegir <span>acciones</span>?</h1></div>"
+  },
+  {
+   "voz": "En dos mil siete apostó un millón de dólares: un fondo indexado contra gestores profesionales, durante diez años.",
+   "trans": "whip",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">La apuesta · 2008-2017</div><div class=\"row\"><i data-icon=\"lucide:handshake\" data-size=\"150\" class=\"g\" data-in=\"0.2\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2 g\" data-in=\"0.4\" data-a=\"stamp\" data-sfx=\"cash\">1 M$</div></div><div class=\"row\" style=\"margin-top:60px;gap:28px\"><div class=\"card\" style=\"flex:1\" data-in=\"2.0\" data-a=\"left\" data-sfx=\"swoosh\"><div class=\"lab\">Buffett</div><h2 style=\"font-size:56px;margin-top:12px\">Fondo indexado</h2></div><div class=\"chip gold\" data-in=\"2.6\" data-a=\"stamp\">VS</div><div class=\"card\" style=\"flex:1\" data-in=\"3.0\" data-a=\"slide\" data-sfx=\"swoosh\"><div class=\"lab\">Protégé Partners</div><h2 style=\"font-size:56px;margin-top:12px\">5 fondos de hedge funds</h2></div></div>"
+  },
+  {
+   "voz": "Resultado: el fondo indexado ganó un ciento veinticinco por ciento. Los gestores, alrededor de un treinta y seis.",
+   "trans": "slide",
+   "html": "<h2 data-in=\"0\" data-a=\"left\">Lo que ganó cada uno en 10 años</h2><div style=\"margin-top:40px\" data-chart='{\"type\": \"bar\", \"data\": [125.8, 36.3], \"labels\": [\"Fondo indexado S&P 500\", \"Hedge funds (media)\"], \"unit\": \" %\", \"dec\": 1, \"mark\": 0, \"in\": 0.4, \"d\": 1.6, \"h\": 560}'></div><div class=\"row\" style=\"margin-top:30px;gap:20px\"><div class=\"chip\" data-in=\"2.6\" data-a=\"pop\">7,1 % al año</div><div class=\"chip\" data-in=\"2.9\" data-a=\"pop\">2,2 % al año</div></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Fuente: carta de Buffett a los accionistas (febrero de 2018), datos 2008-2017. Rentabilidades pasadas no garantizan las futuras.</div>",
+   "sfx": [
+    {
+     "t": 0.6,
+     "s": "riser",
+     "v": 0.7
+    },
+    {
+     "t": 2.1,
+     "s": "impact",
+     "v": 0.7
+    }
+   ]
+  },
+  {
+   "voz": "¿La clave, según él? Las comisiones: lo que cobran los gestores se come gran parte de lo que ganan.",
+   "trans": "zoom",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">La explicación de Buffett</div><i data-icon=\"lucide:receipt-euro\" data-size=\"180\" class=\"g\" data-in=\"0.15\" data-a=\"spin\" data-sfx=\"coin\"></i><h1 style=\"margin-top:40px\" data-in=\"0.4\" data-a=\"up\">Las <span class=\"hl\" data-in=\"1.2\" data-d=\"0.5\" data-a=\"hl\">comisiones</span> se comen la rentabilidad</h1><p data-in=\"2.2\" data-a=\"up\">Lo que pagas cada año, lo pagas también en los años malos.</p>"
+  },
+  {
+   "voz": "Ojo: era para un caso concreto. Lo tuyo depende de tu plazo y del riesgo que aguantes.",
+   "trans": "slide",
+   "sfx": [
+    {
+     "t": 0.1,
+     "s": "ding",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"row\"><i data-icon=\"lucide:triangle-alert\" data-size=\"120\" class=\"g\" data-in=\"0\" data-a=\"shake\" data-d=\"0.5\"></i><div class=\"k\" style=\"margin:0\" data-in=\"0.1\" data-a=\"fade\">El matiz</div></div><h2 style=\"margin-top:40px\" data-in=\"0.3\" data-a=\"up\">El 90/10 era para <span class=\"g\">un caso concreto</span></h2><div class=\"col\" style=\"margin-top:50px\"><div class=\"row\" data-in=\"2.0\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:calendar-clock\" data-size=\"80\" class=\"w\"></i><p style=\"margin:0\">Tu plazo</p></div><div class=\"row\" data-in=\"2.6\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:activity\" data-size=\"80\" class=\"w\"></i><p style=\"margin:0\">El riesgo que aguantas</p></div></div>"
+  },
+  {
+   "voz": "La lección: antes de buscar al genio, mira cuánto pagas. Síguenos para entender tu dinero sin humo.",
+   "trans": "fade",
+   "sfx": [
+    {
+     "t": 0.2,
+     "s": "success",
+     "v": 0.7
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Conclusión</div><h1 data-in=\"0.15\" data-a=\"words\">Antes de buscar al genio, mira cuánto pagas.</h1><p data-in=\"2.4\" data-a=\"up\">Síguenos para entender tu dinero <span class=\"g\">sin humo</span>.</p><div class=\"src\" data-in=\"2.8\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero ni una recomendación de inversión.</div>"
+  }
+ ]
+}

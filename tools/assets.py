@@ -11,6 +11,7 @@ Uso:
          "assets": [{"id": "jensen", "de": "commons", "q": "Jensen Huang", "elige": 1},
                     {"id": "bolsa", "de": "unsplash", "q": "stock market screen", "orient": "portrait"},
                     {"id": "campana", "de": "openverse-audio", "q": "bell ring"}]
+         "alt": consulta de reserva si "q" (p. ej. un "File:..." exacto de Commons) no da resultado.
   python3 tools/assets.py hoja <slug>     -> posts/<slug>/assets/hoja.jpg (miniaturas para revisar)
 
 Créditos en posts/<slug>/assets/creditos.json: {"jensen": {"credito": "Foto: ... / Wikimedia Commons, CC BY 3.0", ...}}.
@@ -25,10 +26,17 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 UA = {"User-Agent": "csf-media-assets/1.0 (+https://github.com/dineroaldescubierto15-blip/csf-media)"}
 OK_LIC = ("cc0", "pdm", "by", "by-sa", "public domain", "cc-by", "cc by", "cc-by-sa", "cc by-sa", "pd", "cc zero", "unsplash")
 
-def get(url, headers=None):
-    req = urllib.request.Request(url, headers={**UA, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return r.read()
+def get(url, headers=None, tries=5):
+    import time, urllib.error
+    for k in range(tries):
+        req = urllib.request.Request(url, headers={**UA, **(headers or {})})
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 503) and k < tries - 1:
+                time.sleep(int(e.headers.get("Retry-After") or 0) or 5 * (k + 1)); continue
+            raise
 
 def getj(url, headers=None):
     return json.loads(get(url, headers))
@@ -130,7 +138,12 @@ def resolve(spec_path):
         ext = "wav" if a["de"] == "openverse-audio" else "jpg"
         if (ROOT / "posts" / slug / "assets" / f"{a['id']}.{ext}").exists():
             print(f"ya está: {a['id']}"); continue
-        download(slug, a["id"], a["de"], a["q"], int(a.get("elige", 1)), a.get("orient"))
+        try:
+            download(slug, a["id"], a["de"], a["q"], int(a.get("elige", 1)), a.get("orient"))
+        except SystemExit:
+            if not a.get("alt"): raise
+            print(f"  sin resultado para «{a['q']}», pruebo «{a['alt']}»")
+            download(slug, a["id"], a["de"], a["alt"], 1, a.get("orient"))
 
 def sheet(slug):
     d = ROOT / "posts" / slug / "assets"; imgs = sorted(d.glob("*.jpg"))

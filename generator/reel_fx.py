@@ -15,8 +15,9 @@ Componentes (dentro del "html" de una escena):
       bar: "labels" una por barra; "colors" opcional; "mark": índice destacado en dorado.
   <div data-news='{"medio":"Expansión","fecha":"21/11/2026","titular":"El BCE **sube** los tipos","in":0.2}'></div>
       -> tarjeta de titular (texto citado, sin logos del medio). **palabra** = subrayado dorado animado.
-  <div data-photo='{"src":"assets/jensen.jpg","credito":"Foto: NVIDIA / Wikimedia Commons, CC BY 3.0","h":760,"in":0.1}'></div>
+  <div data-photo='{"src":"assets/jensen.jpg","credito":"auto","h":760,"in":0.1}'></div>
       -> foto con marco, zoom lento (Ken Burns) y crédito. Archivos en posts/<slug>/assets/ (tools/assets.py).
+      "credito": "auto" toma el texto de posts/<slug>/assets/creditos.json (o escríbelo a mano).
 
 Animaciones extra por atributo (además de up|fade|pop|grow|growy|draw|count de reel.py):
   data-a="slide" (desde la derecha) | "left" | "zoom" (de grande a normal) | "stamp" (golpe) | "blur" | "words"
@@ -208,8 +209,19 @@ def _news(cfg):
             f'<div class="nm">{_html.escape(cfg["medio"])}<span>{_html.escape(cfg.get("fecha",""))}</span></div>'
             f'<div class="nt">{tit}</div>{q}</div>')
 
+CUR_SLUG = None
+
+def _auto_credit(src):
+    f = ROOT / "posts" / (CUR_SLUG or "") / "assets" / "creditos.json"
+    if CUR_SLUG and f.exists():
+        cr = json.loads(f.read_text(encoding="utf-8")).get(pathlib.Path(src).stem)
+        if cr: return cr.get("credito", "")
+    return ""
+
 def _photo(cfg):
     t0 = float(cfg.get("in", 0.1)); h = int(cfg.get("h", 760)); sfx = cfg.get("sfx", "camera")
+    if cfg.get("credito") == "auto":
+        cfg = {**cfg, "credito": _auto_credit(cfg["src"])}
     cr = f'<div class="cr">{_html.escape(cfg["credito"])}</div>' if cfg.get("credito") else ""
     pos = cfg.get("pos", "50% 40%")
     return (f'<div class="photo" data-kb style="height:{h}px" data-in="{t0:.2f}" data-d="0.5" data-a="{cfg.get("a","zoom")}" data-sfx="{sfx}">'

@@ -241,6 +241,7 @@ def synth(text, model, spk, out, speed=0.9):
 
 def build_html(spec, subs=None):
     import reel_fx as fx   # extras visuales (iconos, gráficos, titulares, fotos, GSAP, subtítulos): ver reel_fx.py
+    fx.CUR_SLUG = spec["slug"]
     scenes = "".join(f'<div class="scene"{fx.scene_attrs(sc)}>{fx.expand(sc["html"])}</div>' for sc in spec["scenes"])
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style>{fx.head(spec, spec["slug"])}</head><body>'
             f'{fx.body_before(spec)}<div id="bar"></div><div id="logo">CSF</div>{scenes}{fx.body_after(spec)}<script>{JS}</script>'
