@@ -348,7 +348,7 @@ def main():
         sw = tmp / "sfx.wav"; wav_out(sw, fx.sfx_track(cs, total))
         inputs += ["-i", str(sw)]; chain += f"[{len(inputs)//2 - 1}:a]aformat=channel_layouts=stereo[s];"; mix.append("[s]")
         (out / "sfx_cues.json").write_text(json.dumps(cs, ensure_ascii=False, indent=1), encoding="utf-8")
-    chain += "".join(mix) + f"amix=inputs={len(mix)}:duration=first:normalize=0[a]"
+    chain += "".join(mix) + f"amix=inputs={len(mix)}:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]"   # volumen estándar de Reels
     cmd = ["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", chain,
            "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-shortest",
            "-movflags", "+faststart", str(final_tmp)]
