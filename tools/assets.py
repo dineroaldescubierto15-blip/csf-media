@@ -95,8 +95,8 @@ def openverse_token():
     if _ov_tok is None:
         cid, sec = [(os.environ.get(k) or "").strip().strip(",").strip("\"' ") for k in ("OPENVERSE_CLIENT_ID", "OPENVERSE_CLIENT_SECRET")]
         tok = ""
-        if cid or sec:
-            print(f"  Openverse: client_id de {len(cid)} caracteres, client_secret de {len(sec)} (no se muestran)")
+        if len(cid) > len(sec):   # el client_id de Openverse es corto (~40) y el secret largo (~128): si llegan al revés, se corrigen
+            cid, sec = sec, cid
         if cid and sec:
             body = urllib.parse.urlencode({"grant_type": "client_credentials", "client_id": cid, "client_secret": sec}).encode()
             req = urllib.request.Request("https://api.openverse.org/v1/auth_tokens/token/", data=body,
