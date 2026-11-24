@@ -62,8 +62,10 @@ def search_commons(q, n=6, orient=None):
         titles = [q]
     else:
         s = getj("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(
-            {"action": "query", "list": "search", "srsearch": f"{q} filetype:bitmap", "srnamespace": 6, "srlimit": n * 3, "format": "json"}))
-        titles = [x["title"] for x in s["query"]["search"]]
+            {"action": "query", "list": "search", "srsearch": q, "srnamespace": 6, "srlimit": min(50, n * 3), "format": "json"}))
+        if "query" not in s:
+            sys.exit(f"Commons no ha devuelto resultados: {json.dumps(s)[:300]}")
+        titles = [x["title"] for x in s["query"]["search"] if x["title"].lower().endswith((".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff"))]
     out = []
     for i in range(0, len(titles), 20):
         info = getj("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(
