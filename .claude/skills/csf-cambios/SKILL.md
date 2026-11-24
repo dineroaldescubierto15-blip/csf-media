@@ -21,7 +21,7 @@ probarlo y explicarle el resultado en catalán, breve y sin tecnicismos.
 |---|---|
 | Temas, tono, más/menos de un pilar, captions | `CLAUDE.md` (sección de marca/procedimiento). Si es puntual para mañana, basta un registro de feedback en el data store (`tipo`="feedback", `estado`="nuevo"). |
 | Aspecto de los carruseles | `generator/render.py` (CSS/tipos de slide) y, si aplica, el ejemplo en `generator/specs/` |
-| Aspecto, ritmo o duración de los Reels, subtítulos | `generator/reel.py` y la guía de Reels en `CLAUDE.md` |
+| Aspecto, ritmo o duración de los Reels, subtítulos, iconos, gráficos, fotos, efectos de sonido | `generator/reel_fx.py` (extras visuales y sonido), `generator/reel.py` (sin tocar la voz), `generator/sfx/`, el método `docs/reels.md` y la guía de Reels en `CLAUDE.md` |
 | Voz (tono, velocidad, otra voz) — **BLOQUEADA**: solo con confirmación explícita de Pol dos veces (dos mensajes); luego actualiza `voices/VOZ_BLOQUEADA.json` | `voices/` (referencia oficial + README) y el motor en `generator/reel.py`. Tras cambiarla, mide el tono (F0) y genera una muestra |
 | Horarios de publicación, qué se publica | Escenario de publicación en Make (`escenario_publicar`). Pide primero el blueprint con `scenarios_get`, edítalo y envíalo entero |
 | ↳ Ojo al mapear | En "Search records" del data store los campos del registro salen en `{{1.data.<campo>}}` (p. ej. `1.data.files`, `1.data.caption`, `1.data.video_url`); solo la clave es `{{1.key}}`. Con `{{1.files}}` el post llega vacío y Instagram falla. |

@@ -20,9 +20,15 @@ Lo esencial está resumido abajo; si dudas, léelo.
   duración, FGD 100.000 €, fecha de los datos). Nunca "el mejor" en absoluto. Patrocinado → "Publicidad" visible en la slide.
 - Visual: fondo #0A0A0A, texto #F5F5F2, dorado #F4C542 solo para la cifra/palabra clave; slides de contraste en #E7E7E3.
   Inter. Mucho espacio. 1 slide = 1 idea. Fuente en pequeño bajo cada dato. Sin emojis en slides.
-- Cada slide lleva apoyo visual propio: mejor un gráfico con datos reales que una ilustración decorativa.
-  Ilustraciones planas, solo paleta de marca, sin fotos ni personas reales, sin marcas/personajes de terceros.
-- Reel: 1080×1920, 35-55 s, 5-8 escenas animadas, voz en off oficial ("csf"). Guion dinámico y cercano
+- Cada slide/escena lleva apoyo visual propio: mejor un gráfico con datos reales que una ilustración decorativa.
+  Desde el 24-11-2026 (decisión de Pol) se permiten, cuando informan: iconos (Lucide), logos para identificar de qué
+  se habla (p. ej. bitcoin, la empresa de la noticia; nunca como patrocinio), titulares citados con medio y fecha,
+  fotos con licencia libre y crédito visible (Unsplash, Commons) y fotos de figuras públicas ligadas al tema (sin
+  retocar, sin sugerir que recomiendan nada). Nada de personajes de ficción de terceros ni capturas de medios.
+- Reel: **método completo en `docs/reels.md`** (idea y su análisis → 3 ganchos y el mejor → estructura de retención con
+  bucle abierto y re-ganchos → recursos visuales y sonidos → revisión con fotogramas y escucha). Pasan cosas todo el
+  rato: un cambio visible cada 1,5-3 s, tipos de plano variados, efectos de sonido sincronizados, subtítulos.
+  1080×1920, 35-55 s, 7-10 escenas animadas, voz en off oficial ("csf"). Guion dinámico y cercano
   (preguntas, frases cortas, contrastes), números EN LETRAS en la voz. Gancho fuerte en los 2 primeros segundos.
   Contenido en la zona segura (no tapar abajo ni a la derecha). Última escena: conclusión + "Síguenos…" + aviso legal en pequeño.
 - Crecimiento (cuenta nueva, ver `docs/crecimiento.md`): primera línea del caption con la palabra clave que se busca
@@ -69,7 +75,20 @@ Lo esencial está resumido abajo; si dudas, léelo.
   extrae fotogramas del mp4 con ffmpeg y **míralos** (solapes, textos cortados) → si hay que corregir, edita el spec y
   relanza (la voz de las escenas sin cambios sale de la caché del workflow) → `build_post.py --reel`, commit, push.
   No cambies la voz, sus parámetros ni las versiones de `generator/requirements-reel.txt` (son las de la voz aprobada).
-  No ejecutes `reel.py` en local para la voz csf (ni con `--frames`): se queda sin memoria.
+  No ejecutes `reel.py` en local para la voz csf (ni con `--frames`): se queda sin memoria. **Sí** puedes usar
+  `--sin-voz` en local (no sintetiza la voz, estima la duración): `--sin-voz --frames 0.5,2.5,…` para fotogramas y
+  `--sin-voz` solo para un vídeo de prueba en `generator/.preview_reel.mp4`. Antes, `npm ci` (GSAP e iconos).
+- **Extras de los Reels** (`generator/reel_fx.py`, ver su docstring y `docs/reels.md`): iconos (`data-icon`), gráficos con
+  datos (`data-chart`), titulares (`data-news`), fotos con crédito (`data-photo`), animaciones extra (`slide`, `zoom`,
+  `stamp`, `words`, `type`, `hl`…), timelines GSAP por escena (`TL(i)`), transiciones (`trans`), fondo animado,
+  subtítulos palabra a palabra (`"subtitulos": true`) y **efectos de sonido** (`data-sfx`, `"sfx"`) de
+  `generator/sfx/` (generados con earshot). El workflow deja `posts/<slug>/escucha.txt` (lo que "oye" earshot) y
+  `sfx_cues.json`.
+- `tools/assets.py`: busca y descarga fotos (Unsplash, Wikimedia Commons, Openverse) y sonidos (Openverse) con licencia
+  libre y guarda el crédito. En el spec, `"assets"`: el workflow los descarga antes del render. Unsplash necesita el
+  secreto `UNSPLASH_ACCESS_KEY` en GitHub.
+- Skills de vídeo y sonido en `.claude/skills/` (versiones en `skills-lock.json`): `gsap-*`, `hyperframes*` (y su
+  registro de ~450 bloques), `remotion-*`, `earshot`, `real-sound`, `real-sfx`, `find-skills`. Ver `docs/reels.md`.
 - `generator/render.py <spec.json>`: genera las slides desde un spec (ver docstring y `generator/specs/ejemplo-csf-01.json`).
 - `tools/build_post.py <slug> <caption.txt> [--reel]`: crea `posts/<slug>/post.json` (carrusel: files; reel: video_url
   servido por jsDelivr como video/mp4).
@@ -115,7 +134,8 @@ Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea d
 5. Elige temas sin repetir los publicados/pendientes recientes (mira los slugs de la cola). Varía pilares.
 6. Para cada carrusel o reel: investiga y verifica datos (WebSearch), calcula cifras con Python, escribe el spec con
    SVG propios, renderiza, **mira el mosaico** (`generator/.preview.png`) y arregla solapes o textos densos,
-   escribe el caption, pasa el semáforo.
+   escribe el caption, pasa el semáforo. Reels: sigue `docs/reels.md` entero (plan en el spec con idea, 3 ganchos,
+   estructura y re-ganchos; vista previa `--sin-voz`; tras el render, fotogramas + `escucha.txt`).
 7. `build_post.py`, commit y push. Espera a que la URL raw de `post.json` responda 200.
 8. Crea el registro en el data store (`estado`="pendiente", `tipo`="post", `media`, caption, files o video_url,
    prioridad, fecha=ahora).

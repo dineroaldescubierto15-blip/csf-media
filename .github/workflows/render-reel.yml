@@ -1,6 +1,8 @@
 # Renderiza un Reel (voz oficial "csf" + vídeo) en un runner de GitHub (16 GB de RAM).
 # La sesión de la tarea diaria no tiene memoria suficiente para Qwen3-TTS 1.7B en float32.
 # No cambia la voz ni su código: ejecuta generator/reel.py tal cual sobre el spec indicado.
+# Además: descarga las fotos/sonidos del spec (tools/assets.py), instala GSAP e iconos (npm ci) y deja un informe
+# de escucha del resultado (earshot) en posts/<slug>/escucha.txt.
 name: Render Reel
 
 on:
@@ -40,6 +42,13 @@ jobs:
         with:
           python-version: "3.13"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Herramientas de vídeo (GSAP, iconos Lucide y Simple Icons)
+        run: npm ci --no-audit --no-fund
+
       - name: Paquetes del sistema (ffmpeg, Inter, sox)
         run: |
           sudo apt-get update -q
@@ -66,8 +75,33 @@ jobs:
             voice-${{ inputs.slug }}-
             voice-${{ inputs.cache_from || inputs.slug }}-
 
+      - name: Fotos y sonidos del spec (Unsplash, Wikimedia Commons, Openverse)
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: python tools/assets.py resolver "generator/specs/$SLUG.json"
+
       - name: Renderizar
         run: python generator/reel.py "generator/specs/$SLUG.json"
+
+      - name: Caché de los modelos de escucha (earshot)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/earshot
+          key: earshot-listen-v1
+
+      - name: Escuchar el resultado con earshot (informe, no bloquea)
+        continue-on-error: true
+        run: |
+          python -m venv /tmp/ears
+          /tmp/ears/bin/pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          /tmp/ears/bin/pip install -q "earshot[listen] @ git+https://github.com/Leonxlnx/earshot@7a7f7c5c70d4a763a1eca4b3666af7c77e313f97"
+          {
+            echo "# Escucha de posts/$SLUG/reel.mp4 (earshot)"
+            /tmp/ears/bin/earshot timeline "posts/$SLUG/reel.mp4" 2>&1
+            echo
+            /tmp/ears/bin/earshot describe "posts/$SLUG/reel.mp4" 2>&1
+          } > "posts/$SLUG/escucha.txt"
+          cat "posts/$SLUG/escucha.txt"
 
       - name: Subir el vídeo como artefacto (copia de seguridad)
         uses: actions/upload-artifact@v4
@@ -82,6 +116,7 @@ jobs:
           git config user.name "csf-render-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "posts/$SLUG/reel.mp4" "posts/$SLUG/cover.jpg"
+          for f in "posts/$SLUG/assets" "posts/$SLUG/sfx_cues.json" "posts/$SLUG/escucha.txt"; do [ -e "$f" ] && git add "$f"; done
           git commit -m "Reel $SLUG renderizado en GitHub Actions"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0

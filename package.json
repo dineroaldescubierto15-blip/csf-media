@@ -1,0 +1,10 @@
+{
+  "name": "csf-media-video",
+  "private": true,
+  "description": "Herramientas de vídeo para los Reels de Capital Sin Filtros (GSAP, iconos). Ver CLAUDE.md.",
+  "dependencies": {
+    "gsap": "3.13.0",
+    "lucide-static": "0.468.0",
+    "simple-icons": "13.21.0"
+  }
+}

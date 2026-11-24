@@ -1,0 +1,19 @@
+{
+ "slug": "demo-herramientas",
+ "music_seed": 4,
+ "subtitulos": true,
+ "scenes": [
+  {"voz": "¿Bitcoin a la mitad de precio? Tranquilo, vamos por partes.",
+   "html": "<div class=\"col center\"><i data-icon=\"si:bitcoin\" data-size=\"220\" class=\"g\" data-in=\"0.1\" data-a=\"spin\" data-d=\"0.6\" data-sfx=\"whoosh\"></i><h1 data-in=\"0.4\" data-a=\"words\">¿Bitcoin a <span>mitad</span> de precio?</h1><div class=\"chip gold\" data-in=\"1.2\" data-a=\"stamp\" data-sfx=\"impact\">−56 %</div></div>"},
+  {"voz": "Mira el gráfico. Del máximo de octubre, a hoy.", "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Precio de bitcoin</div><div data-chart='{\"type\":\"line\",\"data\":[64,70,68,95,110,126,118,104,90,70,56],\"labels\":[\"ene 25\",\"oct 25\",\"nov 26\"],\"unit\":\" k$\",\"in\":0.3,\"d\":1.6,\"sfx\":\"riser\"}'></div><div class=\"src\" data-in=\"2\" data-a=\"fade\">Datos ilustrativos (prueba de herramientas)</div>"},
+  {"voz": "Y los titulares no ayudan.", "trans": "whip",
+   "html": "<div data-news='{\"medio\":\"Diario de prueba\",\"fecha\":\"24/11/2026\",\"titular\":\"Bitcoin pierde **la mitad** de su valor en un año\",\"in\":0.2}'></div>"},
+  {"voz": "Las barras lo dejan claro.", "trans": "zoom",
+   "html": "<h2 data-in=\"0\" data-a=\"left\">Caídas desde máximos</h2><div style=\"margin-top:50px\" data-chart='{\"type\":\"bar\",\"data\":[86,84,78,56],\"labels\":[\"2013-15\",\"2017-18\",\"2021-22\",\"2025-26\"],\"unit\":\" %\",\"mark\":3,\"in\":0.3,\"d\":1.0}'></div>"},
+  {"voz": "Y una foto con su crédito.",
+   "html": "<div data-photo='{\"src\":\"../csf-01_empezar-a-invertir/01.jpg\",\"credito\":\"Foto: prueba / Capital Sin Filtros\",\"h\":820,\"in\":0.1}'></div><div class=\"row\" style=\"margin-top:40px\"><i data-icon=\"lucide:trending-down\" data-size=\"90\" class=\"g\" data-in=\"0.6\" data-a=\"pop\" data-sfx=\"pop\"></i><p style=\"margin:0\" data-in=\"0.7\" data-a=\"type\">Texto que se escribe solo</p></div>"},
+  {"voz": "Y animación con GSAP.", "dur": 3,
+   "html": "<h2 id=\"g1\">Animado con <span class=\"g\">GSAP</span></h2><div id=\"g2\" class=\"card\" style=\"margin-top:40px\"><p style=\"margin:0\">Rebotes, curvas y textos.</p></div><script>{const tl=TL(5); tl.from('#g1',{y:120,opacity:0,duration:.6,ease:'back.out(2)'},0.1).from('#g2',{scale:.5,opacity:0,rotation:-8,duration:.7,ease:'elastic.out(1,.5)'},0.6);}</script>"}
+ ]
+}

@@ -239,10 +239,12 @@ def synth(text, model, spk, out, speed=0.9):
         a = np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a)
     return a
 
-def build_html(spec):
-    scenes = "".join(f'<div class="scene">{sc["html"]}</div>' for sc in spec["scenes"])
-    return (f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>'
-            f'<div id="bar"></div><div id="logo">CSF</div>{scenes}<script>{JS}</script></body></html>')
+def build_html(spec, subs=None):
+    import reel_fx as fx   # extras visuales (iconos, gráficos, titulares, fotos, GSAP, subtítulos): ver reel_fx.py
+    scenes = "".join(f'<div class="scene"{fx.scene_attrs(sc)}>{fx.expand(sc["html"])}</div>' for sc in spec["scenes"])
+    return (f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style>{fx.head(spec, spec["slug"])}</head><body>'
+            f'{fx.body_before(spec)}<div id="bar"></div><div id="logo">CSF</div>{scenes}{fx.body_after(spec)}<script>{JS}</script>'
+            f'{fx.subs_script(subs) if subs else ""}<script>{fx.EXTRA_JS}</script></body></html>')
 
 def main():
     spec_path = pathlib.Path(sys.argv[1]); spec = json.loads(spec_path.read_text(encoding="utf-8"))
@@ -259,7 +261,9 @@ def main():
         if extra:
             sys.exit(f"VOZ BLOQUEADA: el spec no puede cambiar {extra}. Pol tiene que confirmarlo dos veces.")
         spec = {**spec, **lock["parametros"]}
-    if any(sc.get("voz") for sc in scenes):
+    import reel_fx as fx
+    sin_voz = "--sin-voz" in sys.argv   # vista previa sin sintetizar la voz (duración estimada a 5,8 sílabas/s)
+    if any(sc.get("voz") for sc in scenes) and not sin_voz:
         if vname == "csf":
             idx = [i for i, sc in enumerate(scenes) if sc.get("voz")]
             gen_ = qwen_clone_synth([scenes[i]["voz"] for i in idx], spec.get("voice_speed", 1.08), spec.get("voice_seed", 0), spec.get("voice_takes", 3), spec.get("voice_rate", 5.8))
@@ -276,11 +280,13 @@ def main():
     else:
         clips = [None] * len(scenes)
     LEAD = 0.2
-    durs = [max(float(sc.get("dur", 0)), (len(c) / SR + LEAD + 0.5) if c is not None else 0) for sc, c in zip(scenes, clips)]
+    est = [sum(fx._syl(w) for w in sc["voz"].split()) / 5.8 if sin_voz and sc.get("voz") else 0 for sc in scenes]
+    vdur = [len(c) / SR if c is not None else e for c, e in zip(clips, est)]
+    durs = [max(float(sc.get("dur", 0)), (v + LEAD + 0.5) if v else 0) for sc, v in zip(scenes, vdur)]
     durs = [round(d * FPS) / FPS for d in durs]; total = sum(durs)
     if not 3 <= total <= 90:
         sys.exit("Un Reel debe durar entre 3 y 90 s (recomendado 15-30 s).")
-    gen = ROOT / "generator"; html = gen / ".reel.html"; html.write_text(build_html(spec), encoding="utf-8")
+    gen = ROOT / "generator"; html = gen / ".reel.html"; html.write_text(build_html(spec, fx.subs_timing(scenes, vdur, LEAD) if spec.get("subtitulos") else None), encoding="utf-8")
     frames_only = None
     if "--frames" in sys.argv:
         frames_only = [float(x) for x in sys.argv[sys.argv.index("--frames") + 1].split(",")]
@@ -313,7 +319,7 @@ def main():
             ff.stdin.close()
             if ff.wait() != 0: sys.exit(f"ffmpeg falló en la escena {i}")
             final = tmp / f"s{i:02d}.mp4"; part.rename(final); parts.append(final)
-            if i == 0:
+            if i == 0 and not sin_voz:
                 pg.evaluate(f"setFrame(0,{min(d-0.35, 2.0)},{d},{total},1,false)")
                 pg.screenshot(path=str(out / "cover.jpg"), type="jpeg", quality=92)
         b.close()
@@ -324,26 +330,32 @@ def main():
     subprocess.run([sys.executable, str(gen / "music.py"), str(total), str(wav), "--seed", str(spec.get("music_seed", 1))], check=True)
     has_voice = any(c is not None for c in clips)
     final_tmp = out / "reel.part.mp4"
+    def wav_out(path, x):
+        with wave.open(str(path), "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes())
+    inputs = ["-i", str(video), "-i", str(wav)]; chain = "[1:a]volume=0.22[m];"; mix = ["[m]"]
     if has_voice:
         vt = np.zeros(int(total * SR) + SR, dtype=np.float32)
         for st, c in zip(starts, clips):
             if c is None: continue
             a = int((st + LEAD) * SR); vt[a:a + len(c)] += c[: len(vt) - a]
         vt = vt / max(1e-9, np.abs(vt).max()) * 0.9
-        vw = tmp / "voice.wav"
-        with wave.open(str(vw), "wb") as w:
-            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((vt * 32767).astype(np.int16).tobytes())
-        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(wav), "-i", str(vw),
-               "-filter_complex", "[1:a]volume=0.22[m];[2:a]aformat=channel_layouts=stereo,volume=1.0[v];[m][v]amix=inputs=2:duration=first:normalize=0[a]",
-               "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-shortest",
-               "-movflags", "+faststart", str(final_tmp)]
-    else:
-        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(wav), "-map", "0:v", "-map", "1:a",
-               "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(final_tmp)]
+        vw = tmp / "voice.wav"; wav_out(vw, vt)
+        inputs += ["-i", str(vw)]; chain += f"[{len(inputs)//2 - 1}:a]aformat=channel_layouts=stereo,volume=1.0[v];"; mix.append("[v]")
+    cs = fx.cues(spec, starts, durs)
+    if cs:   # efectos de sonido (generator/sfx) en el instante en que aparece cada elemento
+        sw = tmp / "sfx.wav"; wav_out(sw, fx.sfx_track(cs, total))
+        inputs += ["-i", str(sw)]; chain += f"[{len(inputs)//2 - 1}:a]aformat=channel_layouts=stereo[s];"; mix.append("[s]")
+        (out / "sfx_cues.json").write_text(json.dumps(cs, ensure_ascii=False, indent=1), encoding="utf-8")
+    chain += "".join(mix) + f"amix=inputs={len(mix)}:duration=first:normalize=0[a]"
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", chain,
+           "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-shortest",
+           "-movflags", "+faststart", str(final_tmp)]
     subprocess.run(cmd, check=True)
-    final_tmp.rename(out / "reel.mp4"); shutil.rmtree(tmp, ignore_errors=True)
-    mb = (out / "reel.mp4").stat().st_size / 1e6
-    print(f"OK posts/{slug}/reel.mp4 ({total:.1f}s, {mb:.1f} MB) + cover.jpg")
+    dest = (gen / ".preview_reel.mp4") if sin_voz else (out / "reel.mp4")
+    final_tmp.rename(dest); shutil.rmtree(tmp, ignore_errors=True)
+    mb = dest.stat().st_size / 1e6
+    print(f"OK {dest.relative_to(ROOT)} ({total:.1f}s, {mb:.1f} MB)" + ("" if sin_voz else " + cover.jpg"))
 
 if __name__ == "__main__":
     main()
