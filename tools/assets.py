@@ -90,7 +90,8 @@ def search_openverse(q, n=6, orient=None, audio=False):
     p = {"q": q, "page_size": n * 2, "license": "cc0,pdm,by,by-sa", "mature": "false"}
     if audio: p["extension"] = "wav,mp3,ogg,flac"
     if orient and not audio: p["aspect_ratio"] = {"portrait": "tall", "landscape": "wide", "squarish": "square"}.get(orient, orient)
-    res = getj(f"https://api.openverse.org/v1/{kind}/?" + urllib.parse.urlencode(p))["results"]
+    tok = os.environ.get("OPENVERSE_TOKEN")   # desde algunas IPs (p. ej. GitHub) Openverse pide registrarse (gratis)
+    res = getj(f"https://api.openverse.org/v1/{kind}/?" + urllib.parse.urlencode(p), {"Authorization": f"Bearer {tok}"} if tok else None)["results"]
     out = []
     for r in res:
         lic = f"CC {r['license'].upper()} {r.get('license_version') or ''}".strip().replace("CC CC0", "CC0").replace("CC PDM", "Dominio público")

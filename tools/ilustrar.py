@@ -35,20 +35,27 @@ def candidatos(persona, out, n=15, fuentes=None):
     out = pathlib.Path(out); out.mkdir(parents=True, exist_ok=True)
     fuentes = fuentes or (["commons", "openverse"] + (["unsplash"] if os.environ.get("UNSPLASH_ACCESS_KEY") else []))
     cs = []
+    consultas = [persona, f"{persona} portrait", f"{persona} keynote", f"{persona} 2025", f"{persona} 2024", f"{persona} interview"]
     for f in fuentes:
-        try:
-            got = assets.search(f, persona, 20)
-            for c in got: c["de"] = f
-            cs += got; print(f"{f}: {len(got)} resultados")
-        except BaseException as e:
-            print(f"{f}: error {e}")
+        for q in (consultas if f == "commons" else consultas[:2]):
+            try:
+                got = assets.search(f, q, 20)
+                for c in got: c["de"] = f
+                cs += got; print(f"{f} «{q}»: {len(got)} resultados")
+            except BaseException as e:
+                print(f"{f} «{q}»: error {e}")
     seen = set(); uniq = []
     for c in cs:
         k = (c.get("autor"), c.get("w"), c.get("h"))
         if k in seen: continue
         seen.add(k); uniq.append(c)
     uniq = [c for c in uniq if (c.get("w") or 1000) >= 800 and (c.get("h") or 1000) >= 800]
-    uniq = sorted(uniq, key=lambda c: -((c.get("w") or 1000) * (c.get("h") or 1000)))[:n]
+    uniq = sorted(uniq, key=lambda c: -((c.get("w") or 1000) * (c.get("h") or 1000)))
+    por_autor = {}; div = []                      # variedad: como mucho 3 fotos del mismo autor
+    for c in uniq:
+        k = str(c.get("autor")).lower()[:20]; por_autor[k] = por_autor.get(k, 0) + 1
+        if por_autor[k] <= 3: div.append(c)
+    uniq = div[:n]
     lst = []
     for i, c in enumerate(uniq, 1):
         f = out / f"cand_{i:02d}.jpg"

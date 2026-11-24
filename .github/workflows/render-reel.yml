@@ -78,6 +78,7 @@ jobs:
       - name: Fotos y sonidos del spec (Unsplash, Wikimedia Commons, Openverse)
         env:
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          OPENVERSE_TOKEN: ${{ secrets.OPENVERSE_TOKEN }}
         run: python tools/assets.py resolver "generator/specs/$SLUG.json"
 
       - name: Renderizar
