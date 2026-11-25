@@ -7,7 +7,8 @@ Uso (lo ejecuta el workflow .github/workflows/stats-reels.yml cada día; tambié
 - IG_TOKEN: token de acceso de larga duración de la cuenta (secreto de GitHub, NUNCA en el repo).
   · Token de "Instagram API con inicio de sesión de Instagram" (empieza por "IG..."): usa graph.instagram.com/me.
   · Token de "inicio de sesión de Facebook" (empieza por "EAA..."): usa graph.facebook.com/<IG_USER_ID>.
-- Escribe stats/reels.json (todas las métricas, por Reel) y stats/resum.md (tabla para leer rápido).
+- Escribe reels.json (todas las métricas, por Reel) y resum.md (tabla) en $STATS_DIR. En el workflow es una carpeta
+  temporal: los archivos se CIFRAN con tools/stats_crypto.py y solo se suben cifrados (el repo es público).
   Solo métricas agregadas de los vídeos: ni tokens ni datos de personas.
 - Cruza cada vídeo con su slug comparando el caption con posts/<slug>/post.json, y calcula el % visto de media
   (tiempo medio de visualización ÷ duración del mp4).
@@ -19,7 +20,7 @@ total_interactions, follows (seguidores ganados, si está disponible).
 import json, os, re, sys, pathlib, subprocess, datetime, urllib.request, urllib.parse, urllib.error
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-OUT = ROOT / "stats"
+OUT = pathlib.Path(os.environ.get("STATS_DIR") or (ROOT / "stats"))
 VER = "v22.0"
 METRICS = ["views", "reach", "ig_reels_avg_watch_time", "ig_reels_video_view_total_time", "likes", "comments",
            "shares", "saved", "total_interactions", "follows"]
@@ -136,7 +137,7 @@ def main():
         best = max(rows, key=lambda r: (r["pct_visto"] or 0))
         lines += ["", f"Más visto en proporción: **{best['slug'] or best['primera_linea'][:40]}** ({best['pct_visto']} % de media)."]
     (OUT / "resum.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"OK: {len(rows)} Reels -> stats/reels.json y stats/resum.md")
+    print(f"OK: {len(rows)} Reels -> {OUT}/reels.json y resum.md")
 
 if __name__ == "__main__":
     main()

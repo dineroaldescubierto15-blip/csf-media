@@ -11,3 +11,5 @@ generator/.voice_cache/
 __pycache__/
 node_modules/
 generator/.preview_reel.mp4
+stats/reels.json
+stats/resum.md

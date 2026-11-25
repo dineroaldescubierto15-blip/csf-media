@@ -1,14 +1,19 @@
 # Estadísticas automáticas de los Reels
 
 El workflow `.github/workflows/stats-reels.yml` lee cada día (03:40 UTC) las métricas de los Reels con la API
-oficial de Instagram y deja en `main`:
-- `stats/reels.json`: todas las métricas por Reel (con su slug).
-- `stats/resum.md`: tabla para leer rápido (duración, vista media, % visto, reproducciones, alcance, envíos, guardados…).
+oficial de Instagram y deja en `main`, **cifradas** (el repositorio es público; decisión de Pol, 25-11-2026):
+- `stats/estadisticas.tar.enc` + `stats/estadisticas.clau.enc`, que contienen:
+  - `reels.json`: todas las métricas por Reel (con su slug).
+  - `resum.md`: tabla para leer rápido (duración, vista media, % visto, reproducciones, alcance, envíos, guardados…).
 
-No gasta operaciones de Make. Solo guarda métricas agregadas de los vídeos (nada de tokens ni datos de personas).
+Cifrado híbrido con openssl (`tools/stats_crypto.py`): la clave pública está en `stats/clau_publica.pem`; la clave
+privada, solo en el data store de Make (registro `config-stats`, campo `texto`). Nunca subas los archivos descifrados.
+No gasta operaciones de Make. Solo métricas agregadas de los vídeos (nada de tokens ni datos de personas).
 
 ## Cómo se usa en la tarea diaria
-1. `git pull` y lee `stats/resum.md` (si existe).
+1. `git pull`; si existe `stats/estadisticas.tar.enc`, lee la clave privada del registro `config-stats` del data store,
+   guárdala en un archivo temporal FUERA del repo y descifra en el scratchpad:
+   `STATS_PRIV="$(cat <archivo>)" python3 tools/stats_crypto.py descifrar <scratchpad>/stats` → lee `resum.md`.
 2. Lo que retiene (% visto alto) y lo que se envía (envíos por 1.000 de alcance) marca qué formatos, ganchos y temas
    repetir; lo que no pasa de 3 s cambia de gancho, no de tema (`docs/viralidad.md`, sección 9).
 3. Anota en el resumen final 1-2 conclusiones y qué has cambiado por ellas.
@@ -23,7 +28,7 @@ La cuenta tiene que ser profesional (empresa o creador), que ya lo es porque Mak
 3. Pulsa **Generar token** al lado de la cuenta y copia el token (empieza por `IG...`, dura 60 días).
 4. En GitHub: repositorio `csf-media` → **Settings → Secrets and variables → Actions → New repository secret** →
    nombre `IG_TOKEN`, valor el token. (Nunca lo pegues en un archivo del repositorio: es público.)
-5. **Actions → Estadísticas de los Reels → Run workflow** para probarlo. Debería aparecer `stats/resum.md`.
+5. **Actions → Estadísticas de los Reels → Run workflow** para probarlo. Deberían aparecer los archivos cifrados en `stats/`.
 
 La app puede quedarse en modo desarrollo: solo lee la propia cuenta. El token caduca a los 60 días: si el workflow
 falla con "token expired" o "Error validating access token", repite el paso 3 y actualiza el secreto.

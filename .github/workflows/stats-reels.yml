@@ -1,5 +1,5 @@
 # Estadísticas de los Reels: cada día a las 03:40 UTC (antes de la tarea diaria de las ~5:00 de Madrid) lee la API
-# oficial de Instagram y guarda stats/reels.json y stats/resum.md en main. No gasta operaciones de Make.
+# oficial de Instagram y guarda las estadísticas CIFRADAS en stats/ (el repo es público). No gasta operaciones de Make.
 # Necesita el secreto IG_TOKEN (y IG_USER_ID si el token es de inicio de sesión de Facebook). Ver docs/estadisticas.md.
 name: Estadísticas de los Reels
 
@@ -40,13 +40,17 @@ jobs:
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-        run: python3 tools/ig_stats.py --dias "${{ inputs.dias || '60' }}"
+          STATS_DIR: ${{ runner.temp }}/stats
+        run: |
+          python3 tools/ig_stats.py --dias "${{ inputs.dias || '60' }}"
+          python3 tools/stats_crypto.py cifrar "$STATS_DIR"
+          rm -rf "$STATS_DIR"
       - name: Guardar en el repositorio
         if: steps.chk.outputs.ok == 'si'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stats/
+          git add stats/estadisticas.tar.enc stats/estadisticas.clau.enc
           git diff --cached --quiet && { echo "Sin cambios"; exit 0; }
           git commit -m "Estadísticas de los Reels ($(date -u +%F))"
           for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
