@@ -74,13 +74,18 @@ def insights(base, mid, tok):
         return got
     except RuntimeError:
         pass
+    errs = {}
     for m in METRICS:  # alguna métrica no está disponible: se piden de una en una
         try:
             d = get(f"{base}/{mid}/insights", {"metric": m, "access_token": tok})
             for it in d.get("data", []):
                 got[it["name"]] = it.get("values", [{}])[0].get("value") if it.get("values") else it.get("total_value", {}).get("value")
-        except RuntimeError:
-            continue
+        except RuntimeError as e:
+            errs[m] = str(e)[:200]
+    if errs and not got:
+        print(f"  aviso: sin estadísticas para {mid}: {next(iter(errs.values()))}")
+    if errs:
+        got["_errores"] = errs
     return got
 
 def main():
