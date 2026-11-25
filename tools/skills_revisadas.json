@@ -1,0 +1,18 @@
+{
+ "revisado": "2026-11-25",
+ "nota": "Hallazgos HIGH revisados a mano: falsos positivos (comentarios HTML en plantillas, código de tests, frases de documentación). Ver docs/seguridad-skills.md.",
+ "huellas": {
+  "ec5943cff94e4000bc2e97633944dfe26ecac58107750c1807112113d8e24ec1": "real-sfx · TT1 Direct flow: pathlib.Path.read_text (file read) → pathlib.Path.write_text (file write) · scripts/critique.py:1005",
+  "93305cee5f9705ebfca886511f8a57cf4bf605e56d05162e45d72b343ecf0b87": "real-sfx · TM1 Tool Parameter Abuse · scripts/sheet.py:121",
+  "449e47b25897541aa26f8824417d1280ef58d2d29e5e3ba95502143b7207c9ec": "hyperframes · AR2 Anti-Refusal Statement · references/skill-lifecycle.md:50",
+  "7f9a1670331a1782fae4657fb6562e91ec85c5b20ba26415064ebe00dd0e9541": "slideshow · P6 Direct Prompt Extraction · SKILL.md:60",
+  "6cfc628bd2e06e6fdd89ba9d131278c7dac9e0f1a5a4405924f7e5e541399083": "media-use · TM1 Tool Parameter Abuse · audio/scripts/heygen-voice.test.mjs:141",
+  "4f55d8a26ca6c0ccb75b949cca7988987214482b6dba6d7ef9f0bcf1d8f08dd8": "media-use · TM1 Tool Parameter Abuse · audio/scripts/heygen-voice.test.mjs:229",
+  "1b9c4a623e11b873ccdfee824b906534fcc34ba6789ef0b891480c98a3263a7f": "media-use · TM1 Tool Parameter Abuse · audio/scripts/heygen-voice.test.mjs:148",
+  "506e15186e812d05d4ed02708e64f839ce44016e59c24ec7f941ed2c62bd40b7": "media-use · TM1 Tool Parameter Abuse · audio/scripts/heygen-voice.test.mjs:181",
+  "d4a5ab8fab96e8499b30127e14cd8403ee849aa299b11cdf650900635b20f465": "hyperframes-cli · TM1 Tool Parameter Abuse · references/cloud.md:150",
+  "a790d7d5870e27152ebc92fa4ad7a6accf50b71ec64fedc602de4e3c3801d79e": "hyperframes · P2 Hidden Instructions · assets/frame-presets/blue-professional/caption-skin.html:1",
+  "b9ca9a7fef55acb4fa4234c48c254fe4ce407466f0f484ff859785f6fb524602": "hyperframes · P2 Hidden Instructions · assets/frame-presets/bold-poster/caption-skin.html:1",
+  "dce94bb257238f8fc0553e9fd1749250254c04e2020f1225c557bc794a70e16d": "hyperframes · P2 Hidden Instructions · assets/frame-presets/editorial-forest/caption-skin.html:1"
+ }
+}

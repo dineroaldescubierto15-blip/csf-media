@@ -1,6 +1,13 @@
 {
   "version": 2,
   "skills": {
+    "agent-reach": {
+      "source": "Panniantong/Agent-Reach",
+      "commit": "8d9ecc1f5521fe7d223cde782aaa4005695e2671",
+      "sourceType": "github",
+      "skillPath": "agent_reach/skill/SKILL.md",
+      "computedHash": "2ffac756cb7417e61829ac1ae12d2d9b419c4a5146c316e71522ea23ecce6e37"
+    },
     "earshot": {
       "source": "Leonxlnx/earshot",
       "commit": "7a7f7c5c70d4a763a1eca4b3666af7c77e313f97",
@@ -217,6 +224,13 @@
       "sourceType": "github",
       "skillPath": "skills/reverse-any-video/SKILL.md",
       "computedHash": "221f106c2b350432e566d8469f91c914978a868becd7fffe72f312ae105d1297"
+    },
+    "skill-inspector": {
+      "source": "NVIDIA/skillspector",
+      "commit": "0205488a8257869cac3054397ddd5a5d29180aab",
+      "sourceType": "github",
+      "skillPath": "skills/skill-inspector/SKILL.md",
+      "computedHash": "3fa45f3bef87c8f16e324d5c2855b779e1a0164f70d9176280d3835a1afa0d6a"
     },
     "slideshow": {
       "source": "heygen-com/hyperframes",

@@ -1,0 +1,40 @@
+name: Escanear skills (NVIDIA SkillSpector)
+
+# Revisa con SkillSpector (análisis estático, sin LLM) las skills de .claude/skills
+# cada vez que se añade o cambia una, o a mano. Deja el informe como artefacto.
+on:
+  push:
+    branches: [main]
+    paths: [".claude/skills/**", "skills-lock.json"]
+  workflow_dispatch:
+    inputs:
+      ruta:
+        description: "Skill o carpeta a escanear (por defecto, todas)"
+        required: false
+        default: ".claude/skills"
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Instalar SkillSpector (versión fijada)
+        run: pip install --quiet "git+https://github.com/NVIDIA/skillspector.git@0205488a8257869cac3054397ddd5a5d29180aab"
+      - name: Escanear
+        env:
+          RUTA: ${{ github.event.inputs.ruta || '.claude/skills' }}
+        run: |
+          mkdir -p informe
+          python3 tools/scan_skills.py "$RUTA" informe
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: informe-skillspector
+          path: informe/
