@@ -1,0 +1,56 @@
+# Escucha de posts/csf-34_reel-sueldo-para-alquilar-piso/reel.mp4 (earshot)
+reel.mp4: 0:00.00-0:34.52 (34.5 s). Loudness -14.5 LUFS integrated, true peak -1.2 dBTP, LRA 1.9 LU; loudest 0:06.50-0:09.50 (-13.2 LUFS short-term). No steady beat grid (pulse clarity 0.00 < 0.15). 3 section(s): 0:00.00-0:10.30 funk music?, vocal chop | also: speech synthesizer (AST) | voice: voice-over narration; 0:10.30-0:15.00 funk music?, vocal chop | voice: voice-over narration; 0:15.00-0:34.52 funk music?, vocal chop | also: single-lens reflex camera, speech synthesizer (AST) | voice: voice-over narration. 234 events (6.8/s); 20 tagged (9 ui, 6 voice, 2 whoosh, 1 hit, 1 foley, 1 drum; tags are hints). Strongest accents over a running bed: 0:00.60 +20 dB (chat message pop), 0:05.76 +20 dB (wooden block hit), 0:15.00 +18 dB. Sync to 11 cuts: 36% have an onset within 1 frame (chance 44%), 64% within 100 ms, median |offset| 73 ms; 0% land on a strong accent (>= 10 dB over the bed) within 1 frame (chance 9%); 2 only by a level peak (soft whoosh / swell?); 2 without a hit: 0:05.43, 0:18.63.
+
+SECTIONS
+  0:00.00-0:10.30  funk music?, vocal chop | also: speech synthesizer (AST) | voice: voice-over narration  -14 LUFS  [AST music 0.55, speech 0.71]
+  0:10.30-0:15.00  funk music?, vocal chop | voice: voice-over narration  -15 LUFS  [AST music 0.50, speech 0.63]
+  0:15.00-0:34.52  funk music?, vocal chop | also: single-lens reflex camera, speech synthesizer (AST) | voice: voice-over narration  -14 LUFS  [AST music 0.72, speech 0.78]
+
+TRANSCRIPT   time  kind   what (CLAP tag / runner-up)                     peak  over bed  length  centroid  | sync
+== 0:00.00-0:10.30  funk music?, vocal chop | also: speech synthesizer (AST) | voice: voice-over narration  (+63 untagged onsets, 6.1/s)
+ 0:00.04  WHOOSH fast air whoosh / breath                        -11.9 dBFS +15.0 dB    92 ms   107 Hz
+ 0:00.60  UI     chat message pop / spoken word                   -1.6 dBFS +20.1 dB  1858 ms  1.1 kHz  | strong accent (summary)
+ 0:02.01  HIT?   sub bass drop / short vocal sound                -1.6 dBFS  +5.1 dB   118 ms   789 Hz  | cut +81 ms near
+ 0:03.59  UI?    chat message pop / spoken word                   -3.2 dBFS  +1.5 dB  1350 ms   305 Hz  | cut -12 ms OK
+ 0:03.65  VOICE? spoken word / chat message pop                   -3.2 dBFS  +7.9 dB   342 ms   777 Hz
+ 0:05.43  CUT     no onset within 100 ms (strong sound at +147 ms)  <- NO HIT
+ 0:05.76  FOLEY  wooden block hit / sub bass drop                 -4.9 dBFS +19.8 dB   110 ms   250 Hz  | strong accent (summary)
+ 0:06.23  VOICE? spoken word / sub bass drop                      -4.4 dBFS  +3.2 dB   137 ms   735 Hz  | cut -73 ms near
+ 0:07.38  UI?    chat message pop / spoken word                   -1.7 dBFS  +6.7 dB    22 ms   935 Hz  | cut -19 ms OK
+ 0:10.29  UI     chat message pop / spoken word                   -1.5 dBFS +16.3 dB  2000 ms   937 Hz
+== 0:10.30-0:15.00  funk music?, vocal chop | voice: voice-over narration  (+31 untagged onsets, 6.6/s)
+ 0:11.05  UI     chat message pop / spoken word                   -1.5 dBFS +15.2 dB  1317 ms   699 Hz
+ 0:14.14  VOICE  short vocal sound / chat message pop             -1.6 dBFS +14.3 dB   674 ms  1.2 kHz
+ 0:15.00  -      high onset                                       -1.7 dBFS +17.9 dB  2000 ms   658 Hz  | strong accent (summary)
+== 0:15.00-0:34.52  funk music?, vocal chop | also: single-lens reflex camera, speech synthesizer (AST) | voice: voice-over narration  (+118 untagged onsets, 6.0/s)
+ 0:15.04  UI     chat message pop / spoken word                   -1.7 dBFS +17.9 dB  2000 ms   690 Hz
+ 0:17.50  UI     chat message pop / spoken word                   -1.6 dBFS +17.9 dB  2000 ms   700 Hz
+ 0:18.63  CUT     no onset within 100 ms (strong sound at +115 ms)  <- NO HIT
+ 0:20.47  CUT     no onset; level peak -87 ms, rising 18 dB (a soft whoosh / swell, or just the bed?)  <- CHECK
+ 0:20.72  UI     chat message pop / short vocal sound             -1.5 dBFS +15.1 dB    63 ms  1.2 kHz
+ 0:24.08  VOICE  spoken word / chat message pop                   -1.7 dBFS   silent    70 ms  1.2 kHz
+ 0:24.95  UI     chat message pop / hi-hat                        -3.6 dBFS +14.5 dB  2000 ms   632 Hz
+ 0:25.62  -      high onset                                      -15.0 dBFS  +0.0 dB    20 ms   194 Hz  | cut -10 ms OK
+ 0:25.93  DRUM?  drum hit / celesta note                          -8.9 dBFS  +9.5 dB    49 ms   760 Hz  | cut +30 ms OK
+ 0:29.82  WHOOSH fast air whoosh / celesta note                   -1.6 dBFS +13.7 dB    95 ms  1.3 kHz
+ 0:31.27  CUT     no onset; level peak +103 ms, rising 12 dB (a soft whoosh / swell, or just the bed?)  <- CHECK
+ 0:32.68  VOICE  speech (AST 0.58) / chat message pop             -2.6 dBFS +10.5 dB   407 ms   698 Hz  [AST Speech 0.58]  | cut -51 ms near
+ 0:32.82  VOICE? spoken word / chat message pop                   -2.0 dBFS  +0.0 dB   417 ms  3.7 kHz
+
+NOTES  times, levels, loudness and sync offsets are measurements. Event kinds / tags are CLAP guesses: '?' = the event is less than 12 dB over its bed, so its excerpt is mostly bed and the tag a weak hint (right kind about 1 in 4 on the tuning mixes, 1 in 2 for exposed events; often wrong on music and voice). Where AST ran, its speech overrides the kind with VOICE. Section genres marked ? are weak. 'over bed' = how far the event rises over the level just before it; 'silent' = that bed was below -60 (after a gap the rise means nothing). Full data: --json.
+
+34.52 s busy, 5.0 onsets/s, loudness range 2 LU. Music (AudioSet Music 0.75). Unvalidated hints - genre: hip hop beat with heavy bass (z +2.7), glitch hop music (z +2.6); mood (wrong for ~1 in 5 tracks in a test): . No sound-effect description stands out (closest: a punchy impact hit z +1.8, a sub bass drop z +1.7; tentative). AudioSet: Speech 0.78, Music 0.75, Speech synthesizer 0.32. peak -1.2 dBFS, -14.5 LUFS, brightness 1.5 kHz, bandwidth 20.5 kHz, side/mid -27 dB. Windows that read differently: 0:00.00-0:10.00 a chat message pop (z +1.5; AudioSet Speech 0.68); 0:10.00-0:20.00 a sub bass drop (z +1.8; AudioSet Speech 0.71); 0:24.52-0:34.52 people talking in the background (z +1.7; AudioSet Speech 0.78).
+
+top tags (z calibrated: >= 3 clear, 2.5-3 plausible, 2-2.5 weak, < 2 tentative):
+   +1.8  a punchy impact hit  [impacts]  cos -0.028
+   +1.7  a sub bass drop  [impacts]  cos 0.034
+   +1.6  a chat message pop  [ui]  cos 0.111
+   +1.5  a wooden block hit  [foley]  cos 0.030
+   +1.4  footsteps on wood  [foley]  cos -0.045
+   +1.3  a busy cafe  [ambience]  cos -0.111
+   +1.3  people talking in the background  [ambience]  cos -0.125
+   +1.3  high heels walking  [foley]  cos -0.064
+unvalidated hints (music genre / mood, instruments, voice): a man speaking (+3.1), a voice-over narration (+3.1), hip hop beat with heavy bass (+2.7), glitch hop music (+2.6), a vocal chop (+2.4)
+best per category: transitions: a deep cinematic whoosh (+0.6); impacts: a punchy impact hit (+1.8); ui: a chat message pop (+1.6); keyboard: an enter key press (+0.8); foley: a wooden block hit (+1.5); water: bubbles underwater (+1.2); nature: an apple falling on grass (+0.8); chimes: a glass ting (+0.4); ambience: a busy cafe (+1.3); everyday: a knock on a door (+1.0); music_genre: hip hop beat with heavy bass (+2.7); music_mood: confident and cool music (+2.2); instruments: a vocal chop (+2.4); voice: a man speaking (+3.1); quality: a boomy sound (+1.0); production: a low bitrate mp3 with artifacts (+1.9)
+audioset: Speech 0.78, Music 0.75, Speech synthesizer 0.32, Single-lens reflex camera 0.16, Synthesizer 0.07
+measurements: duration 34.517, peak_dbfs -1.2, true_peak_dbtp -1.2, rms_dbfs -17.2, lufs -14.5, lra_lu 1.9, attack_ms 19.0, decay_ms 1835.0, brightness_hz 1549, bandwidth_hz 20480, noise_floor_dbfs -24.5, flatness 0.0003, harmonic_ratio 0.448, onset_count 174, onsets_per_s 5.04, width side/mid -27 dB, digital_silence_frac 0.0
