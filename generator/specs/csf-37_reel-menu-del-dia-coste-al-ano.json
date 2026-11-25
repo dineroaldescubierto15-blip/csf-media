@@ -46,12 +46,12 @@
    "trans": "whip",
    "sfx": [
     {
-     "t": 2.4,
+     "t": 1.4,
      "s": "cash",
      "v": 0.7
     }
    ],
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.2\" data-a=\"type\">14,70 € × 220 días</h1><div class=\"big2 g\" style=\"font-size:180px;margin-top:30px;white-space:nowrap\" data-in=\"2.4\" data-a=\"stamp\">= 3.234 €</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">220 días: unas 52 semanas de 5 días, menos vacaciones y festivos (estimación).</div>"
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.1\" data-a=\"type\">14,70 € × 220 días</h1><div class=\"big2 g\" style=\"font-size:180px;margin-top:30px;white-space:nowrap\" data-in=\"1.4\" data-a=\"stamp\">= 3.234 €</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">220 días: unas 52 semanas de 5 días, menos vacaciones y festivos (estimación).</div>"
   },
   {
    "voz": "Casi tres nóminas enteras del salario mínimo.",
