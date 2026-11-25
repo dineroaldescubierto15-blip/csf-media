@@ -105,6 +105,8 @@ Lo esencial está resumido abajo; si dudas, léelo.
       `caption`, `prioridad` (2 = serie en partes, 1 = actualidad, 0 = normal), `fecha`; carrusel: `files` (lista de `{media_type:"IMAGE", image_url}`);
       reel: `video_url` (el de post.json).
     - feedback de Pol: key `fb-...`, `tipo`="feedback", `estado`="nuevo" | "leido", `texto`.
+    - `publicado_en` (fecha): marca permanente que pone Make al publicar. Si existe, el post **nunca** se vuelve a
+      publicar (aunque alguien lo apruebe otra vez). No la borres ni la cambies; no reutilices un slug publicado.
     - `config-telegram` (no tocar).
   - Escenario "Aprobar o rechazar desde Telegram" (webhook del bot): cambia `estado` a aprobado/rechazado y guarda feedback.
   - Escenario "Publicar en Instagram": a las 13:30, a las 17:00 y a las 20:30 (desde el 23-11-2026, unos días) publica un reel `aprobado` (mayor `prioridad` y luego
@@ -112,6 +114,8 @@ Lo esencial está resumido abajo; si dudas, léelo.
     Avisos (24-11-2026, decisión de Pol): el mismo escenario corre también a las 12:30, 16:00 y 19:30; si no hay
     nada aprobado avisa a Pol por Telegram ("d'aquí a 1 hora…") y, si en una franja no se publica, le dice que no
     se ha publicado nada y el motivo (sin aprobados, o error de Instagram). Coste: ~1 operación por pasada.
+    Nunca republica: busca solo registros sin `publicado_en`. El botón "Aprobar" de Telegram tampoco reaprueba un post
+    ya publicado (responde "ya está publicado").
   - Series en partes ("Parte 1/3"…): `prioridad` 2 y `fecha` en orden de parte (la parte 1 la más antigua). Las partes
     aprobadas con prioridad 2 ocupan **todas las franjas seguidas** (13:30 y 20:30, sea carrusel o reel) hasta acabar,
     sin nada entre medias. Cada parte debe entenderse sola (gancho propio) y enlazar con la siguiente; en el caption,
