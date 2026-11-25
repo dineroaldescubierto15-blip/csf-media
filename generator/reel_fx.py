@@ -31,7 +31,8 @@ Transición de salida por escena: "trans": "fade" (por defecto) | "slide" | "zoo
 Sonido: data-sfx="pop" en cualquier elemento con data-in (suena cuando aparece), o "sfx": [{"t": 1.2, "s": "impact", "v": 0.8}]
   en la escena. Por defecto suena un whoosh suave en cada cambio de escena ("sfx_transiciones": false lo quita).
   Biblioteca: generator/sfx/*.wav (ver generator/sfx/CREDITS.md). El pico del sonido cae en el instante indicado.
-Spec global: "fondo": "grid" (por defecto) | "glow" | "none";  "subtitulos": true (palabra a palabra, abajo).
+Spec global: "fondo": "grid" (por defecto) | "glow" | "none";  "subtitulos": true (palabra a palabra, abajo) |
+"grande" (3 palabras grandes, estilo TikTok);  "ritmo": true (golpe de zoom en cada escena + acercamiento continuo).
 """
 import json, re, html as _html, pathlib
 import numpy as np
@@ -68,6 +69,10 @@ EXTRA_CSS = """
 #bgfx.glow{background:radial-gradient(600px 600px at 50% 50%,rgba(244,197,66,.10),transparent 70%)}
 #subs{position:absolute;left:90px;right:150px;top:1300px;height:170px;display:flex;align-items:center;justify-content:center;text-align:center;flex-wrap:wrap;gap:0 18px;font-size:58px;font-weight:800;letter-spacing:-.02em;line-height:1.15;color:#F5F5F2;text-shadow:0 4px 18px rgba(0,0,0,.8)}
 #subs .on{color:#F4C542}
+body.subs-big #subs{top:1120px;height:260px;left:80px;right:140px;font-size:92px;line-height:1.05;gap:0 22px;letter-spacing:-.03em;text-shadow:0 6px 24px rgba(0,0,0,.9)}
+body.subs-big #subs span{display:inline-block}
+body.subs-big #subs .on{color:#F4C542;transform:scale(1.08)}
+body.subs-big.has-subs .scene{padding-bottom:820px}
 body.has-subs .scene{padding-bottom:640px}
 .w-word,.w-char{display:inline-block;white-space:pre}
 """
@@ -117,7 +122,13 @@ window.__timelines = window.__timelines || {};
       else if (tr === 'cut') s.style.opacity = 1;
     }
     // entrada suave de cada escena
-    if (idx > 0 && t < 0.25 && tr !== 'cut') { const k = ease(t / 0.25); s.style.transform = `scale(${1.04 - 0.04*k})`; }
+    const ritmo = document.body.classList.contains('ritmo');
+    if (ritmo && !(t > dur - 0.3 && tr !== 'fade')) {
+      // ritmo: golpe de entrada (1,09 -> 1 en 0,2 s) y acercamiento lento continuo durante la escena
+      const k = ease(Math.min(1, t / 0.2)), push = 0.035 * Math.min(1, t / Math.max(0.5, dur));
+      s.style.transform = `scale(${1 + 0.09*(1-k) + push})`;
+    }
+    else if (idx > 0 && t < 0.25 && tr !== 'cut') { const k = ease(t / 0.25); s.style.transform = `scale(${1.04 - 0.04*k})`; }
     else if (!(t > dur - 0.3 && tr !== 'fade')) s.style.transform = '';
     const tl = window.__timelines['s' + idx]; if (tl) tl.seek(t, false);
     const bg = document.getElementById('bgfx');
@@ -126,8 +137,8 @@ window.__timelines = window.__timelines || {};
       const box = document.getElementById('subs'), W = window.__subs[idx] || [];
       let cur = -1; for (let k = 0; k < W.length; k++) if (t >= W[k][1]) cur = k;
       if (cur < 0 || t > W[W.length-1][2] + 0.6) { box.innerHTML = ''; }
-      else { const c0 = Math.floor(cur / 4) * 4;
-        box.innerHTML = W.slice(c0, c0 + 4).map((w, k) => `<span class="${c0+k===cur?'on':''}">${w[0]}</span>`).join(' '); }
+      else { const N = window.__subsN || 4, c0 = Math.floor(cur / N) * N;
+        box.innerHTML = W.slice(c0, c0 + N).map((w, k) => `<span class="${c0+k===cur?'on':''}">${w[0]}</span>`).join(' '); }
     }
   };
 })();
@@ -262,7 +273,19 @@ def body_before(spec):
     return f'<div id="bgfx" class="{fondo}"></div>' if fondo in ("grid", "glow") else ""
 
 def body_after(spec):
-    return '<div id="subs"></div>' if spec.get("subtitulos") else ""
+    """Subtítulos y modo de ritmo. "subtitulos": true (4 palabras, abajo) | "grande" (3 palabras, grandes, centro-abajo,
+    estilo TikTok: para quien ve sin sonido). "ritmo": true = golpe de zoom al entrar en cada escena y acercamiento lento
+    continuo (sensación de cámara en movimiento todo el rato)."""
+    out, cls = "", []
+    if spec.get("subtitulos"):
+        out += '<div id="subs"></div>'
+        if spec.get("subtitulos") == "grande":
+            cls.append("subs-big"); out += "<script>window.__subsN=3;</script>"
+    if spec.get("ritmo"):
+        cls.append("ritmo")
+    if cls:
+        out += "<script>document.body.classList.add(" + ",".join(repr(c) for c in cls) + ");</script>"
+    return out
 
 def scene_attrs(sc):
     return f' data-trans="{sc["trans"]}"' if sc.get("trans") else ""

@@ -1,0 +1,113 @@
+{
+ "slug": "csf-34_reel-sueldo-para-alquilar-piso",
+ "music_seed": 11,
+ "subtitulos": "grande",
+ "ritmo": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Rápido (método viral, docs/viralidad.md): 25-30 s, una idea, cifra en el fotograma 0, respuesta antes de la mitad, giro, CTA de envío.",
+  "idea": "Cuánto hay que cobrar para alquilar un piso medio en España sin pasar del 30 % del sueldo: 3.500 € netos. Y con el salario mínimo, el 93 %.",
+  "por_que_se_comparte": "Toca a casi todo el público (18-30, busca piso o comparte), da una cifra que sorprende y sirve de argumento: se envía a la pareja, al compañero de piso o al grupo.",
+  "palabra_clave": "alquiler",
+  "ganchos": [
+   "Para alquilar un piso normal sin ahogarte, necesitas cobrar tres mil quinientos euros netos. (claridad 5, curiosidad 5, relevancia 5, concreción 5)",
+   "Con el salario mínimo, un piso medio se lleva el noventa y tres por ciento de tu nómina. (5, 4, 5, 5)",
+   "¿Cuánto tienes que ganar para vivir solo en España? (4, 4, 5, 2)"
+  ],
+  "gancho": "Para alquilar un piso normal sin ahogarte, necesitas cobrar tres mil quinientos euros netos.",
+  "bucle": "¿De dónde sale esa cifra? -> la cuenta (escena 4) y el giro del salario mínimo (escena 6).",
+  "re_ganchos": [
+   "~9 s: Haz la cuenta",
+   "~15 s: ¿Y con el salario mínimo?",
+   "~22 s: Y en Madrid"
+  ],
+  "recompensa": "La regla del 30 % y la cuenta exacta.",
+  "cta": "Envíaselo a quien está buscando piso (envíos = señal más fuerte del algoritmo)."
+ },
+ "scenes": [
+  {
+   "voz": "Para alquilar un piso normal sin ahogarte, necesitas cobrar tres mil quinientos euros netos.",
+   "sfx": [
+    {
+     "t": 0.02,
+     "s": "impact",
+     "v": 0.9
+    },
+    {
+     "t": 2.6,
+     "s": "cash",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:house\" data-size=\"150\" class=\"g\"></i><div class=\"big2 g\" style=\"font-size:210px;margin-top:20px\">3.500 €</div><h2 style=\"margin-top:10px\">netos al mes</h2><div class=\"chip\" style=\"margin-top:24px\">para un piso medio en España</div></div>"
+  },
+  {
+   "voz": "Un piso de setenta metros cuesta de media mil cincuenta y siete euros al mes.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Alquiler medio · octubre 2026</div><div class=\"row\"><i data-icon=\"lucide:key-round\" data-size=\"120\" class=\"g\" data-in=\"0.1\" data-a=\"spin\" data-sfx=\"pop\"></i><div class=\"chip\" data-in=\"0.4\" data-a=\"slide\">70 m²</div></div><div class=\"big2\" style=\"margin-top:30px\" data-in=\"1.6\" data-a=\"count\" data-to=\"1057\" data-suf=\" €\" data-d=\"0.8\" data-sfx=\"cash\">0 €</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">idealista, octubre de 2026: 15,1 €/m² al mes de media en España × 70 m².</div>"
+  },
+  {
+   "voz": "Y lo sano es no dedicar más del treinta por ciento de tu sueldo.",
+   "trans": "zoom",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">La regla</div><div class=\"big2 g\" data-in=\"0.2\" data-a=\"stamp\" data-sfx=\"impact\">30 %</div><svg viewBox=\"0 0 840 70\" width=\"840\" style=\"margin-top:30px\"><rect width=\"840\" height=\"70\" rx=\"14\" fill=\"#1C1C1A\"/><rect width=\"252\" height=\"70\" rx=\"14\" fill=\"#F4C542\" data-in=\"0.6\" data-d=\"0.7\" data-a=\"grow\"/></svg><p data-in=\"1.0\" data-a=\"up\">del sueldo como máximo para vivienda</p>"
+  },
+  {
+   "voz": "Haz la cuenta: mil cincuenta y siete entre cero coma tres. Tres mil quinientos.",
+   "trans": "whip",
+   "sfx": [
+    {
+     "t": 2.6,
+     "s": "impact",
+     "v": 0.8
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.3\" data-a=\"type\">1.057 € ÷ 0,30</h1><div class=\"big2 g\" style=\"font-size:180px;margin-top:30px\" data-in=\"2.6\" data-a=\"stamp\">= 3.523 €</div>"
+  },
+  {
+   "voz": "¿Y con el salario mínimo?",
+   "trans": "cut",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "glitch",
+     "v": 0.8
+    }
+   ],
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:wallet\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.4\"></i><h1 data-in=\"0.1\" data-a=\"words\">¿Y con el <span>salario mínimo</span>?</h1></div>"
+  },
+  {
+   "voz": "Te quedan unos mil ciento cuarenta netos. El alquiler se llevaría el noventa y tres por ciento.",
+   "trans": "slide",
+   "sfx": [
+    {
+     "t": 2.4,
+     "s": "riser",
+     "v": 0.6
+    },
+    {
+     "t": 3.6,
+     "s": "error",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Salario mínimo 2026 · neto</div><div class=\"big2\" data-in=\"0.2\" data-a=\"left\">≈ 1.141 €</div><svg viewBox=\"0 0 840 110\" width=\"840\" style=\"margin-top:40px\"><rect width=\"840\" height=\"110\" rx=\"16\" fill=\"#1C1C1A\"/><rect width=\"778\" height=\"110\" rx=\"16\" fill=\"#F4C542\" data-in=\"2.4\" data-d=\"1.2\" data-a=\"grow\"/></svg><div class=\"big2 g\" style=\"margin-top:20px\" data-in=\"3.6\" data-a=\"stamp\">93 %</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">SMI 2026: 1.221 € brutos en 14 pagas (RD 126/2026) menos un 6,5 % de cotización. Cálculo propio.</div>"
+  },
+  {
+   "voz": "Y en Madrid, el mismo piso pasa de mil seiscientos.",
+   "trans": "zoom",
+   "html": "<div class=\"row\"><i data-icon=\"lucide:map-pin\" data-size=\"120\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><h2 style=\"margin:0\" data-in=\"0.1\" data-a=\"up\">Madrid</h2></div><div class=\"big2 g\" style=\"margin-top:30px\" data-in=\"0.9\" data-a=\"count\" data-to=\"1659\" data-suf=\" €\" data-d=\"0.8\" data-sfx=\"cash\">0 €</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">idealista, junio de 2026: 23,7 €/m² en Madrid × 70 m².</div>"
+  },
+  {
+   "voz": "Por eso compartir piso no es un capricho. Envíaselo a quien está buscando piso.",
+   "trans": "fade",
+   "sfx": [
+    {
+     "t": 0.2,
+     "s": "success",
+     "v": 0.6
+    }
+   ],
+   "html": "<h1 data-in=\"0\" data-a=\"words\">Compartir piso no es un capricho.</h1><div class=\"row\" style=\"margin-top:40px\" data-in=\"1.8\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"90\" class=\"g\"></i><p style=\"margin:0\">Envíaselo a quien busca piso</p></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Medias nacionales; cada ciudad y cada piso son distintos. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
