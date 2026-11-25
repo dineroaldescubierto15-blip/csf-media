@@ -1,0 +1,95 @@
+{
+ "slug": "csf-35_reel-black-friday-suben-mas-que-bajan",
+ "music_seed": 14,
+ "subtitulos": "grande",
+ "ritmo": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Actualidad en 30 s (docs/viralidad.md): titular con fecha → qué cambia para ti (cifra) → qué vigilar → envío.",
+  "idea": "Estudio de la OCU publicado el 24-11-2026: en la campaña de Black Friday, el 37 % de los precios sube frente al 35 % que baja (14.000 precios, 60 tiendas). Los que bajan, un 8 %; los que suben, un 12 %.",
+  "por_que_se_comparte": "Black Friday es el viernes 27: todo el mundo está mirando ofertas. Es un dato que contradice lo que se espera y sirve de aviso al amigo que va a comprar.",
+  "palabra_clave": "Black Friday",
+  "ganchos": [
+   "En las ofertas del Black Friday, suben más precios de los que bajan. (claridad 5, curiosidad 5, relevancia 5, concreción 4)",
+   "Solo el treinta y cinco por ciento de los precios baja en Black Friday. (4, 4, 5, 5)",
+   "El descuento medio real del Black Friday es de un ocho por ciento. (5, 4, 4, 5)"
+  ],
+  "gancho": "En las ofertas del Black Friday, suben más precios de los que bajan.",
+  "bucle": "¿Cuánto bajan los que bajan? → −8 % (escena 4) y la regla de los 30 días (escena 6).",
+  "re_ganchos": [
+   "~9 s: ¿Y cuánto bajan los que bajan?",
+   "~15 s: Ojo, el precio tachado…"
+  ],
+  "recompensa": "La regla legal de los 30 días para detectar una rebaja falsa.",
+  "cta": "Envíaselo a quien ya tiene el carrito lleno."
+ },
+ "scenes": [
+  {
+   "voz": "En las ofertas del Black Friday, suben más precios de los que bajan.",
+   "sfx": [
+    {
+     "t": 0.02,
+     "s": "impact",
+     "v": 0.9
+    }
+   ],
+   "html": "<div class=\"col center\"><div class=\"chip gold\">Black Friday 2026</div><div class=\"big2 g\" style=\"font-size:230px;margin-top:30px\">37 %</div><h2 style=\"margin-top:0\">de los precios <b>sube</b></h2><div class=\"big2\" style=\"font-size:120px;color:#8A8A85;margin-top:30px\">35 % baja</div></div>"
+  },
+  {
+   "voz": "Lo dice la OCU, tras mirar más de catorce mil precios de electrónica.",
+   "trans": "slide",
+   "html": "<div data-news='{\"medio\":\"El Debate\",\"fecha\":\"24/11/2026\",\"titular\":\"La OCU destapa la trampa del Black Friday: hay **más subidas de precios que rebajas**\",\"in\":0.1}'></div><div class=\"row\" style=\"margin-top:40px\"><i data-icon=\"lucide:search\" data-size=\"100\" class=\"g\" data-in=\"0.8\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2\" data-in=\"1.2\" data-a=\"fade\">+</div><div class=\"big2\" data-in=\"1.2\" data-a=\"count\" data-to=\"14000\" data-d=\"0.8\" data-sfx=\"tick\">0</div></div><p data-in=\"1.6\" data-a=\"up\">precios de 60 tiendas online</p>"
+  },
+  {
+   "voz": "Comparados con el precio más bajo de septiembre y octubre.",
+   "trans": "zoom",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Respecto al mínimo de sep. y oct.</div><div style=\"margin-top:10px\" data-chart='{\"type\":\"bar\",\"data\":[37,35,28],\"labels\":[\"Suben\",\"Bajan\",\"Igual\"],\"unit\":\" %\",\"dec\":0,\"mark\":0,\"in\":0.2,\"d\":1.3,\"h\":560}'></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">OCU, estudio de Black Friday 2026 (electrónica y electrodomésticos), vía El Debate, 24/11/2026.</div>"
+  },
+  {
+   "voz": "¿Y cuánto bajan los que bajan? Un ocho por ciento de media.",
+   "trans": "cut",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "glitch",
+     "v": 0.7
+    }
+   ],
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:tag\" data-size=\"160\" class=\"g\" data-in=\"0\" data-a=\"spin\"></i><h2 data-in=\"0.1\" data-a=\"up\">Descuento medio real</h2><div class=\"big2 g\" style=\"font-size:220px\" data-in=\"1.8\" data-a=\"stamp\" data-sfx=\"impact\">−8 %</div></div>"
+  },
+  {
+   "voz": "Y los que suben, un doce.",
+   "trans": "whip",
+   "html": "<div class=\"row\" style=\"gap:50px\"><div class=\"col center\"><div class=\"big2\" style=\"color:#8A8A85\" data-in=\"0\" data-a=\"left\">−8 %</div><p style=\"margin:0\">los que bajan</p></div><div class=\"col center\"><div class=\"big2 g\" data-in=\"0.5\" data-a=\"stamp\" data-sfx=\"error\">+12 %</div><p style=\"margin:0\">los que suben</p></div></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Variaciones medias. Fuente: OCU, noviembre de 2026.</div>"
+  },
+  {
+   "voz": "Ojo. El precio tachado tiene que ser el más bajo de los últimos treinta días.",
+   "trans": "slide",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "riser",
+     "v": 0.5
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Lo que dice la ley</div><div class=\"row\"><i data-icon=\"lucide:calendar-days\" data-size=\"130\" class=\"g\" data-in=\"0.1\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2 g\" data-in=\"0.3\" data-a=\"count\" data-to=\"30\" data-d=\"0.6\">0</div></div><h2 data-in=\"1.4\" data-a=\"words\">días: el precio de <span>referencia</span> es el más bajo</h2><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Art. 20.1 de la Ley 7/1996 de Ordenación del Comercio Minorista.</div>"
+  },
+  {
+   "voz": "Antes de pagar, mira el historial de precios.",
+   "trans": "zoom",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:chart-line\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><h1 data-in=\"0.2\" data-a=\"words\">Mira el <span>historial</span> de precios</h1></div>"
+  },
+  {
+   "voz": "Envíaselo a quien ya tiene el carrito lleno.",
+   "trans": "fade",
+   "sfx": [
+    {
+     "t": 0.2,
+     "s": "success",
+     "v": 0.5
+    }
+   ],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien ya tiene el carrito lleno</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Medias del estudio de la OCU; cada producto es distinto. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
