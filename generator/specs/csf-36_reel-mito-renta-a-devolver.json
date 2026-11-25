@@ -1,8 +1,9 @@
 {
  "slug": "csf-36_reel-mito-renta-a-devolver",
  "music_seed": 6,
- "subtitulos": "grande",
+ "subtitulos": "karaoke",
  "ritmo": true,
+ "grano": true,
  "fondo": "grid",
  "plan": {
   "formato": "Mito en 20 segundos (docs/viralidad.md): frase del mito → MITO en sello → la prueba con un número → remate → envío.",
@@ -21,7 +22,8 @@
    "~14 s: ¿Y si te sale a pagar?"
   ],
   "recompensa": "El impuesto es el mismo; solo cambia cuándo lo pagas.",
-  "cta": "Envíaselo a quien celebra la devolución como un premio."
+  "cta": "Envíaselo a quien celebra la devolución como un premio.",
+  "estilo": "v2 (25-11-2026): mismo guion y voz que la versión anterior; vídeo renderizado como prova-estil-v2_mito-renta."
  },
  "scenes": [
   {
@@ -29,45 +31,43 @@
    "sfx": [
     {
      "t": 0.02,
-     "s": "impact",
+     "s": "boom",
      "v": 0.9
+    },
+    {
+     "t": 1.0,
+     "s": "scratch",
+     "v": 0.5
     }
    ],
-   "html": "<div class=\"col center\"><div class=\"chip gold\">Mito o realidad</div><h1 style=\"margin-top:30px\">«Me sale a devolver»</h1><div class=\"big2\" style=\"font-size:170px;white-space:nowrap\">+600 €</div><div class=\"big2 g\" style=\"font-size:200px;margin-top:10px;transform:rotate(-6deg)\">MITO</div></div>"
+   "html": "<div class=\"bgword\">MITO</div><div class=\"col center\"><div class=\"chip gold\">Mito o realidad</div><h1 style=\"margin-top:20px\">«Me sale a devolver»</h1><div class=\"big2\" style=\"font-size:200px;white-space:nowrap\">+600 €</div><div class=\"big2 g\" style=\"font-size:210px;margin-top:6px;transform:rotate(-6deg)\">MITO</div></div>"
   },
   {
    "voz": "Es tu dinero. Te lo retuvieron de más en cada nómina.",
-   "trans": "slide",
-   "html": "<div class=\"col center\"><i data-icon=\"lucide:receipt-text\" data-size=\"170\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"paper\"></i><h1 data-in=\"0.2\" data-a=\"words\">Es <span>tu</span> dinero</h1><p data-in=\"1.4\" data-a=\"up\">retenido de más en cada nómina</p></div>"
+   "trans": "cut",
+   "html": "<div class=\"bgword\">TU DINERO</div><div class=\"col center\"><div class=\"big2 g\" style=\"font-size:260px\" data-in=\"0\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"left\" data-sfx=\"boom\">TU</div><div class=\"big2\" style=\"font-size:190px\" data-in=\"0.35\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"right\" data-flash=\"no\" data-sfx=\"aire\">DINERO</div><p data-in=\"1.5\" data-a=\"up\">retenido de más en cada nómina</p></div>"
   },
   {
    "voz": "Haz la cuenta: seiscientos entre doce. Cincuenta euros al mes.",
    "trans": "whip",
-   "sfx": [
-    {
-     "t": 2.4,
-     "s": "cash",
-     "v": 0.7
-    }
-   ],
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.2\" data-a=\"type\">600 € ÷ 12 meses</h1><div class=\"big2 g\" style=\"font-size:190px;margin-top:30px\" data-in=\"2.4\" data-a=\"stamp\">= 50 €</div><p data-in=\"2.8\" data-a=\"up\">al mes que no tenías</p><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Ejemplo con un sueldo en 12 pagas.</div>"
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.1\" data-a=\"type\">600 € ÷ 12 meses</h1><div data-in=\"1.5\" data-d=\"0.4\" data-a=\"punch\" data-sfx=\"caja\"><div class=\"big2 g\" style=\"font-size:230px;margin-top:30px\" data-in=\"1.5\" data-d=\"0.9\" data-a=\"wheel\" data-to=\"50\" data-pre=\"= \" data-suf=\" €\"></div></div><p data-in=\"2.4\" data-a=\"up\">al mes que no tenías</p><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Ejemplo con un sueldo en 12 pagas.</div>"
   },
   {
    "voz": "Hacienda los ha tenido un año. Y sin pagarte intereses.",
    "trans": "zoom",
-   "sfx": [
-    {
-     "t": 0.1,
-     "s": "glitch",
-     "v": 0.6
-    }
-   ],
-   "html": "<div class=\"col center\"><i data-icon=\"lucide:landmark\" data-size=\"170\" class=\"g\" data-in=\"0\" data-a=\"spin\"></i><div class=\"big2\" style=\"margin-top:20px\" data-in=\"0.3\" data-a=\"up\">12 meses</div><div class=\"big2 g\" data-in=\"1.8\" data-a=\"stamp\" data-sfx=\"error\">0 € de interés</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Si la devolución llega en plazo (antes de 6 meses desde el fin de la campaña), no hay intereses de demora.</div></div>"
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:landmark\" data-size=\"160\" class=\"g\" data-in=\"0\" data-a=\"spin\" data-sfx=\"swipe\"></i><div class=\"big2\" style=\"font-size:170px\" data-in=\"0.2\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"12\" data-suf=\" meses\"></div><div data-in=\"1.8\" data-d=\"0.4\" data-a=\"punch\" data-sfx=\"scratch\"><div class=\"big2 g\">0 € de interés</div></div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Si la devolución llega en plazo (antes de 6 meses desde el fin de la campaña), no hay intereses de demora.</div></div>"
   },
   {
    "voz": "¿Y si te sale a pagar? Tampoco es un castigo. Te retuvieron de menos.",
    "trans": "cut",
-   "html": "<div class=\"row\" style=\"gap:40px\"><div class=\"col center\"><div class=\"big2\" style=\"color:#8A8A85;font-size:130px;white-space:nowrap\" data-in=\"0\" data-a=\"left\">+600 €</div><p style=\"margin:0\">a devolver</p></div><div class=\"col center\" data-in=\"1.4\" data-a=\"pop\" data-sfx=\"pop\"><div class=\"big2\" style=\"font-size:130px;white-space:nowrap\">−300 €</div><p style=\"margin:0\">a pagar</p></div></div><h2 style=\"margin-top:40px\" data-in=\"2.4\" data-a=\"up\">Solo es un <span>ajuste</span></h2>"
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "glitch",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"row\" style=\"gap:40px\"><div class=\"col center\" data-in=\"0\" data-a=\"left\" data-sfx=\"swipe\"><div class=\"big2\" style=\"color:#8A8A85;font-size:130px;white-space:nowrap\">+600 €</div><p style=\"margin:0\">a devolver</p></div><div class=\"col center\" data-in=\"1.4\" data-d=\"0.4\" data-a=\"punch\" data-sfx=\"impact\"><div class=\"big2\" style=\"font-size:130px;white-space:nowrap\">−300 €</div><p style=\"margin:0\">a pagar</p></div></div><h2 style=\"margin-top:40px\" data-in=\"2.4\" data-a=\"up\">Solo es un <span class=\"hl\" data-in=\"2.7\" data-a=\"hl\" data-d=\"0.4\">ajuste</span></h2>"
   },
   {
    "voz": "El impuesto que pagas es el mismo. Solo cambia cuándo.",
@@ -77,14 +77,9 @@
      "t": 0.05,
      "s": "riser",
      "v": 0.5
-    },
-    {
-     "t": 1.6,
-     "s": "impact",
-     "v": 0.8
     }
    ],
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">La realidad</div><div class=\"big2 g\" style=\"font-size:170px\" data-in=\"0.2\" data-a=\"stamp\">Mismo impuesto</div><h2 data-in=\"1.6\" data-a=\"words\">Solo cambia <span>cuándo</span> lo pagas</h2><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">La cuota del IRPF depende de tus ingresos y deducciones del año, no de lo que te retuvieron.</div>"
+   "html": "<div class=\"bgword\">REALIDAD</div><div class=\"k\" data-in=\"0\" data-a=\"fade\">La realidad</div><div class=\"big2 g\" style=\"font-size:180px\" data-in=\"0.25\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"right\" data-sfx=\"boom\">Mismo impuesto</div><h2 data-in=\"1.6\" data-a=\"words\">Solo cambia <span>cuándo</span> lo pagas</h2><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">La cuota del IRPF depende de tus ingresos y deducciones del año, no de lo que te retuvieron.</div>"
   },
   {
    "voz": "Envíaselo a quien celebra la devolución como un premio.",
