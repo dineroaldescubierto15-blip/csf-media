@@ -1,0 +1,91 @@
+{
+ "slug": "csf-37_reel-menu-del-dia-coste-al-ano",
+ "music_seed": 17,
+ "subtitulos": "grande",
+ "ritmo": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Lo que cuesta de verdad (docs/viralidad.md): precio que ves (14,70 €) → lo que pagas al final (3.234 €/año) → en nóminas → alternativa y matiz neutro → envío.",
+  "idea": "El menú del día cuesta 14,70 € de media en 2026 (Hostelería de España y Edenred). Cada día de trabajo (220) son 3.234 € al año, casi 3 nóminas netas del salario mínimo. Con tupper de 3 €, 2.574 € menos; con tupper 3 días por semana, 1.544 €.",
+  "por_que_se_comparte": "Todo el que trabaja decide cada día si come fuera o lleva tupper; la cifra anual sorprende y se manda al compañero de trabajo que baja al menú cada día.",
+  "palabra_clave": "menú del día",
+  "ganchos": [
+   "Comer de menú cada día de trabajo te cuesta más de tres mil euros al año. (claridad 5, curiosidad 5, relevancia 5, concreción 5)",
+   "El menú del día te cuesta casi tres nóminas del salario mínimo al año. (4, 5, 4, 4)",
+   "Menú o tupper: la diferencia son dos mil quinientos euros al año. (5, 4, 4, 5)"
+  ],
+  "gancho": "Comer de menú cada día de trabajo te cuesta más de tres mil euros al año.",
+  "bucle": "¿De dónde sale? → la cuenta (escena 3) → ¿y con tupper? (escena 5) → la versión realista 3 días (escena 6).",
+  "re_ganchos": [
+   "~6 s: Haz la cuenta",
+   "~12 s: ¿Y con tupper?",
+   "~18 s: Pero no hace falta todo o nada"
+  ],
+  "recompensa": "Una opción realista sin culpabilizar: 3 días de tupper = 1.544 € al año.",
+  "cta": "Envíaselo a quien come fuera todos los días."
+ },
+ "scenes": [
+  {
+   "voz": "Comer de menú cada día de trabajo te cuesta más de tres mil euros al año.",
+   "sfx": [
+    {
+     "t": 0.02,
+     "s": "impact",
+     "v": 0.9
+    }
+   ],
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:utensils\" data-size=\"150\" class=\"g\"></i><div class=\"big2 g\" style=\"font-size:220px;margin-top:20px;white-space:nowrap\">3.234 €</div><h2 style=\"margin-top:0\">al año</h2><div class=\"chip\" style=\"margin-top:24px\">comiendo de menú cada día de trabajo</div></div>"
+  },
+  {
+   "voz": "El menú del día ya cuesta catorce con setenta de media.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Menú del día · media en España 2026</div><div class=\"row\"><i data-icon=\"lucide:receipt\" data-size=\"120\" class=\"g\" data-in=\"0.1\" data-a=\"spin\" data-sfx=\"pop\"></i><div class=\"big2\" data-in=\"0.5\" data-a=\"up\" style=\"white-space:nowrap\">14,70 €</div></div><p data-in=\"1.4\" data-a=\"up\">Hace un año: 14,20 €</p><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Hostelería de España y Edenred, octubre de 2026.</div>"
+  },
+  {
+   "voz": "Haz la cuenta: por doscientos veinte días de trabajo.",
+   "trans": "whip",
+   "sfx": [
+    {
+     "t": 2.4,
+     "s": "cash",
+     "v": 0.7
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.2\" data-a=\"type\">14,70 € × 220 días</h1><div class=\"big2 g\" style=\"font-size:180px;margin-top:30px;white-space:nowrap\" data-in=\"2.4\" data-a=\"stamp\">= 3.234 €</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">220 días: unas 52 semanas de 5 días, menos vacaciones y festivos (estimación).</div>"
+  },
+  {
+   "voz": "Casi tres nóminas enteras del salario mínimo.",
+   "trans": "zoom",
+   "html": "<div class=\"row\" style=\"gap:30px\"><i data-icon=\"lucide:wallet\" data-size=\"150\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><i data-icon=\"lucide:wallet\" data-size=\"150\" class=\"g\" data-in=\"0.4\" data-a=\"pop\" data-sfx=\"pop\"></i><i data-icon=\"lucide:wallet\" data-size=\"150\" class=\"g\" style=\"opacity:.5\" data-in=\"0.8\" data-a=\"pop\" data-sfx=\"pop\"></i></div><div class=\"big2\" style=\"margin-top:30px\" data-in=\"1.2\" data-a=\"stamp\">2,8 nóminas</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">SMI 2026 neto ≈ 1.141 € por paga (1.221 € brutos − 6,5 % de cotización). Cálculo propio.</div>"
+  },
+  {
+   "voz": "¿Y con tupper? Si te sale a tres euros, te ahorras dos mil quinientos.",
+   "trans": "cut",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "glitch",
+     "v": 0.6
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Al año</div><div style=\"margin-top:10px\" data-chart='{\"type\":\"bar\",\"data\":[3234,660],\"labels\":[\"Menú\",\"Tupper de 3 €\"],\"unit\":\" €\",\"dec\":0,\"mark\":1,\"in\":0.2,\"d\":1.3,\"h\":520}'></div><div class=\"big2 g\" style=\"margin-top:10px;white-space:nowrap\" data-in=\"2.2\" data-a=\"stamp\" data-sfx=\"impact\">−2.574 €</div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Supuesto: un tupper de unos 3 € por comida. Depende de lo que cocines.</div>"
+  },
+  {
+   "voz": "Pero no hace falta todo o nada. Con tupper tres días por semana, ya son mil quinientos.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Ni todo ni nada</div><div class=\"row\" style=\"gap:14px\" data-in=\"0.3\" data-a=\"up\"><div class=\"chip gold\">L</div><div class=\"chip gold\">M</div><div class=\"chip gold\">X</div><div class=\"chip\">J</div><div class=\"chip\">V</div></div><p data-in=\"0.8\" data-a=\"up\">3 días de tupper, 2 de menú</p><div data-in=\"2.6\" data-a=\"fade\" data-d=\"0.2\"><div class=\"big2 g\" style=\"margin-top:20px;white-space:nowrap\" data-in=\"2.6\" data-a=\"count\" data-to=\"1544\" data-suf=\" €\" data-d=\"0.8\" data-sfx=\"cash\">0 €</div></div><p data-in=\"2.8\" data-a=\"fade\">menos al año</p>"
+  },
+  {
+   "voz": "Envíaselo a quien come fuera todos los días.",
+   "trans": "fade",
+   "sfx": [
+    {
+     "t": 0.2,
+     "s": "success",
+     "v": 0.5
+    }
+   ],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien come fuera todos los días</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Precios medios; cada ciudad y cada menú son distintos. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
