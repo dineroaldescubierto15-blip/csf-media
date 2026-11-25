@@ -84,6 +84,12 @@ Lo esencial está resumido abajo; si dudas, léelo.
   subtítulos palabra a palabra (`"subtitulos": true`) y **efectos de sonido** (`data-sfx`, `"sfx"`) de
   `generator/sfx/` (generados con earshot). El workflow deja `posts/<slug>/escucha.txt` (lo que "oye" earshot) y
   `sfx_cues.json`.
+- **Estilo v2 de los Reels (en prueba desde el 25-11-2026)**: `"subtitulos": "karaoke"`, `"grano": true`,
+  `data-a="wheel"` (contador de rodillos), `data-a="punch"`/`"slam"` (golpe con temblor y destello), `.bgword` y los sonidos
+  `boom`, `caja`, `scratch`, `swipe`, `aire` (docstring de `reel_fx.py`). Prueba: `generator/specs/prova-estil-v2_mito-renta.json`.
+  Se usa por defecto solo cuando Pol lo apruebe.
+- Estadísticas: `tools/ig_stats.py` + workflow `stats-reels.yml` (diario, 03:40 UTC) → `stats/reels.json` y `stats/resum.md`.
+  Necesita el secreto `IG_TOKEN` en GitHub (`docs/estadisticas.md`).
 - `tools/assets.py`: busca y descarga fotos (Unsplash, Wikimedia Commons, Openverse) y sonidos (Openverse) con licencia
   libre y guarda el crédito. En el spec, `"assets"`: el workflow los descarga antes del render. Unsplash necesita el
   secreto `UNSPLASH_ACCESS_KEY` en GitHub; Openverse, `OPENVERSE_CLIENT_ID` y `OPENVERSE_CLIENT_SECRET`.
@@ -136,6 +142,8 @@ Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea d
    post ajeno (1-3 frases, tono de marca, sin enlaces ni "sígueme", datos solo verificados); `respon:` → borrador de
    respuesta a un comentario propio; `stats:` → breve análisis y ajuste de temas/formatos (anótalo en el resumen).
    Junta todos los borradores en un solo mensaje y envíalo con `tools/send_msg.py`. Márcalos `leido`.
+2b. Estadísticas: si existe `stats/resum.md` (workflow `stats-reels.yml`, ver `docs/estadisticas.md`), léelo y ajusta
+   formatos, ganchos y temas según el % visto y los envíos; anota 1-2 conclusiones en el resumen.
 3. Revisa la cola de reels (`pendiente` + `aprobado`). Objetivo: ≥ 6 reels en cola. Cada día: 3 reels (4 si hay menos
    de 3 en cola), con temas distintos entre sí (se publican 3 al día: 13:30, 17:00 y 20:30). Primero adapta a Reel los carruseles de la cola que nunca se publicaron
    (guion propio, datos revisados hoy) y después temas nuevos. Lanza los workflows de render en paralelo.

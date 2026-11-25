@@ -1,0 +1,52 @@
+# Estadísticas de los Reels: cada día a las 03:40 UTC (antes de la tarea diaria de las ~5:00 de Madrid) lee la API
+# oficial de Instagram y guarda stats/reels.json y stats/resum.md en main. No gasta operaciones de Make.
+# Necesita el secreto IG_TOKEN (y IG_USER_ID si el token es de inicio de sesión de Facebook). Ver docs/estadisticas.md.
+name: Estadísticas de los Reels
+
+on:
+  schedule:
+    - cron: "40 3 * * *"
+  workflow_dispatch:
+    inputs:
+      dias:
+        description: "Días hacia atrás"
+        required: false
+        default: "60"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats-reels
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar el secreto
+        id: chk
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: |
+          if [ -z "$IG_TOKEN" ]; then echo "Falta el secreto IG_TOKEN: no se hace nada (ver docs/estadisticas.md)."; echo "ok=no" >> "$GITHUB_OUTPUT"; else echo "ok=si" >> "$GITHUB_OUTPUT"; fi
+      - name: Instalar ffmpeg
+        if: steps.chk.outputs.ok == 'si'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Leer estadísticas
+        if: steps.chk.outputs.ok == 'si'
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python3 tools/ig_stats.py --dias "${{ inputs.dias || '60' }}"
+      - name: Guardar en el repositorio
+        if: steps.chk.outputs.ok == 'si'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stats/
+          git diff --cached --quiet && { echo "Sin cambios"; exit 0; }
+          git commit -m "Estadísticas de los Reels ($(date -u +%F))"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 5; done
