@@ -108,7 +108,14 @@ def main():
             errs.append(f"{base.split('/')[2]}/{me}: {e}")
     else:
         sys.exit("El token no funciona con ninguna API de Instagram:\n  " + "\n  ".join(errs))
-    print(f"API: {base} ({me})")
+    kind = "IG" if tok.startswith("IG") else "EAA" if tok.startswith("EAA") else "otro"
+    print(f"API: {base} ({me}); tipo de token: {kind}")
+    for pb in (f"https://graph.facebook.com/{VER}", f"https://graph.instagram.com/{VER}"):  # diagnóstico: permisos concedidos
+        try:
+            pr = get(f"{pb}/me/permissions", {"access_token": tok})
+            print(f"  permisos ({pb.split('/')[2]}):", ", ".join(f"{x.get('permission')}={x.get('status')}" for x in pr.get("data", [])))
+        except RuntimeError as e:
+            print(f"  permisos ({pb.split('/')[2]}): no disponible ({e})")
     desde = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=dias)
     caps = slugs_by_caption()
     rows, url, params = [], f"{base}/{me}/media", {
