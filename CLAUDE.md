@@ -28,7 +28,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
 - Reel: **método viral en `docs/viralidad.md` (manda desde el 25-11-2026)** + técnica en `docs/reels.md` (idea y su análisis → 3 ganchos y el mejor → estructura de retención con
   bucle abierto y re-ganchos → recursos visuales y sonidos → revisión con fotogramas y escucha). Pasan cosas todo el
   rato: un cambio visible cada 1,5-3 s, tipos de plano variados, efectos de sonido sincronizados, subtítulos.
-  1080×1920, **20-35 s (60-100 palabras)**, escenas cortas, `"subtitulos": "grande"` y `"ritmo": true`, voz en off oficial ("csf"). Guion dinámico y cercano
+  1080×1920, **20-35 s (60-100 palabras)**, escenas cortas, **estilo v2 por defecto** (`"subtitulos": "karaoke"`, `"ritmo": true`, `"grano": true`; ver Infraestructura), voz en off oficial ("csf"). Guion dinámico y cercano
   (preguntas, frases cortas, contrastes), números EN LETRAS en la voz. Gancho completo en el **fotograma 0** (cifra o frase concreta, sin `data-in` en la escena 1); respuesta antes del 40 %.
   Contenido en la zona segura (no tapar abajo ni a la derecha). Cierre ≤ 3 s: remate + CTA de envío ("Envíaselo a quien…") + aviso legal en pequeño.
 - Crecimiento (cuenta nueva, ver `docs/crecimiento.md`): primera línea del caption con la palabra clave que se busca
@@ -84,10 +84,11 @@ Lo esencial está resumido abajo; si dudas, léelo.
   subtítulos palabra a palabra (`"subtitulos": true`) y **efectos de sonido** (`data-sfx`, `"sfx"`) de
   `generator/sfx/` (generados con earshot). El workflow deja `posts/<slug>/escucha.txt` (lo que "oye" earshot) y
   `sfx_cues.json`.
-- **Estilo v2 de los Reels (en prueba desde el 25-11-2026)**: `"subtitulos": "karaoke"`, `"grano": true`,
-  `data-a="wheel"` (contador de rodillos), `data-a="punch"`/`"slam"` (golpe con temblor y destello), `.bgword` y los sonidos
-  `boom`, `caja`, `scratch`, `swipe`, `aire` (docstring de `reel_fx.py`). Prueba: `generator/specs/prova-estil-v2_mito-renta.json`.
-  Se usa por defecto solo cuando Pol lo apruebe.
+- **Estilo v2 de los Reels (POR DEFECTO desde el 25-11-2026, aprobado por Pol)**: en cada spec `"subtitulos": "karaoke"`,
+  `"ritmo": true`, `"grano": true`; cifras con `data-a="wheel"` (contador de rodillos; no uses `count`, que enseña un "0"),
+  1-3 golpes por Reel con `data-a="punch"`/`"slam"` (temblor y destello) en la cifra o palabra clave, `.bgword` (palabra de
+  fondo) en 2-3 escenas y los sonidos `boom`, `caja`, `scratch`, `swipe`, `aire` además de los de siempre (docstring de
+  `reel_fx.py`). Referencia: `generator/specs/prova-estil-v2_mito-renta.json`. No abuses: el golpe pierde fuerza si está en todas las escenas.
 - Estadísticas: `tools/ig_stats.py` + workflow `stats-reels.yml` (diario, 03:40 UTC) → `stats/estadisticas.*.enc`
   (CIFRADAS con `tools/stats_crypto.py`; clave privada solo en el data store, registro `config-stats`). Nunca subas las
   estadísticas descifradas. Necesita el secreto `IG_TOKEN` en GitHub (`docs/estadisticas.md`).

@@ -26,7 +26,7 @@ fotograma 0, den la respuesta pronto y se envíen**.
 | Ganchos en pregunta genérica ("¿Podrías…?", "¿Es el café…?") | Una pregunta se responde mentalmente con "no" y sigues | Afirmación con **cifra concreta** o consecuencia para ti |
 | La respuesta llega al final | Quien no aguanta no se lleva nada y no lo comparte | Respuesta antes del **40 %** del vídeo; luego, el giro |
 | Pantallas con mucho texto pequeño | En el móvil no se lee y se ve "presentación" | 1 cifra grande por escena; el resto, en los subtítulos grandes |
-| Subtítulos pequeños abajo | Mucha gente ve sin sonido | `"subtitulos": "grande"` (3 palabras, 92 px, centro-abajo) |
+| Subtítulos pequeños abajo | Mucha gente ve sin sonido | `"subtitulos": "karaoke"` (3 palabras grandes, la que suena en píldora dorada; estilo v2 por defecto) |
 | Final largo: conclusión + "Síguenos" + aviso | Los últimos 4-5 s se van, y "síguenos" no lo pide el algoritmo | Cierre de ≤ 3 s con CTA de **envío** ("Envíaselo a quien…") |
 | Temas "de manual" (fondo de emergencia, TIN vs TAE) | Útiles, pero nadie los manda a un amigo | Temas que **tocan la vida real** del público y dan un dato para discutir |
 | Mismo esqueleto visual en todos | El ojo se acostumbra | Alternar formatos (sección 5) |
@@ -53,7 +53,7 @@ lentas, no cambiando la voz.
    - "Síguenos" solo de vez en cuando (o en el caption).
 10. **Bucle** cuando se pueda: que la última frase empalme con la primera, para que se vea dos veces.
 11. **Spec**:
-    - Activa `"subtitulos": "grande"` y `"ritmo": true`.
+    - Activa el estilo v2: `"subtitulos": "karaoke"`, `"ritmo": true` y `"grano": true`; cifras con `wheel`, 1-3 golpes `punch`/`slam`.
     - En el `plan`, añade `formato` y `por_que_se_comparte`.
 12. **Datos**: igual que siempre (fuente consultada hoy, cifras calculadas con Python, fuente en pequeño en pantalla).
 
@@ -165,7 +165,7 @@ Prohibido (marca y retención):
 ## 10. Herramientas que ayudan
 | Herramienta | Para qué |
 |---|---|
-| `reel_fx.py` | `"subtitulos": "grande"`, `"ritmo": true`, `data-chart`, `data-news`, `data-photo`, `count`, `stamp`, `type` (la cuenta escrita en pantalla) |
+| `reel_fx.py` | estilo v2 (`"subtitulos": "karaoke"`, `"grano"`, `wheel`, `punch`, `slam`, `.bgword`), `"ritmo": true`, `data-chart`, `data-news`, `data-photo`, `count`, `stamp`, `type` (la cuenta escrita en pantalla) |
 | `hyperframes-registry` | ~450 bloques: tipografía cinética, subtítulos animados, transiciones. Inspírate o pórtalos a una escena con GSAP (`TL(i)`) |
 | `earshot` | Revisa `escucha.txt`: voz desde el segundo 0 y efectos sincronizados |
 | `real-sfx` / `real-sound` | Efectos reales si los sintéticos se quedan cortos |
