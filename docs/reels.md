@@ -1,3 +1,7 @@
+> **Desde el 25-11-2026 manda `docs/viralidad.md`** (20-35 s, gancho en el fotograma 0, respuesta antes del 40 %,
+> subtítulos grandes, `"ritmo": true`, cierre con CTA de envío). Lo de este documento sigue valiendo para la técnica
+> (componentes, sonido, revisión), pero donde hable de 35-55 s o de 110-160 palabras, aplica las cifras nuevas.
+
 # Cómo se hace un Reel de Capital Sin Filtros (método desde el 24-11-2026)
 
 Objetivo de Pol: Reels **profesionales, elaborados y fáciles de seguir**, en los que **pasan cosas todo el rato** para

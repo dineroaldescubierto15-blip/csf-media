@@ -25,12 +25,12 @@ Lo esencial está resumido abajo; si dudas, léelo.
   se habla (p. ej. bitcoin, la empresa de la noticia; nunca como patrocinio), titulares citados con medio y fecha,
   fotos con licencia libre y crédito visible (Unsplash, Commons) y fotos de figuras públicas ligadas al tema (sin
   retocar, sin sugerir que recomiendan nada). Nada de personajes de ficción de terceros ni capturas de medios.
-- Reel: **método completo en `docs/reels.md`** (idea y su análisis → 3 ganchos y el mejor → estructura de retención con
+- Reel: **método viral en `docs/viralidad.md` (manda desde el 25-11-2026)** + técnica en `docs/reels.md` (idea y su análisis → 3 ganchos y el mejor → estructura de retención con
   bucle abierto y re-ganchos → recursos visuales y sonidos → revisión con fotogramas y escucha). Pasan cosas todo el
   rato: un cambio visible cada 1,5-3 s, tipos de plano variados, efectos de sonido sincronizados, subtítulos.
-  1080×1920, 35-55 s, 7-10 escenas animadas, voz en off oficial ("csf"). Guion dinámico y cercano
-  (preguntas, frases cortas, contrastes), números EN LETRAS en la voz. Gancho fuerte en los 2 primeros segundos.
-  Contenido en la zona segura (no tapar abajo ni a la derecha). Última escena: conclusión + "Síguenos…" + aviso legal en pequeño.
+  1080×1920, **20-35 s (60-100 palabras)**, escenas cortas, `"subtitulos": "grande"` y `"ritmo": true`, voz en off oficial ("csf"). Guion dinámico y cercano
+  (preguntas, frases cortas, contrastes), números EN LETRAS en la voz. Gancho completo en el **fotograma 0** (cifra o frase concreta, sin `data-in` en la escena 1); respuesta antes del 40 %.
+  Contenido en la zona segura (no tapar abajo ni a la derecha). Cierre ≤ 3 s: remate + CTA de envío ("Envíaselo a quien…") + aviso legal en pequeño.
 - Crecimiento (cuenta nueva, ver `docs/crecimiento.md`): primera línea del caption con la palabra clave que se busca
   (Euríbor, IRPF, fondo de emergencia…); gancho del Reel en texto en pantalla y voz en el primer segundo; alterna CTA
   y usa "Envíaselo a quien…" cuando el tema se preste; usa series reconocibles ("Mito o realidad", "Tu primer sueldo",
@@ -60,7 +60,7 @@ Lo esencial está resumido abajo; si dudas, léelo.
   (para que use el Chromium preinstalado; no ejecutes `playwright install`).
   En CPU tarda ~5 s por segundo de audio + descarga del modelo la primera vez: lanza el render en segundo plano.
   Estilo de la voz (elegido por Pol): ritmo ~5,8 sílabas/s (~180 palabras/min), pausas casi nulas, finales marcados.
-  Para 35-55 s, guion de 110-160 palabras. Se genera frase a frase con 3 tomas: cuenta ~15-20 min de render para 50 s.
+  Para 20-35 s, guion de 60-100 palabras (series: ≤ 110). Se genera frase a frase con 3 tomas: cuenta ~15-20 min de render para 50 s.
   La puntuación decide la entonación: "." baja (cierre seguro), "?" sube, "," y "…" dejan la frase abierta.
   Frases cortas: cada frase es una unidad de entonación.
   La voz se guarda en `generator/.voice_cache/`: `--frames` y el render completo la sintetizan una sola vez.
@@ -145,7 +145,7 @@ Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea d
 5. Elige temas sin repetir los publicados/pendientes recientes (mira los slugs de la cola). Varía pilares.
 6. Para cada carrusel o reel: investiga y verifica datos (WebSearch), calcula cifras con Python, escribe el spec con
    SVG propios, renderiza, **mira el mosaico** (`generator/.preview.png`) y arregla solapes o textos densos,
-   escribe el caption, pasa el semáforo. Reels: sigue `docs/reels.md` entero (plan en el spec con idea, 3 ganchos,
+   escribe el caption, pasa el semáforo. Reels: sigue `docs/viralidad.md` (reglas duras, ganchos, formatos, temas) y `docs/reels.md` (plan en el spec con idea, 3 ganchos,
    estructura y re-ganchos; vista previa `--sin-voz`; tras el render, fotogramas + `escucha.txt`).
 7. `build_post.py`, commit y push. Espera a que la URL raw de `post.json` responda 200.
 8. Crea el registro en el data store (`estado`="pendiente", `tipo`="post", `media`, caption, files o video_url,
