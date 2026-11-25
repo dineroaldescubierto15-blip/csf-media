@@ -32,7 +32,20 @@ Sonido: data-sfx="pop" en cualquier elemento con data-in (suena cuando aparece),
   en la escena. Por defecto suena un whoosh suave en cada cambio de escena ("sfx_transiciones": false lo quita).
   Biblioteca: generator/sfx/*.wav (ver generator/sfx/CREDITS.md). El pico del sonido cae en el instante indicado.
 Spec global: "fondo": "grid" (por defecto) | "glow" | "none";  "subtitulos": true (palabra a palabra, abajo) |
-"grande" (3 palabras grandes, estilo TikTok);  "ritmo": true (golpe de zoom en cada escena + acercamiento continuo).
+"grande" (3 palabras grandes, estilo TikTok) | "karaoke" (estilo v2: 3 palabras, la que suena en una píldora dorada,
+las que faltan en gris);  "ritmo": true (golpe de zoom en cada escena + acercamiento continuo);  "grano": true (grano de
+película sutil, aspecto menos "plantilla").
+
+Estilo v2 (25-11-2026, adaptado de bloques de hyperframes-registry: caption-pill-karaoke, number-wheel,
+caption-kinetic-slam, logo-sting, mk-emphasis-type, grain-overlay):
+  data-a="wheel" data-to="3234" data-suf=" €" [data-pre="+"] [data-dec="1"] -> contador de rodillos (cada dígito gira
+      hasta su valor; invisible antes de su data-in, así no se ve un "0").
+  data-a="punch" -> la cifra cae seca desde grande y desenfocada; la escena tiembla 0,35 s y hay un destello suave.
+  data-a="slam" data-dir="left|right" -> igual, entrando de lado (para una palabra sola a pantalla completa).
+      data-flash="no" quita el destello. Combínalos con data-sfx="boom" o "impact".
+  <div class="bgword">MITO</div> -> palabra enorme casi transparente que se desliza detrás (textura de fondo).
+  Sonidos nuevos (earshot): boom (golpe grave), caja (caja registradora), scratch (disco rayado: "mito"),
+      swipe (mano que barre), aire (whoosh corto y fino).
 """
 import json, re, html as _html, pathlib
 import numpy as np
@@ -75,6 +88,21 @@ body.subs-big #subs .on{color:#F4C542;transform:scale(1.08)}
 body.subs-big.has-subs .scene{padding-bottom:820px}
 body.has-subs .scene{padding-bottom:640px}
 .w-word,.w-char{display:inline-block;white-space:pre}
+
+/* ---- estilo v2 (25-11-2026): subtítulos karaoke, contador de rodillos, golpe con flash, palabra de fondo, grano ---- */
+body.subs-kar #subs{top:1130px;height:250px;left:70px;right:130px;font-size:86px;line-height:1.08;gap:10px 14px;letter-spacing:-.03em;text-shadow:none}
+body.subs-kar #subs span{display:inline-block;padding:2px 18px 8px;border-radius:18px;color:#F5F5F2;text-shadow:0 6px 22px rgba(0,0,0,.95)}
+body.subs-kar #subs span.fut{opacity:.38}
+body.subs-kar #subs span.on{background:#F4C542;color:#0A0A0A;text-shadow:none}
+body.subs-kar.has-subs .scene{padding-bottom:820px}
+.wheel{display:inline-flex;align-items:flex-end;line-height:1;white-space:nowrap}
+.wheel .wd{display:inline-block;height:1em;overflow:hidden;position:relative}
+.wheel .wd>span{display:flex;flex-direction:column}
+.wheel .wd>span>i{font-style:normal;height:1em;display:block}
+.bgword{position:absolute;left:-40px;top:50%;font-size:420px;font-weight:900;letter-spacing:-.06em;line-height:.9;white-space:nowrap;color:rgba(245,245,242,.045);pointer-events:none;z-index:0}
+.scene>*:not(.bgword){position:relative;z-index:1}
+#flash{position:absolute;inset:0;background:#F5F5F2;opacity:0;pointer-events:none;z-index:50;mix-blend-mode:screen}
+#grain{position:absolute;inset:0;pointer-events:none;z-index:40;opacity:.10;mix-blend-mode:overlay}
 """
 
 EXTRA_JS = """
@@ -85,6 +113,18 @@ window.__timelines = window.__timelines || {};
     const chars = el.dataset.a === 'type';
     const parts = chars ? [...el.textContent] : el.textContent.split(/(\\s+)/);
     el.innerHTML = parts.map(p => /^\\s+$/.test(p) ? p : `<span class="${chars?'w-char':'w-word'}" style="opacity:0">${p}</span>`).join('');
+  }
+
+  // contador de rodillos (data-a="wheel" data-to="3234" data-suf=" €" data-pre="+" data-dec="0"): cada dígito gira hasta su valor
+  for (const el of document.querySelectorAll('[data-a="wheel"]')) {
+    const dec = +(el.dataset.dec || 0), v = (+el.dataset.to).toFixed(dec);
+    let [ip, fp] = v.split('.'); ip = ip.replace(/\\B(?=(\\d{3})+(?!\\d))/g, '.');
+    const txt = (el.dataset.pre || '') + ip + (fp ? ',' + fp : '') + (el.dataset.suf || '');
+    el.classList.add('wheel'); let k = 0;
+    el.innerHTML = [...txt].map(ch => /\\d/.test(ch)
+      ? `<span class="wd" data-k="${k++}" data-v="${ch}"><span>${'01234567890'.split('').map(n => `<i>${n}</i>`).join('')}</span></span>`
+      : `<span>${ch === ' ' ? '&nbsp;' : ch}</span>`).join('');
+    el.style.opacity = 0;
   }
   const base = window.setFrame;
   const ease = p => 1 - Math.pow(1 - p, 3);
@@ -105,6 +145,20 @@ window.__timelines = window.__timelines || {};
       else if (a === 'kb') { const q = Math.max(0, Math.min(1, (t - st) / Math.max(0.1, dur - st))); el.style.opacity = Math.min(1, (t-st)/0.4); el.style.transform = `scale(${1.12 - 0.12*q})`; }
       else if (a === 'float') { el.style.opacity = Math.min(1, Math.max(0, (t-st)/0.4)); el.style.transform = `translateY(${Math.sin((t-st)*2.2)*12}px)`; }
       else if (a === 'shake') { const k = Math.max(0, 1 - Math.max(0, t - st) / d); el.style.opacity = t >= st ? 1 : 0; el.style.transform = `translateX(${Math.sin((t-st)*60)*18*k}px)`; }
+      else if (a === 'wheel') {
+        el.style.opacity = t >= st ? 1 : 0;
+        const ds = el.querySelectorAll('.wd'), n = ds.length;
+        ds.forEach((w, k) => { const q = Math.max(0, Math.min(1, (t - st - (n - 1 - k) * 0.06) / d)), v = +w.dataset.v;
+          const turns = v + 10 * (n - k > 1 ? 1 : 0), raw = turns * ease(q), pos = raw > 10 ? raw % 10 : raw;
+          w.firstChild.style.transform = `translateY(${-pos}em)`; });
+      }
+      else if (a === 'punch' || a === 'slam') {
+        // golpe: entra grande y desenfocado y cae seco; la escena tiembla y hay un destello (estilo "logo sting")
+        const b = back(p), dir = el.dataset.dir === 'right' ? 1 : el.dataset.dir === 'left' ? -1 : 0;
+        el.style.opacity = Math.min(1, p * 4);
+        el.style.filter = `blur(${(1 - Math.min(1, p * 2.2)) * 18}px)`;
+        el.style.transform = a === 'slam' ? `translateX(${dir * (1 - e) * 420}px) scale(${2.4 - 1.4 * b})` : `scale(${1.9 - 0.9 * b})`;
+      }
       else if (a === 'words' || a === 'type') {
         const kids = el.children, n = kids.length, step = +(el.dataset.step || (a === 'type' ? 0.035 : 0.12));
         for (let k = 0; k < n; k++) { const q = Math.max(0, Math.min(1, (t - st - k*step) / (a === 'type' ? 0.01 : 0.25)));
@@ -130,6 +184,18 @@ window.__timelines = window.__timelines || {};
     }
     else if (idx > 0 && t < 0.25 && tr !== 'cut') { const k = ease(t / 0.25); s.style.transform = `scale(${1.04 - 0.04*k})`; }
     else if (!(t > dur - 0.3 && tr !== 'fade')) s.style.transform = '';
+    // palabra de fondo que se desliza despacio (textura, estilo "emphasis type")
+    for (const bw of s.querySelectorAll('.bgword')) bw.style.transform = `translate(${-t * 38}px, -50%)`;
+    // temblor de cámara y destello tras cada golpe (data-a="punch"/"slam")
+    let sh = 0, fl = 0;
+    for (const el of s.querySelectorAll('[data-a="punch"],[data-a="slam"]')) {
+      const dt = t - (+el.dataset.in + 0.12);
+      if (dt >= 0 && dt < 0.35) { sh = Math.max(sh, 1 - dt / 0.35); }
+      if (dt >= -0.02 && dt < 0.14 && el.dataset.flash !== 'no') { fl = Math.max(fl, 0.15 * (1 - Math.max(0, dt) / 0.14)); }
+    }
+    if (sh > 0) s.style.transform = (s.style.transform || '') + ` translate(${Math.sin(t * 95) * 16 * sh}px, ${Math.cos(t * 77) * 12 * sh}px)`;
+    const fx = document.getElementById('flash'); if (fx) fx.style.opacity = fl;
+    const gr = document.getElementById('grain'); if (gr) { const sd = Math.floor(g * 12) % 97; gr.querySelector('feTurbulence').setAttribute('seed', sd); }
     const tl = window.__timelines['s' + idx]; if (tl) tl.seek(t, false);
     const bg = document.getElementById('bgfx');
     if (bg) bg.style.transform = `translate(${(g*14)%120}px, ${(g*9)%120}px) scale(${1 + 0.02*Math.sin(g*0.6)})`;
@@ -138,7 +204,10 @@ window.__timelines = window.__timelines || {};
       let cur = -1; for (let k = 0; k < W.length; k++) if (t >= W[k][1]) cur = k;
       if (cur < 0 || t > W[W.length-1][2] + 0.6) { box.innerHTML = ''; }
       else { const N = window.__subsN || 4, c0 = Math.floor(cur / N) * N;
-        box.innerHTML = W.slice(c0, c0 + N).map((w, k) => `<span class="${c0+k===cur?'on':''}">${w[0]}</span>`).join(' '); }
+        const kar = document.body.classList.contains('subs-kar');
+        box.innerHTML = W.slice(c0, c0 + N).map((w, k) => { const j = c0 + k, cls = j === cur ? 'on' : (kar && j > cur ? 'fut' : '');
+          const pz = kar && j === cur ? Math.min(1, (t - w[1]) / 0.12) : 1; const st = kar && j === cur ? ` style="transform:scale(${1.18 - 0.1*pz})"` : '';
+          return `<span class="${cls}"${st}>${w[0]}</span>`; }).join(' '); }
     }
   };
 })();
@@ -281,6 +350,14 @@ def body_after(spec):
         out += '<div id="subs"></div>'
         if spec.get("subtitulos") == "grande":
             cls.append("subs-big"); out += "<script>window.__subsN=3;</script>"
+        elif spec.get("subtitulos") == "karaoke":
+            cls.append("subs-kar"); out += "<script>window.__subsN=3;</script>"
+    if spec.get("grano"):
+        out += ('<svg id="grain" width="1080" height="1920"><filter id="grf"><feTurbulence type="fractalNoise" '
+                'baseFrequency="0.9" numOctaves="2" seed="1" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/>'
+                '</filter><rect width="100%" height="100%" filter="url(#grf)"/></svg>')
+    if spec.get("flash", True):
+        out += '<div id="flash"></div>'
     if spec.get("ritmo"):
         cls.append("ritmo")
     if cls:
@@ -312,7 +389,8 @@ def subs_script(timing):
 
 VOL = {"tick": 0.35, "type": 0.45, "pop": 0.6, "click": 0.6, "whoosh": 0.55, "swoosh": 0.5, "impact": 0.6,
        "riser": 0.5, "cash": 0.6, "coin": 0.6, "ding": 0.55, "glitch": 0.5, "error": 0.6, "success": 0.6,
-       "camera": 0.55, "paper": 0.6}
+       "camera": 0.55, "paper": 0.6, "boom": 0.7, "caja": 0.55, "scratch": 0.6, "swipe": 0.55,
+       "aire": 0.5}
 
 def cues(spec, starts, durs):
     out = []

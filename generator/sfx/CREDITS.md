@@ -22,3 +22,8 @@ Para regenerar o añadir uno: `earshot make "<descripción>" -o generator/sfx/<n
 | success | respuesta correcta, "realidad" |
 | camera | foto que aparece |
 | paper | titular de noticia que aparece |
+| boom | golpe grave para la cifra clave o una palabra que entra de golpe (`punch`/`slam`) |
+| caja | caja registradora: el resultado de una cuenta en euros |
+| scratch | disco rayado: "mito", algo que no es lo que parece |
+| swipe | mano que barre: comparación que entra de lado |
+| aire | whoosh corto y fino: segunda palabra de un `slam` |
