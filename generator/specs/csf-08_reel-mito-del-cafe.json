@@ -1,81 +1,48 @@
 {
  "slug": "csf-08_reel-mito-del-cafe",
  "music_seed": 2,
- "subtitulos": true,
+ "subtitulos": "grande",
+ "ritmo": true,
  "fondo": "grid",
  "plan": {
-  "idea": "El mito de que el café diario es lo que impide ahorrar: suma, pero la vivienda pesa 16 veces más.",
-  "promesa": "Saber dónde mirar primero para ahorrar de verdad.",
+  "formato": "Lo que cuesta de verdad / A vs B (docs/viralidad.md), versión corta del 25-11-2026",
+  "idea": "Dejar el café ahorra 730 €/año; bajar un 10 % el alquiler, 900. Lo grande decide.",
+  "por_que_se_comparte": "Todo el mundo ha oído 'deja el café para ahorrar'; se envía a quien lo repite.",
   "palabra_clave": "ahorrar",
   "ganchos": [
-   "¿El café de cada día es lo que no te deja ahorrar? (claridad 5, curiosidad 4, relevancia 5, concreción 4)",
-   "Setecientos treinta euros al año en café… y no es tu problema. (4, 5, 4, 5)",
-   "Te dicen que dejes el café para ahorrar. Haz números. (5, 3, 4, 3)"
+   "Dejar el café te ahorra setecientos treinta euros al año. Pero no es ahí donde se va tu dinero. (5,5,5,5)",
+   "El café no es tu problema. Haz la cuenta. (4,4,4,3)",
+   "Te dicen que dejes el café para ahorrar. (4,3,4,2)"
   ],
-  "gancho": "¿El café de cada día es lo que no te deja ahorrar? Haz números.",
-  "bucle": "¿Dónde se va el dinero de verdad? -> la vivienda (se cierra en la escena 4).",
-  "golpes": [
-   "2 €/día = 730 €/año",
-   "Re-gancho: ¿es ahí?",
-   "Vivienda 11.665 €/año (INE EPF 2025)",
-   "Comparativa de ahorros",
-   "Lo grande decide",
-   "Matiz"
-  ],
+  "gancho": "Dejar el café te ahorra setecientos treinta euros al año. Pero no es ahí donde se va tu dinero.",
+  "bucle": "¿Dónde se va entonces? -> la vivienda",
   "re_ganchos": [
-   "~8 s: Pero ¿es ahí donde se va?",
-   "~20 s: Compara",
-   "~37 s: Ojo"
+   "~8 s: Un hogar medio…",
+   "~14 s: Haz la cuenta"
   ],
-  "recompensa": "Bajar un 10 % el alquiler ahorra más que dejar el café.",
-  "cta": "Síguenos para entender tu dinero sin humo."
+  "recompensa": "Bajar el alquiler un 10 % ahorra más que todo el café.",
+  "cta": "Envíaselo a quien siempre culpa al café."
  },
- "assets": [
-  {
-   "id": "cafe",
-   "de": "unsplash",
-   "q": "takeaway coffee cup hand",
-   "orient": "portrait"
-  }
- ],
  "scenes": [
   {
-   "voz": "¿El café de cada día es lo que no te deja ahorrar? Haz números.",
-   "dur": 3.4,
+   "voz": "Dejar el café te ahorra setecientos treinta euros al año. Pero no es ahí donde se va tu dinero.",
    "sfx": [
     {
-     "t": 0.05,
+     "t": 0.02,
      "s": "impact",
-     "v": 0.8
+     "v": 0.9
     }
    ],
-   "html": "<div data-photo='{\"src\": \"assets/cafe.jpg\", \"credito\": \"auto\", \"h\": 620, \"in\": 0.0, \"a\": \"zoom\", \"sfx\": \"camera\"}'></div><h1 style=\"margin-top:44px\" data-in=\"0.15\" data-a=\"words\" data-step=\"0.1\">¿El <span>café</span> es lo que no te deja ahorrar?</h1>"
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:coffee\" data-size=\"150\" class=\"g\"></i><div class=\"big2 g\" style=\"font-size:200px;margin-top:16px\">730 €</div><h2 style=\"margin-top:10px\">al año en cafés</h2><div class=\"chip\" style=\"margin-top:22px\">y no es tu mayor gasto</div></div>"
   },
   {
-   "voz": "Dos euros al día son unos sesenta euros al mes. Setecientos treinta al año. No es poco.",
+   "voz": "Un hogar medio gasta once mil seiscientos euros al año en vivienda. Un tercio de todo.",
    "trans": "slide",
-   "html": "<div class=\"row\"><i data-icon=\"lucide:coffee\" data-size=\"130\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"chip\" data-in=\"0.3\" data-a=\"slide\">2 € al día</div></div><div class=\"chip\" style=\"margin-top:40px\" data-in=\"1.3\" data-a=\"slide\" data-sfx=\"tick\">≈ 61 € al mes</div><div class=\"big g\" style=\"margin-top:30px\" data-in=\"2.4\" data-a=\"count\" data-to=\"730\" data-suf=\" €\" data-d=\"0.9\" data-sfx=\"cash\">0 €</div><p style=\"margin-top:0\" data-in=\"2.6\" data-a=\"up\">al año</p><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cálculo: 2 € × 365 días.</div>"
+   "html": "<div class=\"row\"><i data-icon=\"lucide:house\" data-size=\"130\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2\" data-in=\"0.3\" data-a=\"count\" data-to=\"11665\" data-suf=\" €\" data-d=\"0.9\">0 €</div></div><svg viewBox=\"0 0 840 70\" width=\"840\" style=\"margin-top:40px\"><rect width=\"840\" height=\"70\" rx=\"14\" fill=\"#1C1C1A\"/><rect width=\"279\" height=\"70\" rx=\"14\" fill=\"#F4C542\" data-in=\"2.8\" data-d=\"0.7\" data-a=\"grow\" data-sfx=\"swoosh\"/></svg><p data-in=\"3.0\" data-a=\"up\"><b class=\"g\">33,2 %</b> del gasto del hogar</p><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">INE, Encuesta de Presupuestos Familiares 2025 (25/06/2026).</div>"
   },
   {
-   "voz": "Pero, ¿de verdad es ahí donde se va tu dinero?",
-   "trans": "cut",
-   "sfx": [
-    {
-     "t": 0.05,
-     "s": "glitch",
-     "v": 0.8
-    }
-   ],
-   "html": "<div class=\"col center\"><i data-icon=\"lucide:search\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.45\"></i><h1 data-in=\"0.15\" data-a=\"words\">¿De verdad se va <span>ahí</span>?</h1></div>"
-  },
-  {
-   "voz": "Según el INE, un hogar medio gasta unos once mil seiscientos euros al año en vivienda. Un tercio de todo lo que gasta.",
-   "trans": "whip",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Gasto medio por hogar · 2025</div><div class=\"row\"><i data-icon=\"lucide:house\" data-size=\"150\" class=\"g\" data-in=\"0.2\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2\" data-in=\"0.4\" data-a=\"count\" data-to=\"11665\" data-suf=\" €\" data-d=\"1.1\">0 €</div></div><p data-in=\"0.8\" data-a=\"up\">al año en <b>vivienda</b> y suministros</p><svg viewBox=\"0 0 840 70\" width=\"840\" style=\"margin-top:40px\"><rect x=\"0\" y=\"0\" width=\"840\" height=\"70\" rx=\"14\" fill=\"#1C1C1A\"/><rect x=\"0\" y=\"0\" width=\"279\" height=\"70\" rx=\"14\" fill=\"#F4C542\" data-in=\"3.4\" data-d=\"0.8\" data-a=\"grow\" data-sfx=\"swoosh\"/></svg><p data-in=\"3.6\" data-a=\"up\"><b class=\"g\">33,2 %</b> de todo el gasto del hogar</p><div class=\"src\" data-in=\"1\" data-a=\"fade\">Fuente: INE, Encuesta de Presupuestos Familiares 2025 (25/06/2026). Vivienda, agua, electricidad y gas.</div>"
-  },
-  {
-   "voz": "Compara. Bajar un diez por ciento un alquiler de setecientos cincuenta euros ahorra novecientos al año. Tres suscripciones de diez euros, trescientos sesenta.",
-   "trans": "slide",
+   "voz": "Haz la cuenta: bajar un diez por ciento un alquiler de setecientos cincuenta ahorra novecientos al año. Más que todo el café.",
+   "trans": "zoom",
    "sfx": [
     {
      "t": 0.6,
@@ -83,41 +50,24 @@
      "v": 0.6
     },
     {
-     "t": 2.2,
+     "t": 2.4,
      "s": "impact",
-     "v": 0.6
+     "v": 0.7
     }
    ],
-   "html": "<h2 data-in=\"0\" data-a=\"left\">Lo que ahorras en un año</h2><div style=\"margin-top:40px\" data-chart='{\"type\": \"bar\", \"data\": [900, 730, 360], \"labels\": [\"Alquiler de 750 € −10 %\", \"Todo el café\", \"3 suscripciones de 10 €\"], \"unit\": \" €\", \"dec\": 0, \"mark\": 0, \"in\": 0.4, \"d\": 1.6, \"h\": 560}'></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cálculos propios con cifras de ejemplo.</div>"
+   "html": "<h2 data-in=\"0\" data-a=\"left\">Lo que ahorras en un año</h2><div style=\"margin-top:30px\" data-chart='{\"type\": \"bar\", \"data\": [900, 730, 360], \"labels\": [\"Alquiler −10 %\", \"Todo el café\", \"3 suscripciones\"], \"unit\": \" €\", \"dec\": 0, \"mark\": 0, \"in\": 0.4, \"d\": 1.6, \"h\": 540}'></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Alquiler de 750 €/mes; café de 2 € al día; suscripciones de 10 €/mes. Cálculo propio.</div>"
   },
   {
-   "voz": "Los gastos pequeños suman, sí. Pero los grandes deciden: vivienda, transporte y deudas.",
-   "trans": "zoom",
-   "html": "<h1 data-in=\"0\" data-a=\"up\">Lo pequeño suma. <span class=\"hl\" data-in=\"1.2\" data-d=\"0.5\" data-a=\"hl\">Lo grande decide.</span></h1><div class=\"col\" style=\"margin-top:56px\"><div class=\"row\" data-in=\"2.4\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:house\" data-size=\"80\" class=\"g\"></i><p style=\"margin:0\">Vivienda</p></div><div class=\"row\" data-in=\"2.9\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:car\" data-size=\"80\" class=\"g\"></i><p style=\"margin:0\">Transporte</p></div><div class=\"row\" data-in=\"3.4\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:credit-card\" data-size=\"80\" class=\"g\"></i><p style=\"margin:0\">Deudas</p></div></div>"
-  },
-  {
-   "voz": "Ojo: si el café es tu pequeño gusto y lo grande está en orden, no es el problema.",
-   "trans": "slide",
-   "sfx": [
-    {
-     "t": 0.1,
-     "s": "ding",
-     "v": 0.6
-    }
-   ],
-   "html": "<div class=\"row\"><i data-icon=\"lucide:triangle-alert\" data-size=\"120\" class=\"g\" data-in=\"0\" data-a=\"shake\" data-d=\"0.5\"></i><div class=\"k\" style=\"margin:0\" data-in=\"0.1\" data-a=\"fade\">El matiz</div></div><h2 style=\"margin-top:40px\" data-in=\"0.3\" data-a=\"up\">Con lo grande en orden, el café <span class=\"g\">no es el problema</span></h2>"
-  },
-  {
-   "voz": "Ahorra primero donde más pesa. Síguenos para entender tu dinero sin humo.",
+   "voz": "Lo pequeño suma. Lo grande decide. Envíaselo a quien siempre culpa al café.",
    "trans": "fade",
    "sfx": [
     {
      "t": 0.2,
      "s": "success",
-     "v": 0.7
+     "v": 0.6
     }
    ],
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Conclusión</div><h1 data-in=\"0.15\" data-a=\"words\">Ahorra primero donde más pesa.</h1><p data-in=\"2.0\" data-a=\"up\">Síguenos para entender tu dinero <span class=\"g\">sin humo</span>.</p><div class=\"src\" data-in=\"2.8\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero.</div>"
+   "html": "<h1 data-in=\"0\" data-a=\"words\">Lo pequeño suma. <span>Lo grande decide.</span></h1><div class=\"row\" style=\"margin-top:40px\" data-in=\"1.6\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"90\" class=\"g\"></i><p style=\"margin:0\">Envíaselo a quien culpa al café</p></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero.</div>"
   }
  ]
 }

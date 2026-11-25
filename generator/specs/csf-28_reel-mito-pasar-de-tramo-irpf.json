@@ -1,115 +1,90 @@
 {
  "slug": "csf-28_reel-mito-pasar-de-tramo-irpf",
  "music_seed": 9,
- "subtitulos": true,
+ "subtitulos": "grande",
+ "ritmo": true,
  "fondo": "grid",
  "plan": {
-  "idea": "Mito: si cambias de tramo del IRPF cobras menos. Los tipos se aplican por escalones: solo lo que pasa del límite paga más.",
-  "promesa": "Entender cómo funcionan los tramos del IRPF con un ejemplo de números reales.",
+  "formato": "Mito en 20 segundos (docs/viralidad.md), versión corta del 25-11-2026",
+  "idea": "Mito: si cambias de tramo del IRPF cobras menos. Solo lo que pasa del límite paga más.",
+  "por_que_se_comparte": "Casi todo el mundo conoce a alguien que lo cree; se envía para zanjar la discusión.",
   "palabra_clave": "IRPF",
   "ganchos": [
-   "¿Te suben el sueldo y vas a cobrar menos por cambiar de tramo? Es un mito. (claridad 5, curiosidad 4, relevancia 5, concreción 4)",
-   "Mil euros de subida: ¿cuánto te quedas de verdad? (4, 5, 4, 5)",
-   "No rechaces una subida por miedo al IRPF. (4, 3, 4, 3)"
+   "«Si me suben el sueldo, paso de tramo y cobro menos.» Es mentira. (5,4,5,4)",
+   "Mil euros de subida: te quedas setecientos doce. (4,4,4,5)",
+   "El mito del IRPF que hace rechazar subidas. (4,4,4,2)"
   ],
-  "gancho": "¿Te suben el sueldo y vas a cobrar menos por cambiar de tramo? Es un mito.",
-  "bucle": "¿Todo pasa a pagar el 30 %? -> No, solo 800 € (se cierra en la escena 5).",
-  "golpes": [
-   "Escalones",
-   "Ejemplo 20.000 → 21.000 €",
-   "Re-gancho ¿todo al 30 %?",
-   "200 € al 24 % y 800 € al 30 %",
-   "288 € de impuesto, 712 € te quedas",
-   "Retención"
-  ],
+  "gancho": "«Si me suben el sueldo, paso de tramo y cobro menos.» Es mentira, y te lo enseño.",
+  "bucle": "¿Cuánto pagas de verdad? -> 288 € (escena 4)",
   "re_ganchos": [
-   "~17 s: ¿Y todo pasa al treinta?",
-   "~27 s: Resultado",
-   "~35 s: ¿Y la nómina?"
+   "~9 s: Pues el treinta por ciento solo…",
+   "~15 s: ¿Y la nómina?"
   ],
   "recompensa": "De 1.000 € de subida te quedas 712 €.",
-  "cta": "Envíaselo a quien aún se lo cree."
+  "cta": "Envíaselo a quien rechazaría una subida por esto."
  },
  "scenes": [
   {
-   "voz": "¿Te suben el sueldo y vas a cobrar menos por cambiar de tramo? Es un mito.",
-   "dur": 3.6,
+   "voz": "«Si me suben el sueldo, paso de tramo y cobro menos.» Es mentira, y te lo enseño.",
    "sfx": [
     {
-     "t": 1.5,
+     "t": 0.02,
      "s": "impact",
-     "v": 0.8
+     "v": 0.9
     }
    ],
-   "html": "<div class=\"chip gold\" data-in=\"0\" data-a=\"pop\">Mito o realidad</div><h1 style=\"margin-top:40px\" data-in=\"0.15\" data-a=\"words\" data-step=\"0.1\">¿Cobrar menos por cambiar de <span>tramo</span>?</h1><div class=\"big2 g\" style=\"margin-top:40px\" data-in=\"1.5\" data-a=\"stamp\">MITO</div>"
+   "html": "<div class=\"chip gold\">Mito o realidad</div><h1 style=\"margin-top:36px\">«Si paso de tramo, cobro menos»</h1><div class=\"big2 g\" style=\"font-size:190px;margin-top:30px;transform:rotate(-6deg)\">MITO</div>"
   },
   {
-   "voz": "El IRPF funciona por escalones. Cada tipo se aplica solo a la parte de tu base que cae en ese escalón.",
+   "voz": "Te suben mil euros y pasas el límite de veinte mil doscientos.",
    "trans": "slide",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Escala general de referencia · 2026</div><div style=\"margin-top:20px\" data-chart='{\"type\": \"bar\", \"data\": [19, 24, 30, 37, 45], \"labels\": [\"12.450\", \"20.200\", \"35.200\", \"60.000\", \"300.000\"], \"unit\": \" %\", \"dec\": 0, \"mark\": 2, \"in\": 0.3, \"d\": 1.8, \"h\": 600}'></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Tipo de cada tramo según su límite superior de base (€). Escala estatal + autonómica de referencia; cada comunidad fija la suya. Fuente: Agencia Tributaria.</div>"
+   "html": "<div class=\"row\"><div class=\"big2\" style=\"color:#8A8A85\" data-in=\"0\" data-a=\"left\">20.000 €</div><i data-icon=\"lucide:arrow-right\" data-size=\"90\" class=\"g\" data-in=\"0.4\" data-a=\"pop\"></i></div><div class=\"big2 g\" style=\"margin-top:16px\" data-in=\"0.8\" data-a=\"stamp\" data-sfx=\"cash\">21.000 €</div><div class=\"row\" style=\"margin-top:40px\" data-in=\"2.0\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:flag\" data-size=\"80\" class=\"g\"></i><p style=\"margin:0\">Límite del tramo: <b>20.200 €</b></p></div>"
   },
   {
-   "voz": "Un ejemplo. Tu base pasa de veinte mil a veintiún mil euros, y superas el límite de veinte mil doscientos.",
+   "voz": "Pues el treinta por ciento solo se aplica a los ochocientos que pasan del límite.",
    "trans": "zoom",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Ejemplo</div><div class=\"row\"><div class=\"big2\" style=\"color:#8A8A85\" data-in=\"0.4\" data-a=\"left\">20.000 €</div><i data-icon=\"lucide:arrow-right\" data-size=\"90\" class=\"g\" data-in=\"1.0\" data-a=\"pop\"></i></div><div class=\"big2 g\" style=\"margin-top:20px\" data-in=\"1.4\" data-a=\"stamp\" data-sfx=\"cash\">21.000 €</div><div class=\"row\" style=\"margin-top:50px\" data-in=\"3.4\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:flag\" data-size=\"80\" class=\"g\"></i><p style=\"margin:0\">Límite del tramo: <b>20.200 €</b></p></div>"
+   "html": "<h2 data-in=\"0\" data-a=\"left\">Los 1.000 € de subida</h2><svg viewBox=\"0 0 840 120\" width=\"840\" style=\"margin-top:40px\"><rect width=\"164\" height=\"120\" rx=\"14\" fill=\"#6F6F6F\" data-in=\"0.3\" data-d=\"0.5\" data-a=\"grow\"/><rect x=\"176\" width=\"664\" height=\"120\" rx=\"14\" fill=\"#F4C542\" data-in=\"1.6\" data-d=\"0.8\" data-a=\"grow\" data-sfx=\"swoosh\"/></svg><div class=\"row\" style=\"margin-top:26px;gap:24px\"><div class=\"chip\" data-in=\"0.6\" data-a=\"pop\">200 € al 24 %</div><div class=\"chip gold\" data-in=\"2.0\" data-a=\"pop\">800 € al 30 %</div></div>"
   },
   {
-   "voz": "¿Y toda tu base pasa a pagar el treinta por ciento? No.",
+   "voz": "Pagas doscientos ochenta y ocho. Te quedas setecientos doce. Cobras más.",
+   "trans": "whip",
+   "sfx": [
+    {
+     "t": 0.4,
+     "s": "riser",
+     "v": 0.6
+    },
+    {
+     "t": 1.9,
+     "s": "impact",
+     "v": 0.7
+    }
+   ],
+   "html": "<div style=\"margin-top:10px\" data-chart='{\"type\": \"bar\", \"data\": [712, 288], \"labels\": [\"Te quedas\", \"Impuesto\"], \"unit\": \" €\", \"dec\": 0, \"mark\": 0, \"in\": 0.2, \"d\": 1.4, \"h\": 560}'></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">200 × 24 % + 800 × 30 % = 288 €. Escala general de referencia 2026; cada comunidad fija la suya.</div>"
+  },
+  {
+   "voz": "¿Y por qué a veces la nómina baja? Cambia la retención, y se ajusta en la renta.",
    "trans": "cut",
    "sfx": [
     {
      "t": 0.05,
      "s": "glitch",
-     "v": 0.8
+     "v": 0.7
     }
    ],
-   "html": "<div class=\"col center\"><i data-icon=\"lucide:circle-x\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.45\"></i><h1 data-in=\"0.15\" data-a=\"words\">¿Todo al <span>30 %</span>? No.</h1></div>"
+   "html": "<div class=\"row\"><i data-icon=\"lucide:receipt-text\" data-size=\"120\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.4\"></i><h2 style=\"margin:0\" data-in=\"0.1\" data-a=\"up\">¿Y la nómina?</h2></div><h1 style=\"margin-top:40px\" data-in=\"1.6\" data-a=\"up\">Cambia la <span>retención</span></h1><div class=\"row\" style=\"margin-top:30px\" data-in=\"3.0\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:calendar-check\" data-size=\"80\" class=\"w\"></i><p style=\"margin:0\">Se ajusta en la renta</p></div>"
   },
   {
-   "voz": "De la subida, doscientos euros siguen al veinticuatro por ciento. Solo los ochocientos que pasan del límite van al treinta.",
-   "trans": "slide",
-   "html": "<h2 data-in=\"0\" data-a=\"left\">Los 1.000 € de subida</h2><svg viewBox=\"0 0 840 120\" width=\"840\" style=\"margin-top:50px\"><rect x=\"0\" y=\"0\" width=\"164\" height=\"120\" rx=\"14\" fill=\"#6F6F6F\" data-in=\"0.6\" data-d=\"0.6\" data-a=\"grow\" data-sfx=\"pop\"/><rect x=\"176\" y=\"0\" width=\"664\" height=\"120\" rx=\"14\" fill=\"#F4C542\" data-in=\"3.0\" data-d=\"0.9\" data-a=\"grow\" data-sfx=\"swoosh\"/></svg><div class=\"row\" style=\"margin-top:30px;gap:24px\"><div class=\"chip\" data-in=\"1.0\" data-a=\"pop\">200 € al 24 %</div><div class=\"chip gold\" data-in=\"3.5\" data-a=\"pop\">800 € al 30 %</div></div><p style=\"margin-top:40px\" data-in=\"4.5\" data-a=\"up\">Lo de abajo tributa <b>igual que antes</b>.</p>"
-  },
-  {
-   "voz": "Resultado: de los mil euros, pagas doscientos ochenta y ocho de impuesto y te quedas setecientos doce. Cobras más, no menos.",
-   "trans": "zoom",
-   "sfx": [
-    {
-     "t": 0.6,
-     "s": "riser",
-     "v": 0.6
-    },
-    {
-     "t": 2.2,
-     "s": "impact",
-     "v": 0.6
-    }
-   ],
-   "html": "<h2 data-in=\"0\" data-a=\"left\">De 1.000 € de subida</h2><div style=\"margin-top:40px\" data-chart='{\"type\": \"bar\", \"data\": [712, 288], \"labels\": [\"Te quedas\", \"Impuesto\"], \"unit\": \" €\", \"dec\": 0, \"mark\": 0, \"in\": 0.4, \"d\": 1.6, \"h\": 560}'></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cálculo: 200 × 24 % + 800 × 30 % = 288 €. Escala de referencia; varía según la comunidad.</div>"
-  },
-  {
-   "voz": "¿Y por qué a veces la nómina sorprende? Cambia la retención. Pero es un adelanto, y se ajusta en la declaración de la renta.",
-   "trans": "whip",
-   "sfx": [
-    {
-     "t": 0.1,
-     "s": "ding",
-     "v": 0.6
-    }
-   ],
-   "html": "<div class=\"row\"><i data-icon=\"lucide:receipt-text\" data-size=\"120\" class=\"g\" data-in=\"0\" data-a=\"spin\" data-sfx=\"paper\"></i><div class=\"k\" style=\"margin:0\" data-in=\"0.1\" data-a=\"fade\">¿Y la nómina?</div></div><h2 style=\"margin-top:40px\" data-in=\"1.6\" data-a=\"up\">Cambia la <span class=\"g\">retención</span></h2><div class=\"row\" style=\"margin-top:50px\" data-in=\"3.6\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:calendar-check\" data-size=\"80\" class=\"w\"></i><p style=\"margin:0\">Es un adelanto: se ajusta en la <b>renta</b></p></div>"
-  },
-  {
-   "voz": "Cambiar de tramo no hace que cobres menos. Envíaselo a quien aún se lo cree, y síguenos para entender tu dinero sin humo.",
+   "voz": "Envíaselo a quien rechazaría una subida por esto.",
    "trans": "fade",
    "sfx": [
     {
      "t": 0.2,
      "s": "success",
-     "v": 0.7
+     "v": 0.6
     }
    ],
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Conclusión</div><h1 data-in=\"0.15\" data-a=\"words\">Cambiar de tramo no hace que cobres menos.</h1><p data-in=\"2.4\" data-a=\"up\">Envíaselo a quien aún se lo cree. Síguenos para entender tu dinero <span class=\"g\">sin humo</span>.</p><div class=\"src\" data-in=\"2.8\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero.</div>"
+   "html": "<div class=\"row\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\" data-in=\"0\" data-a=\"pop\"></i><h2 style=\"margin:0\" data-in=\"0.1\" data-a=\"up\">Envíaselo a quien aún se lo cree</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero.</div>"
   }
  ]
 }

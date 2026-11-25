@@ -1,120 +1,85 @@
 {
  "slug": "csf-09_reel-tin-vs-tae",
  "music_seed": 3,
- "subtitulos": true,
+ "subtitulos": "grande",
+ "ritmo": true,
  "fondo": "grid",
  "plan": {
-  "idea": "TIN vs TAE con dos préstamos reales de ejemplo: el del 6 % sale más caro que el del 7 % por la comisión.",
-  "promesa": "Saber qué número mirar al comparar préstamos.",
+  "formato": "A vs B (docs/viralidad.md), versión corta del 25-11-2026",
+  "idea": "El préstamo al 6 % sale 136 € más caro que el del 7 % por la comisión: mira la TAE.",
+  "por_que_se_comparte": "Útil justo antes de pedir un préstamo o financiar algo; se manda a quien lo va a pedir.",
   "palabra_clave": "TIN y TAE",
   "ganchos": [
-   "¿Préstamo al seis por ciento o al siete? El barato puede salir caro. (claridad 5, curiosidad 5, relevancia 4, concreción 5)",
-   "El préstamo más barato me costaba ciento treinta y seis euros más. (4, 4, 4, 5)",
-   "TIN y TAE no son lo mismo, y te puede costar dinero. (4, 3, 4, 2)"
+   "Préstamo al seis o al siete por ciento. El del seis te sale ciento treinta y seis euros más caro. (5,5,4,5)",
+   "El préstamo barato que sale caro. (4,4,4,2)",
+   "TIN o TAE: cuál mirar. (4,2,4,2)"
   ],
-  "gancho": "¿Préstamo al seis por ciento o al siete? El barato puede salir caro.",
-  "bucle": "¿Por qué el del 6 % sale más caro? -> comisión de apertura y TAE (se cierra en la escena 7).",
-  "golpes": [
-   "Las dos ofertas",
-   "Re-gancho: fácil, ¿no?",
-   "Comisión de 300 €",
-   "Qué es la TAE",
-   "TAE 8,36 % vs 7,23 %",
-   "+136 € en total"
-  ],
+  "gancho": "Préstamo al seis por ciento o al siete. El del seis te sale ciento treinta y seis euros más caro.",
+  "bucle": "¿Por qué? -> la comisión",
   "re_ganchos": [
-   "~9 s: Fácil, ¿no? Pues no",
-   "~19 s: Aquí entra la TAE",
-   "~30 s: ¿Y en euros?"
+   "~6 s: ¿Por qué?",
+   "~12 s: Por eso se mira la TAE"
   ],
-  "recompensa": "El préstamo al 6 % cuesta 136 € más.",
-  "cta": "Síguenos para entender tu dinero sin humo."
+  "recompensa": "Mirar la TAE, no el TIN.",
+  "cta": "Envíaselo a quien va a pedir un préstamo."
  },
  "scenes": [
   {
-   "voz": "¿Préstamo al seis por ciento o al siete? El barato puede salir caro.",
-   "dur": 3.4,
+   "voz": "Préstamo al seis por ciento o al siete. El del seis te sale ciento treinta y seis euros más caro.",
    "sfx": [
     {
-     "t": 0.05,
+     "t": 0.02,
      "s": "impact",
-     "v": 0.8
+     "v": 0.9
     }
    ],
-   "html": "<div class=\"row\" style=\"gap:28px\"><div class=\"chip gold\" data-in=\"0\" data-a=\"pop\" style=\"font-size:60px\">6 %</div><div class=\"chip\" data-in=\"0.2\" data-a=\"pop\" style=\"font-size:60px\">7 %</div></div><h1 style=\"margin-top:44px\" data-in=\"0.35\" data-a=\"words\" data-step=\"0.1\">El préstamo <span>barato</span> puede salir caro</h1>"
+   "html": "<div class=\"chip\">Préstamo de 10.000 € a 3 años</div><div class=\"row\" style=\"margin-top:36px;gap:28px\"><div class=\"card\" style=\"flex:1\"><div class=\"lab\">Oferta A</div><div class=\"big2 g\" style=\"margin-top:8px\">6 %</div></div><div class=\"card\" style=\"flex:1\"><div class=\"lab\">Oferta B</div><div class=\"big2\" style=\"margin-top:8px\">7 %</div></div></div><h1 style=\"margin-top:36px\">El del 6 % sale <span>136&nbsp;€ más caro</span></h1>"
   },
   {
-   "voz": "Diez mil euros a tres años. La oferta A, con un TIN del seis por ciento. La B, del siete.",
-   "trans": "slide",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Préstamo de 10.000 € a 3 años</div><div class=\"row\" style=\"margin-top:30px;gap:28px\"><div class=\"card\" style=\"flex:1\" data-in=\"1.6\" data-a=\"left\" data-sfx=\"swoosh\"><div class=\"lab\">Oferta A</div><h2 style=\"margin-top:12px\">TIN <span class=\"g\">6 %</span></h2></div><div class=\"card\" style=\"flex:1\" data-in=\"3.4\" data-a=\"slide\" data-sfx=\"swoosh\"><div class=\"lab\">Oferta B</div><h2 style=\"margin-top:12px\">TIN 7 %</h2></div></div>"
-  },
-  {
-   "voz": "Fácil, ¿no? Pues no.",
+   "voz": "¿Por qué? Cobra un tres por ciento de comisión de apertura: trescientos euros el primer día.",
    "trans": "cut",
    "sfx": [
     {
      "t": 0.05,
      "s": "glitch",
-     "v": 0.8
+     "v": 0.7
     }
    ],
-   "html": "<div class=\"col center\"><i data-icon=\"lucide:circle-alert\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.45\"></i><h1 data-in=\"0.15\" data-a=\"words\">Fácil, ¿no? <span>Pues no.</span></h1></div>"
+   "html": "<div class=\"row\"><i data-icon=\"lucide:receipt-euro\" data-size=\"130\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.4\" data-sfx=\"paper\"></i><h2 style=\"margin:0\" data-in=\"0.2\" data-a=\"up\">Comisión de apertura del 3 %</h2></div><div class=\"big2 g\" style=\"margin-top:40px\" data-in=\"2.6\" data-a=\"stamp\" data-sfx=\"cash\">300 €</div><p data-in=\"2.9\" data-a=\"up\">el primer día</p>"
   },
   {
-   "voz": "La A cobra una comisión de apertura del tres por ciento: trescientos euros el primer día.",
-   "trans": "whip",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Oferta A</div><i data-icon=\"lucide:receipt-euro\" data-size=\"160\" class=\"g\" data-in=\"0.2\" data-a=\"spin\" data-sfx=\"paper\"></i><p style=\"margin-top:30px\" data-in=\"0.6\" data-a=\"up\">Comisión de apertura del <b>3 %</b></p><div class=\"big2 g\" data-in=\"2.4\" data-a=\"stamp\" data-sfx=\"cash\">300 €</div><p data-in=\"2.8\" data-a=\"up\">el primer día</p>"
-  },
-  {
-   "voz": "Aquí entra la TAE: junta intereses, comisiones y plazos en un solo número.",
+   "voz": "Por eso se mira la TAE, que lo junta todo: ocho coma treinta y seis contra siete coma veintitrés.",
    "trans": "zoom",
-   "html": "<div class=\"row\" style=\"gap:30px\"><i data-icon=\"lucide:percent\" data-size=\"110\" class=\"w\" data-in=\"0.6\" data-a=\"pop\" data-sfx=\"pop\"></i><i data-icon=\"lucide:receipt-euro\" data-size=\"110\" class=\"w\" data-in=\"1.0\" data-a=\"pop\" data-sfx=\"pop\"></i><i data-icon=\"lucide:calendar-days\" data-size=\"110\" class=\"w\" data-in=\"1.4\" data-a=\"pop\" data-sfx=\"pop\"></i></div><i data-icon=\"lucide:arrow-down\" data-size=\"90\" class=\"m\" data-in=\"2.0\" data-a=\"up\"></i><div class=\"big2 g\" data-in=\"2.4\" data-a=\"stamp\" data-sfx=\"impact\">TAE</div><p data-in=\"2.8\" data-a=\"up\">el coste real en un solo número</p>"
-  },
-  {
-   "voz": "La A sube al ocho coma treinta y seis por ciento. La B se queda en el siete coma veintitrés.",
-   "trans": "slide",
    "sfx": [
     {
-     "t": 0.6,
+     "t": 1.6,
      "s": "riser",
      "v": 0.6
     },
     {
-     "t": 2.2,
+     "t": 3.2,
      "s": "impact",
-     "v": 0.6
+     "v": 0.7
     }
    ],
-   "html": "<h2 data-in=\"0\" data-a=\"left\">TAE de cada oferta</h2><div style=\"margin-top:40px\" data-chart='{\"type\": \"bar\", \"data\": [8.36, 7.23], \"labels\": [\"Oferta A (TIN 6 %)\", \"Oferta B (TIN 7 %)\"], \"unit\": \" %\", \"dec\": 2, \"mark\": 0, \"in\": 0.4, \"d\": 1.6, \"h\": 560}'></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cálculo propio: cuota mensual (sistema francés), 36 cuotas; la comisión se descuenta del importe recibido.</div>"
+   "html": "<div class=\"big2 g\" data-in=\"0\" data-a=\"stamp\">TAE</div><div style=\"margin-top:20px\" data-chart='{\"type\": \"bar\", \"data\": [8.36, 7.23], \"labels\": [\"Oferta A\", \"Oferta B\"], \"unit\": \" %\", \"dec\": 2, \"mark\": 0, \"in\": 1.4, \"d\": 1.4, \"h\": 500}'></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Cálculo propio: 36 cuotas (sistema francés); la comisión se descuenta del importe recibido.</div>"
   },
   {
-   "voz": "¿Y en euros? Con la A pagas once mil doscientos cincuenta y dos. Con la B, once mil ciento dieciséis.",
-   "trans": "zoom",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Lo que pagas en total</div><div class=\"card\" data-in=\"1.0\" data-a=\"left\" data-sfx=\"swoosh\"><div class=\"lab\">Oferta A</div><div class=\"big2 g\" style=\"margin-top:10px\">11.252 €</div></div><div class=\"card\" style=\"margin-top:28px\" data-in=\"3.8\" data-a=\"slide\" data-sfx=\"swoosh\"><div class=\"lab\">Oferta B</div><div class=\"big2\" style=\"margin-top:10px\">11.116 €</div></div><div class=\"chip gold\" style=\"margin-top:34px\" data-in=\"5.0\" data-a=\"stamp\" data-sfx=\"cash\">+136 € con el «barato»</div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cuotas + comisión, cálculo propio redondeado.</div>"
-  },
-  {
-   "voz": "El TIN es el precio del dinero. La TAE, lo que te cuesta de verdad. Compara siempre la TAE.",
+   "voz": "En total, once mil doscientos cincuenta y dos contra once mil ciento dieciséis.",
    "trans": "slide",
-   "sfx": [
-    {
-     "t": 0.1,
-     "s": "ding",
-     "v": 0.6
-    }
-   ],
-   "html": "<div class=\"col\"><div class=\"row\" data-in=\"0\" data-a=\"slide\"><div class=\"chip\">TIN</div><p style=\"margin:0\">el precio del dinero</p></div><div class=\"row\" data-in=\"2.0\" data-a=\"slide\" data-sfx=\"pop\"><div class=\"chip gold\">TAE</div><p style=\"margin:0\">lo que te cuesta <b>de verdad</b></p></div></div><h2 style=\"margin-top:60px\" data-in=\"3.6\" data-a=\"up\">Compara siempre la <span class=\"hl\" data-in=\"4.2\" data-d=\"0.5\" data-a=\"hl\">TAE</span>.</h2>"
+   "html": "<div class=\"card\" data-in=\"0\" data-a=\"left\"><div class=\"lab\">Oferta A · total pagado</div><div class=\"big2 g\" style=\"margin-top:8px\">11.252 €</div></div><div class=\"card\" style=\"margin-top:24px\" data-in=\"2.2\" data-a=\"slide\" data-sfx=\"swoosh\"><div class=\"lab\">Oferta B · total pagado</div><div class=\"big2\" style=\"margin-top:8px\">11.116 €</div></div>"
   },
   {
-   "voz": "Guárdalo para cuando pidas un préstamo. Y síguenos para entender tu dinero sin humo.",
+   "voz": "El TIN es el precio. La TAE, lo que pagas. Envíaselo a quien va a pedir un préstamo.",
    "trans": "fade",
    "sfx": [
     {
      "t": 0.2,
      "s": "success",
-     "v": 0.7
+     "v": 0.6
     }
    ],
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Conclusión</div><h1 data-in=\"0.15\" data-a=\"words\">El barato no siempre es el más barato.</h1><p data-in=\"2.0\" data-a=\"up\">Síguenos para entender tu dinero <span class=\"g\">sin humo</span>.</p><div class=\"src\" data-in=\"2.8\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero.</div>"
+   "html": "<div class=\"col\"><div class=\"row\" data-in=\"0\" data-a=\"slide\"><div class=\"chip\">TIN</div><p style=\"margin:0\">el precio</p></div><div class=\"row\" data-in=\"0.9\" data-a=\"slide\" data-sfx=\"pop\"><div class=\"chip gold\">TAE</div><p style=\"margin:0\">lo que pagas <b>de verdad</b></p></div></div><div class=\"row\" style=\"margin-top:40px\" data-in=\"2.2\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"90\" class=\"g\"></i><p style=\"margin:0\">Envíaselo a quien va a pedir un préstamo</p></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero.</div>"
   }
  ]
 }

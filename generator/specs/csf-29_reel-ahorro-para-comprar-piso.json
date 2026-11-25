@@ -1,64 +1,47 @@
 {
  "slug": "csf-29_reel-ahorro-para-comprar-piso",
  "music_seed": 6,
- "subtitulos": true,
+ "subtitulos": "grande",
+ "ritmo": true,
  "fondo": "grid",
  "plan": {
-  "idea": "Cuánto hay que tener ahorrado para comprar un piso usado de 200.000 €: entrada + ITP + gastos = 55.000-63.000 €.",
-  "promesa": "Calcular el ahorro real necesario para comprar vivienda.",
+  "formato": "Haz la cuenta (docs/viralidad.md), versión corta del 25-11-2026",
+  "idea": "Para un piso usado de 200.000 € hacen falta 55.000-63.000 € ahorrados: entrada + ITP + gastos.",
+  "por_que_se_comparte": "Lo que se plantea toda pareja o persona que ahorra para su casa; se manda para hacer planes.",
   "palabra_clave": "comprar piso",
   "ganchos": [
-   "¿Cuánto necesitas ahorrado para comprar un piso de doscientos mil euros? (claridad 5, curiosidad 5, relevancia 5, concreción 5)",
-   "Para un piso de doscientos mil necesitas mucho más que cuarenta mil. (4, 4, 5, 4)",
-   "El gasto de comprar casa que casi nadie cuenta. (3, 5, 4, 2)"
+   "Para comprar un piso de doscientos mil necesitas cincuenta y cinco mil ahorrados. (5,5,5,5)",
+   "El veinte por ciento de entrada no basta. (4,4,5,3)",
+   "El impuesto de la casa que casi nadie calcula. (4,5,4,2)"
   ],
-  "gancho": "¿Cuánto necesitas ahorrado para comprar un piso de doscientos mil euros?",
-  "bucle": "¿Solo el 20 %? -> faltan impuestos y gastos (se cierra en la escena 7).",
-  "golpes": [
-   "Entrada 20 % = 40.000 €",
-   "Re-gancho",
-   "ITP 6-10 %",
-   "12.000-20.000 € de impuesto",
-   "~3.000 € de gastos",
-   "Total 55.000-63.000 €",
-   "Matiz jóvenes"
-  ],
+  "gancho": "Para comprar un piso de doscientos mil euros necesitas tener ahorrados cincuenta y cinco mil. Como mínimo.",
+  "bucle": "¿De dónde sale? -> entrada + impuesto + gastos",
   "re_ganchos": [
-   "~9 s: ¿Ya está? No",
-   "~25 s: Y súmale",
-   "~31 s: Total"
+   "~9 s: Y aquí viene lo que casi nadie cuenta",
+   "~19 s: Total"
   ],
-  "recompensa": "Entre 55.000 y 63.000 € ahorrados.",
-  "cta": "Síguenos para entender tu dinero sin humo."
+  "recompensa": "La cuenta completa: 55.000-63.000 €.",
+  "cta": "Envíaselo a quien está ahorrando para su casa."
  },
- "assets": [
-  {
-   "id": "piso",
-   "de": "unsplash",
-   "q": "apartment building facade balconies spain",
-   "orient": "portrait"
-  }
- ],
  "scenes": [
   {
-   "voz": "¿Cuánto necesitas ahorrado para comprar un piso de doscientos mil euros?",
-   "dur": 3.4,
+   "voz": "Para comprar un piso de doscientos mil euros necesitas tener ahorrados cincuenta y cinco mil. Como mínimo.",
    "sfx": [
     {
-     "t": 0.05,
+     "t": 0.02,
      "s": "impact",
-     "v": 0.8
+     "v": 0.9
     }
    ],
-   "html": "<div data-photo='{\"src\": \"assets/piso.jpg\", \"credito\": \"auto\", \"h\": 600, \"in\": 0.0, \"a\": \"zoom\", \"sfx\": \"camera\"}'></div><h1 style=\"margin-top:44px\" data-in=\"0.15\" data-a=\"words\" data-step=\"0.1\">¿Cuánto ahorro para un piso de <span>200.000 €</span>?</h1>"
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:house\" data-size=\"140\" class=\"g\"></i><div class=\"big2 g\" style=\"font-size:200px;margin-top:16px\">55.000 €</div><h2 style=\"margin-top:10px\">ahorrados, como mínimo</h2><div class=\"chip\" style=\"margin-top:22px\">para un piso usado de 200.000 €</div></div>"
   },
   {
-   "voz": "El banco suele financiar como mucho el ochenta por ciento. El otro veinte lo pones tú: cuarenta mil euros.",
+   "voz": "El banco financia el ochenta por ciento. El veinte lo pones tú: cuarenta mil.",
    "trans": "slide",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">La entrada</div><svg viewBox=\"0 0 840 110\" width=\"840\" style=\"margin-top:20px\"><rect x=\"0\" y=\"0\" width=\"664\" height=\"110\" rx=\"14\" fill=\"#6F6F6F\" data-in=\"0.3\" data-d=\"0.9\" data-a=\"grow\"/><rect x=\"676\" y=\"0\" width=\"164\" height=\"110\" rx=\"14\" fill=\"#F4C542\" data-in=\"2.6\" data-d=\"0.5\" data-a=\"grow\" data-sfx=\"pop\"/></svg><div class=\"row\" style=\"margin-top:24px;gap:24px\"><div class=\"chip\" data-in=\"0.8\" data-a=\"pop\">80 % hipoteca</div><div class=\"chip gold\" data-in=\"2.8\" data-a=\"pop\">20 % tú</div></div><div class=\"big2 g\" style=\"margin-top:40px\" data-in=\"3.6\" data-a=\"count\" data-to=\"40000\" data-suf=\" €\" data-d=\"0.8\" data-sfx=\"cash\">0 €</div>"
+   "html": "<svg viewBox=\"0 0 840 110\" width=\"840\"><rect width=\"664\" height=\"110\" rx=\"14\" fill=\"#6F6F6F\" data-in=\"0.1\" data-d=\"0.7\" data-a=\"grow\"/><rect x=\"676\" width=\"164\" height=\"110\" rx=\"14\" fill=\"#F4C542\" data-in=\"1.6\" data-d=\"0.4\" data-a=\"grow\" data-sfx=\"pop\"/></svg><div class=\"row\" style=\"margin-top:22px;gap:24px\"><div class=\"chip\" data-in=\"0.4\" data-a=\"pop\">80 % hipoteca</div><div class=\"chip gold\" data-in=\"1.8\" data-a=\"pop\">20 % tú</div></div><div class=\"big2 g\" style=\"margin-top:36px\" data-in=\"2.6\" data-a=\"count\" data-to=\"40000\" data-suf=\" €\" data-d=\"0.7\" data-sfx=\"cash\">0 €</div>"
   },
   {
-   "voz": "¿Ya está? No. Falta lo que casi nadie cuenta.",
+   "voz": "Y aquí viene lo que casi nadie cuenta: el impuesto.",
    "trans": "cut",
    "sfx": [
     {
@@ -67,70 +50,48 @@
      "v": 0.8
     }
    ],
-   "html": "<div class=\"col center\"><i data-icon=\"lucide:circle-help\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.45\"></i><h1 data-in=\"0.15\" data-a=\"words\">¿Ya está? <span>No.</span></h1></div>"
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:landmark\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"stamp\" data-d=\"0.4\"></i><h1 data-in=\"0.1\" data-a=\"words\">El <span>impuesto</span></h1></div>"
   },
   {
-   "voz": "En vivienda usada pagas el ITP, y depende de tu comunidad: seis por ciento en Madrid, nueve en la Comunitat Valenciana, diez en Cataluña.",
-   "trans": "whip",
+   "voz": "Entre el seis y el diez por ciento, según tu comunidad. De doce mil a veinte mil euros.",
+   "trans": "zoom",
    "sfx": [
     {
-     "t": 0.6,
+     "t": 0.5,
      "s": "riser",
      "v": 0.6
     }
    ],
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Impuesto de Transmisiones (ITP) · tipo general</div><div style=\"margin-top:30px\" data-chart='{\"type\": \"bar\", \"data\": [6, 9, 10], \"labels\": [\"Madrid\", \"C. Valenciana\", \"Cataluña\"], \"unit\": \" %\", \"dec\": 0, \"mark\": 2, \"in\": 1.4, \"d\": 1.8, \"h\": 560}'></div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Tipos generales de vivienda usada en 2026 (C. Valenciana: 9 % desde el 1/6/2026, Ley 5/2025). Hay tipos reducidos para algunos colectivos.</div>"
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">ITP · vivienda usada · tipo general 2026</div><div style=\"margin-top:20px\" data-chart='{\"type\": \"bar\", \"data\": [12000, 18000, 20000], \"labels\": [\"Madrid 6 %\", \"C. Valenciana 9 %\", \"Cataluña 10 %\"], \"unit\": \" €\", \"dec\": 0, \"mark\": 2, \"in\": 0.4, \"d\": 1.6, \"h\": 540}'></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Sobre 200.000 €. C. Valenciana: 9 % desde el 1/6/2026 (Ley 5/2025). Hay tipos reducidos para algunos colectivos.</div>"
   },
   {
-   "voz": "Con un piso de doscientos mil euros, son entre doce mil y veinte mil euros solo de impuesto.",
-   "trans": "zoom",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">ITP de un piso de 200.000 €</div><i data-icon=\"lucide:landmark\" data-size=\"150\" class=\"g\" data-in=\"0.2\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2\" style=\"margin-top:30px\" data-in=\"1.6\" data-a=\"stamp\" data-sfx=\"impact\">12.000 €</div><p data-in=\"2.0\" data-a=\"up\">a</p><div class=\"big2 g\" data-in=\"2.6\" data-a=\"stamp\" data-sfx=\"impact\">20.000 €</div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Cálculo: 200.000 € × 6 % y × 10 %.</div>"
-  },
-  {
-   "voz": "Y súmale unos tres mil euros de notaría, registro, gestoría y tasación.",
+   "voz": "Más unos tres mil de notaría, registro y gestiones.",
    "trans": "slide",
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Gastos de la compra</div><div class=\"col\" style=\"margin-top:10px\"><div class=\"row\" data-in=\"0.6\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:stamp\" data-size=\"80\" class=\"w\"></i><p style=\"margin:0\">Notaría</p></div><div class=\"row\" data-in=\"1.1\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:book-open\" data-size=\"80\" class=\"w\"></i><p style=\"margin:0\">Registro</p></div><div class=\"row\" data-in=\"1.6\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:folder-open\" data-size=\"80\" class=\"w\"></i><p style=\"margin:0\">Gestoría</p></div><div class=\"row\" data-in=\"2.1\" data-a=\"slide\" data-sfx=\"pop\"><i data-icon=\"lucide:ruler\" data-size=\"80\" class=\"w\"></i><p style=\"margin:0\">Tasación</p></div></div><div class=\"chip gold\" style=\"margin-top:40px\" data-in=\"2.8\" data-a=\"stamp\" data-sfx=\"cash\">≈ 3.000 €</div><div class=\"src\" data-in=\"1\" data-a=\"fade\">Estimación orientativa; varía según el precio y la comunidad.</div>"
+   "html": "<div class=\"row\" style=\"gap:30px\"><i data-icon=\"lucide:stamp\" data-size=\"110\" class=\"w\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><i data-icon=\"lucide:book-open\" data-size=\"110\" class=\"w\" data-in=\"0.3\" data-a=\"pop\" data-sfx=\"pop\"></i><i data-icon=\"lucide:folder-open\" data-size=\"110\" class=\"w\" data-in=\"0.6\" data-a=\"pop\" data-sfx=\"pop\"></i></div><div class=\"big2 g\" style=\"margin-top:30px\" data-in=\"1.2\" data-a=\"stamp\" data-sfx=\"cash\">≈ 3.000 €</div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Estimación orientativa.</div>"
   },
   {
-   "voz": "Total: entre cincuenta y cinco mil y sesenta y tres mil euros ahorrados. Y eso, antes de amueblar.",
-   "trans": "zoom",
+   "voz": "Total: de cincuenta y cinco a sesenta y tres mil. Y eso, antes de amueblar.",
+   "trans": "whip",
    "sfx": [
     {
-     "t": 0.6,
-     "s": "riser",
-     "v": 0.6
-    },
-    {
-     "t": 2.2,
+     "t": 1.6,
      "s": "impact",
      "v": 0.7
     }
    ],
-   "html": "<h2 data-in=\"0\" data-a=\"left\">Lo que necesitas ahorrado</h2><div style=\"margin-top:40px\" data-chart='{\"type\": \"bar\", \"data\": [55000, 63000], \"labels\": [\"Madrid (ITP 6 %)\", \"Cataluña (ITP 10 %)\"], \"unit\": \" €\", \"dec\": 0, \"mark\": 1, \"in\": 0.4, \"d\": 1.6, \"h\": 520}'></div><p data-in=\"3.4\" data-a=\"up\">Entrada + ITP + gastos. <b class=\"g\">Antes de amueblar.</b></p><div class=\"src\" data-in=\"1\" data-a=\"fade\">40.000 € + 12.000-20.000 € + ~3.000 €. Cálculo propio.</div>"
+   "html": "<div data-chart='{\"type\": \"bar\", \"data\": [55000, 63000], \"labels\": [\"Con ITP del 6 %\", \"Con ITP del 10 %\"], \"unit\": \" €\", \"dec\": 0, \"mark\": 1, \"in\": 0.2, \"d\": 1.4, \"h\": 520}'></div><p data-in=\"2.4\" data-a=\"up\"><b class=\"g\">Antes de amueblar.</b></p><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">40.000 € + 12.000-20.000 € + ~3.000 €. Cálculo propio.</div>"
   },
   {
-   "voz": "Ojo: si tienes menos de treinta y cinco años, varias comunidades rebajan el ITP, con límites de precio y de renta.",
-   "trans": "slide",
-   "sfx": [
-    {
-     "t": 0.1,
-     "s": "ding",
-     "v": 0.6
-    }
-   ],
-   "html": "<div class=\"row\"><i data-icon=\"lucide:triangle-alert\" data-size=\"120\" class=\"g\" data-in=\"0\" data-a=\"shake\" data-d=\"0.5\"></i><div class=\"k\" style=\"margin:0\" data-in=\"0.1\" data-a=\"fade\">El matiz</div></div><h2 style=\"margin-top:40px\" data-in=\"0.3\" data-a=\"up\">Menos de 35 años: <span class=\"g\">ITP rebajado</span> en varias comunidades</h2><p data-in=\"3.4\" data-a=\"up\">Con límites de precio y de renta. Consulta los de la tuya.</p>"
-  },
-  {
-   "voz": "Haz los números completos antes de buscar casa. Síguenos para entender tu dinero sin humo.",
+   "voz": "Envíaselo a quien está ahorrando para su casa.",
    "trans": "fade",
    "sfx": [
     {
      "t": 0.2,
      "s": "success",
-     "v": 0.7
+     "v": 0.6
     }
    ],
-   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Conclusión</div><h1 data-in=\"0.15\" data-a=\"words\">Haz los números completos antes de buscar casa.</h1><p data-in=\"2.4\" data-a=\"up\">Síguenos para entender tu dinero <span class=\"g\">sin humo</span>.</p><div class=\"src\" data-in=\"2.8\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero.</div>"
+   "html": "<div class=\"row\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\" data-in=\"0\" data-a=\"pop\"></i><h2 style=\"margin:0\" data-in=\"0.1\" data-a=\"up\">Envíaselo a quien ahorra para su casa</h2></div><p style=\"margin-top:30px\" data-in=\"0.6\" data-a=\"up\">¿Menos de 35 años? Mira el ITP reducido de tu comunidad.</p><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Contenido informativo, no es asesoramiento financiero.</div>"
   }
  ]
 }
