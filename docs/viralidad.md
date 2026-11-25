@@ -45,7 +45,7 @@ lentas, no cambiando la voz.
 4. **Promesa clara en 3 s**: tiene que entenderse qué se va a llevar quien mire ("la cuenta", "el dato", "el error").
 5. **Respuesta antes del 40 %**, después el giro ("¿Y con el salario mínimo?", "Pero en Madrid…").
 6. **Re-gancho cada 6-8 s**: pregunta corta, "Haz la cuenta", "Ojo", "Y aquí viene lo bueno".
-7. **Cambio visual cada 1,5-2,5 s**: escenas cortas (2-5 s) y `"ritmo": true` (golpe de zoom en cada escena).
+7. **Cambio visual cada 1,5-2,5 s**: escenas cortas (2-5 s) y `"ritmo": true` (golpe de zoom en cada escena); con `"ritmo"` el silencio entre escenas baja de 0,5 a 0,25 s.
 8. **1 idea por vídeo, 1 cifra por escena**: el número va enorme y el texto pequeño queda solo para la fuente.
 9. **Cierre ≤ 3 s**:
    - Remate de una frase y CTA de **envío** ("Envíaselo a quien está buscando piso").
