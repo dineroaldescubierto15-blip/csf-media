@@ -88,13 +88,22 @@ def main():
     if not tok:
         sys.exit("Falta IG_TOKEN (secreto de GitHub). Ver docs/estadisticas.md.")
     dias = int(sys.argv[sys.argv.index("--dias") + 1]) if "--dias" in sys.argv else 60
-    if tok.startswith("IG"):
-        base, me = f"https://graph.instagram.com/{VER}", "me"
+    # Cuenta de @capital.sin.filtros (ya figura en CLAUDE.md; IG_USER_ID solo la sustituye si hiciera falta)
+    uid = os.environ.get("IG_USER_ID", "").strip() or "17841428832055293"
+    cands = [(f"https://graph.instagram.com/{VER}", "me"), (f"https://graph.facebook.com/{VER}", uid),
+             (f"https://graph.instagram.com/{VER}", uid)]
+    if not tok.startswith("IG"):
+        cands = cands[1:] + cands[:1]
+    errs = []
+    for base, me in cands:
+        try:
+            get(f"{base}/{me}", {"fields": "id,username", "access_token": tok})
+            break
+        except RuntimeError as e:
+            errs.append(f"{base.split('/')[2]}/{me}: {e}")
     else:
-        uid = os.environ.get("IG_USER_ID", "").strip()
-        if not uid:
-            sys.exit("Con un token de Facebook (EAA...) hace falta IG_USER_ID.")
-        base, me = f"https://graph.facebook.com/{VER}", uid
+        sys.exit("El token no funciona con ninguna API de Instagram:\n  " + "\n  ".join(errs))
+    print(f"API: {base} ({me})")
     desde = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=dias)
     caps = slugs_by_caption()
     rows, url, params = [], f"{base}/{me}/media", {
