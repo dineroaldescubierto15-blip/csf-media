@@ -95,10 +95,10 @@ body.subs-kar #subs span{display:inline-block;padding:2px 18px 8px;border-radius
 body.subs-kar #subs span.fut{opacity:.38}
 body.subs-kar #subs span.on{background:#F4C542;color:#0A0A0A;text-shadow:none}
 body.subs-kar.has-subs .scene{padding-bottom:820px}
-.wheel{display:inline-flex;align-items:flex-end;line-height:1;white-space:nowrap}
+.wheel{display:inline-flex;align-items:flex-end;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
 .wheel .wd{display:inline-block;height:1em;overflow:hidden;position:relative}
 .wheel .wd>span{display:flex;flex-direction:column}
-.wheel .wd>span>i{font-style:normal;height:1em;display:block}
+.wheel .wd>span>i{font-style:normal;height:1em;display:block;text-align:center}
 .bgword{position:absolute;left:-40px;top:50%;font-size:420px;font-weight:900;letter-spacing:-.06em;line-height:.9;white-space:nowrap;color:rgba(245,245,242,.045);pointer-events:none;z-index:0}
 .scene>*:not(.bgword){position:relative;z-index:1}
 #flash{position:absolute;inset:0;background:#F5F5F2;opacity:0;pointer-events:none;z-index:50;mix-blend-mode:screen}
