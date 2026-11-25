@@ -283,7 +283,8 @@ def main():
     LEAD = 0.2
     est = [sum(fx._syl(w) for w in sc["voz"].split()) / 5.8 if sin_voz and sc.get("voz") else 0 for sc in scenes]
     vdur = [len(c) / SR if c is not None else e for c, e in zip(clips, est)]
-    durs = [max(float(sc.get("dur", 0)), (v + LEAD + 0.5) if v else 0) for sc, v in zip(scenes, vdur)]
+    TAIL = 0.25 if spec.get("ritmo") else 0.5   # silencio tras la voz de cada escena ("ritmo": cortes más rápidos; la voz no cambia)
+    durs = [max(float(sc.get("dur", 0)), (v + LEAD + TAIL) if v else 0) for sc, v in zip(scenes, vdur)]
     durs = [round(d * FPS) / FPS for d in durs]; total = sum(durs)
     if not 3 <= total <= 90:
         sys.exit("Un Reel debe durar entre 3 y 90 s (recomendado 15-30 s).")
