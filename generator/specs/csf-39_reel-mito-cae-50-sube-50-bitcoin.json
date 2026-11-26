@@ -1,0 +1,91 @@
+{
+ "slug": "csf-39_reel-mito-cae-50-sube-50-bitcoin",
+ "music_seed": 9,
+ "subtitulos": "karaoke",
+ "ritmo": true,
+ "grano": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Mito en 20 segundos + Haz la cuenta (docs/viralidad.md): frase del mito → MITO en sello → la cuenta con 100 € → el caso real de bitcoin esta semana → remate → envío.",
+  "idea": "Si algo cae un 50 % y luego sube un 50 %, no recuperas: 100 € → 50 € → 75 €. Para volver hace falta +100 %. Bitcoin pasó de más de 126.000 $ (octubre de 2025) a cerca de 57.200 $ (25-11-2026, El Folio): para volver a su máximo tendría que subir más de un 120 %.",
+  "por_que_se_comparte": "Es un error de cálculo que casi todo el mundo comete y se comprueba en 5 segundos; con bitcoin en las noticias, se manda al amigo que dice 'ya rebotará'.",
+  "palabra_clave": "bitcoin",
+  "ganchos": [
+   "Cae un cincuenta por ciento, sube un cincuenta por ciento. Y no estás igual. (claridad 5, curiosidad 5, relevancia 4, concreción 5)",
+   "Bitcoin tendría que subir un ciento veinte por ciento solo para volver a su máximo. (4, 5, 4, 5)",
+   "Perder la mitad y recuperar la mitad no es quedarte igual. (4, 4, 4, 3)"
+  ],
+  "gancho": "Cae un cincuenta por ciento, sube un cincuenta por ciento. Y no estás igual.",
+  "bucle": "¿Entonces cuánto falta? → la cuenta con 100 € (escenas 2-4) → el caso real de bitcoin (escenas 5-6).",
+  "re_ganchos": [
+   "~4 s: Haz la cuenta",
+   "~11 s: Para volver a cien…",
+   "~15 s: Le pasa ahora a bitcoin"
+  ],
+  "recompensa": "Bitcoin tendría que subir más de un 120 % para volver a su máximo.",
+  "cta": "Envíaselo a quien dice que ya lo recuperará.",
+  "estadisticas": "La serie de bitcoin (csf-14) es el Reel con más alcance (397) y 34 % visto; csf-35 (27,5 s) el de más % visto. Volvemos a bitcoin (solo explicativo) en formato corto."
+ },
+ "scenes": [
+  {
+   "voz": "Cae un cincuenta por ciento, sube un cincuenta por ciento. Y no estás igual.",
+   "sfx": [
+    {
+     "t": 0.02,
+     "s": "boom",
+     "v": 0.9
+    },
+    {
+     "t": 2.6,
+     "s": "scratch",
+     "v": 0.5
+    }
+   ],
+   "html": "<div class=\"bgword\">MITO</div><div class=\"col center\"><div class=\"chip gold\">Mito o realidad</div><div class=\"row\" style=\"gap:24px;margin-top:24px\"><div class=\"big2\" style=\"font-size:135px;white-space:nowrap;color:#8A8A85\">−50 %</div><div class=\"big2\" style=\"font-size:135px;white-space:nowrap\">+50 %</div></div><h1 style=\"margin-top:10px\">«Me quedo igual»</h1><div class=\"big2 g\" style=\"font-size:210px;margin-top:6px;transform:rotate(-6deg)\">MITO</div></div>"
+  },
+  {
+   "voz": "Haz la cuenta. Cien euros caen a cincuenta.",
+   "trans": "whip",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.1\" data-a=\"type\">100 € − 50 %</h1><div class=\"big2\" style=\"font-size:220px;margin-top:30px;white-space:nowrap;color:#8A8A85\" data-in=\"1.3\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"50\" data-pre=\"= \" data-suf=\" €\" data-sfx=\"tick\"></div>"
+  },
+  {
+   "voz": "Ahora suben un cincuenta por ciento. Setenta y cinco.",
+   "trans": "cut",
+   "html": "<div class=\"row\"><i data-icon=\"lucide:trending-up\" data-size=\"130\" class=\"g\" data-in=\"0\" data-a=\"spin\" data-sfx=\"swipe\"></i><h1 style=\"margin:0\" data-in=\"0.1\" data-a=\"type\">50 € + 50 %</h1></div><div data-in=\"1.5\" data-d=\"0.4\" data-a=\"punch\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:240px;margin-top:30px;white-space:nowrap\">= 75 €</div></div><p data-in=\"2.2\" data-a=\"up\">te siguen faltando 25 €</p>"
+  },
+  {
+   "voz": "Para volver a cien, necesitas subir un cien por cien.",
+   "trans": "zoom",
+   "html": "<div class=\"bgword\">DOBLE</div><div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Para volver a 100 € desde 50 €</div><div data-in=\"0.6\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"left\" data-sfx=\"impact\"><div class=\"big2 g\" style=\"font-size:260px;white-space:nowrap\">+100 %</div></div><p data-in=\"1.6\" data-a=\"up\">Las caídas pesan más que las subidas</p></div>"
+  },
+  {
+   "voz": "Le pasa ahora a bitcoin. Ayer rozó los cincuenta y siete mil dólares.",
+   "trans": "slide",
+   "html": "<div data-news='{\"medio\":\"El Folio\",\"fecha\":\"26/11/2026\",\"titular\":\"Bitcoin cae **bajo los 60.000 dólares** y agrava su crisis por los ETF\",\"in\":0.1}'></div><div class=\"row\" style=\"margin-top:40px\"><i data-icon=\"si:bitcoin\" data-size=\"120\" class=\"g\" data-in=\"1.4\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2\" style=\"font-size:150px;white-space:nowrap\" data-in=\"1.6\" data-d=\"0.9\" data-a=\"wheel\" data-to=\"57200\" data-suf=\" $\"></div></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Precio aproximado del 25/11/2026 (El Folio). Cambia cada minuto.</div>"
+  },
+  {
+   "voz": "Desde su máximo, ha caído más de la mitad. Para volver, tendría que subir más de un ciento veinte por ciento.",
+   "trans": "cut",
+   "sfx": [
+    {
+     "t": 0.05,
+     "s": "riser",
+     "v": 0.5
+    }
+   ],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Bitcoin · dólares</div><div style=\"margin-top:10px\" data-chart='{\"type\":\"bar\",\"data\":[126000,57200],\"labels\":[\"Máximo oct. 2025\",\"25 nov. 2026\"],\"unit\":\" $\",\"dec\":0,\"mark\":1,\"in\":0.2,\"d\":1.2,\"h\":340}'></div><div data-in=\"3.0\" data-d=\"0.4\" data-a=\"punch\" data-sfx=\"caja\"><div class=\"big2 g\" style=\"font-size:170px;white-space:nowrap\">+120 %</div></div><p data-in=\"3.5\" data-a=\"up\">para volver al máximo</p><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">126.000 ÷ 57.200 = 2,2 → +120 %. Cálculo propio (El Folio).</div>"
+  },
+  {
+   "voz": "Envíaselo a quien dice que ya lo recuperará.",
+   "trans": "fade",
+   "sfx": [
+    {
+     "t": 0.2,
+     "s": "success",
+     "v": 0.5
+    }
+   ],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien dice que ya lo recuperará</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Explicación matemática, no una predicción ni una recomendación de compra o venta. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
