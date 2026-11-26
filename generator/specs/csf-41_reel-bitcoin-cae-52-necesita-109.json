@@ -1,0 +1,63 @@
+{
+ "slug": "csf-41_reel-bitcoin-cae-52-necesita-109",
+ "music_seed": 11,
+ "subtitulos": "karaoke",
+ "ritmo": true,
+ "grano": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Bitcoin del día (feedback de Pol, 27-11-2026: enfocarlo al momento de bitcoin) + Haz la cuenta: caída de bitcoin en el fotograma 0 → lo que tiene que subir (+109 %) antes del 40 % → la cuenta de +50 % → gráfico → la regla general → envío.",
+  "idea": "Bitcoin cotizaba a unos 60.423 $ el 26-11-2026 (CoinGecko vía Cryptoticker), un 52 % por debajo de su máximo de 126.080 $ (6-10-2025). Si ahora subiera un 50 %, llegaría a 90.635 $: aún un 28 % por debajo. Para volver al máximo tiene que subir un 109 %. Regla: -50 % pide +100 %; -75 % pide +300 %.",
+  "por_que_se_comparte": "Bitcoin está en las noticias por su caída; el dato de cuánto tiene que subir para recuperarse sorprende y se manda al amigo que tiene o mira bitcoin.",
+  "palabra_clave": "bitcoin",
+  "ganchos": [
+   "Bitcoin ha caído más de la mitad. Y subir la mitad no basta. (claridad 5, curiosidad 5, relevancia 5, concreción 4)",
+   "Bitcoin tiene que subir un ciento nueve por ciento para volver a su máximo. (4, 5, 4, 5)",
+   "Si bitcoin sube un cincuenta por ciento, seguirá lejos de su máximo. (4, 4, 4, 4)"
+  ],
+  "gancho": "Bitcoin ha caído más de la mitad. Y subir la mitad no basta.",
+  "bucle": "¿Cuánto tiene que subir entonces? → +109 % (escena 2) → ¿y si sube un 50 %? (escenas 3-4) → la regla (escena 5).",
+  "re_ganchos": [
+   "~4 s: Para volver a su máximo…",
+   "~9 s: Haz la cuenta",
+   "~17 s: La regla"
+  ],
+  "recompensa": "La regla para cualquier inversión: −50 % pide +100 %; −75 % pide +300 %.",
+  "cta": "Envíaselo a quien mira el precio de bitcoin cada día.",
+  "estadisticas": "csf-14 (bitcoin) es el Reel con más alcance; Pol quiere probar 1 Reel de bitcoin al día para ver si funciona mejor."
+ },
+ "scenes": [
+  {
+   "voz": "Bitcoin ha caído más de la mitad. Y subir la mitad no basta.",
+   "sfx": [{"t": 0.02, "s": "boom", "v": 0.9}, {"t": 2.0, "s": "scratch", "v": 0.4}],
+   "html": "<div class=\"bgword\">BITCOIN</div><div class=\"col center\"><i data-icon=\"si:bitcoin\" data-size=\"150\" class=\"g\"></i><div class=\"big2\" style=\"font-size:240px;margin-top:10px;white-space:nowrap\">−52 %</div><h2 style=\"margin-top:0\">desde su máximo</h2><div class=\"chip gold\" style=\"margin-top:20px\">Y subir un 50 % no basta</div><div class=\"src\">126.080 $ (6/10/2025) → 60.423 $ (26/11/2026). CoinGecko.</div></div>"
+  },
+  {
+   "voz": "Para volver a su máximo, tiene que subir un ciento nueve por ciento.",
+   "trans": "cut",
+   "html": "<div class=\"bgword\">DOBLE</div><div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Para volver a 126.080 $</div><div data-in=\"0.5\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"left\" data-sfx=\"impact\"><div class=\"big2 g\" style=\"font-size:270px;white-space:nowrap\">+109 %</div></div><p data-in=\"1.5\" data-a=\"up\">tiene que más que duplicarse</p><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">126.080 ÷ 60.423 = 2,09. Cálculo propio.</div></div>"
+  },
+  {
+   "voz": "Haz la cuenta. Si sube un cincuenta por ciento, llega a noventa mil seiscientos.",
+   "trans": "whip",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.1\" data-a=\"type\">60.423 $ + 50 %</h1><div class=\"big2\" style=\"font-size:190px;margin-top:30px;white-space:nowrap\" data-in=\"1.8\" data-d=\"0.9\" data-a=\"wheel\" data-to=\"90635\" data-pre=\"= \" data-suf=\" $\" data-sfx=\"tick\"></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Precio del 26/11/2026, 17:25 (CoinGecko, vía Cryptoticker). Cambia cada minuto.</div>"
+  },
+  {
+   "voz": "Y sigue un veintiocho por ciento por debajo del máximo.",
+   "trans": "zoom",
+   "sfx": [{"t": 0.05, "s": "riser", "v": 0.5}],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Bitcoin · dólares</div><div style=\"margin-top:10px\" data-chart='{\"type\":\"bar\",\"data\":[126080,60423,90635],\"labels\":[\"Máximo\",\"Ahora\",\"Ahora +50 %\"],\"unit\":\" $\",\"dec\":0,\"mark\":2,\"in\":0.2,\"d\":1.2,\"h\":420}'></div><div data-in=\"2.0\" data-d=\"0.4\" data-a=\"punch\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:170px;white-space:nowrap\">−28 %</div></div><p data-in=\"2.5\" data-a=\"up\">aún lejos del máximo</p>"
+  },
+  {
+   "voz": "La regla: si algo cae un cincuenta, necesita un cien. Si cae un setenta y cinco, un trescientos.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">La regla (vale para todo)</div><div class=\"col\" style=\"gap:26px;margin-top:20px\"><div class=\"row\" style=\"gap:40px\" data-in=\"0.2\" data-a=\"left\" data-sfx=\"swipe\"><div class=\"big2\" style=\"font-size:120px;color:#8A8A85;white-space:nowrap\">−50 %</div><div class=\"big2 g\" style=\"font-size:120px;white-space:nowrap\">+100 %</div></div><div class=\"row\" style=\"gap:40px\" data-in=\"2.6\" data-a=\"left\" data-sfx=\"aire\"><div class=\"big2\" style=\"font-size:120px;color:#8A8A85;white-space:nowrap\">−75 %</div><div class=\"big2 g\" style=\"font-size:120px;white-space:nowrap\">+300 %</div></div></div><p data-in=\"3.4\" data-a=\"up\">Las caídas pesan más que las subidas</p>"
+  },
+  {
+   "voz": "Envíaselo a quien mira el precio de bitcoin cada día.",
+   "trans": "fade",
+   "sfx": [{"t": 0.2, "s": "success", "v": 0.5}],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien mira el precio de bitcoin cada día</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Explicación matemática, no una predicción ni una recomendación de compra o venta. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
