@@ -132,7 +132,7 @@ Prohibido (marca y retención):
   - Euríbor.
   - BCE.
   - IPC frente a sueldo.
-  - Bitcoin (solo explicar).
+  - Bitcoin (solo explicar). **Desde el 27-11-2026, 1 Reel de bitcoin al día: banco propio en `docs/bitcoin.md`.**
   - Grandes empresas como el caso Nvidia.
 - **Generacional**:
   - Lo que podía comprar un sueldo en 2006 frente a 2026.

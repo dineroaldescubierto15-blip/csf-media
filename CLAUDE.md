@@ -16,6 +16,8 @@ Lo esencial está resumido abajo; si dudas, léelo.
 - Pilares (alternarlos, no repetir concepto+ángulo seguidos): Ahorro y hábitos · Inversión · Vivienda ·
   Deuda y crédito · Mercados · Finanzas personales · Mitos y errores · Actualidad explicada · Cripto (solo explicativo).
 - Cripto: explicar, noticias, análisis de BTC/ETH, memecoins como fenómeno. **Nunca** recomendar comprar.
+  **Prueba desde el 27-11-2026 (decisión de Pol): 1 de los 3 Reels diarios es de bitcoin**, enfocado en lo que le pasa
+  ahora a bitcoin; banco de temas y reglas en `docs/bitcoin.md`.
 - Productos reales (p. ej. cuentas remuneradas): permitido con condiciones completas (TAE, requisitos, límites,
   duración, FGD 100.000 €, fecha de los datos). Nunca "el mejor" en absoluto. Patrocinado → "Publicidad" visible en la slide.
 - Visual: fondo #0A0A0A, texto #F5F5F2, dorado #F4C542 solo para la cifra/palabra clave; slides de contraste en #E7E7E3.
@@ -148,7 +150,7 @@ Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea d
    clave del registro `config-stats` (`docs/estadisticas.md`), lee `resum.md` y ajusta
    formatos, ganchos y temas según el % visto y los envíos; anota 1-2 conclusiones en el resumen.
 3. Revisa la cola de reels (`pendiente` + `aprobado`). Objetivo: ≥ 6 reels en cola. Cada día: 3 reels (4 si hay menos
-   de 3 en cola), con temas distintos entre sí (se publican 3 al día: 13:30, 17:00 y 20:30). Primero adapta a Reel los carruseles de la cola que nunca se publicaron
+   de 3 en cola), **uno de ellos de bitcoin** (`docs/bitcoin.md`) y los demás de otros pilares, con temas distintos entre sí (se publican 3 al día: 13:30, 17:00 y 20:30). Primero adapta a Reel los carruseles de la cola que nunca se publicaron
    (guion propio, datos revisados hoy) y después temas nuevos. Lanza los workflows de render en paralelo.
 4. Actualidad: busca noticias financieras de las últimas 24 h relevantes para el público (BCE, Euríbor, IPC,
    fiscalidad, grandes movimientos de mercado o de Bitcoin, cambios en productos de ahorro populares en España).
