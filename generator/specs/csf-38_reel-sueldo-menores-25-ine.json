@@ -1,0 +1,68 @@
+{
+ "slug": "csf-38_reel-sueldo-menores-25-ine",
+ "music_seed": 21,
+ "subtitulos": "karaoke",
+ "ritmo": true,
+ "grano": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Actualidad en 30 s + Sueldo real (docs/viralidad.md): cifra del público en el fotograma 0 → titular con fecha → la media engaña (mediana) → por edad (gráfico) → giro: temporal frente a indefinido → envío.",
+  "idea": "El INE publicó ayer (25-11-2026) el salario del empleo principal de 2025 (EPA): media 2.497 € brutos al mes (máximo desde 2006), pero los menores de 25 cobran de media 1.439 €, la mediana es 2.092 € y entre temporal (1.908 €) e indefinido (2.602 €) hay 694 € al mes.",
+  "por_que_se_comparte": "Todo el mundo se compara con 'el sueldo medio' que sale en las noticias; el dato de su edad y el de su contrato es el que se manda al amigo o al grupo que acaba de empezar a trabajar.",
+  "palabra_clave": "salario medio",
+  "ganchos": [
+   "Menores de veinticinco años: mil cuatrocientos treinta y nueve euros brutos al mes. (claridad 5, curiosidad 5, relevancia 5, concreción 5)",
+   "El sueldo medio en España es de dos mil cuatrocientos noventa y siete euros. Pero tú no cobras eso. (4, 5, 4, 4)",
+   "Mismo trabajo, setecientos euros menos al mes. La diferencia es el contrato. (4, 5, 4, 3)"
+  ],
+  "gancho": "Menores de veinticinco años: mil cuatrocientos treinta y nueve euros brutos al mes.",
+  "bucle": "¿Y el sueldo medio del que hablan las noticias? → 2.497 € (escena 2) → la media engaña (escena 3) → ¿qué más pesa? el contrato (escenas 5-6).",
+  "re_ganchos": [
+   "~8 s: Pero la media engaña",
+   "~13 s: Y la edad pesa",
+   "~17 s: Ojo al contrato"
+  ],
+  "recompensa": "Casi 700 € al mes de diferencia entre temporal e indefinido.",
+  "cta": "Envíaselo a quien acaba de empezar a trabajar.",
+  "estadisticas": "csf-35 (27,5 s) es el que más % visto tiene (37 %): mantener 25-30 s y cifra en el fotograma 0."
+ },
+ "scenes": [
+  {
+   "voz": "Menores de veinticinco años: mil cuatrocientos treinta y nueve euros brutos al mes.",
+   "sfx": [{"t": 0.02, "s": "boom", "v": 0.9}],
+   "html": "<div class=\"bgword\">SUELDO</div><div class=\"col center\"><div class=\"chip gold\">INE · publicado ayer</div><h2 style=\"margin-top:26px\">Sueldo medio con menos de 25 años</h2><div class=\"big2 g\" style=\"font-size:230px;white-space:nowrap\">1.439 €</div><h2 style=\"margin-top:0\">brutos al mes</h2><div class=\"src\">INE, Salario del empleo principal (EPA) 2025, 25/11/2026.</div></div>"
+  },
+  {
+   "voz": "Lo publicó ayer el INE. Y la media de todos: dos mil cuatrocientos noventa y siete.",
+   "trans": "slide",
+   "html": "<div data-news='{\"medio\":\"El Español\",\"fecha\":\"25/11/2026\",\"titular\":\"El salario medio toca **máximos desde 2006**, con 2.497 euros\",\"in\":0.1}'></div><div class=\"big2\" style=\"margin-top:40px;white-space:nowrap\" data-in=\"1.6\" data-d=\"0.9\" data-a=\"wheel\" data-to=\"2497\" data-suf=\" €\" data-sfx=\"tick\"></div><p data-in=\"2.2\" data-a=\"up\">media de todos los asalariados</p>"
+  },
+  {
+   "voz": "Pero la media engaña. La mitad cobra menos de dos mil noventa y dos.",
+   "trans": "cut",
+   "sfx": [{"t": 0.05, "s": "scratch", "v": 0.5}],
+   "html": "<div class=\"bgword\">MEDIA</div><div class=\"k\" data-in=\"0\" data-a=\"fade\">La mitad cobra menos de</div><div data-in=\"0.9\" data-d=\"0.4\" data-a=\"punch\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:220px;white-space:nowrap\">2.092 €</div></div><p data-in=\"1.6\" data-a=\"up\">sueldo mediano (el del medio de la fila)</p><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">INE, EPA 2025. Brutos al mes, pagas extra prorrateadas.</div>"
+  },
+  {
+   "voz": "Y la edad pesa. De veinticinco a treinta y cuatro, dos mil ciento setenta.",
+   "trans": "zoom",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Sueldo medio por edad · € brutos/mes</div><div style=\"margin-top:10px\" data-chart='{\"type\":\"bar\",\"data\":[1439,2171,2550,2758,2768],\"labels\":[\"16-24\",\"25-34\",\"35-44\",\"45-54\",\"55+\"],\"unit\":\" €\",\"dec\":0,\"mark\":1,\"in\":0.2,\"d\":1.4,\"h\":620,\"sfx\":\"riser\"}'></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">INE, Salario del empleo principal (EPA) 2025.</div>"
+  },
+  {
+   "voz": "Ojo al contrato. Temporal, mil novecientos ocho. Indefinido, dos mil seiscientos dos.",
+   "trans": "whip",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Ojo al contrato</div><div class=\"row\" style=\"gap:70px;margin-top:20px\"><div class=\"col center\" data-in=\"0.1\" data-a=\"left\" data-sfx=\"swipe\"><i data-icon=\"lucide:file-clock\" data-size=\"110\" class=\"m\"></i><div class=\"big2\" style=\"font-size:112px;color:#8A8A85;white-space:nowrap\" data-in=\"0.4\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"1908\" data-suf=\" €\"></div><p style=\"margin:0\">temporal</p></div><div class=\"col center\" data-in=\"1.6\" data-a=\"slide\" data-sfx=\"aire\"><i data-icon=\"lucide:file-check\" data-size=\"110\" class=\"g\"></i><div class=\"big2 g\" style=\"font-size:112px;white-space:nowrap\" data-in=\"1.9\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"2602\" data-suf=\" €\"></div><p style=\"margin:0\">indefinido</p></div></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Sueldo medio bruto mensual por tipo de contrato. INE, EPA 2025.</div>"
+  },
+  {
+   "voz": "Casi setecientos euros al mes de diferencia.",
+   "trans": "cut",
+   "html": "<div class=\"bgword\">CONTRATO</div><div class=\"col center\"><div data-in=\"0.1\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"right\" data-sfx=\"caja\"><div class=\"big2 g\" style=\"font-size:240px;white-space:nowrap\">694 €</div></div><h2 data-in=\"1.0\" data-a=\"words\">al mes de <span>diferencia</span></h2><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">2.601,5 € − 1.907,7 € = 693,8 €. Medias: influyen la edad, el sector y la jornada.</div></div>"
+  },
+  {
+   "voz": "Envíaselo a quien acaba de empezar a trabajar.",
+   "trans": "fade",
+   "sfx": [{"t": 0.2, "s": "success", "v": 0.5}],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien acaba de empezar a trabajar</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Sueldos brutos mensuales con pagas extra prorrateadas (INE, EPA 2025). Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
