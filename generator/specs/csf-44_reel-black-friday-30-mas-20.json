@@ -1,0 +1,78 @@
+{
+ "slug": "csf-44_reel-black-friday-30-mas-20",
+ "music_seed": 11,
+ "subtitulos": "karaoke",
+ "ritmo": true,
+ "grano": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Haz la cuenta + Mito (docs/viralidad.md): '-30 % + -20 % no es -50 %' → es un 44 % → la cuenta con 100 € (56 €, no 50 €) → giro: el precio tachado → la ley (el más bajo de 30 días) → multas de Consumo → envío.",
+  "idea": "El día de Black Friday (27-11-2026) circulan descuentos encadenados ('30 % + 20 % extra'). Los porcentajes no se suman: 100 × 0,7 × 0,8 = 56 €, un 44 % de descuento. Además, por el art. 20 de la Ley 7/1996 de Ordenación del Comercio Minorista, el precio anterior que se tacha debe ser el más bajo aplicado en los 30 días anteriores. Consumo multó a siete webs con 348.000 € por falsas rebajas en el Black Friday de 2023 (nota del 4-7-2025).",
+  "por_que_se_comparte": "Es el día: todo el mundo está mirando ofertas. La cuenta sorprende y se manda a quien está a punto de comprar.",
+  "palabra_clave": "Black Friday",
+  "ganchos": [
+   "Un treinta por ciento más un veinte por ciento no es un cincuenta. (claridad 5, curiosidad 5, relevancia 5, concreción 5)",
+   "El precio tachado de hoy tiene que cumplir una regla. Casi nadie la conoce. (4, 4, 5, 3)",
+   "Ese cincuenta por ciento de Black Friday es, en realidad, un cuarenta y cuatro. (4, 5, 4, 4)"
+  ],
+  "gancho": "Un treinta por ciento más un veinte por ciento no es un cincuenta.",
+  "bucle": "¿Entonces cuánto es? (44 %, escena 2) → ¿por qué? la cuenta (escenas 3-5) → ¿y el precio tachado? (escenas 6-8).",
+  "re_ganchos": [
+   "~4 s: Es un cuarenta y cuatro. Haz la cuenta.",
+   "~14 s: Y ojo con el precio tachado",
+   "~20 s: Consumo ya ha multado por eso"
+  ],
+  "recompensa": "Pagas 56 €, no 50 €; y el precio tachado tiene que ser el más bajo de los últimos 30 días.",
+  "cta": "Envíaselo a quien hoy va a comprar en Black Friday.",
+  "estadisticas": "csf-35 (Black Friday, 27,5 s) es el Reel con más % visto (34 %): mismo tema, ángulo nuevo, ~30 s."
+ },
+ "scenes": [
+  {
+   "voz": "Un treinta por ciento más un veinte por ciento no es un cincuenta.",
+   "sfx": [{"t": 0.02, "s": "boom", "v": 0.9}],
+   "html": "<div class=\"bgword\">BLACK FRIDAY</div><div class=\"col center\"><div class=\"chip gold\">Black Friday</div><div class=\"big2\" style=\"font-size:130px;white-space:nowrap;margin-top:20px\">−30 % −20 %</div><div class=\"big2 g\" style=\"font-size:180px;white-space:nowrap;margin-top:10px\">≠ −50 %</div><h2 style=\"margin-top:10px\">Los descuentos no se suman</h2></div>"
+  },
+  {
+   "voz": "Es un cuarenta y cuatro. Haz la cuenta.",
+   "trans": "cut",
+   "html": "<div class=\"bgword\">44 %</div><div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Descuento real</div><div data-in=\"0.2\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"left\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:300px;white-space:nowrap\">−44 %</div></div></div>"
+  },
+  {
+   "voz": "Cien euros menos el treinta: setenta.",
+   "trans": "whip",
+   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><i data-icon=\"lucide:tag\" data-size=\"130\" class=\"w\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><h1 style=\"margin-top:20px\" data-in=\"0.2\" data-a=\"type\">100 € − 30 %</h1><div class=\"big2\" style=\"font-size:170px;white-space:nowrap\" data-in=\"1.3\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"70\" data-pre=\"= \" data-suf=\" €\" data-sfx=\"tick\"></div></div>"
+  },
+  {
+   "voz": "Y el veinte se aplica sobre setenta, no sobre cien.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><h1 data-in=\"0\" data-a=\"type\">70 € − 20 %</h1><div class=\"row\" style=\"gap:60px;margin-top:40px\"><div class=\"col center\" data-in=\"0.9\" data-a=\"left\" data-sfx=\"swipe\"><p style=\"margin:0\">sobre</p><div class=\"big2 g\" style=\"font-size:140px\">70 €</div></div><div class=\"col center\" data-in=\"1.8\" data-a=\"slide\" data-sfx=\"aire\"><p style=\"margin:0\">no sobre</p><div class=\"big2\" style=\"font-size:140px;color:#8A8A85;text-decoration:line-through\">100 €</div></div></div></div>"
+  },
+  {
+   "voz": "Pagas cincuenta y seis euros. No cincuenta.",
+   "trans": "cut",
+   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Pagas</div><div data-in=\"0.2\" data-d=\"0.45\" data-a=\"punch\" data-sfx=\"caja\"><div class=\"big2 g\" style=\"font-size:280px;white-space:nowrap\">56 €</div></div><h2 data-in=\"1.6\" data-a=\"up\"><span style=\"color:#8A8A85;text-decoration:line-through\">50 €</span></h2><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">100 € × 0,70 × 0,80 = 56 €</div></div>"
+  },
+  {
+   "voz": "Y ojo con el precio tachado.",
+   "trans": "zoom",
+   "sfx": [{"t": 0.05, "s": "scratch", "v": 0.5}],
+   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Ojo</div><div class=\"big2\" style=\"font-size:200px;white-space:nowrap;color:#8A8A85;text-decoration:line-through\" data-in=\"0.1\" data-a=\"stamp\" data-sfx=\"impact\">129 €</div><div class=\"big2 g\" style=\"font-size:200px;white-space:nowrap\" data-in=\"0.7\" data-a=\"up\">79 €</div><p data-in=\"1.0\" data-a=\"fade\">¿De dónde sale el precio tachado?</p></div>"
+  },
+  {
+   "voz": "Por ley, tiene que ser el más bajo de los últimos treinta días.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:scale\" data-size=\"140\" class=\"g\" data-in=\"0\" data-a=\"spin\" data-sfx=\"swipe\"></i><div class=\"k\" style=\"margin-top:20px\" data-in=\"0.2\" data-a=\"fade\">Precio tachado = el más bajo de los últimos</div><div class=\"big2 g\" style=\"font-size:220px;white-space:nowrap\" data-in=\"0.6\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"30\" data-suf=\" días\" data-sfx=\"tick\"></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Art. 20 de la Ley 7/1996 de Ordenación del Comercio Minorista.</div></div>"
+  },
+  {
+   "voz": "Si no lo es, es una falsa rebaja. Y Consumo ya ha multado por eso.",
+   "trans": "whip",
+   "html": "<div class=\"col center\"><div class=\"big2\" style=\"font-size:130px;white-space:nowrap\" data-in=\"0\" data-a=\"up\">Falsa rebaja</div><div class=\"k\" style=\"margin-top:40px\" data-in=\"1.4\" data-a=\"fade\">Multas a 7 webs</div><div class=\"big2 g\" style=\"font-size:190px;white-space:nowrap\" data-in=\"1.6\" data-d=\"0.9\" data-a=\"wheel\" data-to=\"348000\" data-suf=\" €\" data-sfx=\"caja\"></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Ministerio de Consumo (4/7/2025): sanciones por falsas rebajas en el Black Friday de 2023.</div></div>"
+  },
+  {
+   "voz": "Envíaselo a quien hoy va a comprar en Black Friday.",
+   "trans": "fade",
+   "sfx": [{"t": 0.2, "s": "success", "v": 0.5}],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien hoy va a comprar en Black Friday</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Ejemplo con un producto de 100 €. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
