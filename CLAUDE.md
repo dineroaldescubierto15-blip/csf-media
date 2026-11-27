@@ -154,7 +154,11 @@ Para modificar cualquier pieza (marca, generadores, voz, horarios, Make, tarea d
    (guion propio, datos revisados hoy) y después temas nuevos. Lanza los workflows de render en paralelo.
 4. Actualidad: busca noticias financieras de las últimas 24 h relevantes para el público (BCE, Euríbor, IPC,
    fiscalidad, grandes movimientos de mercado o de Bitcoin, cambios en productos de ahorro populares en España).
-   Solo si hay algo **realmente relevante**, crea además un carrusel de actualidad con `prioridad` = 1.
+   Solo si hay algo **realmente relevante**, crea además un Reel de actualidad con `prioridad` = 1.
+   Orden del día (decisión de Pol, 27-11-2026): el Reel de bitcoin sale el **primero** (13:30) y, si hay una noticia
+   **muy importante**, su Reel sale el **segundo** (17:00). Cómo: los dos con `prioridad` 1 y el de bitcoin registrado
+   antes (`fecha` más antigua); el resto, `prioridad` 0. Tras crear los registros, envía a Pol la lista de la cola
+   (aprobados en orden de publicación con número y tema, y pendientes) con `tools/send_msg.py`.
 5. Elige temas sin repetir los publicados/pendientes recientes (mira los slugs de la cola). Varía pilares.
 6. Para cada carrusel o reel: investiga y verifica datos (WebSearch), calcula cifras con Python, escribe el spec con
    SVG propios, renderiza, **mira el mosaico** (`generator/.preview.png`) y arregla solapes o textos densos,
