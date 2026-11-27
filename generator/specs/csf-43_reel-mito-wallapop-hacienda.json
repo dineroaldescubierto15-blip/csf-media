@@ -1,0 +1,74 @@
+{
+ "slug": "csf-43_reel-mito-wallapop-hacienda",
+ "music_seed": 9,
+ "subtitulos": "karaoke",
+ "ritmo": true,
+ "grano": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Mito en 20 segundos (docs/viralidad.md): el dato que asusta (DAC7) → '¿pagas por vender?' MITO → la prueba con un móvil (800 → 300 = 0 € de impuesto) → giro: si ganas, sí tributa (desde el 19 %) → y revender es negocio → envío.",
+  "idea": "Desde la directiva DAC7, Wallapop, Vinted y similares informan a Hacienda de quien hace más de 30 ventas o cobra más de 2.000 € al año. Eso no crea un impuesto nuevo: vender algo usado por menos de lo que costó no da ganancia y no paga IRPF (la pérdida por uso tampoco se puede compensar). Solo tributa la ganancia (vender por más de lo que pagaste), en la base del ahorro desde el 19 %. Comprar para revender de forma habitual es actividad económica.",
+  "por_que_se_comparte": "Mucha gente vende en Wallapop/Vinted y circula el miedo a 'Hacienda te va a cobrar'. Se manda al amigo que vende ropa o el móvil viejo.",
+  "palabra_clave": "Wallapop Hacienda",
+  "ganchos": [
+   "Más de treinta ventas o dos mil euros al año: Wallapop avisa a Hacienda. (claridad 5, curiosidad 5, relevancia 5, concreción 5)",
+   "Vender tu móvil viejo en Wallapop no te hace pagar impuestos. Casi nunca. (4, 4, 5, 3)",
+   "'Hacienda te va a cobrar por vender en Vinted.' Es un mito, con un matiz. (4, 4, 4, 3)"
+  ],
+  "gancho": "Más de treinta ventas o dos mil euros al año: Wallapop avisa a Hacienda.",
+  "bucle": "¿Entonces pagas por vender? (escena 2, respuesta: no) → ¿por qué? el ejemplo del móvil (escenas 3-4) → ¿cuándo sí? (escenas 5-7).",
+  "re_ganchos": [
+   "~4 s: ¿Significa que pagas impuestos por vender? No.",
+   "~13 s: Pero ojo",
+   "~19 s: Y si compras para revender…"
+  ],
+  "recompensa": "Vender lo tuyo más barato de lo que te costó: 0 € de impuesto. Solo tributa la ganancia.",
+  "cta": "Envíaselo a quien vende en Wallapop con miedo.",
+  "estadisticas": "El formato Mito (csf-36, renta a devolver) y los cortos con una cifra por escena (csf-35, 34 % visto) son los que mejor retienen; este dura ~26 s y la respuesta llega a los ~5 s."
+ },
+ "scenes": [
+  {
+   "voz": "Más de treinta ventas o dos mil euros al año: Wallapop avisa a Hacienda.",
+   "sfx": [{"t": 0.02, "s": "boom", "v": 0.9}],
+   "html": "<div class=\"bgword\">HACIENDA</div><div class=\"col center\"><div class=\"chip gold\">Mito o realidad</div><div class=\"big2 g\" style=\"font-size:150px;white-space:nowrap;margin-top:16px\">+30 ventas</div><h2 style=\"margin:-10px 0\">o</h2><div class=\"big2 g\" style=\"font-size:150px;white-space:nowrap\">+2.000 €</div><h2 style=\"margin-top:10px;white-space:nowrap;font-size:62px\">al año → aviso a Hacienda</h2><div class=\"src\" style=\"margin-top:6px\">Directiva DAC7: Wallapop, Vinted y similares informan a la Agencia Tributaria.</div></div>"
+  },
+  {
+   "voz": "¿Significa que pagas impuestos por vender? No.",
+   "trans": "cut",
+   "sfx": [{"t": 0.05, "s": "scratch", "v": 0.5}],
+   "html": "<div class=\"bgword\">MITO</div><div class=\"col center\"><h1 data-in=\"0\" data-a=\"words\">«Pago impuestos por todo lo que <span>vendo</span>»</h1><div data-in=\"1.6\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"right\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:260px;transform:rotate(-6deg);margin-top:30px\">MITO</div></div></div>"
+  },
+  {
+   "voz": "Compraste un móvil por ochocientos euros. Lo vendes por trescientos.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:smartphone\" data-size=\"150\" class=\"w\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"row\" style=\"gap:50px;margin-top:40px\"><div class=\"col center\" data-in=\"0.2\" data-a=\"left\"><p style=\"margin:0\">Lo compraste</p><div class=\"big2\" style=\"font-size:120px;white-space:nowrap;color:#8A8A85\">800 €</div></div><div class=\"col center\" data-in=\"1.9\" data-a=\"slide\" data-sfx=\"swipe\"><p style=\"margin:0\">Lo vendes</p><div class=\"big2 g\" style=\"font-size:120px;white-space:nowrap\">300 €</div></div></div></div>"
+  },
+  {
+   "voz": "No has ganado nada. Has perdido quinientos. Impuesto: cero euros.",
+   "trans": "cut",
+   "html": "<div class=\"col center\"><div class=\"big2\" style=\"font-size:170px;white-space:nowrap\" data-in=\"0.3\" data-a=\"up\">−500 €</div><p data-in=\"0.6\" data-a=\"fade\">no hay ganancia</p><div class=\"k\" style=\"margin-top:50px\" data-in=\"1.8\" data-a=\"fade\">Impuesto</div><div data-in=\"2.2\" data-d=\"0.45\" data-a=\"punch\" data-sfx=\"caja\"><div class=\"big2 g\" style=\"font-size:260px;white-space:nowrap\">0 €</div></div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">El IRPF grava la ganancia patrimonial. La pérdida por el uso de tus cosas tampoco se puede restar (art. 33.5 de la Ley del IRPF).</div></div>"
+  },
+  {
+   "voz": "Pero ojo: si vendes más caro de lo que pagaste, eso sí tributa.",
+   "trans": "whip",
+   "sfx": [{"t": 0.05, "s": "glitch", "v": 0.5}],
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Pero ojo</div><div class=\"col center\" style=\"margin-top:20px\"><i data-icon=\"lucide:trending-up\" data-size=\"140\" class=\"g\" data-in=\"0.1\" data-a=\"spin\" data-sfx=\"aire\"></i><h1 style=\"margin-top:20px\" data-in=\"0.4\" data-a=\"type\">100 € → 150 €</h1><div class=\"big2 g\" style=\"font-size:150px;white-space:nowrap\" data-in=\"1.8\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"50\" data-pre=\"+\" data-suf=\" €\" data-sfx=\"tick\"></div><p data-in=\"2.4\" data-a=\"up\">de ganancia: eso sí se declara</p></div>"
+  },
+  {
+   "voz": "Desde el diecinueve por ciento de lo que ganas.",
+   "trans": "zoom",
+   "html": "<div class=\"bgword\">IRPF</div><div class=\"col center\"><div class=\"big2 g\" style=\"font-size:280px;white-space:nowrap\" data-in=\"0.1\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"19\" data-suf=\" %\" data-sfx=\"tick\"></div><h2 data-in=\"1.0\" data-a=\"up\">de la ganancia, no de la venta</h2><p data-in=\"1.6\" data-a=\"fade\">50 € × 19 % = 9,50 €</p><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Base del ahorro del IRPF: 19 % hasta 6.000 € de ganancia; tramos más altos por encima.</div></div>"
+  },
+  {
+   "voz": "Y si compras para revender, Hacienda lo ve como un negocio.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:store\" data-size=\"150\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><h1 style=\"margin-top:30px\" data-in=\"0.3\" data-a=\"words\">Comprar para revender = <span>negocio</span></h1><p data-in=\"1.6\" data-a=\"up\">actividad económica: autónomo, IVA y declarar los rendimientos</p></div>"
+  },
+  {
+   "voz": "Envíaselo a quien vende en Wallapop con miedo.",
+   "trans": "fade",
+   "sfx": [{"t": 0.2, "s": "success", "v": 0.5}],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien vende en Wallapop con miedo</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Que la plataforma informe no crea ningún impuesto nuevo. Fuentes: OCU y Ley del IRPF. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
