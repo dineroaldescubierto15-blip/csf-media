@@ -1,0 +1,74 @@
+{
+ "slug": "csf-42_reel-habitacion-494-euros",
+ "music_seed": 4,
+ "subtitulos": "karaoke",
+ "ritmo": true,
+ "grano": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Actualidad en 30 s (docs/viralidad.md): cifra del informe de ayer → qué es (habitación, no piso) → comparación con 2018 (gráfico) → la cuenta al año → Madrid y Barcelona → titular → envío.",
+  "idea": "Informe de idealista publicado el 26-11-2026 (3.er trimestre de 2026): alquilar una habitación en piso compartido cuesta de media 494 € al mes en España, frente a 341 € en 2018 (+45 %, +153 €/mes = 1.836 € más al año). Barcelona 662 €, Madrid 631 €. La competencia por cada habitación se ha triplicado desde 2018.",
+  "por_que_se_comparte": "Le toca a casi todo el público (estudiantes, primer trabajo, gente que comparte piso). Se manda al compañero de piso o a quien busca habitación.",
+  "palabra_clave": "alquiler de habitación",
+  "ganchos": [
+   "Alquilar una habitación ya cuesta cuatrocientos noventa y cuatro euros al mes. (claridad 5, curiosidad 4, relevancia 5, concreción 5)",
+   "Una habitación cuesta un cuarenta y cinco por ciento más que en dos mil dieciocho. (4, 4, 5, 4)",
+   "Compartir piso ya no es barato: mil ochocientos euros más al año que en dos mil dieciocho. (4, 5, 4, 4)"
+  ],
+  "gancho": "Alquilar una habitación ya cuesta cuatrocientos noventa y cuatro euros al mes.",
+  "bucle": "¿Una habitación, no un piso? (escena 2) → ¿y antes? (escena 3) → ¿cuánto es al año? (escena 5) → ¿y en tu ciudad? (escena 6).",
+  "re_ganchos": [
+   "~5 s: En 2018 costaba 341",
+   "~10 s: Haz la cuenta",
+   "~15 s: ¿Y en Barcelona?",
+   "~19 s: la competencia se ha triplicado"
+  ],
+  "recompensa": "1.836 € más al año que en 2018 por la misma habitación de media.",
+  "cta": "Envíaselo a quien está buscando habitación.",
+  "estadisticas": "Lo que más retiene (csf-35, 27,5 s, 34 %) es corto y con una cifra por escena; Vivienda (csf-34) tuvo buen alcance (54) pero 20 % visto con 34,6 s: aquí ~25 s y respuesta en el fotograma 0."
+ },
+ "scenes": [
+  {
+   "voz": "Alquilar una habitación ya cuesta cuatrocientos noventa y cuatro euros al mes.",
+   "sfx": [{"t": 0.02, "s": "boom", "v": 0.9}],
+   "html": "<div class=\"bgword\">AL MES</div><div class=\"col center\"><i data-icon=\"lucide:bed-double\" data-size=\"150\" class=\"w\"></i><h2 style=\"margin-top:20px\">Una habitación</h2><div class=\"big2 g\" style=\"font-size:280px;white-space:nowrap;margin-top:0\">494 €</div><h2 style=\"margin-top:0\">al mes</h2><div class=\"src\">Media de España, 3.er trimestre de 2026. Fuente: idealista (26/11/2026).</div></div>"
+  },
+  {
+   "voz": "No un piso. Una habitación en piso compartido.",
+   "trans": "cut",
+   "html": "<div class=\"col center\"><div class=\"row\" style=\"gap:60px\"><div class=\"col center\" data-in=\"0\" data-a=\"left\" data-sfx=\"swipe\"><i data-icon=\"lucide:house\" data-size=\"160\" class=\"m\"></i><h2 style=\"margin:10px 0 0;color:#8A8A85;text-decoration:line-through;white-space:nowrap\">Un piso</h2></div><div class=\"col center\" data-in=\"0.9\" data-a=\"pop\" data-sfx=\"pop\"><i data-icon=\"lucide:bed\" data-size=\"160\" class=\"g\"></i><h2 style=\"margin:10px 0 0;white-space:nowrap\" class=\"g\">Una habitación</h2></div></div><p style=\"margin-top:40px\" data-in=\"1.5\" data-a=\"up\">en un piso compartido</p></div>"
+  },
+  {
+   "voz": "En dos mil dieciocho costaba trescientos cuarenta y uno.",
+   "trans": "slide",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Habitación, media de España</div><div style=\"width:860px;margin-top:20px\" data-chart='{\"type\":\"bar\",\"data\":[341,494],\"labels\":[\"2018\",\"2026\"],\"unit\":\" €\",\"in\":0.2,\"d\":1.4,\"mark\":1,\"sfx\":\"riser\"}'></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">idealista: 341 €/mes en 2018 y 494 €/mes en el 3.er trimestre de 2026 (series recalculadas con la metodología de julio de 2026).</div>"
+  },
+  {
+   "voz": "Un cuarenta y cinco por ciento más.",
+   "trans": "cut",
+   "html": "<div class=\"bgword\">+45 %</div><div class=\"col center\"><div data-in=\"0.1\" data-d=\"0.45\" data-a=\"punch\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:300px;white-space:nowrap\">+45 %</div></div><p data-in=\"1.0\" data-a=\"up\">en ocho años</p></div>"
+  },
+  {
+   "voz": "Haz la cuenta: ciento cincuenta y tres euros más al mes. Mil ochocientos treinta y seis al año.",
+   "trans": "whip",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><h1 data-in=\"0.1\" data-a=\"type\">494 € − 341 €</h1><div class=\"big2\" style=\"font-size:150px;white-space:nowrap;margin-top:10px\" data-in=\"1.0\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"153\" data-pre=\"= \" data-suf=\" €/mes\" data-sfx=\"tick\"></div><div data-in=\"3.0\" data-d=\"0.4\" data-a=\"punch\" data-flash=\"no\" data-sfx=\"caja\"><div class=\"big2 g\" style=\"font-size:170px;white-space:nowrap;margin-top:30px\">1.836 €/año</div></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">153 € × 12 meses, frente a 2018.</div>"
+  },
+  {
+   "voz": "¿Y en Barcelona? Seiscientos sesenta y dos. En Madrid, seiscientos treinta y uno.",
+   "trans": "zoom",
+   "html": "<div class=\"k\" data-in=\"0\" data-a=\"fade\">Habitación, al mes</div><div class=\"col\" style=\"gap:40px;margin-top:30px\"><div class=\"row\" style=\"gap:40px;justify-content:space-between;width:820px\" data-in=\"0.2\" data-a=\"slide\" data-sfx=\"swipe\"><h2 style=\"margin:0\">Barcelona</h2><div class=\"big2 g\" style=\"font-size:150px;white-space:nowrap\">662 €</div></div><div class=\"row\" style=\"gap:40px;justify-content:space-between;width:820px\" data-in=\"2.0\" data-a=\"slide\" data-sfx=\"aire\"><h2 style=\"margin:0\">Madrid</h2><div class=\"big2\" style=\"font-size:150px;white-space:nowrap\">631 €</div></div></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">idealista, 3.er trimestre de 2026.</div>"
+  },
+  {
+   "voz": "Y la competencia por cada habitación se ha triplicado.",
+   "trans": "slide",
+   "sfx": [{"t": 0.05, "s": "paper", "v": 0.6}],
+   "html": "<div style=\"width:880px\" data-news='{\"medio\":\"idealista\",\"fecha\":\"26/11/2026\",\"titular\":\"La competencia por cada habitación se **triplica** desde 2018\",\"in\":0.1}'></div>"
+  },
+  {
+   "voz": "Envíaselo a quien está buscando habitación.",
+   "trans": "fade",
+   "sfx": [{"t": 0.2, "s": "success", "v": 0.5}],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien está buscando habitación</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Precios medios de oferta; varían mucho por ciudad y barrio. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
