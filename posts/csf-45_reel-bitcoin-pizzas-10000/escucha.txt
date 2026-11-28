@@ -1,0 +1,92 @@
+# Escucha de posts/csf-45_reel-bitcoin-pizzas-10000/reel.mp4 (earshot)
+reel.mp4: 0:00.00-0:26.16 (26.2 s). Loudness -14.4 LUFS integrated, true peak -1.0 dBTP, LRA 1.4 LU; loudest 0:07.00-0:10.00 (-13.5 LUFS short-term). No steady beat grid (pulse clarity 0.05 < 0.15). 2 section(s): 0:00.00-0:16.80 funk music?, vocal chop, confident and cool | also: speech synthesizer (AST) | voice: voice-over narration; 0:16.80-0:26.15 glitch hop music?, vocal chop | also: single-lens reflex camera (AST) | voice: voice-over narration. 177 events (6.8/s); 20 tagged (17 ui, 3 voice; tags are hints). Strongest accents over a running bed: 0:08.90 +31 dB (chat message pop), 0:03.10 +18 dB (chat message pop), 0:13.38 +16 dB. Sync to 60 cuts: 40% have an onset within 1 frame (chance 43%), 93% within 100 ms, median |offset| 39 ms; 15% land on a strong accent (>= 10 dB over the bed) within 1 frame (chance 9%); 4 without a hit: 0:02.23, 0:06.73, 0:12.97, 0:13.13.
+
+SECTIONS
+  0:00.00-0:16.80  funk music?, vocal chop, confident and cool | also: speech synthesizer (AST) | voice: voice-over narration  -14 LUFS  [AST music 0.57, speech 0.67]
+  0:16.80-0:26.15  glitch hop music?, vocal chop | also: single-lens reflex camera (AST) | voice: voice-over narration  -14 LUFS  [AST music 0.79, speech 0.84]
+
+TRANSCRIPT   time  kind   what (CLAP tag / runner-up)                     peak  over bed  length  centroid  | sync
+== 0:00.00-0:16.80  funk music?, vocal chop, confident and cool | also: speech synthesizer (AST) | voice: voice-over narration  (+74 untagged onsets, 4.4/s)
+ 0:00.24  UI     chat message pop / spoken word                   -1.7 dBFS +14.7 dB  2000 ms  1.1 kHz  | cut +38 ms near
+ 0:00.70  -      high onset                                       -1.5 dBFS  +8.3 dB   242 ms  1.1 kHz  | cut +63 ms near
+ 0:01.00  -      high onset                                       -1.8 dBFS  +1.9 dB   146 ms   768 Hz  | cut -36 ms near
+ 0:01.24  -      full onset                                       -2.1 dBFS +11.0 dB    64 ms   610 Hz  | cut +2 ms OK
+ 0:01.68  UI?    chat message pop / short vocal sound             -1.7 dBFS +11.1 dB   289 ms   723 Hz  | cut +49 ms near
+ 0:01.90  -      high onset                                       -2.8 dBFS  +6.7 dB    64 ms   919 Hz  | cut +69 ms near
+ 0:02.07  -      low onset                                        -1.6 dBFS  +6.7 dB   315 ms   572 Hz  | cut +39 ms near
+ 0:02.23  CUT     no onset within 100 ms (strong sound at +108 ms)  <- NO HIT
+ 0:02.97  -      high onset                                       -1.4 dBFS  +1.0 dB   314 ms   699 Hz  | cut +69 ms near
+ 0:03.10  UI     chat message pop / spoken word                   -1.4 dBFS +17.6 dB  1640 ms   545 Hz  | cut -2 ms OK; strong accent (summary)
+ 0:03.75  -      high onset                                       -4.5 dBFS  +6.4 dB   108 ms   375 Hz  | cut +51 ms near
+ 0:04.64  UI     chat message pop / celesta note                  -1.5 dBFS +13.4 dB    93 ms   534 Hz  | cut +78 ms near
+ 0:05.25  VOICE? spoken word / footsteps on grass                 -1.4 dBFS +10.9 dB   526 ms   889 Hz
+ 0:05.37  VOICE? short vocal sound / chat message pop             -1.7 dBFS  +9.8 dB   139 ms   740 Hz  | cut +41 ms near
+ 0:05.67  -      high onset                                       -4.0 dBFS  +2.2 dB   118 ms  1.0 kHz  | cut +35 ms near
+ 0:06.02  -      high onset                                       -4.6 dBFS  +8.8 dB    65 ms  1.0 kHz  | cut -49 ms near
+ 0:06.73  CUT     no onset within 100 ms (strong sound at +140 ms)  <- NO HIT
+ 0:07.35  VOICE  speech (AST 0.74) / chat message pop             -1.5 dBFS   silent   350 ms  4.8 kHz  [AST Speech 0.74]  | cut +17 ms OK
+ 0:07.56  -      high onset                                       -1.5 dBFS  +6.6 dB   125 ms  1.2 kHz  | cut -41 ms near
+ 0:07.99  -      high onset                                       -1.5 dBFS  +7.8 dB    87 ms   802 Hz  | cut -48 ms near
+ 0:08.48  -      high onset                                       -4.5 dBFS  +6.7 dB    77 ms   454 Hz  | cut -23 ms OK
+ 0:08.90  UI     chat message pop / spoken word                   -1.7 dBFS +31.2 dB    40 ms   605 Hz  | cut -33 ms OK; strong accent (summary)
+ 0:09.40  -      high onset                                       -4.1 dBFS  +4.1 dB   103 ms   709 Hz  | cut +2 ms OK
+ 0:09.57  -      high onset                                       -1.8 dBFS  +5.2 dB   111 ms   728 Hz  | cut +41 ms near
+ 0:10.31  -      full onset                                       -6.1 dBFS  +8.5 dB  1295 ms   423 Hz  | cut +48 ms near
+ 0:11.74  UI?    chat message pop / wooden block hit              -2.5 dBFS +11.9 dB    78 ms   400 Hz  | cut -26 ms OK
+ 0:12.26  -      high onset                                       -5.2 dBFS  +4.1 dB    56 ms   872 Hz  | cut +28 ms OK
+ 0:12.42  -      full onset                                       -2.2 dBFS  +6.3 dB   111 ms   606 Hz  | cut +20 ms OK
+ 0:12.97  CUT     no onset or level peak within 250 ms  <- NO HIT
+ 0:13.13  CUT     no onset within 100 ms (strong sound at +247 ms)  <- NO HIT
+ 0:13.38  -      high onset                                       -1.5 dBFS +16.0 dB   216 ms   754 Hz  | strong accent (summary)
+ 0:13.69  -      high onset                                       -1.4 dBFS  +6.0 dB   152 ms   663 Hz  | cut +60 ms near
+ 0:14.10  -      full onset                                      -17.4 dBFS  +0.9 dB    22 ms   133 Hz  | cut -30 ms OK
+ 0:14.22  UI     chat message pop / whip pan whoosh transition    -1.7 dBFS +13.4 dB   684 ms   897 Hz
+ 0:14.37  -      high onset                                       -2.1 dBFS +11.9 dB   577 ms  2.9 kHz  | cut -30 ms OK
+ 0:14.62  UI     chat message pop / spoken word                   -1.7 dBFS +13.0 dB   250 ms   347 Hz  | cut -80 ms near
+ 0:15.06  UI?    chat message pop / spoken word                   -1.4 dBFS +10.2 dB   340 ms   966 Hz  | cut +58 ms near
+ 0:15.36  UI?    chat message pop / short vocal sound             -2.3 dBFS  +9.1 dB    35 ms   763 Hz  | cut +58 ms near
+ 0:15.88  -      high onset                                      -11.1 dBFS  +0.0 dB    72 ms  3.6 kHz  | cut -20 ms OK
+ 0:16.26  -      high onset                                       -2.6 dBFS  +7.6 dB    31 ms   570 Hz  | cut +61 ms near
+== 0:16.80-0:26.15  glitch hop music?, vocal chop | also: single-lens reflex camera (AST) | voice: voice-over narration  (+43 untagged onsets, 4.6/s)
+ 0:17.36  UI     chat message pop / mechanical keyboard key pre   -2.6 dBFS +15.1 dB    76 ms  1.3 kHz  | cut -71 ms near
+ 0:17.51  UI     chat message pop                                 -1.7 dBFS +14.0 dB   205 ms   437 Hz
+ 0:17.58  -      high onset                                       -1.7 dBFS +12.0 dB   435 ms   836 Hz  | cut +17 ms OK
+ 0:17.74  -      low onset                                       -17.5 dBFS  +0.0 dB     3 ms   132 Hz  | cut -24 ms OK
+ 0:18.13  UI     chat message pop / sub bass drop                 -1.9 dBFS +13.5 dB   126 ms   929 Hz  | cut +0 ms OK
+ 0:18.34  -      low onset                                        -1.8 dBFS  +2.7 dB   313 ms   362 Hz  | cut +38 ms near
+ 0:18.84  -      high onset                                       -1.9 dBFS  +8.7 dB   165 ms   850 Hz  | cut +2 ms OK
+ 0:19.09  -      full onset                                       -1.8 dBFS  +8.6 dB    70 ms   569 Hz  | cut +95 ms near
+ 0:19.29  UI     chat message pop / spoken word                   -2.0 dBFS +14.3 dB   611 ms  1.2 kHz  | cut -40 ms near
+ 0:19.71  -      low onset                                        -4.2 dBFS  +2.1 dB   158 ms   206 Hz  | cut +13 ms OK
+ 0:20.34  -      high onset                                      -10.1 dBFS  +8.4 dB    31 ms   785 Hz  | cut +38 ms near
+ 0:20.94  -      low onset                                        -1.6 dBFS  +0.5 dB  1272 ms   272 Hz  | cut -31 ms OK
+ 0:21.14  -      low onset                                        -9.5 dBFS  +0.0 dB    19 ms  1.2 kHz  | cut +44 ms near
+ 0:21.45  UI?    chat message pop / spoken word                   -3.6 dBFS +10.6 dB    58 ms   852 Hz  | cut +53 ms near
+ 0:21.68  -      high onset                                       -1.6 dBFS +10.3 dB   115 ms  1.0 kHz  | cut -23 ms OK
+ 0:21.90  -      high onset                                       -1.6 dBFS  +9.6 dB   299 ms   928 Hz  | cut -98 ms near
+ 0:22.31  -      high onset                                       -1.5 dBFS  +5.3 dB    48 ms  1.1 kHz  | cut +14 ms OK
+ 0:23.87  -      high onset                                       -3.3 dBFS  +5.3 dB     8 ms   478 Hz  | cut -32 ms OK
+ 0:24.19  -      high onset                                       -1.6 dBFS  +4.8 dB   218 ms   245 Hz  | cut +19 ms OK
+ 0:24.35  UI?    chat message pop / whip pan whoosh transition    -1.6 dBFS  +9.7 dB   620 ms   698 Hz  | cut +50 ms near
+ 0:24.79  -      high onset                                       -1.3 dBFS  +4.5 dB   211 ms  1.0 kHz  | cut +56 ms near
+ 0:24.87  -      high onset                                       -1.3 dBFS  +3.8 dB    96 ms   867 Hz  | cut +3 ms OK
+ 0:25.21  UI?    chat message pop / celesta note                  -1.7 dBFS  +8.9 dB   267 ms   955 Hz  | cut -55 ms near
+ 0:25.57  -      high onset                                       -5.5 dBFS  +4.7 dB    33 ms  1.5 kHz  | cut +1 ms OK
+
+NOTES  times, levels, loudness and sync offsets are measurements. Event kinds / tags are CLAP guesses: '?' = the event is less than 12 dB over its bed, so its excerpt is mostly bed and the tag a weak hint (right kind about 1 in 4 on the tuning mixes, 1 in 2 for exposed events; often wrong on music and voice). Where AST ran, its speech overrides the kind with VOICE. Section genres marked ? are weak. 'over bed' = how far the event rises over the level just before it; 'silent' = that bed was below -60 (after a gap the rise means nothing). Full data: --json.
+
+26.15 s busy, 5.0 onsets/s, loudness range 1 LU. Music (AudioSet Music 0.76). Unvalidated hints - genre: hip hop beat with heavy bass (z +2.7), funk music (z +2.5); mood (wrong for ~1 in 5 tracks in a test): confident and cool music (z +2.4). No sound-effect description stands out (closest: a sub bass drop z +1.8, a punchy impact hit z +1.4; tentative). AudioSet: Speech 0.78, Music 0.76, Speech synthesizer 0.26. peak -1.0 dBFS, -14.4 LUFS, brightness 1.6 kHz, bandwidth 20.5 kHz, side/mid -28 dB. Windows that read differently: 0:00.00-0:10.00 people talking in the background (z +1.5; AudioSet Speech 0.71); 0:16.16-0:26.16 a punchy impact hit (z +1.7; AudioSet Speech 0.78).
+
+top tags (z calibrated: >= 3 clear, 2.5-3 plausible, 2-2.5 weak, < 2 tentative):
+   +1.8  a sub bass drop  [impacts]  cos 0.060
+   +1.4  a punchy impact hit  [impacts]  cos -0.028
+   +1.3  a phone vibration buzz  [ui]  cos 0.008
+   +1.3  an apple falling on grass  [nature]  cos 0.021
+   +1.3  a chat message pop  [ui]  cos 0.112
+   +1.3  people talking in the background  [ambience]  cos -0.105
+   +1.2  footsteps on wood  [foley]  cos -0.032
+   +1.2  a wooden block hit  [foley]  cos 0.030
+unvalidated hints (music genre / mood, instruments, voice): a man speaking (+2.9), a voice-over narration (+2.7), hip hop beat with heavy bass (+2.7), funk music (+2.5), confident and cool music (+2.4)
+best per category: transitions: cloth whipping through the air (+0.8); impacts: a sub bass drop (+1.8); ui: a phone vibration buzz (+1.3); keyboard: an enter key press (+0.4); foley: footsteps on wood (+1.2); water: bubbles underwater (+0.8); nature: an apple falling on grass (+1.3); chimes: a glass ting (+0.0); ambience: people talking in the background (+1.3); everyday: a knock on a door (+0.9); music_genre: hip hop beat with heavy bass (+2.7); music_mood: confident and cool music (+2.4); instruments: a vocal chop (+2.2); voice: a man speaking (+2.9); quality: a boomy sound (+1.1); production: a low bitrate mp3 with artifacts (+1.6)
+audioset: Speech 0.78, Music 0.76, Speech synthesizer 0.26, Single-lens reflex camera 0.18, Synthesizer 0.10
+measurements: duration 26.155, peak_dbfs -1.0, true_peak_dbtp -1.0, rms_dbfs -17.2, lufs -14.4, lra_lu 1.4, attack_ms 290.0, decay_ms 1822.0, brightness_hz 1650, bandwidth_hz 20480, noise_floor_dbfs -24.7, flatness 0.0004, harmonic_ratio 0.404, onset_count 130, onsets_per_s 4.97, width side/mid -28 dB, digital_silence_frac 0.0
