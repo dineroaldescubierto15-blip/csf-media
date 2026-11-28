@@ -1,0 +1,73 @@
+{
+ "slug": "csf-45_reel-bitcoin-pizzas-10000",
+ "music_seed": 17,
+ "subtitulos": "karaoke",
+ "ritmo": true,
+ "grano": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Bitcoin del día (historia + Haz la cuenta con el precio de hoy): las 2 pizzas de 10.000 BTC en el fotograma 0 → costaban unos 40 $ → hoy, 547 millones de euros (respuesta antes del 40 %) → 273 millones por pizza → giro: hace un mes eran 715 millones (gráfico) → bitcoin -23 % en un mes → remate y envío.",
+  "idea": "El 22-5-2010 Laszlo Hanyecz pagó dos pizzas de Papa John's con 10.000 bitcoins (unos 41 $ entonces; primera compra conocida con bitcoin, Guinness World Records). Con el precio del 28-11-2026 a las 4:55 (Madrid) de Crypto.com, 54.737 € por BTC, esos 10.000 BTC valen 547 millones de euros. Hace un mes (71.480 €/BTC) eran 715 millones; hace un año (79.170 €), 792 millones: bitcoin ha caído un 23 % en un mes y un 31 % en un año. Tema 5 del banco de docs/bitcoin.md, conectado con el momento actual (la caída).",
+  "por_que_se_comparte": "Es la anécdota de bitcoin que todo el mundo quiere contar; la cifra en euros de hoy sorprende y el giro (ha perdido 167 millones en un mes) enseña la volatilidad sin recomendar nada.",
+  "palabra_clave": "bitcoin",
+  "ganchos": [
+   "Alguien pagó dos pizzas con diez mil bitcoins. (claridad 5, curiosidad 5, relevancia 4, concreción 5)",
+   "Estas dos pizzas hoy valen quinientos cuarenta y siete millones de euros. (5, 5, 4, 5)",
+   "Bitcoin ha caído un veintitrés por ciento en un mes. Mira lo que le ha pasado a estas pizzas. (4, 4, 4, 4)"
+  ],
+  "gancho": "Alguien pagó dos pizzas con diez mil bitcoins. Fue en dos mil diez.",
+  "bucle": "¿Cuánto valdrían hoy? → 547 M€ (escena 3) → ¿y por pizza? (escena 4) → giro: hace un mes valían más (escenas 5-6). El final ('la historia de las pizzas') empalma con el principio.",
+  "re_ganchos": [
+   "~4 s: Entonces valían unos cuarenta dólares",
+   "~11 s: Más de doscientos setenta millones por pizza",
+   "~14 s: Pero ojo. Hace solo un mes…"
+  ],
+  "recompensa": "Hoy valdrían 547 millones de euros, pero en un mes han perdido 167 millones: bitcoin ha caído un 23 %.",
+  "cta": "Envíaselo a quien no conoce la historia de las pizzas.",
+  "estadisticas": "Las estadísticas no se actualizan desde el 26-11 (token caducado). csf-14 (bitcoin) sigue siendo el Reel con más alcance; csf-35 (27,5 s) el de más % visto: ~25 s y gancho de historia con cifra."
+ },
+ "scenes": [
+  {
+   "voz": "Alguien pagó dos pizzas con diez mil bitcoins. Fue en dos mil diez.",
+   "sfx": [{"t": 0.02, "s": "boom", "v": 0.9}],
+   "html": "<div class=\"bgword\">PIZZA</div><div class=\"col center\"><div class=\"row\" style=\"gap:30px\"><i data-icon=\"lucide:pizza\" data-size=\"170\" class=\"w\"></i><i data-icon=\"lucide:pizza\" data-size=\"170\" class=\"w\"></i></div><div class=\"big2\" style=\"font-size:120px;white-space:nowrap;margin-top:10px\">2 pizzas =</div><div class=\"row\" style=\"gap:24px;justify-content:center\"><i data-icon=\"si:bitcoin\" data-size=\"150\" class=\"g\"></i><div class=\"big2 g\" style=\"font-size:180px;white-space:nowrap\">10.000</div></div><h2 style=\"margin-top:10px\">22 de mayo de 2010</h2></div>"
+  },
+  {
+   "voz": "Entonces valían unos cuarenta dólares.",
+   "trans": "whip",
+   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">En 2010, las dos pizzas costaban</div><div class=\"big2\" style=\"font-size:260px;white-space:nowrap\" data-in=\"0.2\" data-d=\"0.7\" data-a=\"wheel\" data-to=\"41\" data-pre=\"~\" data-suf=\" $\" data-sfx=\"tick\"></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Primera compra conocida con bitcoin (Guinness World Records). Laszlo Hanyecz, Florida.</div></div>"
+  },
+  {
+   "voz": "Hoy serían quinientos cuarenta y siete millones de euros.",
+   "trans": "cut",
+   "html": "<div class=\"bgword\">HOY</div><div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">10.000 bitcoins, hoy</div><div data-in=\"0.3\" data-d=\"0.45\" data-a=\"punch\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:250px;white-space:nowrap\">547 M€</div></div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">10.000 × 54.737 € = 547 millones. Precio del 28/11/2026, 4:55 h (Crypto.com). Cambia cada minuto.</div></div>"
+  },
+  {
+   "voz": "Más de doscientos setenta millones por pizza.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:pizza\" data-size=\"200\" class=\"g\" data-in=\"0\" data-a=\"spin\" data-sfx=\"swipe\"></i><div class=\"k\" style=\"margin-top:20px\" data-in=\"0.2\" data-a=\"fade\">Cada pizza</div><div class=\"big2\" style=\"font-size:220px;white-space:nowrap\" data-in=\"0.5\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"273\" data-suf=\" M€\" data-sfx=\"caja\"></div></div>"
+  },
+  {
+   "voz": "Pero ojo. Hace solo un mes eran setecientos quince millones.",
+   "trans": "zoom",
+   "sfx": [{"t": 0.05, "s": "scratch", "v": 0.5}],
+   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Lo que valen las 10.000 BTC (millones de €)</div><div data-chart='{\"type\":\"bar\",\"data\":[792,715,547],\"labels\":[\"Hace 1 año\",\"Hace 1 mes\",\"Hoy\"],\"unit\":\"\",\"mark\":2,\"in\":0.3,\"d\":1.4,\"sfx\":\"riser\"}'></div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Precio de 1 BTC: 79.170 € (hace 1 año), 71.480 € (hace 1 mes), 54.737 € (28/11/2026). Crypto.com.</div></div>"
+  },
+  {
+   "voz": "Bitcoin ha caído un veintitrés por ciento en un mes.",
+   "trans": "cut",
+   "html": "<div class=\"bgword\">−23 %</div><div class=\"col center\"><i data-icon=\"si:bitcoin\" data-size=\"130\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><div data-in=\"0.3\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"left\" data-sfx=\"impact\"><div class=\"big2\" style=\"font-size:300px;white-space:nowrap\">−23 %</div></div><h2 data-in=\"1.2\" data-a=\"up\">en un mes</h2><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">71.480 € → 54.737 €. Datos pasados: no dicen qué hará mañana.</div></div>"
+  },
+  {
+   "voz": "El valor de esas pizzas cambia cada minuto.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:clock\" data-size=\"150\" class=\"w\" data-in=\"0\" data-a=\"spin\" data-sfx=\"aire\"></i><h1 style=\"margin-top:20px\" data-in=\"0.2\" data-a=\"words\">Sube y baja cada minuto</h1><p data-in=\"1.0\" data-a=\"fade\">Bitcoin es muy volátil: puedes perder buena parte de lo que pongas.</p></div>"
+  },
+  {
+   "voz": "Envíaselo a quien no conoce la historia de las pizzas.",
+   "trans": "fade",
+   "sfx": [{"t": 0.2, "s": "success", "v": 0.5}],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien no conoce la historia de las pizzas</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Historia y datos pasados; no es una predicción ni una recomendación de compra. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
