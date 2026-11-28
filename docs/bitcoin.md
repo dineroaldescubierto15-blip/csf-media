@@ -25,7 +25,7 @@ el alcance y los envíos de los Reels de bitcoin frente al resto, y cuéntaselo 
 | 2 | Qué es bitcoin en 30 s (dinero digital sin banco central, registro público) | Explicado | "Bitcoin no lo emite ningún banco. Entonces, ¿quién decide?" |
 | 3 | Solo habrá 21 millones (y cuántos quedan por crear) | Haz la cuenta | "Solo existirán veintiún millones de bitcoins. Ya hay casi veinte." |
 | 4 | El halving: cada ~4 años se crean la mitad (abril 2024: 3,125 BTC por bloque; el próximo, hacia 2028) | Explicado | "Cada cuatro años, bitcoin se reduce a la mitad. Así funciona." |
-| 5 | La pizza de 10.000 bitcoins (22-5-2010) y lo que valdrían hoy | Historia | "Alguien pagó dos pizzas con diez mil bitcoins." |
+| 5 | La pizza de 10.000 bitcoins (22-5-2010) y lo que valdrían hoy (hecho: csf-45) | Historia | "Alguien pagó dos pizzas con diez mil bitcoins." |
 | 6 | Satoshi Nakamoto: nadie sabe quién es y no ha movido su ~1 millón de BTC | Historia | "El creador de bitcoin tiene un millón de bitcoins. Y nadie sabe quién es." |
 | 7 | Bitcoins perdidos para siempre (claves olvidadas; estimaciones de millones) | Curiosidad | "Millones de bitcoins están perdidos para siempre." |
 | 8 | Qué es un satoshi: puedes tener 0,0001 BTC | Mito | "'Bitcoin es muy caro para mí.' Mito: se divide en cien millones." |
