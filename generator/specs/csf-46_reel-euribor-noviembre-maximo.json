@@ -1,0 +1,78 @@
+{
+ "slug": "csf-46_reel-euribor-noviembre-maximo",
+ "music_seed": 23,
+ "subtitulos": "karaoke",
+ "ritmo": true,
+ "grano": true,
+ "fondo": "grid",
+ "plan": {
+  "formato": "Actualidad en 30 s: el euríbor cierra noviembre en máximos desde julio de 2024 (fotograma 0) → 3,3 % frente a 2,2 % hace un año (titular citado) → la cuenta con una hipoteca típica: +90 €/mes (antes del 40 %) → más de 1.000 € al año → giro para quien aún no tiene hipoteca: necesitas cobrar ~250 € más → qué vigilar (BCE, 17-12) → envío.",
+  "idea": "Euríbor a 12 meses: media de noviembre de 2026 en el 3,313 % (20 sesiones ya publicadas), frente al 3,239 % de octubre y el 2,217 % de noviembre de 2025 (euribor.com.es, 27-11-2026; Deia, 27-11-2026: 'nivel más alto desde julio de 2024'). Hipoteca de 150.000 € a 25 años con euríbor + 1: de 728 € a 818 € al mes si te toca la revisión anual ahora (+90 €/mes, +1.075 €/año, cálculo propio con el sistema francés). Con la regla habitual de los bancos (cuota ≤ 35 % de los ingresos netos) la misma hipoteca pide cobrar 2.337 € netos en lugar de 2.081 € (+256 €). Próxima reunión del BCE: 17-12-2026.",
+  "por_que_se_comparte": "Es la noticia de finanzas personales de la semana; el '+90 € al mes' se manda a quien tiene hipoteca variable y el giro de los 250 € a quien está pensando en comprar piso.",
+  "palabra_clave": "Euríbor",
+  "ganchos": [
+   "El euríbor cierra noviembre en máximos desde julio de dos mil veinticuatro. (claridad 5, curiosidad 4, relevancia 4, concreción 5)",
+   "Tu hipoteca puede subir noventa euros al mes. Culpa del euríbor. (4, 5, 4, 5)",
+   "Para la misma hipoteca, ahora tienes que cobrar doscientos cincuenta euros más. (4, 4, 5, 4)"
+  ],
+  "gancho": "El euríbor cierra noviembre en máximos desde julio de dos mil veinticuatro.",
+  "bucle": "¿Cuánto es? (escena 2) → ¿qué significa en euros? (escenas 3-5) → ¿y si no tengo hipoteca? (escenas 6-7) → qué vigilar (escena 8).",
+  "re_ganchos": [
+   "~6 s: Haz la cuenta",
+   "~14 s: ¿Y si vas a comprar piso?",
+   "~22 s: Ojo al diecisiete de diciembre"
+  ],
+  "recompensa": "Con una hipoteca típica, +90 €/mes en la revisión; y para pedir la misma hipoteca necesitas cobrar ~250 € más al mes.",
+  "cta": "Envíaselo a quien está pensando en comprar piso.",
+  "estadisticas": "csf-20 (euríbor, 49 s) solo retuvo un 10 %: mismo pilar con formato nuevo (Actualidad en 30 s, ~30 s, cifra en el fotograma 0 y respuesta a los ~10 s)."
+ },
+ "scenes": [
+  {
+   "voz": "El euríbor cierra noviembre en máximos desde julio de dos mil veinticuatro.",
+   "sfx": [{"t": 0.02, "s": "boom", "v": 0.9}],
+   "html": "<div class=\"bgword\">EURÍBOR</div><div class=\"col center\"><div class=\"chip gold\">Euríbor · noviembre 2026</div><div class=\"big2 g\" style=\"font-size:250px;white-space:nowrap;margin-top:20px\">3,313 %</div><h2 style=\"margin-top:10px\">El más alto desde julio de 2024</h2><i data-icon=\"lucide:trending-up\" data-size=\"130\" class=\"w\"></i></div>"
+  },
+  {
+   "voz": "Tres coma tres por ciento. Hace un año, dos coma dos.",
+   "trans": "whip",
+   "html": "<div class=\"col center\"><div data-news='{\"medio\":\"Deia\",\"fecha\":\"27/11/2026\",\"titular\":\"El euríbor cerrará noviembre en su nivel **más alto** desde julio de 2024\",\"in\":0}'></div><div class=\"row\" style=\"gap:60px;margin-top:40px;justify-content:center\"><div class=\"col center\" data-in=\"1.2\" data-a=\"left\" data-sfx=\"swipe\"><p style=\"margin:0\">Nov. 2025</p><div class=\"big2\" style=\"font-size:120px;color:#8A8A85\">2,217 %</div></div><div class=\"col center\" data-in=\"1.8\" data-a=\"slide\" data-sfx=\"aire\"><p style=\"margin:0\">Nov. 2026</p><div class=\"big2 g\" style=\"font-size:120px\">3,313 %</div></div></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Euríbor a 12 meses, media mensual (euribor.com.es, 27/11/2026, con 20 sesiones publicadas).</div></div>"
+  },
+  {
+   "voz": "Haz la cuenta. Hipoteca de ciento cincuenta mil euros, a veinticinco años.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:house\" data-size=\"150\" class=\"g\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"k\" style=\"margin-top:10px\" data-in=\"0\" data-a=\"fade\">Haz la cuenta</div><div class=\"big2\" style=\"font-size:170px;white-space:nowrap\" data-in=\"0.2\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"150000\" data-suf=\" €\" data-sfx=\"tick\"></div><h2 data-in=\"1.6\" data-a=\"up\">25 años · euríbor + 1 %</h2></div>"
+  },
+  {
+   "voz": "Si te toca revisión, pagas noventa euros más al mes.",
+   "trans": "cut",
+   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Cuota al mes</div><h1 data-in=\"0.1\" data-a=\"type\">728 € → 818 €</h1><div data-in=\"1.3\" data-d=\"0.45\" data-a=\"punch\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:260px;white-space:nowrap\">+90 €</div></div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Revisión anual: euríbor 2,217 % → 3,313 %. Sistema francés, cálculo propio.</div></div>"
+  },
+  {
+   "voz": "Más de mil euros al año.",
+   "trans": "zoom",
+   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Al año</div><div class=\"big2\" style=\"font-size:240px;white-space:nowrap\" data-in=\"0.1\" data-d=\"0.8\" data-a=\"wheel\" data-to=\"1075\" data-pre=\"+\" data-suf=\" €\" data-sfx=\"caja\"></div></div>"
+  },
+  {
+   "voz": "¿Y si vas a comprar piso?",
+   "trans": "cut",
+   "sfx": [{"t": 0.05, "s": "scratch", "v": 0.45}],
+   "html": "<div class=\"bgword\">PISO</div><div class=\"col center\"><i data-icon=\"lucide:key-round\" data-size=\"170\" class=\"g\" data-in=\"0\" data-a=\"spin\" data-sfx=\"swipe\"></i><div class=\"big2\" style=\"font-size:130px;margin-top:20px\" data-in=\"0.1\" data-a=\"up\">¿Vas a comprar?</div></div>"
+  },
+  {
+   "voz": "Con la regla del treinta y cinco por ciento, necesitas cobrar doscientos cincuenta euros más al mes.",
+   "trans": "slide",
+   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Para la misma hipoteca, cobrar</div><div class=\"row\" style=\"gap:50px;justify-content:center\"><div class=\"col center\" data-in=\"0.3\" data-a=\"left\"><p style=\"margin:0\">Antes</p><div class=\"big2\" style=\"font-size:110px;color:#8A8A85\">2.081 €</div></div><div class=\"col center\" data-in=\"0.8\" data-a=\"slide\" data-sfx=\"aire\"><p style=\"margin:0\">Ahora</p><div class=\"big2\" style=\"font-size:110px\">2.337 €</div></div></div><div data-in=\"2.0\" data-d=\"0.45\" data-a=\"slam\" data-dir=\"right\" data-flash=\"no\" data-sfx=\"impact\"><div class=\"big2 g\" style=\"font-size:200px;white-space:nowrap\">+256 €</div></div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Ingresos netos al mes si la cuota no pasa del 35 % (criterio habitual de los bancos). Cálculo propio.</div></div>"
+  },
+  {
+   "voz": "Ojo al diecisiete de diciembre: decide el BCE.",
+   "trans": "whip",
+   "html": "<div class=\"col center\"><i data-icon=\"lucide:calendar\" data-size=\"150\" class=\"w\" data-in=\"0\" data-a=\"pop\" data-sfx=\"pop\"></i><div class=\"big2 g\" style=\"font-size:200px;white-space:nowrap\" data-in=\"0.2\" data-a=\"stamp\">17 dic.</div><h2 data-in=\"0.8\" data-a=\"up\">Reunión del BCE (Banco Central Europeo)</h2><p data-in=\"1.2\" data-a=\"fade\">El euríbor se mueve con lo que se espera de sus tipos.</p></div>"
+  },
+  {
+   "voz": "Envíaselo a quien está pensando en comprar piso.",
+   "trans": "fade",
+   "sfx": [{"t": 0.2, "s": "success", "v": 0.5}],
+   "html": "<div class=\"row\" data-in=\"0\" data-a=\"slide\" data-sfx=\"swoosh\"><i data-icon=\"lucide:send\" data-size=\"110\" class=\"g\"></i><h2 style=\"margin:0\">Envíaselo a quien está pensando en comprar piso</h2></div><div class=\"src\" data-in=\"0.3\" data-a=\"fade\">Ejemplo: 150.000 €, 25 años, euríbor + 1 %. Tu cuota depende de tu contrato. Contenido informativo, no es asesoramiento financiero.</div>"
+  }
+ ]
+}
