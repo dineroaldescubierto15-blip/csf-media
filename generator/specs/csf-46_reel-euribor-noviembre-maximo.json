@@ -35,7 +35,7 @@
   {
    "voz": "Tres coma tres por ciento. Hace un año, dos coma dos.",
    "trans": "whip",
-   "html": "<div class=\"col center\"><div data-news='{\"medio\":\"Deia\",\"fecha\":\"27/11/2026\",\"titular\":\"El euríbor cerrará noviembre en su nivel **más alto** desde julio de 2024\",\"in\":0}'></div><div class=\"row\" style=\"gap:60px;margin-top:40px;justify-content:center\"><div class=\"col center\" data-in=\"1.2\" data-a=\"left\" data-sfx=\"swipe\"><p style=\"margin:0\">Nov. 2025</p><div class=\"big2\" style=\"font-size:120px;color:#8A8A85\">2,217 %</div></div><div class=\"col center\" data-in=\"1.8\" data-a=\"slide\" data-sfx=\"aire\"><p style=\"margin:0\">Nov. 2026</p><div class=\"big2 g\" style=\"font-size:120px\">3,313 %</div></div></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Euríbor a 12 meses, media mensual (euribor.com.es, 27/11/2026, con 20 sesiones publicadas).</div></div>"
+   "html": "<div class=\"col center\"><div data-news='{\"medio\":\"Deia\",\"fecha\":\"27/11/2026\",\"titular\":\"El euríbor cerrará noviembre en su nivel **más alto** desde julio de 2024\",\"in\":0}'></div><div class=\"row\" style=\"gap:60px;margin-top:40px;justify-content:center\"><div class=\"col center\" data-in=\"1.2\" data-a=\"left\" data-sfx=\"swipe\"><p style=\"margin:0\">Nov. 2025</p><div class=\"big2\" style=\"font-size:100px;color:#8A8A85;white-space:nowrap\">2,217 %</div></div><div class=\"col center\" data-in=\"1.8\" data-a=\"slide\" data-sfx=\"aire\"><p style=\"margin:0\">Nov. 2026</p><div class=\"big2 g\" style=\"font-size:100px;white-space:nowrap\">3,313 %</div></div></div><div class=\"src\" data-in=\"0.4\" data-a=\"fade\">Euríbor a 12 meses, media mensual (euribor.com.es, 27/11/2026, con 20 sesiones publicadas).</div></div>"
   },
   {
    "voz": "Haz la cuenta. Hipoteca de ciento cincuenta mil euros, a veinticinco años.",
@@ -45,7 +45,7 @@
   {
    "voz": "Si te toca revisión, pagas noventa euros más al mes.",
    "trans": "cut",
-   "html": "<div class=\"col center\"><div class=\"k\" data-in=\"0\" data-a=\"fade\">Cuota al mes</div><h1 data-in=\"0.1\" data-a=\"type\">728 € → 818 €</h1><div data-in=\"1.3\" data-d=\"0.45\" data-a=\"punch\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:260px;white-space:nowrap\">+90 €</div></div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Revisión anual: euríbor 2,217 % → 3,313 %. Sistema francés, cálculo propio.</div></div>"
+   "html": "<div class=\"col center\"><div class=\"k\">Cuota al mes</div><h1 data-in=\"0.1\" data-a=\"type\">728 € → 818 €</h1><div data-in=\"1.3\" data-d=\"0.45\" data-a=\"punch\" data-sfx=\"boom\"><div class=\"big2 g\" style=\"font-size:260px;white-space:nowrap\">+90 €</div></div><div class=\"src\" data-in=\"0.5\" data-a=\"fade\">Revisión anual: euríbor 2,217 % → 3,313 %. Sistema francés, cálculo propio.</div></div>"
   },
   {
    "voz": "Más de mil euros al año.",
